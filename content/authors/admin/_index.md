@@ -34,11 +34,11 @@ bio: My research interests include Reinforcement Learning and Human-AI interacti
 #   - Human-AI Interaction
 
 # Education to show in About widget
-education:
-  courses:
-    - course: Computer Science
-      institution: Mansoura University
-      year: 2024
+# education:
+#   courses:
+#     - course: Computer Science
+#       institution: Mansoura University
+#       year: 2024
 
 
 # Social/Academic Networking
@@ -58,7 +58,7 @@ social:
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/mohamedyosef101
-    label: Follow me on LinkedIn
+    label: LinkedIn
     display: 
       header: true
   # Link to a PDF of your resume/CV.
