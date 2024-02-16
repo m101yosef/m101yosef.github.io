@@ -18,7 +18,7 @@ sections:
   - block: collection
     id: posts
     content:
-      title: Recent Posts
+      title: Recent Articles
       subtitle: ''
       text: ''
       # Choose how many pages you would like to display (0 = all pages)
@@ -26,7 +26,7 @@ sections:
       # Filter on criteria
       filters:
         folders:
-          - post
+          - articles
         author: ""
         category: ""
         tag: ""

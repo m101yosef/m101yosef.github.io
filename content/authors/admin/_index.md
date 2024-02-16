@@ -62,6 +62,7 @@ social:
   - icon: medium
     icon_pack: fab
     link: https://medium.com/@mohamedyosef101
+    label: Medium
     display: 
       header: true
 
