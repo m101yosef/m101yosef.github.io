@@ -7,6 +7,8 @@ summary: Forget the GPS! Forget carefully programmed robots following strict ins
 # Date published
 date: '2024-02-13'
 
+share: false
+
 
 authors:
   - admin

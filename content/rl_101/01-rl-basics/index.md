@@ -2,6 +2,19 @@
 title: The fundamentals of reinforcement learning explained.
 date: '2024-01-22'
 summary: Learn the basics of the rising star in the world of AI; reinforcement learning.
+
+share: false
+
+authors:
+  - admin
+  - محمد يوسف
+
+tags:
+  - Reinforcement Learning
+  - الذكاء الاصطناعي
+
+categories:
+  - RL 101
 ---
 
 
