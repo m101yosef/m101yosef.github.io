@@ -14,19 +14,19 @@ sections:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
   
-  ### POSTS ###
+  ### RL 101 ###
   - block: collection
-    id: posts
+    id: rl101
     content:
-      title: Recent Articles
-      subtitle: ''
+      title: RL 101
+      subtitle: 'The basics of reinforcement learning'
       text: ''
       # Choose how many pages you would like to display (0 = all pages)
       count: 5
       # Filter on criteria
       filters:
         folders:
-          - articles
+          - rl_101
         author: ""
         category: ""
         tag: ""
@@ -37,7 +37,7 @@ sections:
       # Choose how many pages you would like to offset by
       offset: 0
       # Page order: descending (desc) or ascending (asc) date.
-      order: desc
+      order: asc
     design:
       # Choose a layout view
       view: compact
