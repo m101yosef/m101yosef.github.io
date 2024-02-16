@@ -7,19 +7,6 @@ summary: In RL, when the agent take actions (or a sequence of actions) which mea
 # Date published
 date: '2024-02-08'
 
-# Is this an unpublished draft?
-draft: false
-
-# Show this page in the Featured widget?
-featured: false
-
-# Featured image
-# Place an image named `featured.jpg/png` in this page's folder and customize its options here.
-image:
-  caption: 'Image credit: [**Unsplash**](https://miro.medium.com/v2/resize:fit:720/format:webp/0*Zl45lW4vNUZz0gKS)'
-  focal_point: ''
-  placement: 2
-  preview_only: false
 
 authors:
   - admin
@@ -27,6 +14,7 @@ authors:
 
 tags:
   - Reinforcement Learning
+  - Markov Process
   - الذكاء الاصطناعي
 
 categories:
@@ -59,5 +47,6 @@ In the last article, we talked about [the fundamentals of reinforcement learnin
 Now, imagine a sequence of events, like flipping a coin repeatedly. A Markov process assumes that the probability of the next event (heads or tails) **only depends on the current state**, in this case, whether the last flip was heads or tails. The past history holds no additional information. This is called the **[Markov property](https://youtu.be/vbqkzyu2bQ0?si=4GqYMTvis0SFVMhI)**.
 
 
+<div><br></div>
 
 ## read the [full article on Medium](https://medium.com/@mohamedyosef101/markov-decision-processes-given-a-model-of-the-world-761fc4147cbf)
