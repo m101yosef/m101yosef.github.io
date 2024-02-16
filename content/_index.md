@@ -11,65 +11,7 @@ sections:
       title:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
-  - block: experience
-    content:
-      title: Experience
-      # Date format for experience
-      #   Refer to https://docs.hugoblox.com/customization/#date-format
-      date_format: Nov 2020
-      # Experiences.
-      #   Add/remove as many `experience` items below as you like.
-      #   Required fields are `title`, `company`, and `date_start`.
-      #   Leave `date_end` empty if it's your current employer.
-      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-      items:
-        - title: Business Strategy Specialist
-          company: Media Community DPR
-          company_url: ''
-          company_logo: org-mc
-          location: Saudi Arabia
-          date_start: 'Nov 2020'
-          date_end: 'May 2021'
-          description: |2-
-              * We were able to eliminate over 90% of learning breakdowns in only 3 months which lead to increase in rates by 35%. 
-              * Add new features like "campaigns" with 20 success story which improved the awareness and get more than 2k in the first weeks.
 
-        - title: Product Designer
-          company: MY101
-          company_url: ''
-          company_logo: org-m
-          location: ''
-          date_start: 'Apr 2021'
-          date_end: 'Aug 2023'
-          description: |2- 
-              * Understand your customers and target market through user research to pinpoint their needs and problems.
-              * Map out the optimal user journey through intuitive wireframes and storyboards.
-              * Refine and iterate designs through high and low fidelity prototypes to maximize usability. 
-              * Craft the final visual design that is not only functional but captures your brand's aesthetic and voice.
-
-        - title: Research Fellow
-          company: Mansoura University
-          company_url: ''
-          company_logo: org-mu
-          location: 'Egypt'
-          date_start: 'Sep 2023'
-          date_ended: ''
-          description: Leading Project AQSA at Mansoura University to employ AI to help small businesses manage finances
-
-        - title: Data Scientist
-          company: MY101
-          company_url: '' 
-          company_logo: org-m
-          location: ''
-          date_start: 'Oct 2022'
-          date_end: '' 
-          description: |2- 
-              Helping product teams: 
-              * Focus efforts on initialtives with the  highest impact.
-              * Make confident decisions based on facts, not assumption. 
-              * Continuously improve based on real customer usage and feedback.
-    design:
-      columns: '2'
   - block: accomplishments
     content:
       # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
