@@ -6,7 +6,9 @@
 # Appearance
 
 appearance:
+  theme_day: minimal
   mode: light
+  color: cyan
   font: minimal
   font_size: L
 
