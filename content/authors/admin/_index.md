@@ -2,9 +2,6 @@
 # Display name
 title: Mohamed Yosef
 
-# Name pronunciation (optional)
-name_pronunciation: محمد يوسف
-
 # Full name (for SEO)
 first_name: Mohamed
 last_name: Yosef
@@ -25,11 +22,11 @@ organizations:
 bio: Data scientist and Reinforcement Learning Researcher.
 
 # Interests to show in About widget
-interests:
-   - Reinforcement Learning
-   - Human-AI Interaction
-   - Multi-agent Learning
-   - Machine Learning
+# interests:
+#    - Reinforcement Learning
+#    - Human-AI Interaction
+#    - Multi-agent Learning
+#    - Machine Learning
 
 # Education to show in About widget
 # education:
@@ -45,12 +42,11 @@ social:
   - icon: envelope
     icon_pack: fas
     link: 'mailto:mohamedyosef101@outlook.com'
+    display: 
+      header: true
   # - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
   #   icon_pack: fas
   #   link: https://scholar.google.co
-  - icon: github
-    icon_pack: fab
-    link: https://github.com/mohamedyosef101
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/mohamedyosef101
