@@ -3,31 +3,26 @@
 title: Mohamed Yosef
 
 # Name pronunciation (optional)
-name_pronunciation:
+name_pronunciation: محمد يوسف
 
 # Full name (for SEO)
 first_name: Mohamed
 last_name: Yosef
 
-# Status emoji
-status:
-  icon:
-
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position/tagline
-role: 
-  - name: Data Scientist, RL Researcher.
-    url: https://kaggle.com/mohamedyosef101
+# role: Data Scientist, RL Researcher.
 
 # Organizations/Affiliations to show in About widget
-# organizations:
-#   - name: 
-#     url: 
+organizations:
+  - name: Data Scientist, RL Researcher
+    url: https://kaggle.com/mohamedyosef101
+  - name: Mansoura University
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include Reinforcement Learning and Human-AI interaction.
+bio: Data scientist and Reinforcement Learning Researcher.
 
 # Interests to show in About widget
 interests:
@@ -46,8 +41,6 @@ interests:
 
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
-#   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
-#   form "mailto:your-email@example.com" or "/#contact" for contact widget.
 social:
   - icon: envelope
     icon_pack: fas
@@ -60,16 +53,16 @@ social:
     link: https://github.com/mohamedyosef101
   - icon: linkedin
     icon_pack: fab
-    link: https://www.linkedin.com/mohamedyosef101
+    link: https://www.linkedin.com/in/mohamedyosef101
     label: LinkedIn
     display: 
       header: true
-  # Link to a PDF of your resume/CV.
-  # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
-  # and uncomment the lines below.
-  - icon: cv
-    icon_pack: ai
-    link: uploads/resume.pdf
+  - icon: twitter
+    icon_pack: fab
+    link: https://www.twitter.com/mohamedyosef101
+    label: Twitter
+    display: 
+      header: true
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
