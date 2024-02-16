@@ -6,7 +6,7 @@ type: landing
 
 sections:
 
-### BIO ###
+  ### BIO ###
   - block: about.biography
     id: about
     content:
@@ -43,7 +43,7 @@ sections:
       view: compact
       columns: '2'
 
-### PROJECTS ###
+  ### PROJECTS ###
   - block: portfolio
     id: projects
     content:
@@ -72,7 +72,7 @@ sections:
       # For Showcase view, flip alternate rows?
       flip_alt_rows: false
 
-### GALLERY ### 
+  ### GALLERY ### 
   - block: markdown
     content:
       title: Gallery
@@ -93,7 +93,7 @@ sections:
       columns: '2'
       view: card
 
-### RECENT PUBLICATIONS ### 
+  ### RECENT PUBLICATIONS ### 
   - block: collection
     content:
       title: Recent Publications
@@ -108,6 +108,7 @@ sections:
     design:
       columns: '2'
       view: citation
+  ### TALKS ###
   - block: collection
     id: talks
     content:
@@ -118,9 +119,4 @@ sections:
     design:
       columns: '2'
       view: compact
-  - block: tag_cloud
-    content:
-      title: Popular Topics
-    design:
-      columns: '2'
 ---
