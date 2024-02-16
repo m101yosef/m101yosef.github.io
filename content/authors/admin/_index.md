@@ -63,6 +63,11 @@ social:
     label: Twitter
     display: 
       header: true
+  - icon: medium
+    icon_pack: fab
+    link: https://medium.com/@mohamedyosef101
+    display: 
+      header: true
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
