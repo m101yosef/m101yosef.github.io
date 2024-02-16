@@ -6,9 +6,8 @@
 # Appearance
 
 appearance:
-  theme_day: minimal
+  theme_day: github-light
   theme_night: minimal
-  color: green
   font: minimal
   font_size: L
 
