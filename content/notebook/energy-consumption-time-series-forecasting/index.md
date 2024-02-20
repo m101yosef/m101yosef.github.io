@@ -1,19 +1,25 @@
 ---
 title: Energy Consumption - Time Series Forecasting
 date: '2024-02-20'
+
+share: false
+authors: 
+    - admin
+tags: 
+    - Energy
+    - Time Series
 ---
 
 Our goal in this project is to use the hourly power consumption data to predict the PJME in the future. This is done by developing a model that can be used to predict future values based on the past values of the time series.
-
----
 
 **DATA**: **[The hourly energy consumption data](https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption)** comes from PJM's website and are in megawatts (MW). 
 
 **GitHub repo**: [mohamedyosef101/energy-time-series-forecasting](https://github.com/mohamedyosef101/energy-time-series-forecasting)
 
----
-
 ![earth](https://github.com/mohamedyosef101/energy-time-series-forecasting/assets/118842452/e4fce3fe-174f-4e0c-b190-2f5602110ee7)
+
+
+<div><br></div>
 
 # Step 0: Set it up
 ---
@@ -38,6 +44,8 @@ print("Now, you're ready for step one")
 
     Now, you're ready for step one
 
+<div><br></div>
+
 # Step 1: Explore the data
 ---
 To better understand the data, I need to create a graph to see the change in PJM Energy over time.
@@ -58,7 +66,9 @@ plt.show()
 
     
 ![png](output_5_0.png)
-    
+
+
+<div><br></div>  
 
 # Step 2: Split the data
 ---
@@ -82,6 +92,7 @@ plt.show()
     
 ![png](output_8_0.png)
     
+<div><br></div>
 
 # Step 3: Feature Engineering
 ---
@@ -115,10 +126,11 @@ plt.show()
     
 ![png](output_11_0.png)
     
-
+<div><br></div>
 <div style="background: #e3eefc; padding: 24px 12px; color: #0000AA; margin: 4px 80px 4px 4px; border-radius: 4px;">
 <p style="font-weight: bold;">We can see here that after midnight, the use of energy go down and it gets higher from around 6AM to 6PM and then go down again.</p>
 </div>
+<div><br></div>
 
 ```python
 # viaualize the monthly Megawatt
@@ -131,14 +143,17 @@ plt.show()
     
 ![png](output_13_0.png)
     
-
+<div><br></div>
 <div style="background: #e3eefc; padding: 24px 12px; color: #0000AA; margin: 4px 80px 4px 4px; border-radius: 4px;">
 <p style="font-weight: bold;">The monthly usage tends to peak here two times in the winter season, then in the fall and sprint it has lower and another peak in the middle of summer.</p>
 </div>
+<div><br></div>
 
 # Step 4: Modelling
 ---
 `XGBoost` is good and reliable model for regression and time series analysis as well. Also, for the metrics, we'll use `mean squared error`.
+
+<div><br></div>
 
 ### 4.1 Prepare the data
 
@@ -156,6 +171,8 @@ y_train = train[target]
 X_test = test[features]
 y_test = test[target]
 ```
+
+<div><br></div>
 
 ### 4.2 Build the model
 
@@ -210,6 +227,8 @@ reg.fit(X_train, y_train,
              n_estimators=1000, n_jobs=None, num_parallel_tree=None,
              objective=&#x27;reg:linear&#x27;, predictor=None, ...)</pre></div></div></div></div></div>
 
+<div><br></div>
+
 ### 4.3 Features importance
 We need to see how much these features were used in each of the trees built by `XGBoost` model.
 
@@ -224,6 +243,8 @@ plt.show()
     
 ![png](output_21_0.png)
     
+<div><br></div>
+<div><br></div>
 
 # Step 5: Forecasting on test data
 compare the prediction with the actual values.
@@ -241,6 +262,7 @@ plt.show()
     
 ![png](output_23_0.png)
     
+<div><br></div>
 
 ```python
 # RMSE Score
@@ -260,23 +282,14 @@ print("R-squared (R2) Score:", r2)
 
     R-squared (R2) Score: 0.6670230260104328
 
+<div><br></div>
 <div style="background: #e3eefc; padding: 24px 12px; color: #0000AA; margin: 4px 80px 4px 4px; border-radius: 4px;">
 <p style="font-weight: bold;">The result is not that good, but it's a great starting point for your future model.</p>
 </div>
+<div><br></div>
 
 # Acknowledegments
 * Great walk through [Time Series Forecasting with XGBoost](https://www.kaggle.com/code/robikscube/time-series-forecasting-with-machine-learning-yt) by Rob Mulla
 * Useful video explaining [what is Time Series Analysis](https://youtu.be/GE3JOFwTWVM?si=YrK_rY1nNUwYljHF) by IBM Technology.
 
 <div><br></div>
-
-<div>
-	<hr>
-	<p> 🔔 Follow me for more <b>Data Science, User Experience (UX), and Machine Learning</b> content.</p>
-	<hr>
-</div>
-<p>&copy; Created by <b>MohamedYosef101</b> | 
-	<a href="https://linkedin.com/in/mohamedyosef101">LinkedIn</a> &centerdot;
-	<a href="https://medium.com/in/@mohamedyosef101">Medium</a> &centerdot;
-	<a href="https://github.com/mohamedyosef101">GitHub</a>
-</p>

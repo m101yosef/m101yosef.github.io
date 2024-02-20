@@ -1,7 +1,18 @@
 ---
-title: What is Regression Analysis
+title: Regression Analysis with TensorFlow
 date: '2024-02-20'
+
+share: false
+authors: 
+  - admin
+tags: 
+  - Regression
+  - TensorFlow
 ---
+
+[Open in Kaggle](https://www.kaggle.com/code/mohamedyosef101/regression-with-tensorflow)
+
+<div><br></div>
 
 A statistical technique used to investigate the relationship between a dependent variable (target/label) and one or more independent variables (features).
 
@@ -21,8 +32,9 @@ There are many different ways but this is a generic setup.
 
 *Table 1: Typical architecture of a regression network. Source: Adapted from page 293 of [Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow Book by Aurélien Géron](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/)*
 
-# <span style="font-family: freestyle script; font-size: 130%;">Step 0.</span> <span style="color: #00773e; font-size: 120%">The setup</span>
-<hr style="background-color: #00773E; border: 0px; height: 2px;">
+<div><br></div>
+
+# Step 0. The setup
 
 ```python
 # import the libraries
@@ -40,14 +52,11 @@ from keras import layers
 import datetime as dt
 print(f"Notebook last run: {dt.datetime.now()}")
 ```
-
-    /opt/conda/lib/python3.10/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.24.3
-      warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
-
     Notebook last run: 2024-01-20 14:16:41.949670
 
-# <span style="font-family: freestyle script; font-size: 130%;">Step 1.</span> <span style="color: #00773e; font-size: 120%">Get the data</span>
-<hr style="background-color: #00773E; border: 0px; height: 2px;">
+<div><br></div>
+
+# Step 1. Get the data
 
 The dataset is available from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/9/auto+mpg).
 
@@ -156,6 +165,8 @@ raw_dataset.head()
 </table>
 </div>
 
+<div><br></div>
+
 ```python
 # take a copy from the data
 df = raw_dataset.copy()
@@ -178,8 +189,9 @@ df.info()
     dtypes: float64(5), int64(3)
     memory usage: 25.0 KB
 
-# <span style="font-family: freestyle script; font-size: 130%;">Step 2.</span> <span style="color: #00773e; font-size: 120%">Data Cleaning</span>
-<hr style="background-color: #00773E; border: 0px; height: 2px;">
+<div><br></div>
+
+# Step 2. Data Cleaning
 
 ```python
 # get missing values
@@ -195,13 +207,17 @@ missing_values_table
     horsepower    6
     dtype: int64
 
+<div><br></div>
+
 ```python
 # drop the nan value rows
 df = df.dropna()
 ```
 
-# <span style="font-family: freestyle script; font-size: 130%;">Step 3.</span> <span style="color: #00773e; font-size: 120%">Data Preparation</span>
-<hr style="background-color: #00773E; border: 0px; height: 2px;">
+<div><br></div>
+
+
+# Step 3. Data Preparation
 
 ```python
 # split the data into training and test set
@@ -212,27 +228,20 @@ print(train.shape, test.shape)
 
     (314, 8) (78, 8)
 
+<div><br></div>
+
 ```python
 # pairplot
 sns.pairplot(
     train[['mpg', 'cylinders', 'displacement', 'weight']], 
     diag_kind='kde')
 ```
-
-    /opt/conda/lib/python3.10/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-      with pd.option_context('mode.use_inf_as_na', True):
-    /opt/conda/lib/python3.10/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-      with pd.option_context('mode.use_inf_as_na', True):
-    /opt/conda/lib/python3.10/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-      with pd.option_context('mode.use_inf_as_na', True):
-    /opt/conda/lib/python3.10/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-      with pd.option_context('mode.use_inf_as_na', True):
-
     <seaborn.axisgrid.PairGrid at 0x7e924819e260>
 
     
 ![png](output_11_2.png)
     
+<div><br></div>
 
 ```python
 # split features from labels
@@ -250,6 +259,8 @@ print('splitting compeleted successfully!')
 
     splitting compeleted successfully!
 
+<div><br></div>
+
 ```python
 # Normalizing the features X
 X = (X - X.min(axis=0)) / (X.max(axis=0) - X.min(axis=0))
@@ -259,8 +270,9 @@ print("Normalization is done!")
 
     Normalization is done!
 
-# <span style="font-family: freestyle script; font-size: 130%;">Step 4.</span> <span style="color: #00773e; font-size: 120%">Regression with a deep neural network (DNN)</span>
-<hr style="background-color: #00773E; border: 0px; height: 2px;">
+<div><br></div>
+
+# Step 4. Regression with a deep neural network (DNN)
 
 ```python
 ## build the model
@@ -276,6 +288,8 @@ dnn_model.compile(
 )
 ```
 
+<div><br></div>
+
 ```python
 %%time
 history = dnn_model.fit(
@@ -288,6 +302,8 @@ history = dnn_model.fit(
     CPU times: user 6.7 s, sys: 677 ms, total: 7.38 s
     Wall time: 6.76 s
 
+<div><br></div>
+
 ```python
 def plot_loss(history):
   plt.plot(history.history['loss'], label='loss')
@@ -299,10 +315,10 @@ def plot_loss(history):
 
 plot_loss(history)
 ```
-
     
 ![png](output_17_0.png)
     
+<div><br></div>
 
 ```python
 # collect the test results for later
@@ -311,6 +327,7 @@ test_results['linear_model'] = dnn_model.evaluate(
     X_test, y_test, verbose=0
 )
 ```
+<div><br></div>
 
 ```python
 # performance
@@ -332,9 +349,9 @@ _ = plt.plot([0, 50], [0, 50])
     
 ![png](output_19_1.png)
     
+<div><br></div>
 
-# <span style="font-family: freestyle script; font-size: 130%;">Useful</span> <span style="color: #00773e; font-size: 120%">Resources</span>
-<hr style="background-color: #00773E; border: 0px; height: 2px;">
+# Useful Resources
 
 - TensorFlow Core. [*Basic regression: Predict fuel efficiency*](https://www.tensorflow.org/tutorials/keras/regression). TensorFlow.
 - Misra Turp. 2023. [*50 Days of Deep Learning*](https://youtube.com/playlist?list=PLM8lYG2MzHmQn55ii0duXdO9QSoDF5myF&si=s1pe9cRtFjKCPqR5). YouTube.

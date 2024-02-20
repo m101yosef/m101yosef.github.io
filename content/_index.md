@@ -65,6 +65,10 @@ sections:
       filters: 
         folders: 
           - notebook
+        author: ""
+        category: ""
+        tag: ""
+        exclude_featured: true
         order: asc 
     design: 
       view: compact

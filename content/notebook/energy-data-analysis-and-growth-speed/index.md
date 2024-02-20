@@ -1,7 +1,19 @@
 ---
-title: Global energy consumption
+title: Energy Data Analysis and Growth Speed
 date: '2024-02-20'
+
+share: false
+authors: 
+  - admin
+tags: 
+  - Energy
+  - Data Analysis
+  - Economics
 ---
+
+[Open in Kaggle](https://www.kaggle.com/code/mohamedyosef101/energy-data-analysis-and-growth-speed)
+
+<div><br></div>
 
 The energy system has transformed dramatically since the Industrial Revolution. We'll see this transformation of the global energy supply in this notebook. It shows global energy consumption from 1983 onwards.
 
@@ -9,7 +21,8 @@ The energy system has transformed dramatically since the Industrial Revolution. 
 
 ![energy 2](https://github.com/mohamedyosef101/energy-substitution/assets/118842452/ffae65d5-2c29-4626-a13c-115897bc8952)
 
-<hr>
+
+<div><br></div>
 
 # Step 0: set it up
 
@@ -136,9 +149,11 @@ df.head()
   </tbody>
 </table>
 </div>
+<div><br></div>
+
 
 # 1. Renewable Energy over time
----
+
 Explore the change in Solar, Wind, Hydropower, Biofuels, Tranditional Biomass, and Other Renewables (which may include geothermal, tidal, etc.) over the time.
 
 **Before starting** and because I don't like repeating the code so I'll create a plot fuction to use it with both renwable and non-renewable columns.
@@ -163,14 +178,16 @@ plot_over_years(renewable_columns, 'Change in Renewable Energy Sources Over Time
     
 ![png](output_5_0.png)
     
-
+<div><br></div>
 <div style="background: #e3eefc; padding: 24px 12px; color: #00a; margin: 4px 80px 4px 4px; border-radius: 4px;">
 <p style="font-weight: bold;">As you can see, traditional biomass is going down not higher like the rest. And this because traditional biomass sources like wood, crop residues, and animal dung have relatively low energy efficiency compared to modern renewable sources like solar panels or wind turbines.</p>
 <p style="color: #fc0000; font-weight: bold;">Which means: the more we have access to more efficient and cleaner energy technologies, the less we'll rely on traditional biomass.</p>
 </div>
+<div><br></div>
+
 
 # 2. Non-Renewable Energy over time
----
+
 Now, let's explore the change in Nuclear, Gas, Oil, and Coal over time.
 
 ```python
@@ -182,14 +199,16 @@ plot_over_years(non_renewable_columns, 'Change in Non-Renewable Energy Sources O
     
 ![png](output_8_0.png)
     
-
+<div><br></div>
 <div style="background: #e3eefc; padding: 24px 12px; color: #00a; margin: 4px 80px 4px 4px; border-radius: 4px;">
 <p style="font-weight: bold;">You might noticed that everthing is going up but Nuclear energy is relatively stable.</p>
 <p style="color: #fc0000; font-weight: bold;">This because Nuclear energy is a reliable baseload energy source (it can generate electricity reliably 24/7), but its growth is limited by safety concerns, cost, and nuclear waste.</p>
 </div>
+<div><br></div>
+
 
 # 3. Growth Speed.
----
+
 I'm going to identify the fastest- and slowest-growing energy sources.
 
 ```python
@@ -214,15 +233,20 @@ print(f"Slowest-growing energy source: {slowest_growing_source}")
     Fastest-growing energy source: Solar_GrowthRate
     Slowest-growing energy source: Traditional_biomass_GrowthRate
 
+<div><br></div>
 <div style="background: #e3eefc; padding: 24px 12px; color: #00a; margin: 4px 80px 4px 4px; border-radius: 4px;">
 <p style="font-weight: bold;">We have explained why tradition biomass is going down but why solar energy is growing so fast?</p>
 <p style="color: #fc0000; font-weight: bold;">The simple answer is that solar energy's rapid growth is driven by a combination of falling costs, environmental awareness, supportive government policies, and ongoing technological progress.</p>
 </div>
+<div><br></div>
+
 
 *The long answer in an article by Energy Concept titled [Why Solar is Growing So Fast](https://energyconceptsfresno.com/why-solar-is-growing-so-fast).*
 
+<div><br></div>
+
+
 # Next Steps
----
 * **Identify the most and least significant energy sources.** You can do this by calculating the percentage contribution of each energy source to the total energy mix in each year.
 
 * **Identify trends in the energy mix.** For example, you can look at how the relative importance of different energy sources has changed over time. You can also look at how the energy mix has changed in different regions of the world.
@@ -230,14 +254,3 @@ print(f"Slowest-growing energy source: {slowest_growing_source}")
 * **Identify factors that are driving changes in the energy mix.** For example, you can look at the impact of government policies, technological advancements, and economic conditions.
 
 <div><br></div>
-
-<div>
-	<hr>
-	<p> 🔔 Follow me for more <b>Data Science, User Experience (UX), and Machine Learning</b> content.</p>
-	<hr>
-</div>
-<p>&copy; Created by <b>MohamedYosef101</b> | 
-	<a href="https://linkedin.com/in/mohamedyosef101">LinkedIn</a> &centerdot;
-	<a href="https://medium.com/in/@mohamedyosef101">Medium</a> &centerdot;
-	<a href="https://github.com/mohamedyosef101">GitHub</a>
-</p>

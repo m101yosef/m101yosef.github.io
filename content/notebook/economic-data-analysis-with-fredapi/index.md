@@ -1,7 +1,20 @@
 ---
 title: Economic Data Analysis With Fredapi
 date: '2024-02-20'
+
+share: false
+authors: 
+  - admin
+tags: 
+  - Economics
+  - Data Analysis
 ---
+
+[Open in Kaggle](https://www.kaggle.com/code/mohamedyosef101/economic-data-analysis-with-fredapi)
+
+<div><br></div>
+
+
 <img src="https://news.research.stlouisfed.org/wp-content/uploads/2021/03/FINAL-30-years_LG.png">
 
 # Economic Data Analysis with Fred
@@ -19,7 +32,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 ```
 
----
+
+<div><br></div>
 
 # Step 0: Set the API
 To get my api key, I need to go to [Fred API Keys](https://fred.stlouisfed.org/docs/api/api_key.html) and request an API Key.
@@ -47,6 +61,8 @@ And to request this key, I need to:
     Installing collected packages: fredapi
     Successfully installed fredapi-0.5.1
 
+<div><br></div>
+
 ```python
 # import the API key
 from fredapi import Fred
@@ -71,7 +87,8 @@ If you want to make you API as secret on GitHub, [read this](https://www.kaggle.
 
 And for Kaggle, just go `Add-ons` > `Secrets` and deal with it.
 
----
+
+<div><br></div>
 
 # Step 1: Pull the data
 I'm going to explore the relationship between the growth rate of the economy and the unemployment rate in the last four years since `COVID-19`. 
@@ -136,7 +153,8 @@ merged_data.head(2)
 </table>
 </div>
 
----
+
+<div><br></div>
 
 # Step 2: Explore the relationship
 Now we have a dataframe with three features; `Date`, `GDP` Gross Domestic Product (Billions of Dollars), and `Unemp` Unemployment Rate (Percent).
@@ -206,6 +224,8 @@ df.head()
 </table>
 </div>
 
+<div><br></div>
+
 ```python
 # Create a figure and axis
 fig, ax1 = plt.subplots(figsize=(10, 6))
@@ -237,7 +257,11 @@ plt.show()
 ![png](output_12_0.png)
     
 
+<div><br></div>
+
 That's all ..
+
+<div><br></div>
 
 ### **Project Conclusion:**
 
@@ -245,7 +269,8 @@ As anticipated, our analysis reveals a clear relationship between unemployment r
 
 This observation underscores a fundamental economic principle: "With lower unemployment rates, we are more likely to achieve higher gross domestic product (GDP)." 
 
-<hr>
+
+<div><br></div>
 
 # Resources
 (1) The first inspiration to even work with Fred API was [Rob Mulla YouTube video about Economic Data Analysis](https://www.kaggle.com/code/robikscube/economic-analysis-with-pandas-youtube-tutorial/notebook)
@@ -257,8 +282,3 @@ This observation underscores a fundamental economic principle: "With lower unemp
 (4) The hero of the project without a doubt is the data; here is the [GDP series](https://fred.stlouisfed.org/series/GDP) and the [Unemployment rate series](https://fred.stlouisfed.org/series/U2RATE)
 
 <div><br></div>
-
----
-
-* 💼 For more, take a look at my work on **[GitHub](https://github.com/mohamedyosef101)**
-* 💬 And, if you have any questions, feel free to contact me via **[email](mailto:mohamedyosef101@outlook.com)** or **[LinkedIn](https://linkedin.com/in/mohamedyosef101)**.

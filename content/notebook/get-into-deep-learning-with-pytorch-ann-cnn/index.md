@@ -1,7 +1,20 @@
 ---
 title: Get into Deep Learning ANN & CNN with pytorch
 date: '2024-02-20'
+
+share: false
+authors:
+    - admin
+tags: 
+    - Deep Learning
+    - Neural Network
+    - CNN
+    - PyTorch
 ---
+
+[Open in Kaggle](https://www.kaggle.com/code/mohamedyosef101/get-into-deep-learning-with-pytorch-ann-cnn)
+
+<div><br></div>
 
 PyTorch is everywhere in academic papers, economics, healthcare, **Reinforcement Learning** (*my area of research*), and many more. So, maybe I'm not the right person to motivate you to learn PyTorch but anyway I'll teach you!
 
@@ -33,9 +46,10 @@ To turn on you `cuda` or GPU,
 2. under accelerator click GPU
 and it's done!
 
----
 
-# <span style="font-family: freestyle script; font-size: 130%;">Concept 1. </span> <span style="font-size: 120%">What a tensor is...</span>
+<div><br></div>
+
+# Concept 1. What a tensor is...
 
 Before going to the coding, I want you to understand the concept of tensor and not just the concept and I also want to you visualize the tensors in your brain.
 
@@ -43,13 +57,15 @@ Before going to the coding, I want you to understand the concept of tensor and n
 
 > *The word tensor comes form an old latin word which means to stretch.*
 
+<div><br></div>
 <div align="center">
   <img width="180" src="https://i.ibb.co/bdJ4Xyj/3-axis-numpy.png">
   <img width="188" src="https://i.ibb.co/pxZFrM8/3-axis-front.png">
   <img width="120" src="https://i.ibb.co/rxp1Gdm/3-axis-block.png">
 </div>
+<div><br></div>
 
-**NOTE** the terms matrix and tensor are often used interchangably.
+> **NOTE** the terms matrix and tensor are often used interchangably.
 
 <div><br></div>
 
@@ -58,6 +74,8 @@ Before going to the coding, I want you to understand the concept of tensor and n
 - Dan Fleisch. (2011). [*What's a Tensor?*](https://youtu.be/f5liqUk0ZTw?si=eoUM7IJ8PbYyvK1I). YouTube.
 
 - TensorFlow Core. [*Introduction to Tensors*](https://www.tensorflow.org/guide/tensor)
+
+<div><br></div>
 
 <h2 style="background:#00373E; color: #E3EEFC; border-radius: 4px; padding: 8px 32px;">"Types" of tensors</h2>
 
@@ -73,6 +91,8 @@ print(f"scalar is a rank-{scalar.ndim} tensor")
 
 ![scalar](https://i.ibb.co/vQwMrQK/scalar.png)
 
+<div><br></div>
+
 ```python
 # Vector is like a list of values and has one axis
 vector = torch.tensor([2.0, 3.0, 4.0])
@@ -82,6 +102,8 @@ print(f"vector is a rank-{vector.ndim} tensor")
     vector is a rank-1 tensor
 
 ![vector](https://i.ibb.co/9YWmdZw/vector.png)
+
+<div><br></div>
 
 ```python
 # Matrix has two axes (also can be more)
@@ -94,6 +116,8 @@ print(f"matrix is a rank-{matrix.ndim} tensor")
     matrix is a rank-2 tensor
 
 ![matrix](https://i.ibb.co/NLwfK1m/matrix.png)
+
+<div><br></div>
 
 ```python
 # Rank-3 tensor with tree axes
@@ -120,6 +144,7 @@ There are many ways to visualize this tensor:
   <img width="120" src="https://i.ibb.co/rxp1Gdm/3-axis-block.png">
 </div>
 
+<div><br></div>
 <h2 style="background:#00373E; color: #E3EEFC; border-radius: 4px; padding: 8px 32px;"> Random, Zeros, Ones, range, and like Tensors</h2>
 
 ```python
@@ -131,6 +156,8 @@ rand_MATRIX
     tensor([[0.4360, 0.6261, 0.9401],
             [0.1269, 0.9599, 0.2970]])
 
+<div><br></div>
+
 ```python
 # create a tensor of all zeros
 zeros_TENSOR = torch.zeros(size=(2, 1, 3))
@@ -141,6 +168,8 @@ zeros_TENSOR
     
             [[0., 0., 0.]]])
 
+<div><br></div>
+
 ```python
 # create a torch of all ones
 ones_M = torch.ones(size=(2, 2))
@@ -149,6 +178,8 @@ ones_M
 
     tensor([[1., 1.],
             [1., 1.]])
+
+<div><br></div>
 
 ```python
 # create a range of numbers from 1996 to 2030 with tensors
@@ -160,6 +191,8 @@ years
             2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019,
             2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030])
 
+<div><br></div>
+
 ```python
 # a tensor like "years" but with all values of 1
 years_prob = torch.ones_like(input=years)
@@ -169,15 +202,21 @@ years_prob
     tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
             1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 
----
 
-# <span style="font-family: freestyle script; font-size: 130%;">Concep 2.</span> <span style="font-size: 120%">Neural Network</span>
+<div><br></div>
+
+# Concep 2. Neural Network
+
 I think you know what a neural network is.. But if you don't, give a look to the following playlist $\downarrow$
 - Grant Sanderson. (2017). [*Neural Networks, Deep Learning*](https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&si=ieGLDzRU2Ln9L0RO). YouTube.
+
+<div><br></div>
 
 ### """
 ## The best way to learn is by doing, so let's get it done!
 ### """
+
+<div><br></div>
 
 <h2 style="background:#00373E; color: #E3EEFC; border-radius: 4px; padding: 8px 32px;">2.1_ Import Libraries</h2>
 
@@ -196,6 +235,7 @@ print("It's done!")
 
 From now on, I want you to get into the habbit of reading documentation and know that **the more you read the more you grow**. 
 
+<div><br></div>
 <h2 style="background:#00373E; color: #E3EEFC; border-radius: 4px; padding: 8px 32px;"><a class="anchor"  id="2-2_data-preperation">2.2_ Data Preparation</a></h2>
 
 <div align="center">
@@ -317,6 +357,8 @@ train.head(2)
 
 Don't forget to make the type of the train data as float, `dtype = np.float32`, because if you forget, it will break your model.
 
+<div><br></div>
+
 ```python
 # split 80% for train and 20% for test
 X_train, X_test, y_train, y_test = tts(np_features,
@@ -326,6 +368,8 @@ X_train, X_test, y_train, y_test = tts(np_features,
 ```
 
 The data now stored as a numpy array but you need to work with PyTorch therefore you need to **turn data into tensors**.
+
+<div><br></div>
 
 ```python
 #Put data in tensors
@@ -365,6 +409,7 @@ plt.show()
     
 ![png](output_38_0.png)
     
+<div><br></div>
 
 <h2 style="background:#00373E; color: #E3EEFC; border-radius: 4px; padding: 8px 32px;">2.3_ Build NN Model</h2>
 
@@ -373,6 +418,8 @@ As you saw in the [videos](https://youtube.com/playlist?list=PLZHQObOWTQDPD3Mizz
 <div align="center">
     <img src="https://i.imgur.com/ywMFtDz.png" width="560">
 </div>
+
+<div><br></div>
 
 ```python
 class ANNModel(nn.Module): 
@@ -421,6 +468,8 @@ print("NN Model has been defined!")
 
     NN Model has been defined!
 
+<div><br></div>
+
 ```python
 # set the parameters
 input_dim = 28*28 # the size of the image
@@ -440,6 +489,8 @@ More about paramerters $\downarrow$
 * Misra Turp. (oct 2022). [All Hyperparameters of a Neural Network Explained
 ](https://youtu.be/r2TvNmAxiCU?si=uHO35u4X9jUlnvUi). YouTube.
 
+<div><br></div>
+
 ```python
 ### Set loss, optimizer, and Learning rate ###
 
@@ -457,6 +508,7 @@ optim = torch.optim.SGD(model.parameters(),
 Take a look at: 
 * Misra Turp. (oct 2022). [Which Loss Function, Optimizer and LR to Choose for Neural Networks](https://youtu.be/KI5gOnlQeN8?si=KTc_d8USTuGXtuu-). YouTube.
 
+<div><br></div>
 <h2 style="background:#00373E; color: #E3EEFC; border-radius: 4px; padding: 8px 32px;">2.4_ Model Training</h2>
 
 In the previous step, we have defined a model with input layer, 2 hidden layers, and output layer. The goal of this step is to train the model and to do so you will use the basics; [forward pass](https://youtu.be/rhYYBT6OrOw?si=e70Z45-_6LimT2g_) then come back again with a [backward propagation](https://youtu.be/nH9bWLJI_7A?si=k0m6Dt5ynbqkrgwM). 
@@ -544,6 +596,7 @@ for epoch in range(num_epochs):
     Iteration: 9000 Loss: 0.05 | Accuracy: 96.17
     Iteration: 9500 Loss: 0.02 | Accuracy: 96.10
 
+<div><br></div>
 <h2 style="background:#00373E; color: #E3EEFC; border-radius: 4px; padding: 8px 32px;">2.5_ Evaluation</h2>
 
 There are many ways to evaluate the model and many more [evaluation metrics](https://youtu.be/NE1iCyqUMRI?si=dH_6kLafDuZ_rY6g) but let's make it simple for you and me by using the `Loss` and `Accuracy`.
@@ -572,9 +625,9 @@ plt.show()
 ![png](output_49_1.png)
     
 
----
+<div><br></div>
 
-# <span style="font-family: freestyle script; font-size: 130%;">Concept 3.</span> <span style="font-size: 120%">Convolutional Neural Network</span>
+# Concept 3. Convolutional Neural Network
 
 As you may know, [CNN](https://youtu.be/3mTUAQIHO2U?si=AhwVDERhPZWMMPoo) is a type of Neural Network that is used for images classification and object detection.
 
@@ -582,10 +635,13 @@ As you may know, [CNN](https://youtu.be/3mTUAQIHO2U?si=AhwVDERhPZWMMPoo) is a ty
     <img src="https://i.ibb.co/8rcnyFN/gec2.jpg">
 </div>
 
+<div><br></div>
+
 #### **Bounce**
 If you want to understand what the word "convolution" mean, watch: 
 - Grant Sanderson. (18 Nov 2022). [*But what is a convolution*](https://youtu.be/KuXjwB4LzSA?si=miIHN0ViLuhtdrWi). YouTube.
 
+<div><br></div>
 <h2 style="background:#00373E; color: #E3EEFC; border-radius: 4px; padding: 8px 32px;">3.1_ Import Libraries</h2>
 
 ```python
@@ -594,12 +650,13 @@ from torch import nn
 from torch.autograd import Variable as var
 ```
 
+<div><br></div>
 <h2 style="background:#00373E; color: #E3EEFC; border-radius: 4px; padding: 8px 32px;">3.2_ Data preperation</h2>
 
 We'll do the same steps we did in ANN model data preperation. If you haven't done the steps go and check -> [2.2_ Data Preperation](#2-2_data-preperation).
 
-## D O N E
 
+<div><br></div>
 <h2 style="background:#00373E; color: #E3EEFC; border-radius: 4px; padding: 8px 32px;">3.3_ Build CNN Model</h2>
 
 Learn more about convolutional neural network:
@@ -672,6 +729,8 @@ More about paramerters $\downarrow$
 * Misra Turp. (oct 2022). [All Hyperparameters of a Neural Network Explained
 ](https://youtu.be/r2TvNmAxiCU?si=uHO35u4X9jUlnvUi). YouTube.
 
+<div><br></div>
+
 ```python
 ### Set loss, optimizer, and Learning rate ###
 
@@ -689,6 +748,7 @@ optim = torch.optim.SGD(model.parameters(),
 Take a look at: 
 * Misra Turp. (oct 2022). [Which Loss Function, Optimizer and LR to Choose for Neural Networks](https://youtu.be/KI5gOnlQeN8?si=KTc_d8USTuGXtuu-). YouTube.
 
+<div><br></div>
 <h2 style="background:#00373E; color: #E3EEFC; border-radius: 4px; padding: 8px 32px;">3.4_ Model Training</h2>
 
 <div align="center">
@@ -761,6 +821,7 @@ for epoch in range(num_epochs):
     Iteration: 1500 Loss: 0.03 Accuracy: 97.80%
     Iteration: 2000 Loss: 0.01 Accuracy: 98.24%
 
+<div><br></div>
 <h2 style="background:#00373E; color: #E3EEFC; border-radius: 4px; padding: 8px 32px;">3.5_ Model Evaluation</h2>
 
 Again... There are many ways to evaluate the model and many more [evaluation metrics](https://youtu.be/NE1iCyqUMRI?si=dH_6kLafDuZ_rY6g) but let's make it simple for you and me by using the `Loss` and `Accuracy`.
@@ -789,14 +850,10 @@ plt.show()
 ![png](output_65_1.png)
     
 
----
+<div><br></div>
 
 # References
 - DATAI. (Apr 2020). [*PyTorch tutorial for deep learning lovers*](https://www.kaggle.com/code/kanncaa1/pytorch-tutorial-for-deep-learning-lovers). Kaggle.
 - Andrada. (May 2020). [*How I tought myself deep learning*](https://www.kaggle.com/code/andradaolteanu/how-i-taught-myself-deep-learning-vanilla-nns). Kaggle.
 - Misra Turp. (2022). [*50 Days of Deep Learning*](https://youtube.com/playlist?list=PLM8lYG2MzHmQn55ii0duXdO9QSoDF5myF&si=s1pe9cRtFjKCPqR5). YouTube.
 - Mohamed Yosef. (Dec 2023). [Build you first NN model with TensorFlow](https://www.kaggle.com/code/mohamedyosef101/build-your-first-neural-network). Kaggle. 
-
----
-
-💬 If you have any questions, write a comment or send me a message on **[LinkedIn](https://linkedin.com/in/mohamedyosef101)**.

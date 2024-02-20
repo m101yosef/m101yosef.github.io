@@ -7,7 +7,6 @@ share: false
 
 authors:
   - admin
-  - محمد يوسف
 
 tags:
   - Reinforcement Learning
