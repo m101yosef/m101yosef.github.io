@@ -11,7 +11,6 @@ authors:
 
 tags:
   - Reinforcement Learning
-  - الذكاء الاصطناعي
 
 categories:
   - RL 101

@@ -16,7 +16,6 @@ authors:
 tags:
   - Reinforcement Learning
   - Q-Learning
-  - الذكاء الاصطناعي
 
 categories:
   - RL 101

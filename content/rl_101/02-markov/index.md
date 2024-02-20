@@ -12,12 +12,10 @@ share: false
 
 authors:
   - admin
-  - محمد يوسف
 
 tags:
   - Reinforcement Learning
   - Markov Process
-  - الذكاء الاصطناعي
 
 categories:
   - RL 101
