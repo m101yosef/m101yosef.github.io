@@ -1,6 +1,6 @@
 ---
 title: Energy Data Analysis and Growth Speed
-date: '2024-02-20'
+date: '2023-10-24'
 summary: The energy system has transformed dramatically since the Industrial Revolution. We'll see this transformation of the global energy supply in this notebook. It shows global energy consumption from 1983 onwards.
 featured: true
 share: false
