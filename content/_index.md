@@ -63,7 +63,7 @@ sections:
     id: notebook
     content: 
       title: Notebooks
-      count: 4
+      count: 3
       filters: 
         folders: 
           - notebook
