@@ -1,7 +1,7 @@
 ---
 title: Get into Deep Learning ANN & CNN with pytorch
 summary: PyTorch is everywhere in academic papers, economics, healthcare, Reinforcement Learning, and many more.
-date: '2024-02-20'
+date: '2024-02-12'
 share: false
 authors:
     - admin

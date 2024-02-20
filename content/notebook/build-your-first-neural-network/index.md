@@ -1,7 +1,7 @@
 ---
 title: Build your first Neural Network with Keras
 summary: Think of neurons as tiny brain cells that can receive, process, and transmit information. In a neural network, these neurons are arranged in layers, connected to each other like a web.
-date: '2024-02-20'
+date: '2023-11-06'
 
 share: false 
 
