@@ -42,10 +42,12 @@ sections:
       # Choose a layout view
       view: compact
       columns: '2'
+
+  ### FEATURED ###
   - block: collection
       id: featured
       content:
-        title: Featured Publications
+        title: Featured
         filters:
           folders:
             - publication
