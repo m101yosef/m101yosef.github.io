@@ -70,10 +70,10 @@ social:
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
-My name is Mohamed Yosef, a data scientist and reinforcement learning researcher from Egypt. For me, science is not just knowledge - it's a way of thinking. After working as a UX designer from 2021-2023, I transitioned to data science work. 
+My name is Mohamed Yosef, a data scientist and reinforcement learning researcher from Egypt. For me, **science is not just knowledge - it's a way of thinking**. After working as a UX designer from 2021-2023, I transitioned to data science work. 
 
-My research now focuses on using deep reinforcement learning to enhance human-AI interaction and enable multi-agent learning. I'm also leading Project AQSA at Mansoura University to employ AI to help small businesses manage finances. I share my ideas and insights on reinforcement learning through [my Medium blog](https://medium.com/@mohamedyosef101). 
+My research now focuses on using **deep reinforcement learning** to enhance human-AI interaction and enable multi-agent learning. I'm also leading Project **AQSA** at Mansoura University to employ AI to help small businesses manage finances. Also, I share my ideas and insights on reinforcement learning and AI through [**my Medium blog**](https://medium.com/@mohamedyosef101). 
 
-Combining design thinking and analytical rigor, I aim to push the boundaries of what's possible with AI. I'm passionate about developing AI that augments human capabilities and unlocks new possibilities.
+Using my design thinking knowledge and analytical skills, I aim to push the boundaries of what's possible with AI. I'm passionate about developing AI that augments human capabilities and unlocks new possibilities.
 
 {style="text-align: justify;"}
