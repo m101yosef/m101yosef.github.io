@@ -1,7 +1,5 @@
 ---
-title: '<span style="font-weight: bold; color: #00DA81; background: #10000E; padding:
-  8px 80px 8px 24px; border-radius: 80px;"> Build your first Neural Network with Keras
-  </span>'
+title: Build your first Neural Network with Keras
 date: '2024-02-20'
 ---
 

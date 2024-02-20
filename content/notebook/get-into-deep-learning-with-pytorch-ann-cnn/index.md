@@ -1,5 +1,5 @@
 ---
-title: PyTorch 101
+title: Get into Deep Learning ANN & CNN with pytorch
 date: '2024-02-20'
 ---
 

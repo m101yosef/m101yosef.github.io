@@ -1,5 +1,5 @@
 ---
-title: What is **Regression Analysis**
+title: What is Regression Analysis
 date: '2024-02-20'
 ---
 
