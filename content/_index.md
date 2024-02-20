@@ -13,6 +13,19 @@ sections:
       title: Welcome 👋
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
+
+  ### FEATURED ###
+  - block: collection
+    id: featured
+    content:
+      title: Featured Publications
+      filters:
+        folders:
+          - publication
+        featured_only: true
+    design:
+      columns: '2'
+      view: card
   
   ### RL 101 ###
   - block: collection
@@ -40,21 +53,23 @@ sections:
       order: asc
     design:
       # Choose a layout view
+      view: list
+      columns: '2'
+
+  ### NOTEBOOKS ###
+  - block: collection
+    id: notebook
+    content: 
+      title: Notebooks
+      count: 7
+      filters: 
+        folders: 
+          - notebook
+        order: asc 
+    design: 
       view: compact
       columns: '2'
 
-  ### FEATURED ###
-
-
-  ### DESIGNS ###
-  - block: markdown
-    content:
-      title: Designs
-      subtitle: ''
-      text: |-
-        {{< gallery album="demo" >}}
-    design:
-      columns: '1'
 
   ### RECENT PUBLICATIONS ### 
   - block: collection
@@ -83,4 +98,11 @@ sections:
     design:
       columns: '2'
       view: compact
+
+  ### TAGS ###
+  - block: tag_cloud
+    content:
+      title: 
+    design:
+      columns: '1'
 ---
