@@ -45,6 +45,17 @@ sections:
 
   ### FEATURED ###
 
+
+  ### DESIGNS ###
+  - block: markdown
+    content:
+      title: Designs
+      subtitle: ''
+      text: |-
+        {{< gallery album="demo" >}}
+    design:
+      columns: '1'
+
   ### RECENT PUBLICATIONS ### 
   - block: collection
     content:
