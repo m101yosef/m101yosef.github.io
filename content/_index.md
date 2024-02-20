@@ -8,7 +8,7 @@ sections:
 
   ### BIO ###
   - block: about.biography
-    id: about
+    id: bio
     content:
       title: Welcome 👋
       # Choose a user profile to display (a folder name within `content/authors/`)
@@ -18,7 +18,7 @@ sections:
   - block: collection
     id: featured
     content:
-      title: Featured Publications
+      title: Featured
       filters:
         folders:
           - publication
@@ -77,6 +77,7 @@ sections:
 
   ### RECENT PUBLICATIONS ### 
   - block: collection
+    id: publications
     content:
       title: Recent Publications
       text: |-

@@ -42,6 +42,7 @@ social:
   - icon: envelope
     icon_pack: fas
     link: 'mailto:mohamedyosef101@outlook.com'
+    label: Email me
     display: 
       header: true
   # - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
