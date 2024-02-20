@@ -3,7 +3,7 @@ title: Machine Learning Workflow
 
 event: Online ML Event
 event_url: https://youtu.be/zAJoL_l3Qtc?si=RUQYcdgzOzvFdAH7
-
+share: false
 location: 
 address:
   street: 
