@@ -11,17 +11,14 @@ share: false
 
 authors:
   - admin
-  - محمد يوسف
-
 tags:
   - Reinforcement Learning
   - Q-Learning
-
 categories:
   - RL 101
 ---
 
-# **What is Q-learning?**
+# Intro
 
 Q-learning is a model-free off-policy reinforcement learning algorithm where the agent (the AI) uses a TD learning approach to train its value-based function.
 

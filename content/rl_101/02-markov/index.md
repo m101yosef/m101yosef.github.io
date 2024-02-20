@@ -21,6 +21,7 @@ categories:
   - RL 101
 ---
 
+# Intro
 
 In the last article, we talked about [the fundamentals of reinforcement learning](https://medium.com/@mohamedyosef101/the-fundamentals-of-reinforcement-learning-explained-f42de0053fc7) and here is a quick review…
 
@@ -29,18 +30,6 @@ In the last article, we talked about [the fundamentals of reinforcement learnin
 **Policy**: the set of actions that the agent should take.
 
 **Value function**: future rewards from being in a state and/or action when following a particular policy.
-
-## **Today we’ll talk about:**
-
-* [What does Markov process mean?](https://medium.com/@mohamedyosef101/markov-decision-processes-given-a-model-of-the-world-761fc4147cbf#9584)
-
-* [Markov Reward Processes (MRP)](https://medium.com/@mohamedyosef101/markov-decision-processes-given-a-model-of-the-world-761fc4147cbf#2253)
-
-* [The Bellman Equation](https://medium.com/@mohamedyosef101/markov-decision-processes-given-a-model-of-the-world-761fc4147cbf#9776)
-
-* [Markov Decision Processes (MDP)](https://medium.com/@mohamedyosef101/markov-decision-processes-given-a-model-of-the-world-761fc4147cbf#c2bf)
-
-* [Evaluation and Control in MDPs](https://medium.com/@mohamedyosef101/markov-decision-processes-given-a-model-of-the-world-761fc4147cbf#6227)
 
 # **What does Markov process mean?**
 
