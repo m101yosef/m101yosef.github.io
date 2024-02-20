@@ -22,6 +22,8 @@ sections:
       filters:
         folders:
           - publication
+          - rl_101
+          - notebook
         featured_only: true
     design:
       columns: '2'
