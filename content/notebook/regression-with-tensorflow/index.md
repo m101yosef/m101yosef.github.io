@@ -1,5 +1,7 @@
 ---
 title: Regression Analysis with TensorFlow
+summary: A statistical technique used to investigate the relationship between a dependent variable (target/label) and one or more independent variables (features).
+
 date: '2024-02-20'
 
 share: false

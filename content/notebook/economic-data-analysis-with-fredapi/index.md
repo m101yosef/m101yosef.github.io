@@ -1,5 +1,6 @@
 ---
 title: Economic Data Analysis With Fredapi
+summary: Fred is an economic data website which include a varity of data sources; it's all time series data, financial, and economic data. Beside, they have their own API so there is no need to scrap the website or download csv.
 date: '2024-02-20'
 
 share: false
