@@ -4,6 +4,7 @@ date: '2024-01-22'
 summary: Learn the basics of the rising star in the world of AI; reinforcement learning.
 
 share: false
+featured: true
 
 authors:
   - admin
