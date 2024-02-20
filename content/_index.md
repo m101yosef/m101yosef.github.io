@@ -69,4 +69,11 @@ sections:
     design:
       columns: '2'
       view: compact
+
+  ### TAGS
+  - block: tag_cloud
+  content:
+    title: 
+  design:
+    columns: '1'
 ---
