@@ -37,7 +37,7 @@ sections:
       subtitle: 'The basics of reinforcement learning'
       text: ''
       # Choose how many pages you would like to display (0 = all pages)
-      count: 5
+      count: 9
       # Filter on criteria
       filters:
         folders:
@@ -63,7 +63,7 @@ sections:
     id: notebook
     content: 
       title: Notebooks
-      count: 7
+      count: 4
       filters: 
         folders: 
           - notebook
