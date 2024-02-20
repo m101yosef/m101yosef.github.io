@@ -4,12 +4,21 @@
 #   The weight parameter defines the order that the links will appear in.
 
 main:
-  - name: RL 101
-    url: '#rl101'
+  - name: Bio
+    url: "#bio"
     weight: 10
   - name: Featured
     url: '#featured'
+    weight: 20
+  - name: RL 101
+    url: '#rl101'
     weight: 30
+  - name: Notebooks
+    url: '#notebook'
+    weight: 40
+  - name: Publications
+    url: '#publications'
+    weight: 50
   - name: Talks
     url: '#talks'
-    weight: 40
+    weight: 70
