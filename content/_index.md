@@ -42,6 +42,17 @@ sections:
       # Choose a layout view
       view: compact
       columns: '2'
+  - block: collection
+      id: featured
+      content:
+        title: Featured Publications
+        filters:
+          folders:
+            - publication
+          featured_only: true
+      design:
+        columns: '2'
+        view: card
 
   ### RECENT PUBLICATIONS ### 
   - block: collection
@@ -58,6 +69,7 @@ sections:
     design:
       columns: '2'
       view: citation
+
   ### TALKS ###
   - block: collection
     id: talks
@@ -74,6 +86,4 @@ sections:
   - block: tag_cloud
   content:
     title: 
-  design:
-    columns: '1'
 ---
