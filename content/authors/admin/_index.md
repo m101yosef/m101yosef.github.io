@@ -15,7 +15,7 @@ superuser: true
 # Organizations/Affiliations to show in About widget
 organizations:
   - name: Data Scientist, RL Researcher
-    url: https://kaggle.com/mohamedyosef101
+    url: https://medium.com/@mohamedyosef101
   - name: Mansoura University
 
 # Short bio (displayed in user profile at end of posts)
@@ -70,6 +70,9 @@ social:
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
+
+<br>
+
 My name is Mohamed Yosef, a data scientist and reinforcement learning researcher from Egypt. For me, **science is not just knowledge - it's a way of thinking**. After working as a UX designer from 2021-2023, I transitioned to data science work. 
 
 My research now focuses on using **deep reinforcement learning** to enhance human-AI interaction and enable multi-agent learning. I'm also leading Project **AQSA** at Mansoura University to employ AI to help small businesses manage finances. Also, I share my ideas and insights on reinforcement learning and AI through [**my Medium blog**](https://medium.com/@mohamedyosef101). 
