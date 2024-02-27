@@ -6,9 +6,9 @@
 # Appearance
 
 appearance:
-  theme_day: minimal
+  theme_night: minimal
   font: minimal
-  font_size: L
+  font_size: M
 
 # SEO
 
@@ -48,13 +48,13 @@ footer:
     license:
       enable: false
       allow_derivatives: false
-      share_alike: true
+      share_alike: false
       allow_commercial: false
 
 # Localization
 
 locale:
-  date_format: 'Jan 2, 2006'
+  date_format: '2 Jan 2006'
   time_format: '3:04 PM'
   address_format: en-us
 
@@ -62,10 +62,10 @@ locale:
 
 features:
   syntax_highlighter:
-    theme_light: github-light
+    theme_light: dracula
     theme_dark: github-dark
   math:
-    enable: false
+    enable: true
   privacy_pack:
     enable: false
   repository:
