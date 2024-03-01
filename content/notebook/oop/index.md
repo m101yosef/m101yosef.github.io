@@ -97,7 +97,7 @@ dev1.describe()
 
 <div><br></div>
 
-**Explaination**:
+**Explanation**:
 * **`__init__`**: is a special method we use to initialize the attributes or properties of our object. (*for more, take a look at [this video](https://youtu.be/mYKGYr0xaXw?si=6DcrikEwa4Vy0X5U) by 2MinutesPy on YouTube*)
 * **Objects**: are instances of the `Dev` class, represents individual developers like `dev1`.
 * **Properties/Attributes**:
@@ -192,7 +192,7 @@ print(ml_developer)
 
     Mohamed is a 22 years old and he uses PyTorch
 
-**Explaination**:
+**Explanation**:
 - **`super()`**: is to get the properties/attributes of the parent class `Dev` so we can use them in the child class `MLDev`.
 - **Extend** the functionality by adding `framework` attribute to `MLDev` class.
 - **Override** the basic `__str__` function to include the framework.
@@ -214,7 +214,7 @@ for dev in devs:
     Ali is a 28 years old
     Mohamed is a 22 years old and he uses PyTorch
 
-**Explaination**:
+**Explanation**:
 
 We can now see that we used the same method `__str__` but got two different responds; one with only name & age while the other with name, age, and the framework "PyTorch".
 
@@ -251,7 +251,7 @@ developer.extra_hours(3)
 <div><br></div>
 
 # 4. Abstraction
-Focusing on hidding the internal implementation details of a class and exposing only its essential functionality to the user.
+Focusing on hiding the internal implementation details of a class and exposing only its essential functionality to the user.
 
 ```python
 class DataReader:
