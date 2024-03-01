@@ -1,20 +1,33 @@
 ---
-title: '**O**bject **O**riented **P**rogramming in Python'
+title: Object Oriented Programming in Python
+summary: OPP is very important especially if you want to work with PyTorch. That's why I've collect everything about OOP in one notebook.
 date: '2024-03-01'
+share: false
+authors: 
+  - admin
+tags: 
+  - OOP
+  - Python
 ---
+**O**bject **O**riented **P**rogramming (OOP) is very important especially if you want to work with PyTorch. That's why I've collect everything about OOP in [one notebook](https://www.kaggle.com/code/mohamedyosef101/oop-with-python-quick-review).
 
+<div><br></div>
 
-<img alt="OOP with Python" src="https://github.com/mohamedyosef101/101_learning_area/assets/118842452/279a319d-5beb-4b37-b593-95ba36b59753">
+## **There are 4 Principles of OOP:**
 
-**4 Principles of OOP**:
-1. Inheritance
-2. Polymorphism
-3. Encapsulation
-4. Abstraction
+- **Inheritance**: when you take properties from what a big container (parent class) to a other container (child class).
+- **Polymorphism**: to use the same methods (functions within a class) and get different responses.
+- **Encapsulation**: when you need to protect some data like password or account balance
+- **Abstraction**: to simplify the interface for the user; you use a computer without knowing how to build it and you just know the essentials of how to work with it.
 
-# Create **Classes**
+<div><br></div>
 
-## Why we need classes?
+# Understand **Classes**
+Classes is the core idea behind object oriented programming...
+
+<div><br></div>
+
+## Why we need classes? *start with why*
 In Python, we use lists, strings, integers, other data types to do simple and fast tasks like...
 
 ```python
@@ -140,6 +153,8 @@ Also, there are many more special functions like:
 
 and so on...
 
+<div><br></div>
+
 # 1. **In**heritance
 
 Creating new classes (child classes) that inhirts properties and behaviors from other classes (parent classes).
@@ -203,6 +218,8 @@ for dev in devs:
 
 We can now see that we used the same method `__str__` but got two different responds; one with only name & age while the other with name, age, and the framework "PyTorch".
 
+<div><br></div>
+
 # 3. **Encapsulation**
 Aims to protect and bundle data and the methods that operate on the data within a single class.
 
@@ -229,6 +246,9 @@ developer.extra_hours(3)
 ```
 
     300$ added to the salary
+
+
+<div><br></div>
 
 # 4. Abstraction
 Focusing on hidding the internal implementation details of a class and exposing only its essential functionality to the user.
@@ -305,6 +325,10 @@ if csv_data is not None:  # Checking for both data and potential errors
     Error: File not found - data.txt
     Error: File not found - data.csv
 
+
+<div><br></div>
+
 # References
+- Mohamed Yosef. [OOP with Python - quick review](https://www.kaggle.com/code/mohamedyosef101/oop-with-python-quick-review). Kaggle.
 - Patrick Loeber. [*OOP in Python: Beginner crash course*](https://youtu.be/-pEs-Bss8Wc?si=lK3hEtixgU60S2O4). YouTube.
 - My chat with Gemini. https://g.co/gemini/share/d57ea3486abb.
