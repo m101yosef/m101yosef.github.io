@@ -9,6 +9,10 @@ tags:
   - OOP
   - Python
 ---
+
+<img alt="OOP with Python" src="https://github.com/mohamedyosef101/101_learning_area/assets/118842452/279a319d-5beb-4b37-b593-95ba36b59753">
+
+
 **O**bject **O**riented **P**rogramming (OOP) is very important especially if you want to work with PyTorch. That's why I've collect everything about OOP in [one notebook](https://www.kaggle.com/code/mohamedyosef101/oop-with-python-quick-review).
 
 <div><br></div>
@@ -157,7 +161,7 @@ and so on...
 
 # 1. **In**heritance
 
-Creating new classes (child classes) that inhirts properties and behaviors from other classes (parent classes).
+Creating new classes (child classes) that inherits properties and behaviors from other classes (parent classes).
 
 For our example, let's say that within our developers, we have some ML developers and frontend developer, etc. So, what I'm saying is we have a big container `Dev` and inside this big container "parent", I want to create a small one for `MLDev` "child".
 
