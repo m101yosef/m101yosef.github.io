@@ -5,7 +5,7 @@ name = "Minimal"
 google_fonts = "family=Laila:wght@400;700&family=Rubik:wght@300..900&display=swap"
 
 # Font families
-heading_font = "Rubik"
-body_font = "Laila"
+heading_font = "Laila"
+body_font = "Rubik"
 nav_font = "Rubik"
 mono_font = "Laila"
