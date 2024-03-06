@@ -20,8 +20,6 @@ The energy system has transformed dramatically since the Industrial Revolution. 
 
 **Data Source:** [Global Energy Substitution from 1983 to 2022](https://www.kaggle.com/datasets/mohamedyosef101/global-energy-substitution-from-1983-to-2022)
 
-![energy 2](https://github.com/mohamedyosef101/energy-substitution/assets/118842452/ffae65d5-2c29-4626-a13c-115897bc8952)
-
 
 <div><br></div>
 
@@ -180,10 +178,11 @@ plot_over_years(renewable_columns, 'Change in Renewable Energy Sources Over Time
 ![png](output_5_0.png)
     
 <div><br></div>
-<div style="background: #e3eefc; padding: 24px 12px; color: #00a; margin: 4px 80px 4px 4px; border-radius: 4px;">
-<p style="font-weight: bold;">As you can see, traditional biomass is going down not higher like the rest. And this because traditional biomass sources like wood, crop residues, and animal dung have relatively low energy efficiency compared to modern renewable sources like solar panels or wind turbines.</p>
-<p style="color: #fc0000; font-weight: bold;">Which means: the more we have access to more efficient and cleaner energy technologies, the less we'll rely on traditional biomass.</p>
-</div>
+
+*As you can see*, traditional biomass is going down not higher like the rest. And this because traditional biomass sources like wood, crop residues, and animal dung have relatively low energy efficiency compared to modern renewable sources like solar panels or wind turbines.
+
+> **Which means:** the more we have access to more efficient and cleaner energy technologies, the less we'll rely on traditional biomass.
+
 <div><br></div>
 
 
@@ -201,10 +200,9 @@ plot_over_years(non_renewable_columns, 'Change in Non-Renewable Energy Sources O
 ![png](output_8_0.png)
     
 <div><br></div>
-<div style="background: #e3eefc; padding: 24px 12px; color: #00a; margin: 4px 80px 4px 4px; border-radius: 4px;">
-<p style="font-weight: bold;">You might noticed that everthing is going up but Nuclear energy is relatively stable.</p>
-<p style="color: #fc0000; font-weight: bold;">This because Nuclear energy is a reliable baseload energy source (it can generate electricity reliably 24/7), but its growth is limited by safety concerns, cost, and nuclear waste.</p>
-</div>
+
+You might noticed that everthing is going up but Nuclear energy is relatively stable. This because Nuclear energy is a reliable baseload energy source (it can generate electricity reliably 24/7), **but its growth is limited by safety concerns, cost, and nuclear waste**.
+
 <div><br></div>
 
 
@@ -235,10 +233,9 @@ print(f"Slowest-growing energy source: {slowest_growing_source}")
     Slowest-growing energy source: Traditional_biomass_GrowthRate
 
 <div><br></div>
-<div style="background: #e3eefc; padding: 24px 12px; color: #00a; margin: 4px 80px 4px 4px; border-radius: 4px;">
-<p style="font-weight: bold;">We have explained why tradition biomass is going down but why solar energy is growing so fast?</p>
-<p style="color: #fc0000; font-weight: bold;">The simple answer is that solar energy's rapid growth is driven by a combination of falling costs, environmental awareness, supportive government policies, and ongoing technological progress.</p>
-</div>
+
+We have explained why tradition biomass is going down but why solar energy is growing so fast? The simple answer is that solar energy's rapid growth is driven by a **combination of falling costs, environmental awareness, supportive government policies, and ongoing technological progress**.
+
 <div><br></div>
 
 
