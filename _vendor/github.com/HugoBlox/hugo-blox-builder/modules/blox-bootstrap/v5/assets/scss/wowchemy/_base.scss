@@ -142,7 +142,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $sta-font-heading, sans-serif;
+  font-family: $sta-font-heading, serif;
   font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
@@ -208,7 +208,7 @@ a:focus {
 
 pre,
 code {
-  font-family: $sta-font-mono, monospace;
+  font-family: monospace;
 }
 
 pre {
