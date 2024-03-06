@@ -13,8 +13,11 @@ name = "Minimal"
 
   # Home sections
   background = "#F2F7FC"
-  home_section_odd = "#daf0f0"
-  home_section_even = "#F2F7FC"
+  home_section_odd = "#F2F7FC"
+  home_section_even = "#e3eefa"
+
+  link = "#00718b"
+  link_hover = "#0e1e1e"
 
 [dark]
   # Primary
