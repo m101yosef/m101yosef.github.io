@@ -12,7 +12,7 @@ name = "Minimal"
   menu_title = "#e3eefc"
 
   # Home sections
-  background = "#F2F7FC"
+  background = "#FEFEFE"
   home_section_odd = "#F2F7FC"
   home_section_even = "#e3eefa"
 
