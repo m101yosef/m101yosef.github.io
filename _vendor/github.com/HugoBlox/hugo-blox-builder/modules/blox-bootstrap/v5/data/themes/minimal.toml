@@ -16,7 +16,7 @@ name = "Minimal"
   home_section_odd = "#F2F7FC"
   home_section_even = "#f8f8ff"
 
-  link_hover = "#a9a9a9" 
+  link_hover = "#808080"
 
 [dark]
   # Primary

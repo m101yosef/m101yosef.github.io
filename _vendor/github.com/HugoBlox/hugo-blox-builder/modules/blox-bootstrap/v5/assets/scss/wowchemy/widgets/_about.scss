@@ -33,14 +33,14 @@
 
 .portrait-title h2 {
   font-size: 1.75em;
-  font-weight: 300;
-  color: #000;
+  font-weight: 700;
+  color: #1b1b1b;
   margin: 20px 0 10px;
 }
 
 .portrait-title h3 {
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   color: rgba(0, 0, 0, 0.54);
   margin: 0 0 10px;
 }
@@ -72,7 +72,7 @@ ul.network-icon {
 }
 
 .big-icon {
-  font-size: 0rem;
+  font-size: 1.5rem;
 }
 
 ul.ul-interests li {
@@ -169,3 +169,5 @@ ul.ul-edu li .description p.institution {
     max-width: 680px;
   }
 }
+
+

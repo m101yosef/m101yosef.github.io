@@ -30,7 +30,7 @@ div.alert > div:first-child::before {
   top: -0.5rem;
   left: -2rem;
   font-size: 1.5rem;
-  color: #1976d2;
+  color: #222222;
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   content: '\f05a';
@@ -48,15 +48,19 @@ div.alert-warning > div:first-child::before {
 .article-style aside a,
 div.alert a {
   color: currentcolor;
-  text-decoration: none;
-  border-bottom: solid 1px currentcolor;
+  text-decoration: underline;
 }
 
 .article-style aside,
 .alert-note {
-  color: #12537e;
-  background-color: #f6fbfe;
-  border-color: #1976d2;
+  color: #222222;
+  background-color: #fafbfc;
+  border-color: #000000;
+}
+
+.alert-note a:hover {
+  color: #6e6e6e;
+  text-decoration: underline;
 }
 
 .alert-warning {
