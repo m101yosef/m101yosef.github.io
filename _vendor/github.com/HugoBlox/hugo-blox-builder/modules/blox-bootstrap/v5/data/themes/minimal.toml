@@ -3,21 +3,20 @@ name = "Minimal"
 
 [light]
   # Primary
-  primary = "#00353c"
+  primary = "#21201E"
 
   # Menu
-  menu_primary = "#00353C"
-  menu_text = "#c0c0c0"
+  menu_primary = "#21201E"
+  menu_text = "#F2F2F2"
   menu_text_active = "#fff"
-  menu_title = "#e3eefc"
+  menu_title = "#FCFCFC"
 
   # Home sections
   background = "#FEFEFE"
   home_section_odd = "#F2F7FC"
-  home_section_even = "#e3eefa"
+  home_section_even = "#f8f8ff"
 
-  link = "#00718b"
-  link_hover = "#0e1e1e"
+  link_hover = "#a9a9a9" 
 
 [dark]
   # Primary

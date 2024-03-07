@@ -38,7 +38,6 @@ print(f"Last run at {dt.datetime.now()}")
 # check the device 
 torch.cuda.is_available()
 ```
-
     True
 
 To turn on you `cuda` or GPU, 
