@@ -44,26 +44,32 @@ social:
     link: 'mailto:mohamedyosef101@outlook.com'
     label: Email me
     display: 
-      header: true
+      header: false
   # - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
   #   icon_pack: fas
   #   link: https://scholar.google.co
-  - icon: linkedin
+  - icon: github
     icon_pack: fab
-    link: https://www.linkedin.com/in/mohamedyosef101
-    label: LinkedIn
-    display: 
-      header: true
-  - icon: twitter
-    icon_pack: fab
-    link: https://www.twitter.com/mohamedyosef101
-    label: Twitter
-    display: 
-      header: true
+    link: 'https://github.com/mohamedyosef101'
+    label: GitHub
+    display:
+      header: false
+  # - icon: twitter
+  #   icon_pack: fab
+  #   link: https://www.twitter.com/mohamedyosef101
+  #   label: Twitter
+  #   display: 
+  #     header: false
   - icon: medium
     icon_pack: fab
     link: https://medium.com/@mohamedyosef101
     label: Medium
+    display: 
+      header: false
+  - icon: linkedin
+    icon_pack: fab
+    link: https://www.linkedin.com/in/mohamedyosef101
+    label: LinkedIn
     display: 
       header: true
 
