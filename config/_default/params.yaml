@@ -44,7 +44,7 @@ header:
 
 footer:
   copyright:
-    notice: '© {year} MohamedYosef101. This work is licensed under CC BY NC ND 4.0'
+    notice: '© {year}'
     license:
       enable: false
       allow_derivatives: false

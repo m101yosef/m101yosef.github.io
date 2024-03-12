@@ -23,7 +23,10 @@
 
   {{ with $notice }}
   <p class="powered-by copyright-license-text">
-    {{ replace (replace . "{year}" now.Year) "{license}" (printf "<a href=\"%s\" rel=\"noopener noreferrer\" target=\"_blank\">CC %s 4.0</a>" $license_url (replace $cc_code "-" " " | upper)) | markdownify }}
+    {{ replace . "{year}" now.Year | markdownify }}
+    <a href="https://mohamedyosef101.github.io" rel="noopener noreferrer\" target="_blank\">Mohamed Yosef</a>
+    Powered by <a href="https://hugoblox.com/" rel="noopener noreferrer\" target="_blank\">Hugo Blox</a> & 
+    <a href="https://github.com/HugoBlox/theme-academic-cv" rel="noopener noreferrer\" target="_blank\">Wowchemy Academic</a>.
   </p>
   {{ end }}
 
@@ -47,6 +50,9 @@
   {{ with $notice }}
   <p class="powered-by copyright-license-text">
     {{ replace . "{year}" now.Year | markdownify }}
+    <a href="https://mohamedyosef101.github.io" rel="noopener noreferrer\" target="_blank\">Mohamed Yosef</a>
+    Powered by <a href="https://hugoblox.com/" rel="noopener noreferrer\" target="_blank\">Hugo Blox</a> & 
+    <a href="https://github.com/HugoBlox/theme-academic-cv" rel="noopener noreferrer\" target="_blank\">Wowchemy Academic</a>.
   </p>
   {{ end }}
 
