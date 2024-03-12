@@ -31,16 +31,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install academic==0.11.2
       - name: Run Academic Converter Tool
-        run: academic import 'notebooks/*.ipynb' content/notebook/ --verbose
+        run: academic import 'notebooks/*.ipynb' content/post/ --verbose
       - name: Create Pull Request
         # Set ID for `Check outputs` stage
         id: cpr
         uses: peter-evans/create-pull-request@v5
         with:
-          commit-message: 'content: import notebook from `notebooks/` folder'
-          title: Import latest blog notebook
+          commit-message: 'content: import post from `notebooks/` folder'
+          title: Import latest blog post
           body: |
-            Convert Jupyter Notebooks in the `notebooks/` folder into blog posts in the `content/notebook/` folder.
+            Convert Jupyter Notebooks in the `notebooks/` folder into blog posts in the `content/post/` folder.
             [View Documentation](https://github.com/GetRD/academic-file-converter)
           base: main
           labels: automated-pr, content
