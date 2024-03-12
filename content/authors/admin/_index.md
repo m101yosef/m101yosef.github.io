@@ -79,10 +79,12 @@ highlight_name: true
 
 <br>
 
-My name is Mohamed Yosef, a data scientist and reinforcement learning researcher from Egypt. For me, **science is not just knowledge - it's a way of thinking**. After working as a UX designer from 2021-2023, I transitioned to data science work. 
+My name is Mohamed Yosef, I started out in user experience design, which means I worked on making apps and websites easy and enjoyable to use. After that, I got into data science, where I now focus on deep reinforcement learning (deep RL) and time series analysis.
 
-My research now focuses on using **deep reinforcement learning** to enhance human-AI interaction and enable multi-agent learning. I'm also leading Project **AQSA** at Mansoura University to employ AI to help small businesses manage finances. Also, I share my ideas and insights on reinforcement learning and AI through [my Medium blog](https://medium.com/@mohamedyosef101). 
+Deep Reinforcement Learning is a type of computer learning that helps machines make decisions by trying different actions and learning from the results. Time series analysis is when you look at data that’s collected over time to find trends or patterns. I also study multi-agent learning, which is about teaching multiple computer programs to work together and solve problems.
 
-Using my design thinking knowledge and analytical skills, I aim to push the boundaries of what's possible with AI. I'm passionate about developing AI that augments human capabilities and unlocks new possibilities.
+At Mansoura University, I lead a project called **AQSA** where we help small businesses by using time-series and RL techniques to analyze and forecaste their sales data. This helps them figure out the best ways to sell their products.
+
+My main aim is to make computers helpful partners for people in their work and daily life. I believe that by combining my design skills with my knowledge of data, I can make computers that are not only smart but also easy and pleasant to use.
 
 {style="text-align: justify;"}
