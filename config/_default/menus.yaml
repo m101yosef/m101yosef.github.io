@@ -10,14 +10,14 @@ main:
   - name: Featured
     url: '#featured'
     weight: 20
-  - name: RL 101
-    url: '#rl101'
+  - name: Posts
+    url: '#post'
     weight: 30
-  - name: Notebooks
-    url: '#notebook'
-    weight: 40
   - name: Publications
     url: '#publications'
+    weight: 40
+  - name: Tags
+    url: '#tags'
     weight: 50
   # - name: Talks
   #   url: '#talks'
