@@ -22,56 +22,27 @@ sections:
       filters:
         folders:
           - publication
-          - rl_101
-          - notebook
+          - post
         featured_only: true
     design:
       columns: '2'
       view: card
-  
-  ### RL 101 ###
-  - block: collection
-    id: rl101
-    content:
-      title: RL 101
-      subtitle: 'The basics of reinforcement learning'
-      text: ''
-      # Choose how many pages you would like to display (0 = all pages)
-      count: 9
-      # Filter on criteria
-      filters:
-        folders:
-          - rl_101
-        author: ""
-        category: ""
-        tag: ""
-        exclude_featured: false
-        exclude_future: false
-        exclude_past: false
-        publication_type: ""
-      # Choose how many pages you would like to offset by
-      offset: 0
-      # Page order: descending (desc) or ascending (asc) date.
-      order: asc
-    design:
-      # Choose a layout view
-      view: list
-      columns: '2'
 
-  ### NOTEBOOKS ###
+  ### POSTS ###
   - block: collection
-    id: notebook
+    id: post
     content: 
-      title: Notebooks
+      title: Posts
       count: 3
       filters: 
         folders: 
-          - notebook
+          - post
         author: ""
         category: ""
         tag: ""
         exclude_featured: true
-        order: asc 
+        # Page order: descending (desc) or ascending (asc) date.
+        order: decs
     design: 
       view: compact
       columns: '2'
@@ -108,6 +79,7 @@ sections:
 
   ### TAGS ###
   - block: tag_cloud
+    id: tags
     content:
       title: 
     design:
