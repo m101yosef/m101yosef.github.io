@@ -6,12 +6,23 @@ date: "2023-04-20"
 doi: ""
 publishDate: "2023-04-20"
 share: false
+
 # Publication type.
-publication_types: ["article"]
+# Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
+# 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
+# 7 = Thesis; 8 = Patent
+publication_types: ["report"]
 
 # Publication name and optional abbreviated publication name.
 publication: "Bootcamp"
 publication_short: ""
+
+featured: false
+
+image:
+    caption: ''
+    focal_point: ''
+    preview_only: true
 
 abstract: Many people believe that emotions and logic are opposing forces. Emotions are often portrayed as irrational and illogical, while logic is seen as the pinnacle of rationality and intellect. However, this dichotomy is problematic because it oversimplifies the complex relationship between emotions and logic.
 
@@ -21,18 +32,17 @@ summary: Have you ever wondered why some products are more successful than other
 tags:
 - User Experience
 - Decision-Making
-featured: false
 
-# links:
-# - name: ""
-#   url: ""
+links:
+- name: "Medium"
+  url: "https://bootcamp.uxdesign.cc/the-art-of-decision-making-navigating-the-intersection-of-heart-and-head-d29cb2b73117"
 url_pdf: ''
 url_code: ''
 url_dataset: ''
 url_poster: ''
 url_project: ''
 url_slides: ''
-url_source: 'https://bootcamp.uxdesign.cc/the-art-of-decision-making-navigating-the-intersection-of-heart-and-head-d29cb2b73117'
+url_source: ''
 url_video: ''
 ---
 

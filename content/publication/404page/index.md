@@ -7,14 +7,25 @@ doi: ""
 publishDate: "2023-02-08"
 share: false
 # Publication type.
-# Accepts a single type but formatted as a YAML list (for Hugo requirements).
-# Enter a publication type from the CSL standard.
-publication_types: ["article"]
+# Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
+# 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
+# 7 = Thesis; 8 = Patent
+publication_types: ["report"]
 
 # Publication name and optional abbreviated publication name.
 publication: "Bootcamp"
 publication_short: ""
 
+featured: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder. 
+image:
+  caption: 'Designed by Mohamed Yosef'
+  focal_point: ""
+  preview_only: true
+
+# introduction
 abstract: A 404 error message is something that we have all encountered at least once while surfing the internet. It occurs when a user tries to access a webpage that does not exist or has been moved or deleted. Unfortunately, it can be frustrating for users who expect the website to work seamlessly without any disruptions. As such, it’s essential to have a good 404 error message. A good 404 error message should concisely explain what went wrong in plain language and what to do next. This message should convey pertinent information about why the error occurred and how to proceed. It should not be vague, misleading, or unhelpful.
 
 # Summary. An optional shortened abstract.
@@ -22,9 +33,10 @@ summary: Error pages should reassure, delight and guide the user to interesting 
 
 tags:
 - User Experience
-featured: false
 
 links:
+- name: "Medium"
+  url: "https://medium.com/design-bootcamp/turn-your-404-error-page-into-opportunity-c473cad69d42"
 - name: "Behance"
   url: "https://www.behance.net/gallery/163769529/Turn-404-Error-into-branding-opportunity-UX-Research"
 url_pdf: ''
@@ -33,7 +45,7 @@ url_dataset: ''
 url_poster: ''
 url_project: ''
 url_slides: ''
-url_source: 'https://medium.com/design-bootcamp/turn-your-404-error-page-into-opportunity-c473cad69d42'
+url_source: ''
 url_video: ''
 ---
 
