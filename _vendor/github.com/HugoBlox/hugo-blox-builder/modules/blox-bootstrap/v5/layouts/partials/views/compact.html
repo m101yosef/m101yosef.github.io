@@ -80,7 +80,7 @@
       {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "resize 360x webp" }}{{ end }}
       <a href="{{$link}}" {{ $target | safeHTMLAttr }}>
         <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"
-            alt="{{ $item.Title }}" loading="lazy">
+            alt="{{ $item.Title }}" loading="lazy"  style="width:360px; height: auto; object-fit: cover;">
       </a>
     {{end}}
   </div>

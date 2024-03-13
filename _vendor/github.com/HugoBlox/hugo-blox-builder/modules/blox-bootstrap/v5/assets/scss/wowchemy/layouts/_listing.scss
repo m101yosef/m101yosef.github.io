@@ -48,14 +48,14 @@
 }
 
 .media.stream-item img {
-  max-width: 150px;
+  max-width: 240px;
   height: auto;
   object-fit: cover;
 }
 
 @media screen and (max-width: 768px) {
   .media.stream-item img {
-    max-width: 80px;
+    max-width: 120px;
   }
 }
 
