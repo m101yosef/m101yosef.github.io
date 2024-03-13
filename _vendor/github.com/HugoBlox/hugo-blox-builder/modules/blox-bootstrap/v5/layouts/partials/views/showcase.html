@@ -52,17 +52,17 @@
       </div>
 
     </div>
-    <div class="col-12 col-md-6 order-first {{$order}}">
+    <div class="col-12 col-md-6  {{$order}}">
       {{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
 
       {{ with $resource }}
         {{/* Use CSS to expand images to consistent widths rather than just Hugo as Hugo can significantly increase the
         filesize of GIFs when processing them, e.g. 400kB --> 1.5MB */}}
         {{ $image := . }}
-        {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "resize 540x webp" }}{{ end }}
+        {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "resize 360x webp" }}{{ end }}
         {{if $do_link}}<a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{end}}
           <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"
-              alt="{{ $item.Title }}" loading="lazy" style="width: 540px; height: auto; object-fit: cover;">
+              alt="{{ $item.Title }}" loading="lazy" style="width: 360px; height: auto; object-fit: cover;">
         {{if $do_link}}</a>{{end}}
       {{end}}
     </div>

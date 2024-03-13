@@ -24,10 +24,10 @@ tags:
 - User Experience
 featured: false
 
-# links:
-# - name: ""
-#   url: ""
-url_pdf: 'https://www.behance.net/gallery/163769529/Turn-404-Error-into-branding-opportunity-UX-Research'
+links:
+- name: "Behance"
+  url: "https://www.behance.net/gallery/163769529/Turn-404-Error-into-branding-opportunity-UX-Research"
+url_pdf: ''
 url_code: ''
 url_dataset: ''
 url_poster: ''

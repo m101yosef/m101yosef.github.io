@@ -22,7 +22,7 @@ summary: A product details need to describe succinctly what the product is and, 
 
 tags:
 - User Experience
-featured: false
+featured: true
 
 # links:
 # - name: ""
