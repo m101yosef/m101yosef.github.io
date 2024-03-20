@@ -25,7 +25,7 @@ sections:
         featured_only: true
     design:
       columns: '2'
-      view: compact
+      view: card
 
 
   ### RECENT PUBLICATIONS ### 
@@ -33,17 +33,13 @@ sections:
     id: recent
     content:
       title: Recent Publications
-      text: |-
-        {{% callout note %}}
-        Quickly discover relevant content by [filtering publications](./publication/).
-        {{% /callout %}}
       filters:
         folders:
           - publication
         exclude_featured: true
     design:
       columns: '2'
-      view: compact
+      view: citation
 
   ### PUBLICATIONS ###
   - block: portfolio
@@ -70,7 +66,7 @@ sections:
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '1'
-      view: showcase
+      view: compact
 
   ### TAGS ###
   - block: tag_cloud
