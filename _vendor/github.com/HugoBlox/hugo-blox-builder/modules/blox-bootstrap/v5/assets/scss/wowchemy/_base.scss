@@ -3,9 +3,9 @@
  **************************************************/
 
 html {
-  font-family: $sta-font-body, sans-serif;
+  font-family: system-ui, $sta-font-body, sans-serif;
   font-size: #{$sta-font-size-small}px;
-  color: #1e1e1e;
+  color: rgba(31, 31, 31, 0.9);
   line-height: 1.65;
 
   // Offset anchor scrolling by height of desktop fixed header.
@@ -24,7 +24,7 @@ html {
 
 body {
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: inherit;
   color: inherit;
   background-color: $sta-background;
@@ -147,12 +147,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $sta-font-heading, sans-serif;
+  font-family: system-ui, $sta-font-heading, sans-serif;
   font-weight: 700;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
   line-height: 1.25;
-  color: #313131;
+  color: rgba(31, 31, 31, 0.95);
   text-rendering: optimizelegibility;
 
   /* Ensure long words do not overflow into content. */
@@ -167,20 +167,18 @@ h6 {
 }
 
 h1 {
+  font-family: $sta-font-heading, sans-serif;
   font-size: 1.7rem;
 }
 
 h2 {
-  font-size: 1.5rem;
-  margin-top: 1.3rem;
-  margin-bottom: 1rem;
+  font-size: 1.4rem;
 }
 
 h3 {
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin-top: 1.25rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.25rem;
 }
 
 h4,
@@ -188,12 +186,8 @@ h5,
 h6 {
   font-weight: 700;
   margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem;
   font-size: 1rem;
-}
-
-article h1, article h2, article h3 {
-  font-family: 'Roboto', Helvetica, sans-serif;
 }
 
 a,

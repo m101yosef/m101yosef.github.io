@@ -1,1 +1,25 @@
 // Override this file to add your own SCSS styling.
+.home-section {
+    h1, h2, h3 {
+        font-family: $sta-font-heading;
+    }
+}
+.projects-container {
+
+    .media.stream-item .view-compact {
+        margin: .5rem;
+    }
+
+    .media.stream-item.view-compact img {
+        max-width: 480px;
+        height: auto;
+        object-fit: cover;
+        padding-bottom: 1rem;
+      }
+      
+      @media screen and (max-width: 768px) {
+        .media.stream-item.view-compact img {
+          max-width: 0;
+        }
+      }
+}
