@@ -81,7 +81,7 @@ The **policy** is the agent’s brain, deciding what actions to take based on 
 
 - **Deterministic Policy:** a logical approach where the agent has a specific action to take for each state ***s*** and denoted by $\mu \rightarrow a_t = \mu_\theta(S_t)$. It’s like having a rule that says, “If X happens, do Y”, with no exceptions. The agent follows the same rule every time it’s in the same situation or state.
 
-- **Stochastic Policy:** more flexible. Instead of one action, the agent has a set of actions and chooses one based on probabilities. Here, policy denoted by $\pi \rightarrow a_t \sim \pi_\theta(\cdot|S_t)$. <p style="color: #656565">It’s like flipping a coin to decide what to do. The coin and the flipping have some randomness. You don’t know that you’ll get tail at the first flip and head in the second flip. But what you know is that if you flip the coin many times, you’ll get 50% heads and 50% tails.</p>
+- **Stochastic Policy:** more flexible. Instead of one action, the agent has a set of actions and chooses one based on probabilities. Here, policy denoted by $\pi \rightarrow a_t \sim \pi_\theta(\cdot|S_t)$. It’s like flipping a coin to decide what to do. The coin and the flipping have some randomness. You don’t know that you’ll get tail at the first flip and head in the second flip. But what you know is that if you flip the coin many times, you’ll get 50% heads and 50% tails.
 
 
 ### The feedback Loop: Rewards, Return & Discounting
@@ -104,8 +104,8 @@ $$
 R(\tau)=\sum_{t=0}^{\infty} \gamma^t r_t
 $$
 
-> **Important definition**
-Horizon: number of time steps in each episode; episode: is the agent’s journey from a clear start to a specific end.
+> **Important definition** <br>
+> Horizon: number of time steps in each episode; episode: is the agent’s journey from a clear start to a specific end.
 > 
 
 ### Putting it all together: Trajectory
@@ -209,10 +209,10 @@ Formula for state-value function,
 
 $$
 \begin{aligned}
-V(s) &= \mathbb{E}[G_t \vert S_t = s] \\
-&= \mathbb{E} [R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \dots \vert S_t = s] \\
-&= \mathbb{E} [R_{t+1} + \gamma (R_{t+2} + \gamma R_{t+3} + \dots) \vert S_t = s] \\
-&= \mathbb{E} [R_{t+1} + \gamma G_{t+1} \vert S_t = s] \\
+V(s) &= \mathbb{E}[G_t \vert S_t = s] \\\
+&= \mathbb{E} [R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \dots \vert S_t = s] \\\
+&= \mathbb{E} [R_{t+1} + \gamma (R_{t+2} + \gamma R_{t+3} + \dots) \vert S_t = s] \\\
+&= \mathbb{E} [R_{t+1} + \gamma G_{t+1} \vert S_t = s] \\\
 &= \mathbb{E} [R_{t+1} + \gamma V(S_{t+1}) \vert S_t = s]
 \end{aligned}
 $$
@@ -220,10 +220,13 @@ $$
 Similarly, for action-value or Q-value,
 
 $$
-\begin{aligned}Q(s, a) &= \mathbb{E} [R_{t+1} + \gamma V(S_{t+1}) \mid S_t = s, A_t = a] \\&= \mathbb{E} [R_{t+1} + \gamma \mathbb{E}_{a\sim\pi} Q(S_{t+1}, a) \mid S_t = s, A_t = a]\end{aligned}
+\begin{aligned}
+Q(s, a) &= \mathbb{E} [R_{t+1} + \gamma V(S_{t+1}) \ | \ S_t = s, A_t = a] \\\
+&= \mathbb{E} [R_{t+1} + \gamma \mathbb E_{a \sim \pi} Q(S_{t+1}, a)  \ | \ S_t = s, A_t = a]
+\end{aligned}
 $$
 
-<br>
+
 <br>
 
 > I took these equations and some more from [this amaizing article](https://lilianweng.github.io/posts/2018-02-19-rl-overview/) by Lilian Weng.
@@ -259,13 +262,21 @@ In each iteration, VI uses the current estimate of $V(s)$ to calculate an improv
  
 
 $$
-\begin{aligned} V_{t+1}(s) &= \mathbb{E}_\pi [r + \gamma V_t(s') | S_t = s] \\ &= \sum_a \pi(a \vert s) \sum_{s', r} P(s', r \vert s, a) (r + \gamma V_t(s')) \end{aligned}
+\begin{aligned} 
+V_{t+1}(s) 
+&= \mathbb E_\pi [r + \gamma V_t(s') | S_t = s] \\\ 
+&= \sum_a \pi(a \vert s) \sum_{s', r} P(s', r \vert s, a) (r + \gamma V_t(s')) 
+\end{aligned}
 $$
 
 **2) Policy Iteration, PI**: based on the value functions, PI starts with an initial policy, even a random one, and iteratively improves it. 
 
 $$
-\begin{aligned}Q_\pi(s, a) &= \mathbb{E} [R_{t+1} + \gamma V_\pi(S_{t+1}) \vert S_t=s, A_t=a] \\ &= \sum_{s', r} P(s', r \vert s, a) (r + \gamma V_\pi(s')) \end{aligned}
+\begin{aligned}
+Q_\pi(s, a) 
+&= \mathbb{E} [R_{t+1} + \gamma V_\pi(S_{t+1}) \vert S_t=s, A_t=a] \\\ 
+&= \sum_{s', r} P(s', r \vert s, a) (r + \gamma V_\pi(s')) 
+\end{aligned}
 $$
 
 In each iteration, PI evaluates the current policy by calculating the state-value function for each state under that policy. Then, it uses this state-value function to find greedy policy, one that takes the action with the highest Q-value in each state. Finally, it compares the new greedy policy to the old one and keeps the one with the higher expected return. This process called Generalized Policy Iteration, GPI.
@@ -277,12 +288,17 @@ $$
 This policy iteration process works and always converges to the optimality, but why this is the case? Say, we have a policy $\pi$ and then generate an improved version $\pi'$ by greedily taking actions, $\pi'(s) = arg \; \max_{a \in \mathcal{A}} Q_\pi(s,a)$. The value of this improved $\pi'$ is guaranteed to be better because:
 
 $$
-\begin{aligned}Q_\pi(s, \pi'(s))&= Q_\pi(s, \arg\max_{a \in \mathcal{A}} Q_\pi(s, a)) \\&= \max_{a \in \mathcal{A}} Q_\pi(s, a) \geq Q_\pi(s, \pi(s)) = V_\pi(s)\end{aligned}
+\begin{aligned}
+Q_\pi(s, \pi'(s)) 
+&= Q_\pi(s, \arg\max_{a \in \mathcal{A}} Q_\pi(s, a)) \\\ 
+&= \max_{a \in \mathcal{A}} Q_\pi(s, a) \geq Q_\pi(s, \pi(s)) \\\ 
+&= V_\pi(s)
+\end{aligned}
 $$
 
 ## Monte Carlo Methods
 
-Monte Carlo methods estimate the quality of a given policy **at the end of an episode**. These methods rely on experiencing the environment under the policy’s control and averaging the observed rewards to estimate the value of states and actions. 
+Monte Carlo methods estimate the quality of a given policy at the end of an episode. These methods rely on experiencing the environment under the policy’s control and averaging the observed rewards to estimate the value of states and actions. 
 
 > Monte Carlo can **only** be applied to episodic tasks.
 > 
@@ -303,9 +319,9 @@ This return is then utilized as the target for value updates:
 
 ## Temporal Difference Learning
 
-<p style="color: gray;">“If one had to identify one idea as central and novel to reinforcement learning, it would undoubtedly be temporal-difference learning.” 
+<p style="color: teal;"><b>“If one had to identify one idea as central and novel to reinforcement learning, it would undoubtedly be temporal-difference learning.” </b>
 <br>
-— Sutton & Barto in their book; <a href="https://mitpress.mit.edu/9780262352703/reinforcement-learning/">Reinforcement learning: An introduction</a>.
+— Sutton & Barto in their book; <a style="color: teal;" href="https://mitpress.mit.edu/9780262352703/reinforcement-learning/">Reinforcement learning: An introduction</a>.
 </p>
 
 TD Learning is a combination of dynamic programming and Monte Carlo ideas that estimates the quality of a given policy at each time step, think of it as an exam and your grads are updated after each question, instead of just averaging all grads, returns, at the end of the exam, an episode, like Monte Carlo. 
@@ -324,6 +340,8 @@ $$
 Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha (R_{t+1} + \gamma Q(S_{t+1}, A_{t+1}) - Q(S_t, A_t))
 $$
 
+<br>
+
 ### Dynamic Programming, Monte Carlo, and TD Learning Backups
 
 <figure>
@@ -331,7 +349,6 @@ $$
   <figcaption>Comparison of the backup diagrams of Monte-Carlo, Temporal-Difference learning, and Dynamic Programming for state value functions. | <b>Source: </b> David Silver's RL course <a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/MC-TD.pdf">lecture 4</a>: "Model-Free Prediction"</figcaption>
 </figure>
 
-<br>
 <br>
 
 ## Q-Learning and DQN
@@ -376,14 +393,14 @@ To understand how this "change" happen, put yourself in the agent’s shoes.
 
 3- Over time, you’ll learn the optimal policy, the best action to take in a given state, then act according to the optimal policy by simply looking up the best action for each state based on the learned Q-values.
 
-<br>
 
 ### Deep Q-Learning & DQN
-Deep Q-learning is an advanced form of Q-learning that integrates **neural networks** with **reinforcement learning**. At its core, it uses a **neural network** as the agent’s perception system, enabling it to interpret raw environmental data and determine optimal actions. So, you can let the **neural network** **learn** the appropriate perception system **on its own directly from the environment** without the need to do manual feature engineering.
+Deep Q-learning is an advanced form of Q-learning that integrates neural networks with reinforcement learning. At its core, it uses a neural network as the agent’s perception system, enabling it to interpret raw environmental data and determine optimal actions. So, you can let the neural network learn the appropriate perception system on its own directly from the environment without the need to do manual feature engineering.
 
 Here’s a refined breakdown:
 
 - **Deep Q-Network (DQN)**: This is the neural network that acts as the agent’s eyes, translating pixel-based images of the environment into actionable data. Unlike humans, computers perceive images as arrays of numbers, and DQN uses a convolutional neural network (CNN) to process these pixel images and estimate the potential rewards (Q-values) for different actions.
+
 - **Temporal Limitation**: A single snapshot of the environment isn’t enough for the agent to make informed decisions. Deep Q-learning addresses this by considering multiple future states, allowing the agent to evaluate actions based on both immediate and future rewards.
     
     <figure>
@@ -392,6 +409,7 @@ Here’s a refined breakdown:
     </figure>
     
 - **Experience Replay**: To prevent the agent from forgetting previous lessons when encountering new situations, deep Q-learning employs a technique called **Experience Replay**. This involves storing past experiences and revisiting them, which helps the agent maintain a broader understanding of various states and actions.
+
 - **Fixed Targets**: Deep Q-learning uses two separate networks: the main network estimates future rewards, while a secondary “target” network provides a stable baseline for comparison. This dual-network approach helps stabilize learning and prevent feedback loops that could arise from constantly shifting estimations.
 
 
@@ -454,7 +472,7 @@ To measure **policy performance**, you first need to define an objective functi
 You know what… I can’t dive into the policy gradient theorem (*bore me*), but I want you to know that this theorem reformulates the objective so you can estimate its gradient with no need to differentiate the environment dynamics. 
 
 $$
-\nabla_\theta J(\theta) = \mathbb{E}_{\pi_\theta} [\nabla_\theta\;log\;\pi_\theta(a_t \vert s_t) R(\tau)]
+\nabla_{\theta} J(\theta) = \mathbb E_{\pi_{\theta}} [\nabla_{\theta}\text{ log }\pi_{\theta}(a_t \vert s_t) R(\tau)]
 $$
 
 ### REINFORCE algorithm
