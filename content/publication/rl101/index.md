@@ -17,7 +17,7 @@ publication_types: ["Learnings"]
 publication: "MohamedYosef101"
 publication_short: "MY101"
 
-featured: false
+featured: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
