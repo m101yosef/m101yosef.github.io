@@ -6,20 +6,23 @@
 }
 .projects-container {
 
-    .media.stream-item .view-compact {
-        margin: .5rem;
-    }
+  .media-body {
+    padding: 0.5rem 2rem;
+  }
 
-    .media.stream-item.view-compact img {
-        max-width: 480px;
-        height: auto;
-        object-fit: cover;
-        padding-bottom: 1rem;
+  .media.stream-item.view-compact {
+    margin-bottom: 1rem;
+  }
+
+  .media.stream-item.view-compact img {
+      max-width: 480px;
+      height: auto;
+      object-fit: cover;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .media.stream-item.view-compact img {
+        max-width: 0;
       }
-      
-      @media screen and (max-width: 768px) {
-        .media.stream-item.view-compact img {
-          max-width: 0;
-        }
-      }
+    }
 }

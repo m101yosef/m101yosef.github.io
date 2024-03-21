@@ -76,11 +76,11 @@
   <div class="ml-3">
     {{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
     {{ with $resource }}
-      {{ $image := .Resize "240x" }}
-      {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "resize 360x webp" }}{{ end }}
+      {{ $image := .Resize "720x" }}
+      {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "resize 400x webp" }}{{ end }}
       <a href="{{$link}}" {{ $target | safeHTMLAttr }}>
         <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"
-            alt="{{ $item.Title }}" loading="lazy"  style="width:360px; height: auto; object-fit: cover;">
+            alt="{{ $item.Title }}" loading="lazy">
       </a>
     {{end}}
   </div>
