@@ -36,7 +36,7 @@ tags:
 - Reinforcement Learning
 
 links:
-- name: "My Article Series"
+- name: "Article Series"
   url: "https://medium.com/@mohamedyosef101/list/reinforcement-learning-c4463271c5e3"
 url_pdf: ''
 url_code: 'https://github.com/mohamedyosef101/101_learning_area/tree/area/Reinforcement%20Learning'
