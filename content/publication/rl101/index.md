@@ -27,10 +27,10 @@ image:
   preview_only: true
 
 # introduction
-abstract: This is me summarizing the basics of Reinforcement Learning
+abstract: Reinforcement Learning, learning through trial and error, is a rapidly growing field in AI. Unlike supervised learning, reinforcement learning provides you with the ability to learn directly from the world and adapt to new situations which makes it a valuable option for complex, real-world problems. From AlphaGo beating the world champion in Go, to the newest updates on large language models and what they can do, RL algorithms with no doubt have a huge impace in the present and the future of automation and Human-AI interaction. With this collection of RL principles, you'll gain a deeper understand of how RL work and you may gain insights applicable in your own work, leading to innovative solutions.
 
 # Summary. An optional shortened abstract.
-summary: 
+summary: From AlphaGo beating the world champion in Go, to the newest updates on large language models and what they can do, RL algorithms with no doubt have a huge impace in the present and the future of automation and Human-AI interaction. With this collection of RL principles, you'll gain a deeper understand of how RL work and you may gain insights applicable in your own work, leading to innovative solutions.
 
 tags:
 - Reinforcement Learning
@@ -44,7 +44,7 @@ url_dataset: ''
 url_poster: ''
 url_project: ''
 url_slides: ''
-url_source: 'https://mohamedyosef101.notion.site/Reinforcement-Learning-All-in-one-179f3ecdb1c94f3fb037d8b7c9cbf838'
+url_source: ''
 url_video: ''
 ---
 
