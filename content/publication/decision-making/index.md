@@ -6,6 +6,7 @@ date: "2023-04-20"
 doi: ""
 publishDate: "2023-04-20"
 share: false
+featured: true
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -16,8 +17,6 @@ publication_types: ["report"]
 # Publication name and optional abbreviated publication name.
 publication: "Bootcamp"
 publication_short: ""
-
-featured: false
 
 image:
     caption: ''

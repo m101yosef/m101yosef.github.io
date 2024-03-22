@@ -22,7 +22,6 @@ sections:
       filters:
         folders:
           - publication
-          - learnings
         featured_only: true
     design:
       columns: '2'
@@ -39,20 +38,6 @@ sections:
     design: 
       columns: '2'
       view: compact
-
-
-  ### RECENT PUBLICATIONS ### 
-  - block: collection
-    id: recent
-    content:
-      title: Recent Publications
-      filters:
-        folders:
-          - publication
-        exclude_featured: true
-    design:
-      columns: '2'
-      view: citation
 
   ### PUBLICATIONS ###
   - block: portfolio

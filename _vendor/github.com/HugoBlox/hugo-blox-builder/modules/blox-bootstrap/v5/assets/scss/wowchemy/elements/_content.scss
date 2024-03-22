@@ -19,7 +19,8 @@
 }
 
 .article-header {
-  position: relative; /* Required for caption positioning */
+  position: relative;
+  /* Required for caption positioning */
   clear: both;
 }
 
@@ -29,14 +30,17 @@
   object-fit: cover;
 
   @include media-breakpoint-up(lg) {
-    height: auto; /* Increased height on desktop */
+    height: auto;
+    /* Increased height on desktop */
   }
 }
 
 .featured-image-wrapper {
   position: relative;
-  padding-left: 0; /* Override container padding. */
-  padding-right: 0; /* Override container padding. */
+  padding-left: 0;
+  /* Override container padding. */
+  padding-right: 0;
+  /* Override container padding. */
 }
 
 .featured-image {
@@ -60,6 +64,7 @@
   opacity: 0.65;
   border-radius: 5px 0 0;
 }
+
 @media (min-width: 64em) {
   .article-header-caption {
     padding: 5px 10px;
@@ -125,6 +130,7 @@
 }
 
 .dark .article-style {
+
   // Underline links if they are a similar color to the body text.
   a {
     text-decoration: $sta-dark-link-decoration;
@@ -170,7 +176,8 @@ article .article-metadata {
 }
 
 .article-categories {
-  white-space: nowrap; /* Keep category icon on same line as category links, otherwise context lost. */
+  white-space: nowrap;
+  /* Keep category icon on same line as category links, otherwise context lost. */
 }
 
 .middot-divider {
@@ -228,7 +235,8 @@ caption {
  **************************************************/
 
 .article-widget {
-  padding-top: 1.2rem; /* Match .content-widget-hr */
+  padding-top: 1.2rem;
+  /* Match .content-widget-hr */
 }
 
 .article-widget h3 {
