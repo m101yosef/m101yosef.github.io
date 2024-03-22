@@ -22,10 +22,23 @@ sections:
       filters:
         folders:
           - publication
+          - learnings
         featured_only: true
     design:
       columns: '2'
       view: card
+
+  ### LEARNINGS ###
+  - block: collection
+    id: learnings
+    content: 
+      title: Learnings
+      filters: 
+        folders: 
+          - learnings
+    design: 
+      columns: '2'
+      view: compact
 
 
   ### RECENT PUBLICATIONS ### 
@@ -67,6 +80,19 @@ sections:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '1'
       view: compact
+
+
+  ### TALKS ### 
+  - block: collection
+    id: talks
+    content: 
+      title: Talks
+      filters: 
+        folders: 
+          - event
+    design: 
+      columns: '2'
+      view: youtube
 
   ### TAGS ###
   - block: tag_cloud
