@@ -1,19 +1,20 @@
 ---
-title: "The 4 stages of any UX research process."
+title: "The 4 stages of any UX research process"
 authors:
 - admin
 date: "2023-06-20"
 doi: ""
 publishDate: "2023-06-20"
 share: false
+featured: true
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
 publication_types: ["article"]
 
 # Publication name and optional abbreviated publication name.
-publication: ""
-publication_short: ""
+publication: "MohamedYosef101"
+publication_short: "MY101"
 
 abstract: Without a clear understanding of why you are conducting UX research, you run the risk of collecting irrelevant or inconclusive data, which can lead to wasted time, effort, and resources.
 
@@ -22,18 +23,17 @@ summary: Many people might find the idea of conducting UX research daunting, as 
 
 tags:
 - User Experience
-featured: false
 
-# links:
-# - name: ""
-#   url: ""
+links:
+- name: "Medium"
+  url: "https://medium.com/@mohamedyosef101/the-4-stages-of-any-ux-research-process-f9db949434a3"
 url_pdf: ''
 url_code: ''
 url_dataset: ''
 url_poster: ''
 url_project: ''
 url_slides: ''
-url_source: 'https://medium.com/@mohamedyosef101/the-4-stages-of-any-ux-research-process-f9db949434a3'
+url_source: ''
 url_video: ''
 ---
 
