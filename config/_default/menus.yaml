@@ -10,15 +10,15 @@ main:
   - name: Featured
     url: '#featured'
     weight: 20
-  - name: Posts
-    url: '#post'
+  - name: Learnings
+    url: '#learnings'
     weight: 30
   - name: Publications
     url: '#publications'
     weight: 40
+  - name: Talks
+    url: '#talks'
+    weight: 50
   - name: Tags
     url: '#tags'
-    weight: 50
-  # - name: Talks
-  #   url: '#talks'
-  #   weight: 70
+    weight: 60
