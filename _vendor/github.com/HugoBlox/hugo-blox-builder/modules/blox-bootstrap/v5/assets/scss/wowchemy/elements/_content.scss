@@ -25,11 +25,11 @@
 
 .article-banner {
   width: 100%;
-  height: 260px;
+  height: auto;
   object-fit: cover;
 
   @include media-breakpoint-up(lg) {
-    height: 310px; /* Increased height on desktop */
+    height: auto; /* Increased height on desktop */
   }
 }
 
