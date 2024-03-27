@@ -25,18 +25,6 @@ sections:
         featured_only: true
     design:
       columns: '2'
-      view: card
-
-  ### LEARNINGS ###
-  - block: collection
-    id: learnings
-    content: 
-      title: Learnings
-      filters: 
-        folders: 
-          - learnings
-    design: 
-      columns: '2'
       view: compact
 
   ### PUBLICATIONS ###
@@ -57,10 +45,12 @@ sections:
       buttons:
         - name: All
           tag: '*'
-        - name: Deep Learning
-          tag: Deep Learning
-        - name: Other
-          tag: Demo
+        - name: Reinforcement Learning
+          tag: Reinforcement Learning
+        - name: Analytics
+          tag: Data Analysis
+        - name: User Experience
+          tag: User Experience
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '1'

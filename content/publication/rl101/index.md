@@ -7,18 +7,13 @@ doi: ""
 publishDate: "2024-01-22"
 share: false
 show_related: true
+featured: true
 
-# Publication type.
-# Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
-# 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
-# 7 = Thesis; 8 = Patent
 publication_types: ["Learnings"]
 
 # Publication name and optional abbreviated publication name.
 publication: "MohamedYosef101"
 publication_short: "MY101"
-
-featured: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
@@ -27,7 +22,6 @@ image:
   focal_point: ""
   preview_only: true
 
-# introduction
 abstract: Reinforcement Learning, learning through trial and error, is a rapidly growing field in AI. Unlike supervised learning, reinforcement learning provides you with the ability to learn directly from the world and adapt to new situations which makes it a valuable option for complex, real-world problems. From AlphaGo beating the world champion in Go, to the newest updates on large language models and what they can do, RL algorithms with no doubt have a huge impace in the present and the future of automation and Human-AI interaction. With this collection of RL principles, you'll gain a deeper understand of how RL work and you may gain insights applicable in your own work, leading to innovative solutions.
 
 # Summary. An optional shortened abstract.
@@ -62,7 +56,7 @@ As you may guess, the RL process begins with the agent observing a situation or 
 5. The new state of the environment is observed, and the process repeated.
 
 <figure>
-  <img alt="RL Process" src="./rl-process.png">
+  <img alt="RL Process" src="./images/rl-process.png">
   <figcaption>The Reinforcement Learning Process | <b>Source:</b> <a href="https://mitpress.mit.edu/9780262352703/reinforcement-learning/">Reinforcement learning: An introduction</a> book by Richard S. Sutton and Andrew G. Barto</figcaption>
 </figure>
 
@@ -117,11 +111,11 @@ $$
 $$
 
 ## Types of Reinforcement Learning tasks
-A task is a specific **instance** of a problem. There are mainly two categories of tasks: episodic and continuous. **Episodic** tasks have a clear beginning and specific end, or a terminal state. In contrast, **continuous** tasks are ongoing, lacking a definitive endpoint, which requires the agent to improve the policy continuously while interacting with the environment.
+A task is a specific instance of a problem. There are mainly two categories of tasks: episodic and continuous. **Episodic** tasks have a clear beginning and specific end, or a terminal state. In contrast, **continuous** tasks are ongoing, lacking a definitive endpoint, which requires the agent to improve the policy continuously while interacting with the environment.
 
 <figure>
   <img alt="types of RL tasks; episodic and continuous" 
-  src="./types-of-rl-tasks.png">
+  src="./images/types-of-rl-tasks.png">
   <figcaption>Types of RL tasks; episodic and continuous | Designed by Mohamed Yosef (the author)</figcaption>
 </figure>
 
@@ -134,7 +128,7 @@ Sometimes, agents need to explore to learn new things and exploit to use what th
 
 <figure>
   <img alt="You have four paths and you can exploit you knowledge and choose the path you know or explore the other three paths" 
-  src="./exploration-exploitation-tradoff.png">
+  src="./images/exploration-exploitation-tradoff.png">
   <figcaption>You have four paths; one that you know so you can exploit your knowledge and choose easily. The other three paths are new so you might want to do some exploration. | <b>Designed</b> by Mohamed Yosef (the author)</figcaption>
 </figure>
 
@@ -183,7 +177,7 @@ A key component of a Markov process is the transition dynamics, which specify *
 
 <figure>
   <img alt="Markov Transition Dynamics among three states; A, B, and C" 
-      src="./transition-probability.png">
+      src="./images/transition-probability.png">
   <figcaption>Markov Transition Dynamics among three states; A, B, and C with the probabilities from moving from one state to the other. | <b>Designed</b> by Mohamed Yosef (the author)</figcaption>
 </figure>
 
@@ -200,11 +194,11 @@ Markov decision process consists of five elements  $\mathcal{M} = \langle \mathc
 
 <figure>
   <img alt="Image of Dr. Richard Bellman, the father of dynamic programming"
-  src="./Richard-Bellman.png">
+  src="./images/Richard-Bellman.png">
   <figcaption>Dr. Richard Bellman, the father of dynamic programming | <b>Source:</b> <a href="https://www.codeproject.com/Articles/5354014/Dynamic-Programming-or-How-to-Use-Previous-Computa">Dynamic Programming or How to Use Previous Computation Experience</a> — CodeProject.</figcaption>
 </figure>
 
-The key idea is that we want to calculate the expected long-term return **starting from any given state**. This is called the value *[](https://medium.com/@mohamedyosef101/the-fundamentals-of-reinforcement-learning-explained-f42de0053fc7#4b00)*of that state, denoted *V(s)*. One way to calculate *V(s)* is through simulation — we could sample many episodes starting from state, ***s***, calculate the sum of discounted rewards in each one, and take the average.
+The key idea is that we want to calculate the expected long-term return **starting from any given state**. This is called the value of that state, denoted *V(s)*. One way to calculate *V(s)* is through simulation — we could sample many episodes starting from state, ***s***, calculate the sum of discounted rewards in each one, and take the average.
 
 Formula for state-value function,
 
@@ -313,7 +307,7 @@ $$
 This return is then utilized as the target for value updates:
 
 <figure>
-  <img alt="The equation to estimate the value function in Monte Carlo methods" src="./monte-carlo-value-function.jpg">
+  <img alt="The equation to estimate the value function in Monte Carlo methods" src="./images/monte-carlo-value-function.jpg">
   <figcaption>How Value Function updated in Monte Carlo methods | <b>Source:</b> <a href="https://huggingface.co/learn/deep-rl-course/unit2/mc-vs-td">huggingface.co</a></figcaption>
 </figure>
 
@@ -330,7 +324,7 @@ TD Learning is a combination of dynamic programming and Monte Carlo ideas that 
 Because we didn’t experience an entire episode, we don’t have return $G_t$. Instead, we estimate the return by adding reward and the discounted value of the next state, $\gamma\;V(S_{t+1})$:
 
 <figure>
-  <img alt="An equation to estimate the value function in Temporal Difference Learning" src="./TD-value-function.jpg">
+  <img alt="An equation to estimate the value function in Temporal Difference Learning" src="./images/TD-value-function.jpg">
   <figcaption>How the value function updated in TD Learning | <b>Source: </b><a href="https://huggingface.co/learn/deep-rl-course/unit2/mc-vs-td">huggingface.co</a></figcaption>
 </figure>
 
@@ -346,7 +340,7 @@ $$
 ### Dynamic Programming, Monte Carlo, and TD Learning Backups
 
 <figure>
-  <img alt="Comparison of the backup diagrams of Monte-Carlo, Temporal-Difference learning, and Dynamic Programming for state value functions." src="./TD_MC_DP_backups.png">
+  <img alt="Comparison of the backup diagrams of Monte-Carlo, Temporal-Difference learning, and Dynamic Programming for state value functions." src="./images/TD_MC_DP_backups.png">
   <figcaption>Comparison of the backup diagrams of Monte-Carlo, Temporal-Difference learning, and Dynamic Programming for state value functions. | <b>Source: </b> David Silver's RL course <a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/MC-TD.pdf">lecture 4</a>: "Model-Free Prediction"</figcaption>
 </figure>
 
@@ -372,9 +366,9 @@ As usual, our agent needs to learn the optimal policy, the best action to take i
 
 <figure>
   <div style="background: white;">
-    <img alt="Q-function" src="./Q-function.jpg">
+    <img alt="Q-function" src="./images/Q-function.jpg">
     <img alt="Image shows how Q-values stored in the Q-table" 
-    src="./q-values.jpg">
+    src="./images/q-values.jpg">
   </div>
   <figcaption> Storing Q-values in Q-table | Source: <a href="https://huggingface.co/learn/deep-rl-course/unit2/q-learning">huggingface.co</a></figcaption>
 </figure>
@@ -386,7 +380,7 @@ To understand how this "change" happen, put yourself in the agent’s shoes.
 1- You have to interact with the world by taking action, observing the result, reward, and next situation, state, then updating the Q-table using the Bellman equation:
 
 <figure>
-  <img alt="Calculating the Q-value using Bellman Equation and TD Learning" src="./Q-learning-equation.jpg">
+  <img alt="Calculating the Q-value using Bellman Equation and TD Learning" src="./images/Q-learning-equation.jpg">
   <figcaption>Estimate the Q-value using Bellman Equation and TD Learning | Source: <a href="https://huggingface.co/learn/deep-rl-course/unit2/q-learning">huggingface.co</a></figcaption>
 </figure>
 
@@ -405,7 +399,7 @@ Here’s a refined breakdown:
 - **Temporal Limitation**: A single snapshot of the environment isn’t enough for the agent to make informed decisions. Deep Q-learning addresses this by considering multiple future states, allowing the agent to evaluate actions based on both immediate and future rewards.
     
     <figure>
-      <img alt="The problem of temporal difference where one frame or state was not enough to determine the direction of the ball. But when we used three frames, we can see easily that the ball was going form left to the right." src="./temporal-limitation.png">
+      <img alt="The problem of temporal difference where one frame or state was not enough to determine the direction of the ball. But when we used three frames, we can see easily that the ball was going form left to the right." src="./images/temporal-limitation.png">
       <figcaption>The problem of temporal difference where one frame or state was not enough to determine the direction of the ball. So we used three frames instead. | Designed by Mohamed Yosef (the author)</figcaption>
     </figure>
     
@@ -438,7 +432,7 @@ Perceptual aliasing happens **when two different states appear perceptually sim
 If you are training a self-driving car and it reaches an intersection. The traffic light may look exactly the same (green light) in multiple environments. However, in a given scenario **with the same green light visual**, there may be ongoing cross traffic that requires your car to continue waiting rather than drive into the intersection.
 
 <figure>
-  <img alt="There are two groups of cats each group in a different position and required different actions to reach the cheese." src="./alised-states.png">
+  <img alt="There are two groups of cats each group in a different position and required different actions to reach the cheese." src="./images/alised-states.png">
   <figcaption>Cats represents perceptual aliasing; there are two groups of cats each group in a different positions and required different actions to reach the cheese. | Source: <a herf="https://huggingface.co/learn/deep-rl-course/unit4/advantages-disadvantages">huggingface.co</a></figcaption>
 </figure>
 
@@ -466,7 +460,7 @@ The goal of policy gradient methods — *like any RL technique* — is to **f
 To measure **policy performance**, you first need to define an objective function that gives the expected return.
 
 <figure>
-  <img alt="Objective Function" src="./objective-function.png">
+  <img alt="Objective Function" src="./images/objective-function.png">
   <figcaption>Objective Function. | source: <a href="https://huggingface.co/learn/deep-rl-course/unit4/policy-gradient">huggingface.co</a></figcaption>
 </figure>
 
@@ -495,7 +489,7 @@ A commonly used variation of REINFORCE is to subtract a baseline value from the 
 Combines two key components; **Actor** which aims to choose actions that will lead to high rewards in the long run, and **Critic** helps the actor learn better by providing feedback on the chosen actions.
 
 <figure>
-  <img alt="In the image there is a person playing a game represents the actor and another person saying 'this is a really bad move' represents the critic" src="./a2c.jpg">
+  <img alt="In the image there is a person playing a game represents the actor and another person saying 'this is a really bad move' represents the critic" src="./images/a2c.jpg">
   <figcaption>In the image there is a person playing a game represents the actor and another person saying 'this is a really bad move' represents the critic | source: <a href="https://huggingface.co/learn/deep-rl-course/unit6/advantage-actor-critic">huggingface.co</a></figcaption>
 </figure>
 

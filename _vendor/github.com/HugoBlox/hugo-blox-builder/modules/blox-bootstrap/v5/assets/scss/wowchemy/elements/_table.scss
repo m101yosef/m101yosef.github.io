@@ -4,11 +4,12 @@
 
 /* Based on Bootstrap's `table-responsive` style. */
 table {
-  //display: block;
+  display: block;
   //width: 100%;
-  overflow-x: scroll;
+  //overflow-x: scroll;
   margin-bottom: 1rem;
-  font-size: 0.8rem;
+  margin: 0;
+  font-size: 0.6rem;
   border: none;
 
   // Override `article-style`'s `break-word` wrapping to make wide tables scrollable.
@@ -30,8 +31,6 @@ tr:hover {
 }
 
 th {
-  background-color: #272727;
-  color: #f1f4f8;
   border: none;
 }
 

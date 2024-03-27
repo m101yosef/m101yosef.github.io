@@ -16,14 +16,14 @@ publication_types: ["report"]
 publication: "MohamedYosef101"
 publication_short: "MY101"
 
-featured: true
+featured: true 
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
   caption: 'Designed by Mohamed Yosef'
   focal_point: ""
-  preview_only: false
+  preview_only: true
 
 # introduction
 abstract: The energy system has transformed dramatically since the Industrial Revolution. We found that the fastest growing energy source is Solar Energy. This rapid growth is driven by a combination of falling costs, environmental awareness, supportive government policies, and ongoing technological progress. While the slowest  energy source is Tradional biomass becasue they have relatively low energy efficiency compared to modern renewable sources like solar panels or wind turbines.
