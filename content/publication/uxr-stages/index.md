@@ -6,7 +6,7 @@ date: "2023-06-20"
 doi: ""
 publishDate: "2023-06-20"
 share: false
-featured: true
+featured: false
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.

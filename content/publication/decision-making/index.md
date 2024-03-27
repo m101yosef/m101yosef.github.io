@@ -6,7 +6,7 @@ date: "2023-04-20"
 doi: ""
 publishDate: "2023-04-20"
 share: false
-featured: true
+featured: false
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
