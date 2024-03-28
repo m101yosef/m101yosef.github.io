@@ -79,11 +79,9 @@ highlight_name: true
 
 <br>
 
-My name is Mohamed Yosef, a data scientist and researcher from Egypt. I started out in user experience design, which means I worked on making apps and websites easy and enjoyable to use. After that, I got into **data science**, where I now focus on **deep reinforcement learning** (deep RL) and **time series analysis**.
+My name is Mohamed Yosef, a data scientist and researcher from Egypt. I started out in user experience design, which means I worked on making apps and websites easy and enjoyable to use. After that, I got into **data science**, where I now focus on **deep reinforcement learning** (deep RL).
 
-**Deep RL** is a type of machine learning that helps machines make decisions by trying different actions and learning from the results. **Time series analysis** is when you look at data that’s collected over time to find trends or patterns. I also study **multi-agent learning**, which is about teaching multiple AI agents to work together and solve problems.
-
-At Mansoura University, I lead a project called **AQSA** where we help small businesses by using time-series and RL techniques to analyze and forecaste their sales data. This helps them figure out the best ways to sell their products.
+**Deep RL** is a type of machine learning that helps machines make decisions by trying different actions and learning from the results. I also study **multi-agent learning**, which is about teaching multiple AI agents to work together and solve problems. At Mansoura University, I lead a project called **AQSA** where we help small businesses by using time-series and RL techniques to analyze and forecaste their sales data.
 
 My main aim is to make AI agents helpful partners for people in their work and daily life. I believe that by combining my design skills with my knowledge of data, I can make AI agents that are not only smart but also easy and pleasant to use.
 
