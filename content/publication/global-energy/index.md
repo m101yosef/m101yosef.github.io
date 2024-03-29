@@ -33,8 +33,8 @@ summary: The energy system has transformed dramatically since the Industrial Rev
 
 tags:
 - Energy
-- Renewable Energy
 - Data Analysis
+- Data Science
 
 links:
 - name: "Kaggle"
@@ -49,8 +49,8 @@ url_source: ''
 url_video: ''
 ---
 
-## 1. Renewable Engergy
-Explore the change in Solar, Wind, Hydropower, Biofuels, Tranditional Biomass, and Other Renewables (which may include geothermal, tidal, etc.) over the time.
+## 1. Renewable Energy
+Explore the change in Solar, Wind, Hydropower, Biofuels, Traditional Biomass, and Other Renewables (which may include geothermal, tidal, etc.) over the time.
 
 <figure>
 <img alt="Renewable energy consumption from 1983 to 2022"
@@ -60,7 +60,7 @@ src="./images/renewable-energy-plot.png">
 
 As you can see, traditional biomass is going down not higher like the rest. And this because traditional biomass sources like wood, crop residues, and animal dung have relatively low energy efficiency compared to modern renewable sources like solar panels or wind turbines. Which means: the more we have access to more efficient and cleaner energy technologies, the less we'll rely on traditional biomass.
 
-## 2. Non-Renewable Engergy
+## 2. Non-Renewable Energy
 Exploring the change in Nuclear, Gas, Oil, and Coal.
 
 <figure>
@@ -69,10 +69,10 @@ src="./images/non-renewable-plot.png">
 <figcaption>Non-Renewable energy consumption from 1983 to 2022</figcaption>
 </figure>
 
-You might noticed that everthing is going up but Nuclear energy is relatively stable. This because Nuclear energy is a reliable baseload energy source (it can generate electricity reliably 24/7), but its growth is limited by safety concerns, cost, and nuclear waste.
+You might noticed that everything is going up but Nuclear energy is relatively stable. This because Nuclear energy is a reliable baseload energy source (it can generate electricity reliably 24/7), but its growth is limited by safety concerns, cost, and nuclear waste.
 
 ## Results
-We found that the fastest growing energy source is Solar Energy. This rapid growth is driven by a combination of falling costs, environmental awareness, supportive government policies, and ongoing technological progress. While the slowest  energy source is Tradional biomass becasue they have relatively low energy efficiency compared to modern renewable sources like solar panels or wind turbines.
+We found that the fastest growing energy source is Solar Energy. This rapid growth is driven by a combination of falling costs, environmental awareness, supportive government policies, and ongoing technological progress. While the slowest  energy source is Traditional biomass because they have relatively low energy efficiency compared to modern renewable sources like solar panels or wind turbines.
 
 ## Future steps
 * **Identify the most and least significant energy sources.** You can do this by calculating the percentage contribution of each energy source to the total energy mix in each year.
@@ -82,5 +82,5 @@ We found that the fastest growing energy source is Solar Energy. This rapid grow
 * **Identify factors that are driving changes in the energy mix.** For example, you can look at the impact of government policies, technological advancements, and economic conditions.
 
 
-## Acknoledgment
+## Acknowledgment
 * This data has been collected, aggregated, and documented by Hannah Ritchie, Pablo Rosado, Edouard Mathieu, Max Roser. [Read the full article](https://ourworldindata.org/energy-production-consumption) and [visit the GitHub](https://github.com/owid/energy-data)
