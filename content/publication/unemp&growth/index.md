@@ -29,8 +29,6 @@ summary: TThe goal of the project was to explore the relationship between the gr
 
 tags:
 - Data Analysis
-- Streamlit 
-- Data Visualization
 - Data Science
 
 links:
