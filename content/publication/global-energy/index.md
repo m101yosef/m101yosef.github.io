@@ -26,10 +26,10 @@ image:
   preview_only: true
 
 # introduction
-abstract: The energy system has transformed dramatically since the Industrial Revolution. We found that the fastest growing energy source is Solar Energy. This rapid growth is driven by a combination of falling costs, environmental awareness, supportive government policies, and ongoing technological progress. While the slowest  energy source is Tradional biomass becasue they have relatively low energy efficiency compared to modern renewable sources like solar panels or wind turbines.
+abstract: The energy system has transformed dramatically since the Industrial Revolution. We found that the fastest growing energy source is Solar Energy. This rapid growth is driven by a combination of falling costs, environmental awareness, supportive government policies, and ongoing technological progress. While the slowest  energy source is Traditional biomass because they have relatively low energy efficiency compared to modern renewable sources like solar panels or wind turbines.
 
 # Summary. An optional shortened abstract.
-summary: The energy system has transformed dramatically since the Industrial Revolution. We found that the fastest growing energy source is Solar Energy. While the slowest  energy source is Tradional biomass.
+summary: The energy system has transformed dramatically since the Industrial Revolution. We found that the fastest growing energy source is Solar Energy. While the slowest  energy source is Traditional biomass.
 
 tags:
 - Energy
@@ -50,7 +50,7 @@ url_video: ''
 ---
 
 ## 1. Renewable Energy
-Explore the change in Solar, Wind, Hydropower, Biofuels, Traditional Biomass, and Other Renewables (which may include geothermal, tidal, etc.) over the time.
+Explore the change in Solar, Wind, Hydropower, Biofuels, Traditional Biomass, and Other Renewable sources (which may include geothermal, tidal, etc.) over the time.
 
 <figure>
 <img alt="Renewable energy consumption from 1983 to 2022"
