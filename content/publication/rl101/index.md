@@ -22,10 +22,10 @@ image:
   focal_point: ""
   preview_only: true
 
-abstract: Reinforcement Learning, learning through trial and error, is a rapidly growing field in AI. Unlike supervised learning, reinforcement learning provides you with the ability to learn directly from the world and adapt to new situations which makes it a valuable option for complex, real-world problems. From AlphaGo beating the world champion in Go, to the newest updates on large language models and what they can do, RL algorithms with no doubt have a huge impace in the present and the future of automation and Human-AI interaction. With this collection of RL principles, you'll gain a deeper understand of how RL work and you may gain insights applicable in your own work, leading to innovative solutions.
+abstract: Reinforcement Learning, learning through trial and error, is a rapidly growing field in AI. Unlike supervised learning, reinforcement learning provides you with the ability to learn directly from the world and adapt to new situations which makes it a valuable option for complex, real-world problems. From AlphaGo beating the world champion in Go, to the newest updates on large language models and what they can do, RL algorithms with no doubt have a huge impact in the present and the future of automation and Human-AI interaction. With this collection of RL principles, you'll gain a deeper understand of how RL work and you may gain insights applicable in your own work, leading to innovative solutions.
 
 # Summary. An optional shortened abstract.
-summary: From AlphaGo beating the world champion in Go, to the newest updates on large language models and what they can do, RL algorithms with no doubt have a huge impace in the present and the future of automation and Human-AI interaction. With this collection of RL principles, you'll gain a deeper understand of how RL work and you may gain insights applicable in your own work, leading to innovative solutions.
+summary: From AlphaGo beating the world champion in Go, to the newest updates on large language models and what they can do, RL algorithms with no doubt have a huge impact in the present and the future of automation and Human-AI interaction. With this collection of RL principles, you'll gain a deeper understand of how RL work and you may gain insights applicable in your own work, leading to innovative solutions.
 
 tags:
 - Reinforcement Learning
@@ -44,11 +44,17 @@ url_video: ''
 ---
 
 ## What is Reinforcement Learning?
-A machine learning paradigm where an **agent,** the AI, learns from the **environment** by interacting with it, through trial and error, and receiving **rewards**, negative or positive, as a feedback for performing actions. Using this feedback, the agent can actively adapt to the environment. 
+If you think about how you learn and the nature of learning, you will clearly see that you learn by interacting with your world (or environment). In the same time, you are acutely aware of how your world responds to what you do, and your goal is to get the best results through your actions. The same thing happens with our little RL agent; the **agent** learns from the **world/environment** by interacting with it, through trial and error, and receiving **rewards**, negative or positive, as a feedback for performing actions. The agent is not told which actions to take at first, but the agent use the feedback from the environment to discover which actions yield the most reward. 
+
+Reinforcement learning is different from supervised learning; supervised learning is learning from a training set of labeled examples provided by a knowledgeable external supervisor giving the AI the solution and the right action to take in a specific situation. The goal of supervised learning is to generalize a rule for the AI to deal with other situations that is not in the training set. BUT in real world interactive problems, the answer often emerges through exploration and trial-and-error. There might not be a definitive "correct" answer for every situation the agent encounters. Even if there is a right answer for some situations, it will not work well as a general solution.
+
+Reinforcement learning is also different from unsupervised learning; unsupervised learning is finding structure hidden in collection of unlabeled data. Understanding the hidden structure can be useful in reinforcement leaning, but unsupervised leaning itself does not maximize the reward signal.
+
+So, reinforcement learning is the third machine learning paradigm alongside with supervised learning and unsupervised learning with a goal to maximize the total rewards that agent gets from the environment.
 
 
 ## The Reinforcement Learning Process
-As you may guess, the RL process begins with the agent observing a situation or a state, $S_t$, from the environment (or the world) to get key information about the situation, the state; the agent is in.
+As you may guess, the RL process begins with the agent observing a situation or a state, $S_t$, from the environment (or the world) to get key information about the state.
 1. Based on the state, $S_t$, the agent selects an action, $A_t$, according to its current mindset, policy $\pi$.
 2. The agent executes the action in the environment. This changes the situation, the state of the environment.
 3. The environment provides a reward, $R_t$  (a numerical value), to the agent based on the consequences of its action. 
@@ -64,8 +70,7 @@ As you may guess, the RL process begins with the agent observing a situation or 
 
 
 ## Reinforcement Learning Terminology
-The information the agent gets from the environment. In case of video game, each frame on the screen is like a state, *s,* giving the agent information about the world (environment). In other cases, such as with a trading agent, the state can represent the value of a specific stock, among other possibilities.
-An observation *o* is a partial description of a state. Sometimes, the agent has full visibility of the environment (**fully observed**), while other times, it only sees a partial picture (**partially observed**).
+A **state** is a representation of the current situation the agent is in within its environment. Each state gives the agent information about the world (environment). An observation *o* is a partial description of a state. Sometimes, the agent has full visibility of the environment (**fully observed**), while other times, it only sees a partial picture (**partially observed**).
 
 ### Making choices: Action Spaces
 **Action** is the move, or decision made by the agent in a given state of the environment. And the **action space** is the set of all valid moves/actions in a given environment. Think of the action space as the agent’s toolbox. In a game, it might have a set number of moves (**discrete action space**), like jumping or attacking. In continuous environments, the agent might control a robot’s movement with precise values (**continuous action spaces**).
@@ -224,7 +229,7 @@ $$
 
 <br>
 
-> I took these equations and some more from [this amaizing article](https://lilianweng.github.io/posts/2018-02-19-rl-overview/) by Lilian Weng.
+> I took these equations and some more from [this amazing article](https://lilianweng.github.io/posts/2018-02-19-rl-overview/) by Lilian Weng.
 
 <br>
 
@@ -520,9 +525,9 @@ Here, $\alpha_\theta$ and $\alpha_w$ represent the learning rates for the policy
 * Translation also an important thing for me, so if you can help me to turn this article into Arabic or French, it will be great.
 
 ## References
-- Sutton & Barto. (2018, 2020). [Reinforcement learning: An introduction](https://mitpress.mit.edu/9780262352703/reinforcement-learning/). MIT Press.
-- Thomas Simonini. (2018). [Deep Reinforcement Learning course](https://huggingface.co/learn/deep-rl-course/unit0/introduction). Hugging Face.
-- Lilian Weng. (Feb 2018). [A (Long) Peek into Reinforcement Learning](https://lilianweng.github.io/posts/2018-02-19-rl-overview/). Lil’Log.
-- Duane Rich. (2022). [Reinforcement learning by the book](https://youtube.com/playlist?list=PLzvYlJMoZ02Dxtwe-MmH4nOB5jYlMGBjr&si=M0Si454X5bz9cEbx). YouTube.
-- Emma Brunskill. (2019). [CS234: Reinforcement Learning](https://youtube.com/playlist?list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u&si=iDTVkCL63ER_LWvm). Stanford Online.
-- Jem Corcoran. (2023). [Markov Processes](https://youtube.com/playlist?list=PLLyj1Zd4UWrP3rME2XvFvE4Q5vI3H_7_Z&si=HJ_Jg1z5q20oRf45). A Probability Space.
+[1] Sutton & Barto. (2018, 2020). [Reinforcement learning: An introduction](https://mitpress.mit.edu/9780262352703/reinforcement-learning/). MIT Press.
+[2] Thomas Simonini. (2018). [Deep Reinforcement Learning course](https://huggingface.co/learn/deep-rl-course/unit0/introduction). Hugging Face.
+[3] Lilian Weng. (Feb 2018). [A (Long) Peek into Reinforcement Learning](https://lilianweng.github.io/posts/2018-02-19-rl-overview/). Lil’Log.
+[4] Duane Rich. (2022). [Reinforcement learning by the book](https://youtube.com/playlist?list=PLzvYlJMoZ02Dxtwe-MmH4nOB5jYlMGBjr&si=M0Si454X5bz9cEbx). YouTube.
+[5] Emma Brunskill. (2019). [CS234: Reinforcement Learning](https://youtube.com/playlist?list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u&si=iDTVkCL63ER_LWvm). Stanford Online.
+[6] Jem Corcoran. (2023). [Markov Processes](https://youtube.com/playlist?list=PLLyj1Zd4UWrP3rME2XvFvE4Q5vI3H_7_Z&si=HJ_Jg1z5q20oRf45). A Probability Space.
