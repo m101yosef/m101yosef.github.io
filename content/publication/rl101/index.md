@@ -437,8 +437,8 @@ Perceptual aliasing happens **when two different states appear perceptually sim
 If you are training a self-driving car and it reaches an intersection. The traffic light may look exactly the same (green light) in multiple environments. However, in a given scenario **with the same green light visual**, there may be ongoing cross traffic that requires your car to continue waiting rather than drive into the intersection.
 
 <figure>
-  <img alt="There are two groups of cats each group in a different position and required different actions to reach the cheese." src="./images/alised-states.png">
-  <figcaption>Cats represents perceptual aliasing; there are two groups of cats each group in a different positions and required different actions to reach the cheese. | Source: <a herf="https://huggingface.co/learn/deep-rl-course/unit4/advantages-disadvantages">huggingface.co</a></figcaption>
+<img alt="There are two groups of cats each group in a different position and required different actions to reach the cheese." src="./images/aliased-states.png">
+<figcaption>Cats represents perceptual aliasing; there are two groups of cats each group in a different positions and required different actions to reach the cheese. | Source: <a href="https://huggingface.co/learn/deep-rl-course/unit4/advantages-disadvantages">huggingface.co</a></figcaption>
 </figure>
 
 > Policy gradient methods give distinct probabilities of proceeding vs waiting to the exact same traffic light input depending on the surrounding context.
