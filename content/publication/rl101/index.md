@@ -31,13 +31,13 @@ tags:
 - Reinforcement Learning
 
 links:
-- name: "Article Series"
+- name: "Medium"
   url: "https://medium.com/@mohamedyosef101/list/reinforcement-learning-c4463271c5e3"
-url_pdf: ''
+url_pdf: 'https://mohamedyosef101.github.io/publication/rl101/reinforcement-learning-MY101.pdf'
 url_code: 'https://github.com/mohamedyosef101/101_learning_area/tree/area/Reinforcement%20Learning'
 url_dataset: ''
 url_poster: ''
-url_project: ''
+url_project: 'https://huggingface.co/MohamedYosef101/PPO-LunarLander-v2'
 url_slides: ''
 url_source: ''
 url_video: ''
