@@ -15,25 +15,24 @@ superuser: true
 # Organizations/Affiliations to show in About widget
 organizations:
   - name: Data Scientist, RL Researcher
-    url: https://medium.com/@mohamedyosef101
+    url: https://orcid.org/0009-0003-3052-8404
   - name: Mansoura University
 
 # Short bio (displayed in user profile at end of posts)
 bio: Data scientist and Reinforcement Learning Researcher.
 
 # Interests to show in About widget
-# interests:
-#    - Reinforcement Learning
-#    - Human-AI Interaction
-#    - Multi-agent Learning
-#    - Machine Learning
+interests:
+   - Reinforcement Learning
+   - Human-AI Interaction
+   - Multi-agent Learning
 
 # Education to show in About widget
-# education:
-#   courses:
-#     - course: Computer Science
-#       institution: Mansoura University
-#       year: 2024
+education:
+  courses:
+    - course: Statistics & Computer Science
+      institution: Faculty of Science, Mansoura University
+      year: 
 
 
 # Social/Academic Networking
@@ -54,18 +53,19 @@ social:
     label: GitHub
     display:
       header: false
-  # - icon: twitter
+
+  - icon: twitter
+    icon_pack: fab
+    link: 'https://www.twitter.com/mohamedyosef101'
+    label: Twitter
+    display: 
+      header: true
+  # - icon: medium
   #   icon_pack: fab
-  #   link: https://www.twitter.com/mohamedyosef101
-  #   label: Twitter
+  #   link: https://medium.com/@mohamedyosef101
+  #   label: Medium
   #   display: 
   #     header: false
-  - icon: medium
-    icon_pack: fab
-    link: https://medium.com/@mohamedyosef101
-    label: Medium
-    display: 
-      header: false
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/mohamedyosef101
