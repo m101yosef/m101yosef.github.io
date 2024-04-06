@@ -22,10 +22,10 @@ image:
   focal_point: ""
   preview_only: false
 
-abstract: Exploring machine learning paradigms and the core idea behind it which is generalization. Also, understand neural network and how deep learning is different from traditional machine learning as well as how to use activations functions and optimizers. At the end, I added a small overview of model evaluation followed by some of the common types of neural networks nowadays like CNNs, RNNs, and Transformers.
+abstract: Exploring machine learning paradigms and the core idea behind it which is generalization. Also, neural networks and how deep learning is different from traditional machine learning as well as how to use activations functions and optimizers. At the end, I added a small overview of model evaluation followed by some of the common types of neural networks architectures nowadays like CNNs, RNNs, and Transformers.
 
 # Summary. An optional shortened abstract.
-summary: Exploring machine learning paradigms and the core idea behind it which is generalization. Also, understand neural network and how deep learning is different from traditional machine learning as well as how to use activations functions and optimizers. At the end, I added a small overview of model evaluation followed by some of the common types of neural networks nowadays like CNNs, RNNs, and Transformers.
+summary: Exploring machine learning paradigms and the core idea behind it which is generalization. Also, neural networks and how deep learning is different from traditional machine learning as well as how to use activations functions and optimizers. At the end, I added a small overview of model evaluation followed by some of the common types of neural networks architectures nowadays like CNNs, RNNs, and Transformers.
 
 tags:
 - Data Science
