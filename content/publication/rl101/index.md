@@ -521,9 +521,8 @@ Here, $\alpha_\theta$ and $\alpha_w$ represent the learning rates for the policy
 <br>
 
 
-## Future Steps
-* I still have a lot of work to do in this article to make it more informative and easy to understand. On the same time, if you found any error, or you want to give me some suggestions, feel free to email me: mohamedyosef101@outlook.com.
-* Translation also an important thing for me, so if you can help me to turn this article into Arabic or French, it will be great.
+## Footage
+* I'll try to update this article from time to time to make it more informative and easy to understand. At the same time, if you found any error, or you want to give me some suggestions, feel free to email me: mohamedyosef101@outlook.com.
 
 ## References
 [1] Sutton & Barto. (2018, 2020). [Reinforcement learning: An introduction](https://mitpress.mit.edu/9780262352703/reinforcement-learning/). MIT Press.
