@@ -31,6 +31,7 @@ tags:
 - Data Science
 - Machine Learning
 - Deep Learning
+- Reinforcement Learning
 - Convolutional Neural Network
 - Recurrent Neural Network
 - Transformers
