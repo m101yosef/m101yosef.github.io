@@ -43,6 +43,13 @@ url_source: ''
 url_video: ''
 ---
 
+{{< toc >}}
+
+
+<hr>
+
+<br>
+
 ## What is Reinforcement Learning?
 
 <p>If you think about how you learn and the nature of learning, you will clearly see that you learn by interacting with your world (or environment). In the same time, you are acutely aware of how your world responds to what you do, and your goal is to get the best results through your actions. The same thing happens with our little RL agent; the <b>agent</b> learns from the <b>world/environment</b> by interacting with it, through trial and error, and receiving <b>rewards</b>, negative or positive, as a feedback for performing actions. The agent is not told which actions to take at first, but the agent use the feedback from the environment to discover which actions yield the most reward.</p>

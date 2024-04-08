@@ -22,7 +22,7 @@ image:
   focal_point: ""
   preview_only: false
 
-abstract: Exploring machine learning paradigms and the core idea behind it which is generalization. Also, neural networks and how deep learning is different from traditional machine learning as well as how to use activations functions and optimizers. At the end, I added a small overview of model evaluation followed by some of the common types of neural networks architectures nowadays like CNNs, RNNs, and Transformers.
+abstract: Exploring machine learning paradigms and the core idea behind it which is generalization. Also, I talked about neural networks and how deep learning is different from traditional machine learning as well as how to use activations functions and optimizers. At the end, I added a small overview of model evaluation followed by some of the common types of neural networks architectures nowadays like CNNs, RNNs, and Transformers.
 
 # Summary. An optional shortened abstract.
 summary: Exploring machine learning paradigms and the core idea behind it which is generalization. Also, neural networks and how deep learning is different from traditional machine learning as well as how to use activations functions and optimizers. At the end, I added a small overview of model evaluation followed by some of the common types of neural networks architectures nowadays like CNNs, RNNs, and Transformers.
@@ -37,21 +37,28 @@ tags:
 - Transformers
 
 links:
-- name: "Code - TensorFlow"
+- name: "Neural Network, TensorFlow"
   url: "https://www.kaggle.com/code/mohamedyosef101/build-your-first-neural-network"
-- name: "Code - NumPy"
+- name: "ANN, NumPy"
   url: 'https://www.kaggle.com/code/mohamedyosef101/how-to-build-a-neural-network-with-numpy'
-- name: "Code - PyTorch"
+- name: "ANN & CNN, PyTorch"
   url: "https://www.kaggle.com/code/mohamedyosef101/get-into-deep-learning-with-pytorch-ann-cnn"
 url_pdf: ''
-url_code: ''
-url_dataset: 'https://www.kaggle.com/competitions/digit-recognizer/data'
+url_code: 'https://github.com/mohamedyosef101/101_learning_area/tree/area/PyTorch'
+url_dataset: ''
 url_poster: ''
 url_project: ''
 url_slides: ''
 url_source: ''
 url_video: ''
 ---
+
+{{< toc >}}
+
+
+<hr>
+
+<br>
 
 Artificial Intelligence (AI) is all about creating smart machines that act like they have a brain. Data Science popped up because we now have tons of data every day, and we want to do cool things with it. Machine Learning is where the big ideas of AI meet real-world data to teach machines new tricks. Deep Learning, a part of Machine Learning, is like giving machines a mini-brain made up of layers that can learn from experience, much like our own brain cells do.
 
