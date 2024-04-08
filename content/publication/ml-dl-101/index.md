@@ -37,11 +37,11 @@ tags:
 - Transformers
 
 links:
-- name: "Neural Network, TensorFlow"
+- name: "TensorFlow code"
   url: "https://www.kaggle.com/code/mohamedyosef101/build-your-first-neural-network"
-- name: "ANN, NumPy"
-  url: 'https://www.kaggle.com/code/mohamedyosef101/how-to-build-a-neural-network-with-numpy'
-- name: "ANN & CNN, PyTorch"
+- name: "NumPy code"
+  url: 'https://medium.com/@mohamedyosef101/understanding-neural-networks-by-building-one-from-scratch-using-numpy-61500b9ca882'
+- name: "PyTorch code"
   url: "https://www.kaggle.com/code/mohamedyosef101/get-into-deep-learning-with-pytorch-ann-cnn"
 url_pdf: ''
 url_code: 'https://github.com/mohamedyosef101/101_learning_area/tree/area/PyTorch'
@@ -241,19 +241,31 @@ Recently, **transformers** have emerged as an alternative to RNNs (Vaswani et al
 - Grant Sanderson. (18 Nov 2022). [But what is a convolution?](https://youtu.be/KuXjwB4LzSA?si=miIHN0ViLuhtdrWi). YouTube.
 - Daniel Bourke. (2022). [Zero to Mastery Learn PyTorch for Deep Learning](https://www.learnpytorch.io/). Blog series.
 
-## Footage
-* I'll try to update this article from time to time to make it more informative and easy to understand. At the same time, if you found any error, or you want to give me some suggestions, feel free to email me: mohamedyosef101@outlook.com.
 
-## References
-- Natasha Jaques. (2019). Social and Affective Learning. MIT Media Lab. https://www.media.mit.edu/publications/social-and-affective-machine-learning/
-- Goodfellow, I., Courville, A., and Bengio, Y. (2016). Deep learning. MIT Press. https://mitpress.mit.edu/9780262035613/deep-learning/
-- Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2):179–188.
-- Murphy, K. (2012). Mach. learning: a probabilistic perspective. MIT press. https://mitpress.mit.edu/9780262018029/machine-learning/
-- Bishop, C. M. (2006). Pattern recognition and machine learning. springer. https://link.springer.com/book/10.1007/978-0-387-45528-0
-- MacQueen, J. et al. (1967). Some methods for classification and analysis of multivariate observations. In Proceedings of the fifth Berkeley symposium on mathematical statistics and probability, volume 1, pages 281–297. Oakland, CA, USA.
-- Bing Xu, Naiyan Wang, Tianqi Chen, and Mu Li. (2015). Empirical Evaluation of Rectified Activations in Convolutional Network. https://doi.org/10.48550/arXiv.1505.00853
-- Yu, N. (2007). Gradient methods for minimizing composite objective function. CORE Discussion Papers. https://ideas.repec.org/p/cor/louvco/2007076.html
-- Kingma, D. P. and Ba, J. (2014). Adam: A method for stochastic optimization. https://arxiv.org/abs/1412.6980
-- Yann LeCun, Corinna Cortes, and Christopher J. C. Burges. The MNIST database of handwritten digits.
-- Haohan Wang and Bhiksha Raj. (2017). On the Origin of Deep Learning. https://doi.org/10.48550/arXiv.1702.07800
-- LeCun, Yann, Yoshua Bengio, and Geoffrey Hinton. “Deep learning.” Nature 521.7553 (2015): 436-444. http://pages.cs.wisc.edu/~dyer/cs540/handouts/deep-learning-nature2015.pdf
+## Final words
+I'll try to update this article from time to time to make it more informative and easy to understand. At the same time, if you found any error, or you want to give me some suggestions, feel free to email me: mohamedyosef101@outlook.com.
+
+<div align="center">
+<p style="font-size: 32px; padding-top: 12px;">تم بحمد الله</p>
+</div>
+
+
+<hr>
+
+cite as 
+
+```
+Yosef, M. (2023). The foundations of machine learning and deep learning. MY101. https://mohamedyosef101.github.io/publication/ml-dl-101/
+```
+
+<hr>
+
+## Some References
+[1] Natasha Jaques. (2019). [Social and Affective Learning. MIT Media Lab](https://www.media.mit.edu/publications/social-and-affective-machine-learning/). <br>
+[2] Goodfellow, I., Courville, A., and Bengio, Y. (2016). [Deep learning](https://mitpress.mit.edu/9780262035613/deep-learning/). MIT Press. <br>
+[3] Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2):179–188. <br>
+[4] MacQueen, J. et al. (1967). Some methods for classification and analysis of multivariate observations. In Proceedings of the fifth Berkeley symposium on mathematical statistics and probability, volume 1, pages 281–297. Oakland, CA, USA. <br>
+[5] Yu, N. (2007). [Gradient methods for minimizing composite objective function](https://ideas.repec.org/p/cor/louvco/2007076.html). CORE Discussion Papers. <br>
+[6] Yann LeCun, Corinna Cortes, and Christopher J. C. Burges. The MNIST database of handwritten digits.<br>
+[7] Haohan Wang and Bhiksha Raj. (2017). [On the Origin of Deep Learning](https://doi.org/10.48550/arXiv.1702.07800). <br>
+[8] LeCun, Yann, Yoshua Bengio, and Geoffrey Hinton. “[Deep learning](http://pages.cs.wisc.edu/~dyer/cs540/handouts/deep-learning-nature2015.pdf).” Nature 521.7553 (2015): 436-444. 
