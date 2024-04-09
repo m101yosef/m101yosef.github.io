@@ -28,7 +28,6 @@ abstract: Exploring machine learning paradigms and the core idea behind it which
 summary: Exploring machine learning paradigms and the core idea behind it which is generalization. Also, neural networks and how deep learning is different from traditional machine learning as well as how to use activations functions and optimizers. At the end, I added a small overview of model evaluation followed by some of the common types of neural networks architectures nowadays like CNNs, RNNs, and Transformers.
 
 tags:
-- Data Science
 - Machine Learning
 - Deep Learning
 - Reinforcement Learning
@@ -37,11 +36,11 @@ tags:
 - Transformers
 
 links:
-- name: "TensorFlow code"
+- name: "Kaggle"
   url: "https://www.kaggle.com/code/mohamedyosef101/build-your-first-neural-network"
-- name: "NumPy code"
+- name: "Medium"
   url: 'https://medium.com/@mohamedyosef101/understanding-neural-networks-by-building-one-from-scratch-using-numpy-61500b9ca882'
-- name: "PyTorch code"
+- name: "ANN & CNN"
   url: "https://www.kaggle.com/code/mohamedyosef101/get-into-deep-learning-with-pytorch-ann-cnn"
 url_pdf: ''
 url_code: 'https://github.com/mohamedyosef101/101_learning_area/tree/area/PyTorch'
@@ -122,18 +121,11 @@ Another idea that is related to overfitting and underfitting is **bias-variance 
 
 The **bias-variance tradeoff** is an important idea that relates to overfitting and underfitting. **Bias error** is a result of incorrect assumptions made by the learning algorithm; for example, assuming the true decision boundary is linear when it is actually curved. High bias can lead to underfitting and therefore high training or approximation error. **Variance** ($Var(\hat w)$) describes how much the solution found by the learning algorithm is sensitive to small fluctuations in the training data. If the model has a high variance, we expect that the solution may change significantly if we re-sample a new dataset. High variance can lead to overfitting, where the model learns the quirks and noise in the training data too well, but fails to generalize well to unseen data. There are ways to deal with overfitting; like regularization or maybe increasing the training size in some cases, but I’ll introduce these techniques in section [2.2](#22-loss).
 
-### 1.3 Useful content for studying
-
-- Kylie Ying. (2022). [*Machine Learning for Everyone*](https://youtu.be/i_LwzRVP7bg?si=KeY5CgAfQhAdtOGV). freecodecamp. YouTube.
-- [*Statistics and Probability*](https://www.khanacademy.org/math/statistics-probability). (2008). Khan Academy.
-- Grant Sanderson. 2016. [*The Essence of Linear Algebra*](https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&si=ieGLDzRU2Ln9L0RO). 3Blue1Brown. YouTube.
-- Khan Academy. 2016. [*Multivariable Calculus*](https://www.khanacademy.org/math/multivariable-calculus).
-
 <br>
 
 ## 2 Deep learning
 
-Deep learning drives many applications and services, including digital assistants, voice-enabled TV remotes, credit card fraud detection, self-driving cars, and generative AI. Unlike traditional machine learning, deep learning can handle unstructured data, such as text and images, without extensive preprocessing, also deep learning algorithms automate feature extraction, which reduces dependency on human expertise. As shown in Figure 2.1, the core of deep learning is a neural network that is made up of layers (input, hidden, and output) that contain nodes. Each node computes its output based on a set of weights (or parameters) applied to the output of the previous layer. For a visual explanation, watch [this series](https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&si=ieGLDzRU2Ln9L0RO) by Grant Sanderson.
+Deep learning drives many applications and services, including digital assistants, voice-enabled TV remotes, credit card fraud detection, self-driving cars, and generative AI. Unlike traditional machine learning, deep learning can handle unstructured data, such as text and images, without extensive preprocessing, also deep learning algorithms automate feature extraction, which reduces dependency on human expertise. As shown in Figure 2.1, the core of deep learning is a neural network that is made up of layers (input, hidden, and output) that contain nodes. Each node computes its output based on a set of weights (or parameters) applied to the output of the previous layer.
 
 <figure>
   <img src="./images/deep-nn.png">
@@ -233,17 +225,13 @@ Another type of architecture is **recurrent neural networks** (RNNs) which model
 
 Recently, **transformers** have emerged as an alternative to RNNs (Vaswani et al., 2017). These models make use of an **attention** mechanism to summarize inputs of varying lengths based on dynamically changing, learned attention weights. Transformers have been shown to be highly effective at modeling sequences of data, and consequently have led to impressive results in music generation (<a href="https://doi.org/10.48550/arXiv.1809.04281">Huang et al., 2018b) and text generation (<a href="https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">Radford et al., 2019</a>).
 
-### 2.6 Useful content for studying
 
-- Grant Sanderson. (2017). [Neural Networks, Deep Learning](https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&si=ieGLDzRU2Ln9L0RO). YouTube.
-- Misra Turp. (2023). [50 Days of Deep Learning](https://youtube.com/playlist?list=PLM8lYG2MzHmQn55ii0duXdO9QSoDF5myF&si=s1pe9cRtFjKCPqR5). YouTube.
-- Kylie Ying. (2023). [Convolutional neural network course for beginners](https://youtu.be/nVhau51w6dM?si=zep1R2pclVBmycg3). freecodecamp. YouTube.
-- Grant Sanderson. (18 Nov 2022). [But what is a convolution?](https://youtu.be/KuXjwB4LzSA?si=miIHN0ViLuhtdrWi). YouTube.
-- Daniel Bourke. (2022). [Zero to Mastery Learn PyTorch for Deep Learning](https://www.learnpytorch.io/). Blog series.
-
-
-## Final words
-I'll try to update this article from time to time to make it more informative and easy to understand. At the same time, if you found any error, or you want to give me some suggestions, feel free to email me: mohamedyosef101@outlook.com.
+## Final words 
+In the article, I tried to get you through the foundation of machine learning and deep learning, but there are many concepts to learn. For this reason, you may like to take a look at the following resources: 
+(<a href="https://youtu.be/i_LwzRVP7bg?si=KeY5CgAfQhAdtOGV">Ying, 2022) for traditional ML algorithms, and
+(<a href="https://d2l.ai/d2l-en.pdf">Zhang et al., 2021</a>);
+(<a href="https://youtube.com/playlist?list=PLM8lYG2MzHmQn55ii0duXdO9QSoDF5myF&si=s1pe9cRtFjKCPqR5">Turp, 2023</a>); 
+(<a href="https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&si=ieGLDzRU2Ln9L0RO">Sanderson, 2017</a>) for deep learning. Also, I'll try to update this article from time to time to make it more informative and easy to understand. At the same time, if you found any error, or you want to give me some suggestions, feel free to email me: mohamedyosef101@outlook.com.
 
 <div align="center">
 <p style="font-size: 32px; padding-top: 12px;">تم بحمد الله</p>
@@ -263,9 +251,6 @@ Yosef, M. (2023). The foundations of machine learning and deep learning. MY101. 
 ## Some References
 [1] Natasha Jaques. (2019). [Social and Affective Learning. MIT Media Lab](https://www.media.mit.edu/publications/social-and-affective-machine-learning/). <br>
 [2] Goodfellow, I., Courville, A., and Bengio, Y. (2016). [Deep learning](https://mitpress.mit.edu/9780262035613/deep-learning/). MIT Press. <br>
-[3] Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2):179–188. <br>
-[4] MacQueen, J. et al. (1967). Some methods for classification and analysis of multivariate observations. In Proceedings of the fifth Berkeley symposium on mathematical statistics and probability, volume 1, pages 281–297. Oakland, CA, USA. <br>
-[5] Yu, N. (2007). [Gradient methods for minimizing composite objective function](https://ideas.repec.org/p/cor/louvco/2007076.html). CORE Discussion Papers. <br>
-[6] Yann LeCun, Corinna Cortes, and Christopher J. C. Burges. The MNIST database of handwritten digits.<br>
-[7] Haohan Wang and Bhiksha Raj. (2017). [On the Origin of Deep Learning](https://doi.org/10.48550/arXiv.1702.07800). <br>
-[8] LeCun, Yann, Yoshua Bengio, and Geoffrey Hinton. “[Deep learning](http://pages.cs.wisc.edu/~dyer/cs540/handouts/deep-learning-nature2015.pdf).” Nature 521.7553 (2015): 436-444. 
+[3] Yu, N. (2007). [Gradient methods for minimizing composite objective function](https://ideas.repec.org/p/cor/louvco/2007076.html). CORE Discussion Papers. <br>
+[4] Haohan Wang and Bhiksha Raj. (2017). [On the Origin of Deep Learning](https://doi.org/10.48550/arXiv.1702.07800). <br>
+[5] LeCun, Yann, Yoshua Bengio, and Geoffrey Hinton. “[Deep learning](http://pages.cs.wisc.edu/~dyer/cs540/handouts/deep-learning-nature2015.pdf).” Nature 521.7553 (2015): 436-444. 

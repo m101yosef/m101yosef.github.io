@@ -28,7 +28,10 @@ abstract: Reinforcement Learning, learning through trial and error, is a rapidly
 summary: From AlphaGo beating the world champion in Go, to the newest updates on large language models and what they can do, RL algorithms with no doubt have a huge impact in the present and the future of automation and Human-AI interaction. With this collection of RL principles, you'll gain a deeper understand of how RL work and you may gain insights applicable in your own work, leading to innovative solutions.
 
 tags:
-- Reinforcement Learning
+- Reinforcement Learning 
+- Markov
+- Q-Learning
+- Policy Gradients 
 
 links:
 - name: "Medium"
@@ -64,11 +67,11 @@ So, reinforcement learning is the third machine learning paradigm alongside with
 
 ### 1.1 Reinforcement Learning Process
 
-The process of reinforcement learning (as shown in [Figure 1.1](#figure1-1)) starts with the agent observing a **state** $S_t$ which is a representation of the current situation the agent is in within its environment. Each state gives the agent information about the world (environment). Based on the state, the agent selects an **action** $A_t$ which is the move, or decision made by the agent in a given state of the environment -- the agent decides what to do using **policy** $\pi$, the agent’s brain, decides what actions to take based on the observed state-- then, the environment provides **rewards** to guide the agent after taking the action. The idea of rewards came from points in games; i.e., in football, the team gets 3 points for winning and 1 point for a draw and 0 points for losing.
+The process of reinforcement learning (as shown in [Figure 1](#figure1)) starts with the agent observing a **state** $s_t$ which is a representation of the current situation the agent is in within its environment. Each state gives the agent information about the world (environment). Based on the state, the agent selects an **action** $a_t$ which is the move, or decision made by the agent in a given state of the environment -- the agent decides what to do using **policy** $\pi$, the agent’s brain, decides what actions to take based on the observed state-- then, the environment provides **rewards** $r_t$ to guide the agent after taking the action. The idea of rewards came from points in games; i.e., in football, the team gets 3 points for winning and 1 point for a draw and 0 points for losing.
 
-<figure id="figure1-1">
+<figure id="figure1">
   <img alt="RL Process" src="./images/rl-process.png"">
-  <figcaption>Figure 1.1: RL process starts with the agent observing the current state in the environment, choosing an action, get a reward from the environment, then adjust the policy, and repeat (<a href="https://mitpress.mit.edu/9780262352703/reinforcement-learning/">Sutton & Barto, 2018</a>)</figcaption>
+  <figcaption>Figure 1: Reinforcement Learning process starts with the agent observing the current state in the environment, choosing an action, get a reward from the environment, then adjust the policy, and repeat. Based on a similar figure in (<a href="https://mitpress.mit.edu/9780262352703/reinforcement-learning/">Sutton & Barto, 2018</a>)</figcaption>
 </figure>
 
 <p style="color: crimson; font-weight: bold;">🎯 Note: the agent’s goal is to maximize its expected return (cumulative reward).</p>
@@ -76,28 +79,28 @@ The process of reinforcement learning (as shown in [Figure 1.1](#figure1-1)) sta
 So, instead of individual rewards, we often consider the **return,** which sums up all future rewards. Since we collect rewards over time, we need a way to determines how much future rewards matter in other words a **discount rate**, gamma, $\gamma$. A higher gamma prioritizes long-term rewards (to take 100 dollar after a year), while a lower gamma focuses on immediate rewards (to take 20 dollar now). To it all together, we have a trajectory $\tau$ which is a sequence of states, actions, and rewards the agent experiences in the world. 
 
 $$
-\tau = (S_0, A_0, S_1, A_1, ...)
+\tau = (s_0, a_0, s_1, a_1, ...)
 $$
 
 <br>
 
 ### 1.2 Types of Reinforcement Learning tasks
-A task is a specific instance of a problem that you face everyday in your job. There are mainly two categories of tasks in reinforcement learning: episodic and continuous as shown in [Figure 1.2](#figure1-2). **Episodic** tasks  have a clear beginning and specific end, or a terminal state. In contrast, **continuous** tasks are ongoing, lacking a definitive endpoint, which requires the agent to improve the policy continuously while interacting with the environment.
+A task is a specific instance of a problem that you face everyday in your job. There are mainly two categories of tasks in reinforcement learning: episodic and continuous as shown in [Figure 2](#figure2). **Episodic** tasks  have a clear beginning and specific end, or a terminal state. In contrast, **continuous** tasks are ongoing, lacking a definitive endpoint, which requires the agent to improve the policy continuously while interacting with the environment.
 
-<figure id="figure1-2">
+<figure id="figure2">
   <img alt="types of RL tasks; episodic and continuous" 
   src="./images/types-of-rl-tasks.png">
-  <figcaption>Figure 1.2: Types of RL tasks; episodic (has a terminal state) and continuous that continues forever.</figcaption>
+  <figcaption>Figure 2: Types of RL tasks; episodic (has a terminal state) and continuous that continues forever.</figcaption>
 </figure>
 
 ### 1.3 The Exploration/Exploitation trade-off
 Sometimes, agents need to explore to learn new things and exploit to use what they know to do well. But the question is still: how to balance between exploration and exploitation? **Exploration** is when the agent tries out different things in the environment to learn more about it. It’s like looking around to find new information. Therefore **exploitation** is when the agent uses what it already knows to get the best results. It’s like using a map you’ve made to find the quickest route to a treasure.
 
-<div align="center">
+<div align="center" id="figure3">
   <figure style="max-width: 540px;">
     <img alt="You have four paths and you can exploit you knowledge and choose the path you know or explore the other three paths" 
     src="./images/exploration-exploitation-tradoff.png">
-    <figcaption>Figure 1.3: You have four paths; one that you know so you can exploit your knowledge and choose easily. The other three paths are new so you might want to do some exploration.</figcaption>
+    <figcaption>Figure 3: You have four paths; one that you know so you can exploit your knowledge and choose easily. The other three paths are new so you might want to do some exploration.</figcaption>
   </figure>
 </div>
 
@@ -114,16 +117,18 @@ The Policy is the function we want to learn. Our goal is to find the optimal 
 The major goal of AI and reinforcement learning is to help us make better decisions. Markov decision process is a classical way to set up almost any problem in reinforcement learning. All states in the Markov decision process have MP, Markov property, which means the future only depends on the present, current state, not the past, all previous states:
 
 $$
-\mathbb P[S_{t+1}|S_t]= \mathbb P[S_{t+1}|S_1,...,S_t]
+\mathbb P[s_{t+1}|s_t]= \mathbb P[s_{t+1}|s_1,...,s_t]
 $$
 
-Here, we will take about Markov decision processes assuming we have complete information about the environment. In most cases, we don’t know exactly how an environment will react or the rewards for our actions. However, Markov Decision Processes (MDPs) lay the theoretical foundation for many reinforcement learning algorithms. Markov decision process consists of five elements  $\mathcal{M} = \langle \mathcal{S}, \mathcal{A}, P, R, \gamma \rangle$, where $\mathcal{S}$ → a set of states; $\mathcal{A}$ → a set of actions; $P$ → transition probability function which specify the probability distribution over the next states given the current state (shown in [Figure 2.1](#figure2-1)); $R$ → reward function; $\gamma$ → discounting factor that specifies how much immediate rewards are favored over future rewards, $\gamma \in [0,1]$, when $\gamma$ equals 1, it implies that the future rewards are equally important as the present rewards. When $\gamma$  equals 0, this implies that we only care about present rewards.
+Here, we will take about Markov decision processes assuming we have complete information about the environment. In most cases, we don’t know exactly how an environment will react or the rewards for our actions. However, Markov Decision Processes (MDPs) lay the theoretical foundation for many reinforcement learning algorithms. Markov decision process consists of five elements $\mathcal{M} = \langle \mathcal{S}, \mathcal{A}, P, R, \gamma \rangle$, where $\mathcal{S}$ → a set of states; $\mathcal{A}$ → a set of actions; $P$ → transition probability function which specify the probability distribution over the next states given the current state (shown in [Figure 2.1](#figure2-1)); $R$ → reward function; $\gamma$ → discounting factor that specifies how much immediate rewards are favored over future rewards, $\gamma \in [0,1]$, when $\gamma$ equals 1, it implies that the future rewards are equally important as the present rewards. When $\gamma$  equals 0, this implies that we only care about present rewards.
 
-<figure id="figure2-1">
+<div align="center">
+<figure style="max-width: 540px;" id="figure4">
   <img alt="Markov Transition Dynamics among three states; A, B, and C" 
       src="./images/transition-probability.png">
-  <figcaption> Figure 2.1: Markov Transition Dynamics among three states; A, B, and C with the probabilities from moving from one state to the other. Let's say the agent starts in state $S_1 = C$, the dynamics describe the chances it transitions to other states $S_2=B$ has a probability of $0.1$.</figcaption>
+  <figcaption> Figure 4: Markov Transition Dynamics among three states; A, B, and C with the probabilities from moving from one state to the other. Let's say the agent starts in state $s_1 = C$, the dynamics describe the chances it transitions to other states $s_2=B$ has a probability of $0.1$.</figcaption>
 </figure>
+</div>
 
 
 
@@ -133,11 +138,11 @@ The key idea is that we want to calculate the expected long-term return startin
 
 $$
 \begin{aligned}
-V(s) &= \mathbb{E}[G_t \vert S_t = s] \\\
-&= \mathbb{E} [R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \dots \vert S_t = s] \\\
-&= \mathbb{E} [R_{t+1} + \gamma (R_{t+2} + \gamma R_{t+3} + \dots) \vert S_t = s] \\\
-&= \mathbb{E} [R_{t+1} + \gamma G_{t+1} \vert S_t = s] \\\
-&= \mathbb{E} [R_{t+1} + \gamma V(S_{t+1}) \vert S_t = s]
+V(s) &= \mathbb{E}[G_t \vert s_t = s] \\\
+&= \mathbb{E} [r_{t+1} + \gamma r_{t+2} + \gamma^2 r_{t+3} + \dots \vert s_t = s] \\\
+&= \mathbb{E} [r_{t+1} + \gamma (r_{t+2} + \gamma r_{t+3} + \dots) \vert s_t = s] \\\
+&= \mathbb{E} [r_{t+1} + \gamma G_{t+1} \vert s_t = s] \\\
+&= \mathbb{E} [r_{t+1} + \gamma V(s_{t+1}) \vert s_t = s]
 \end{aligned}
 $$
 
@@ -145,8 +150,8 @@ Similarly, for action-value or Q-value,
 
 $$
 \begin{aligned}
-Q(s, a) &= \mathbb{E} [R_{t+1} + \gamma V(S_{t+1}) \ | \ S_t = s, A_t = a] \\\
-&= \mathbb{E} [R_{t+1} + \gamma \mathbb E_{a \sim \pi} Q(S_{t+1}, a)  \ | \ S_t = s, A_t = a]
+Q(s, a) &= \mathbb{E} [r_{t+1} + \gamma V(s_{t+1}) \ | \ s_t = s, a_t = a] \\\
+&= \mathbb{E} [r_{t+1} + \gamma \mathbb E_{a \sim \pi} Q(s_{t+1}, a)  \ | \ s_t = s, a_t = a]
 \end{aligned}
 $$
 
@@ -161,6 +166,17 @@ $$
 where $R(s)$ is the immediate reward received after taking action $a$ in state $s$; $\gamma$ is the discount factor; $V(s’)$ is the value of the next state $s’$ that follows $s$. So instead of calculating $V(s)$ from scratch using many episodes, we can build it up iteratively using the values of the next states.
 
 
+<br>
+
+Consider the following figure as a summary of what I'm going to cover in the next three sections.
+
+<figure id="figure5">
+  <img alt="Comparison of the backup diagrams of Monte-Carlo, Temporal-Difference learning, and Dynamic Programming for state value functions." src="./images/TD_MC_DP_backups.png">
+  <figcaption>Figure 5: Comparison of the backup diagrams of Monte-Carlo, Temporal-Difference learning, and Dynamic Programming for state value functions (<a href="https://youtu.be/PnHCvfgC_ZA?si=_idcaKWaLDalAila">Silver, 2015</a>)
+  </figcaption>
+</figure>
+
+
 
 ### 2.2 Dynamic Programming (DP)
 
@@ -171,7 +187,7 @@ There are two main dynamic programming algorithms value iteration and policy ite
 $$
 \begin{aligned} 
 V_{t+1}(s) 
-&= \mathbb E_\pi [r + \gamma V_t(s') | S_t = s] \\\ 
+&= \mathbb E_\pi [r + \gamma V_t(s') | s_t = s] \\\ 
 &= \sum_a \pi(a \vert s) \sum_{s', r} P(s', r \vert s, a) (r + \gamma V_t(s')) 
 \end{aligned}
 $$
@@ -181,7 +197,7 @@ $$
 $$
 \begin{aligned}
 Q_\pi(s, a) 
-&= \mathbb{E} [R_{t+1} + \gamma V_\pi(S_{t+1}) \vert S_t=s, A_t=a] \\\ 
+&= \mathbb{E} [r_{t+1} + \gamma V_\pi(s_{t+1}) \vert s_t=s, a_t=a] \\\ 
 &= \sum_{s', r} P(s', r \vert s, a) (r + \gamma V_\pi(s')) 
 \end{aligned}
 $$
@@ -214,7 +230,7 @@ $$
 This return is then utilized as the target for value updates:
 
 $$
-V(S_t) \leftarrow V(S_t) + \alpha [G_t - V(S_t)]
+V(s_t) \leftarrow V(s_t) + \alpha [G_t - V(s_t)]
 $$
 
 <br>
@@ -224,32 +240,28 @@ $$
 <p style="color: teal;"><b>“If one had to identify one idea as central and novel to reinforcement learning, it would undoubtedly be temporal-difference learning.” </b> (<a style="color: teal;" href="https://mitpress.mit.edu/9780262352703/reinforcement-learning/">Sutton & Barto, 2018</a>).
 </p>
 
-TD Learning is a combination of dynamic programming and Monte Carlo ideas that estimates the quality of a given policy at each time step, think of it as an exam and your grads are updated after each question, instead of just averaging all grads, returns, at the end of the exam, an episode, like Monte Carlo. Because we didn’t experience an entire episode, we don’t have return $G_t$. Instead, we estimate the return by adding reward and the discounted value of the next state, $\gamma\; V(S_{t+1})$:
+TD Learning is a combination of dynamic programming and Monte Carlo ideas that estimates the quality of a given policy at each time step, think of it as an exam and your grads are updated after each question, instead of just averaging all grads, returns, at the end of the exam, an episode, like Monte Carlo. Because we didn’t experience an entire episode, we don’t have return $G_t$. Instead, we estimate the return by adding reward and the discounted value of the next state, $\gamma\; V(s_{t+1})$:
 
 $$
-V(S_t) \leftarrow V(S_t) + \alpha [R_{t+1} + \gamma V(S_{t+1}) - V(S_t)]
+V(s_t) \leftarrow V(s_t) + \alpha [r_{t+1} + \gamma V(s_{t+1}) - V(s_t)]
 $$
 
 Similarly, for action-value estimation: 
 
 $$
-Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha (R_{t+1} + \gamma Q(S_{t+1}, A_{t+1}) - Q(S_t, A_t))
+Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha (r_{t+1} + \gamma Q(s_{t+1}, a_{t+1}) - Q(s_t, a_t))
 $$
 
 <br>
 
-The following figure summarizes the last three sections:
+## 3 RL Algorithms 
 
-<figure id="figure2-2">
-  <img alt="Comparison of the backup diagrams of Monte-Carlo, Temporal-Difference learning, and Dynamic Programming for state value functions." src="./images/TD_MC_DP_backups.png">
-  <figcaption>Figure 2.2: Comparison of the backup diagrams of Monte-Carlo, Temporal-Difference learning, and Dynamic Programming for state value functions (<a href="https://youtu.be/PnHCvfgC_ZA?si=_idcaKWaLDalAila">Silver, 2015</a>)
-  </figcaption>
+<figure id="figure6">
+  <img src="./images/rl-algorithms.png">
+  <figcaption>Figure 6: A non-exhaustive, but useful taxonomy of algorithms in reinforcement learning (<a href="https://spinningup.openai.com/en/latest/spinningup/rl_intro2.html">OpenAI, 2018</a>)</figcaption>
 </figure>
 
-<br>
-
-## 3 Q-Learning
-
+### 3.1 Q-learning and DQN
 I told you before that **model-free** means that the agent doesn't know 
 anything about the environment dynamics or how it works. I also want you 
 remember that a policy is the agent's brain; it is the center of decision 
@@ -264,8 +276,8 @@ using a Temporal Difference (TD) learning approach to optimize the value
 function:
 
 $$
-Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha [R_{t+1} + 
-\gamma \max_a Q(S_{t+1}, a) - Q(S_t, A_t)]
+Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha [R_{t+1} + 
+\gamma \max_a Q(s_{t+1}, a) - Q(s_t, a_t)]
 $$
 
 If you recall from [section 1.3](#13-the-explorationexploitation-trade-off), 
@@ -280,21 +292,19 @@ $$
 
 By iteratively optimizing this loss function using [gradient-based optimization](https://mohamedyosef101.github.io/publication/ml-dl-101/#23-optimization), we can refine our Q-value estimates until they converge to their actual expected value. 
 
-
-### 3.1 Deep Q-Learning 
-Deep Q-learning (<a href="https://arxiv.org/abs/1312.5602">Mnih et al., 2015</a>) is an advanced form of Q-learning that integrates deep neural networks with reinforcement learning. Deep Q-network (DQN) uses a deep neural network to estimate the quality of the action $Q(a, s)$ by treating the state $s$ as input, and having an output neuron for each possible action $K$ to estimate Q(a^k, s). But DQN struggle with temporal limitation where one state in not enough (shown in [Figure 3.1](#figure3-1)). Deep Q-learning addresses this by considering multiple future states, allowing the agent to evaluate actions based on both immediate and future rewards. Another problem is that the agent sometimes forgets previous lessons, so we first store all observed 
+**Deep Q-learning** (<a href="https://arxiv.org/abs/1312.5602">Mnih et al., 2015</a>) is an advanced form of Q-learning that integrates deep neural networks with reinforcement learning. Deep Q-network (DQN) uses a deep neural network to estimate the quality of the action $Q(a, s)$ by treating the state $s$ as input, and having an output neuron for each possible action $K$ to estimate Q(a^k, s). But DQN struggle with temporal limitation where one state in not enough (shown in [Figure 7](#figure3-2)). Deep Q-learning addresses this by considering multiple future states, allowing the agent to evaluate actions based on both immediate and future rewards. Another problem is that the agent sometimes forgets previous lessons, so we first store all observed 
 ($s_t, a_t, r_t, s_{t+1}$) tuples into an **experience replay** buffer, and randomly sample batches from this buffer to calculate the loss. 
 
     
-<figure id="figure3-1">
+<figure id="figure7">
   <img alt="The problem of temporal difference where one frame or state was not enough to determine the direction of the ball. But when we used three frames, we can see easily that the ball was going form left to the right." src="./images/temporal-limitation.png">
-  <figcaption>Figure 3.1: The problem of temporal difference where one frame or state was not enough to determine the direction of the ball. So we used three frames instead.</figcaption>
+  <figcaption>Figure 7: The problem of temporal difference where one frame or state was not enough to determine the direction of the ball. So we used three frames instead.</figcaption>
 </figure>
     
 In the early stages of Q-learning, the Q estimates are based on very few samples which can be quite noisy and tend to be optimistic about the future rewards. That's why we need to have a **target Q-network** (<a href="https://ojs.aaai.org/index.php/AAAI/article/view/10295">Hasselt et al., 2016</a>) which is initialized randomly, and slowly updated so the parameters move towards the values of the main Q-network (since we now have two the new, target network and the old, main one). 
 
 
-## 4 Policy gradients
+### 3.2 Policy gradients
 Unlike value-based methods (like Q-learning), which require evaluating the quality of each action, policy-based methods use [gradient descent](https://youtu.be/IHZwWFHWa-w?si=kmjGqpC6zbEnNTUM) to directly improve the policy based on the gradient of the expected return $G_t$ with respect to the policy parameter $\theta$. So you don’t need separate value function approximation. Also, the idea behind policy gradients is simple; increasing the probability of actions that led to high rewards, and decreasing the probability of actions that led to negative, low rewards.
 
 The goal of policy gradient methods — *like any RL technique* — is to find policy parameters that maximize the expected cumulative reward (return). In our case, a neural network outputs a probability distribution over actions (I know everything is about this probability distribution over actions). To measure **policy performance**, you first need to define an objective function that gives the expected return over a trajectory based on the policy:
@@ -307,11 +317,9 @@ $$
 You know what… I can’t dive into the policy gradient theorem (*bore me*), but I want you to know that this theorem reformulates the objective so you can estimate its gradient with no need to differentiate the environment dynamics. 
 
 $$
-\nabla_{\theta} J(\theta) = \mathbb E_{\pi_{\theta}} [\nabla_{\theta}\text{ log }\pi_{\theta}(a_t \vert s_t) R(\tau)]
+\nabla_{\theta} J(\theta) = \mathbb E_{\pi_{\theta}} [\nabla_{\theta} \log \pi_{\theta}(a_t \vert s_t) r(\tau)]
 $$
 
-
-### 4.1 Pros and cons of policy gradients
 
 The first advantage of policy gradients algorithm is how it deals with [exploration/exploitation trade-off](#13-the-explorationexploitation-trade-off) without the need to tune how often the agent should explore vs exploit (e.g., using $\epsilon$-greedy in Q-learning). But with policy gradients, you **directly** model a stochastic policy that outputs a probability over actions. So **the agent automatically explores** different states and trajectories because of random sampling from the policy distribution each time-step. For example, if your policy outputs a 60% chance for action 1 and 40% for action 2, the agent will naturally end up trying action 1 more often, but also frequently explore action 2 without any extra code for exploration vs exploitation. 
 
@@ -321,51 +329,58 @@ As you know deep Q-learning learns a value function (judging how good each act
 
 The problem of any gradient is that the algorithm often get trapped in local maxima rather than the global best policy (the same problem with [optimization](https://mohamedyosef101.github.io/publication/ml-dl-101/#23-optimization) in deep learning). Gradient estimates used for updating the policy tend to have high variance, causing unstable learning. Actor-critic methods help address this.
 
-### 4.2 REINFORCE algorithm
-
-The REINFORCE algorithm is a Monte Carlo policy gradient method. It collects episodes using the policy, estimates the gradient from that episode, and updates the policy parameter $\theta$. A commonly used variation of REINFORCE is to subtract a baseline value from the return $G_t$ to reduce the variance of gradient estimation while keeping the bias unchanged. For example, a common baseline is state-value, and if applied, we would use $A(s,a)=Q(s,a)-V(s)$ in the gradient ascent update.
-
-1. Initialize θ at random
-2. Generate one episode $S_1, A_1, R_2, S_2, A_2, \dots, S_T$ 
-3. For $t=1, 2, ..., T$:
-    1. Estimate the return $G_t$ since the time step t.
-    2. $\theta \leftarrow \theta + \alpha \gamma^t G_t \nabla \ln \pi(A_t \vert S_t, \theta)$
 
 
+### 3.3 Actor critic
+Actor-Critic methods are a hybrid architecture combining value-based (e.g., Q-learning) and policy-based (e.g., policy gradients). Therefore, it solves the problem of high variance in policy gradients and makes our agent train faster and better. Actor-critic methods have two key components (shown in Figure 8); **Actor** which aims to choose actions that will lead to high rewards in the long run, and **Critic** helps the actor learn better by providing feedback on the chosen actions. With that said, you can see that we have two function approximations (i.e., two neural networks); the first one is a policy function represents the actor while the other one is the value function represents the critic. 
 
-## 5 Actor critic
-
-Combines two key components; **Actor** which aims to choose actions that will lead to high rewards in the long run, and **Critic** helps the actor learn better by providing feedback on the chosen actions.
-
-<figure>
+<div align="center">
+<figure style="max-width: 540px;">
   <img alt="In the image there is a person playing a game represents the actor and another person saying 'this is a really bad move' represents the critic" src="./images/a2c.jpg">
-  <figcaption>In the image there is a person playing a game represents the actor and another person saying 'this is a really bad move' represents the critic | source: <a href="https://huggingface.co/learn/deep-rl-course/unit6/advantage-actor-critic">huggingface.co</a></figcaption>
+  <figcaption>Figure 8: Two persons; one is playing a game represents the actor and another saying 'this is a really bad move' represents the critic (<a href="https://huggingface.co/learn/deep-rl-course/unit6/advantage-actor-critic">Simonini, 2018</a>).</figcaption>
 </figure>
+</div>
 
-The process unfolds as follows in an action-value Actor-Critic algorithm:
+The process (<a href="https://huggingface.co/learn/deep-rl-course/unit6/advantage-actor-critic">Simonini, 2018</a>) starts at timestep, t, where we get the current state $S_t$ from the environment and pass it as input through our Actor and Critic where our policy takes the state and outputs an action $A_t$. The critic takes takes the action as input as well and computes the quality of the action (Q-value). Since the action is taken, the environment outputs a reward $R_{t+1}$ and a new state $S_{t+1}$. Now, the actor is ready to update its policy using the Q-value: 
 
-1. Initialize states ***s***, policy parameters  $\theta$, and value function parameters ***w*** randomly. Then, sample an action ***a*** from the policy $\pi(a \vert s; \theta)$.
-2. For each time step ***t*** from **1** to ***T***:
-    - Sample a reward $r_t$ from the reward function $R(s, a)$ and the next state $s'$ from the state transition function $P(s’ \vert s, a)$.
-    - Sample the subsequent action ***a’*** from the policy $\pi(s’, a’; \theta)$.
-    - Update the policy parameters using the gradient of the policy’s log-probability weighted by the action-value function:
-    
-    $$
-    \theta \leftarrow \theta + \alpha_\theta Q(s, a; w) \nabla_\theta \ln \pi(a \vert s; \theta)
-    $$
-    
-    - Compute the temporal-difference error for the action-value at time ***t***: $G_{t:t+1} = r_t + \gamma Q(s’, a’; w) - Q(s, a; w)$ 
-    and use it to update the value function parameters:
-     $w \leftarrow w + \alpha_w G_{t:t+1} \nabla_w Q(s, a; w)$
-    - Update the action and state for the next iteration:  $a \leftarrow a’ \text{ and } s \leftarrow s’$
+$$
+\Delta \theta = \alpha \nabla_\theta (\log \pi_\theta (s,a)) \hat q_w(s,a)
+$$
 
-Here, $\alpha_\theta$ and $\alpha_w$ represent the learning rates for the policy and value function parameters, respectively.
+where $\Delta\theta$ is the change in policy parameters/weights and $\hat q_w(s,a)$ is the action value estimate. With that, the Actor produces the next action to take $a_{t+1}$ in the new state $s_{t+1}$. The Critic then updates its value parameters: 
+
+$$
+\Delta w = \beta (r_{t+1} + \gamma \hat q_w (s_{t+1}, a_{t+1}) 
+- \hat q_w (s_t, a_t)) \nabla_w \hat q_w (s_t, a_t)
+$$
+
+where $\beta$ is the value learning rate which is different from $\alpha$ (the policy learning rate), $\nabla_w \hat q_w (s_t, a_t)$ is the gradient of our value function, and the rest of the equation is the TD error. 
+
+We can stabilize learning further by directly using the advantage function as Critic instead of the action-value function (<a href="https://huggingface.co/learn/deep-rl-course/unit6/advantage-actor-critic">Simonini, 2018</a>). The idea is that the Advantage function calculates the relative advantage of an action compared to other possible at a state: how taking that action at a state is better compared to the average value of the state. It's subtracting the mean value of the state from the state-action pair: 
+
+$$
+\begin{aligned}
+A(a,s) &= Q(a,s) - V(s_t) \\\
+&= r_t + \gamma V(s_{t+1}) - V(s_t)
+\end{aligned}
+$$
+
+The advantage function describes how much better the current reward is than what we expect to get. If we substitute the advantage function into policy gradients, we obtain the Advantage Actor-Critic (A2C) algorithm (<a href="https://arxiv.org/abs/1602.01783v2">Mnih et al., 2016</a>): 
+
+$$
+\begin{aligned}
+\nabla_\theta J(\theta) &= \mathbb E_{\pi_\theta} [[r_t + \gamma V(s_{t+1}) - V(s_t) - V(s_t)] \nabla_\theta \log \pi_\theta (a_t \vert s_t)] \\\
+&= \mathbb E_{\pi_\theta} [A(a_t, s_t)\nabla_\theta \log \pi_\theta(a_t \vert s_t)]
+\end{aligned}
+$$
 
 <br>
 
 
 ## Final words
-I'll try to update this article from time to time to make it more informative and easy to understand. At the same time, if you found any error, or you want to give me some suggestions, feel free to email me: mohamedyosef101@outlook.com.
+This article reviewed the basic concepts in reinforcement learning, there are for sure many concepts that I was not able to cover in this article. So, consider the following resources: 
+(<a href="https://youtube.com/playlist?list=PLLyj1Zd4UWrP3rME2XvFvE4Q5vI3H_7_Z&si=HJ_Jg1z5q20oRf45">Corcoran, 2023</a>) for Markov processes, 
+(<a href="https://mitpress.mit.edu/9780262352703/reinforcement-learning/">Sutton & Barto, 2018</a>) for RL concepts, (<a href="https://huggingface.co/learn/deep-rl-course/unit6/advantage-actor-critic">Simonini, 2018</a>) for some RL implementation, and (<a href="https://www.media.mit.edu/publications/social-and-affective-machine-learning/">Jaques, 2019</a>) for social learning. Also, I'll try to update this article from time to time to make it more informative and easy to understand. At the same time, if you found any error, or you want to give me some suggestions, feel free to email me: mohamedyosef101@outlook.com.
 
 <div align="center">
 <p style="font-size: 32px; padding-top: 12px;">تم بحمد الله</p>
