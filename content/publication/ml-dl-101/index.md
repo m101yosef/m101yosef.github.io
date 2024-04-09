@@ -67,14 +67,14 @@ Since machine learning uses data to actually learn, the most efficient way to us
 
 <figure>
   <img src="./images/data-matrix.png">
-  <figcaption>Figure 1.1: A matrix of house pricing data with some made-up numbers where the features are number of rooms, house size, city, and price. Each row/vector represents a house or a data point while each value in a row called entry. (Designed by Mohamed Yosef)</figcaption>
+  <figcaption>Figure 1: A matrix of house pricing data with some made-up numbers where the features are number of rooms, house size, city, and price. Each row/vector represents a house or a data point while each value in a row called entry.</figcaption>
 </figure>
 
 In machine learning, we consider each data point (row) as an example that the model (the AI) learns from. Let’s say I have a friend called Ahmed who wants to be a physician but instead of learning from text box and medical school, he decided to learn from patients and see each patient as an example (he just observes now). After observing a good number of patients, Ahmed now has some general rules of how to deal with new patients, and this generalization thing is the core idea behind machine learning. So, the machines learn by first getting some examples as data matrix after that, and in traditional machine learning, you’ll need to manually extract useful features from the data then pass this data into the model with respect to model assumptions (which we’ll take about later) and finally you get the result. But the game has not ended yet, you may want to get higher results by getting more data, try other features, or even try another model.
 
 <figure>
   <img src="./images/how-ml-learn.png">
-  <figcaption>Figure 1.2: Machines learn from examples by extracting useful features manually or automatically (like in deep learning) then pass these features into a model to get the result. (Designed by Mohamed Yosef)</figcaption>
+  <figcaption>Figure 2: Machines learn from examples by extracting useful features manually or automatically (like in deep learning) then pass these features into a model to get the result.</figcaption>
 </figure>
 
 
@@ -92,14 +92,14 @@ where $\mu_i$ is the mean of the points in cluster $S_i$. Figure 1.3 (right) sho
 
 <figure>
   <img src="./images/unsupervised.png">
-  <figcaption>Figure 1.3: Data from the iris dataset proposed by Fisher (1936). The x and y axes are two of the features. The left figure shows the true labels for each of the data points, where red points belong to the setosa class, pink are virginica, and green are versicolor. The right figure shows an assignment of each point to a cluster, learned via k-means clustering (<a href="https://medium.com/@belen.sanchez27/predicting-iris-flower-species-with-k-means-clustering-in-python-f6e46806aaee">Sanchez, 2018</a>).</figcaption>
+  <figcaption>Figure 3: Data from the iris dataset proposed by Fisher (1936). The x and y axes are two of the features. The left figure shows the true labels for each of the data points, where red points belong to the setosa class, pink are virginica, and green are versicolor. The right figure shows an assignment of each point to a cluster, learned via k-means clustering (<a href="https://medium.com/@belen.sanchez27/predicting-iris-flower-species-with-k-means-clustering-in-python-f6e46806aaee">Sanchez, 2018</a>).</figcaption>
 </figure>
 
 If you think about how you learn and the nature of learning, you will clearly see that you learn by interacting with your world (or environment). At the same time, you are acutely aware of how your world responds to what you do, and your goal is to get the best results through your actions. The same thing happens with our little RL agent; the agent learns from the world/environment by interacting with it, through trial and error, and receiving rewards; negative or positive as feedback for performing actions. The agent is not told which actions to take at first, but the agent uses the feedback from the environment to discover which actions yield the most reward.
 
 <figure>
   <img src="./images/rl-process.png">
-  <figcaption>Figure 1.4: Reinforcement learning process starts with the agent observing the state of the environment and take action according to the agent’s policy then receives a reward negative or positive from the environment and move to the next state after that the process repeats (<a href="https://mitpress.mit.edu/9780262352703/reinforcement-learning/">Sutton & Barto, 2018</a>).</figcaption>
+  <figcaption>Figure 4: Reinforcement learning process starts with the agent observing the state of the environment and take action according to the agent’s policy then receives a reward negative or positive from the environment and move to the next state after that the process repeats. Based on a similar figure in (<a href="https://mitpress.mit.edu/9780262352703/reinforcement-learning/">Sutton & Barto, 2018</a>).</figcaption>
 </figure>
 
 Reinforcement learning differs from supervised learning; supervised learning is learning from a training set of labeled examples provided by a knowledgeable external supervisor giving the AI the solution and the right action to take in a specific situation. The goal of supervised learning is to generalize a rule for the AI to deal with other situations that are not in the training set. But in real-world interactive problems, the answer often emerges through exploration and trial and error. There might not be a definitive “correct” answer for every situation the agent encounters. Even if there is a right answer for some situations, it will not work well as a general solution (<a href="https://mitpress.mit.edu/9780262352703/reinforcement-learning/">Sutton & Barto, 2018</a>).
@@ -114,7 +114,7 @@ One of the big challenges in machine learning is to improve generalization, whic
 
 <figure>
   <img src="./images/generalization.png">
-  <figcaption>Figure 1.5: A classification task where the model must separate class 1 (green X’s) from class 2 (circles). Three decision boundaries are shown in red. Underfitting occurs when the model capacity is not sufficient to accurately partition the data (a). Here, a linear decision boundary is too simple for the curved distribution of the class labels. However, if the model capacity is too great, it may overfit the data, perfectly capturing the idiosyncrasies of the training data at the expense of generalization error (c) (<a href="https://www.geeksforgeeks.org/underfitting-and-overfitting-in-machine-learning/">Nautiyal, 2019</a>).</figcaption>
+  <figcaption>Figure 5: A classification task where the model must separate class 1 (green X’s) from class 2 (circles). Three decision boundaries are shown in red. Underfitting occurs when the model capacity is not sufficient to accurately partition the data (a). Here, a linear decision boundary is too simple for the curved distribution of the class labels. However, if the model capacity is too great, it may overfit the data, perfectly capturing the idiosyncrasies of the training data at the expense of generalization error (c) (<a href="https://www.geeksforgeeks.org/underfitting-and-overfitting-in-machine-learning/">Nautiyal, 2019</a>).</figcaption>
 </figure>
 
 Another idea that is related to overfitting and underfitting is **bias-variance tradeoff**. Firstly, **bias error** happens when the learning algorithm makes incorrect assumptions; e.g. assuming the data is linearly separable when it is curved which leads to underfitting and therefore high error. Secondly, **variance** says how much your results will change if you train the model on a slightly different dataset. 
@@ -125,15 +125,15 @@ The **bias-variance tradeoff** is an important idea that relates to overfitting 
 
 ## 2 Deep learning
 
-Deep learning drives many applications and services, including digital assistants, voice-enabled TV remotes, credit card fraud detection, self-driving cars, and generative AI. Unlike traditional machine learning, deep learning can handle unstructured data, such as text and images, without extensive preprocessing, also deep learning algorithms automate feature extraction, which reduces dependency on human expertise. As shown in Figure 2.1, the core of deep learning is a neural network that is made up of layers (input, hidden, and output) that contain nodes. Each node computes its output based on a set of weights (or parameters) applied to the output of the previous layer.
+Deep learning drives many applications and services, including digital assistants, voice-enabled TV remotes, credit card fraud detection, self-driving cars, and generative AI. Unlike traditional machine learning, deep learning can handle unstructured data, such as text and images, without extensive preprocessing, also deep learning algorithms automate feature extraction, which reduces dependency on human expertise. As shown in Figure 6, the core of deep learning is a neural network that is made up of layers (input, hidden, and output) that contain nodes. Each node computes its output based on a set of weights (or parameters) applied to the output of the previous layer.
 
 <figure>
   <img src="./images/deep-nn.png">
-  <figcaption>Figure 2.1: A simple neural network with two hidden layers (in red), and a one-dimensional output layer (designed with NN-SVG. https://alexlenail.me/NN-SVG).</figcaption>
+  <figcaption>Figure 6: A simple neural network with two hidden layers (in red), and a one-dimensional output layer (designed with NN-SVG. https://alexlenail.me/NN-SVG).</figcaption>
 </figure>
 
 
-The layer in Figure 2.1 is the input layer which applies the inputs from data $x$. To compute the output of all the nodes within a layer (say the first hidden), we use matrix multiplication: $h^{(1)} = \phi (W^{(1)}x)$, where $W^{(1)}$ is the matrix of weights (or parameters) for the first hidden layer, while $\phi$ is the activation function. 
+The layer in Figure 6 is the input layer which applies the inputs from data $x$. To compute the output of all the nodes within a layer (say the first hidden), we use matrix multiplication: $h^{(1)} = \phi (W^{(1)}x)$, where $W^{(1)}$ is the matrix of weights (or parameters) for the first hidden layer, while $\phi$ is the activation function. 
 
 ### 2.1 Activation Functions
 
@@ -143,14 +143,14 @@ An **activation function** is a fancy way of saying that we are making the outpu
 
 <figure>
   <img src="./images/activation-functions.png">
-  <figcaption>Figure 2.2: (a) Binary step activation function when the inputs is greater than or equal to zero, it is activated, else it is deactivated. (b) simple linear activation function follow the equation x = y at any point in real numbers.</figcaption>
+  <figcaption>Figure 7: (a) Binary step activation function when the inputs is greater than or equal to zero, it is activated, else it is deactivated. (b) simple linear activation function follow the equation x = y at any point in real numbers.</figcaption>
 </figure>
 
 If you think for a moment, you will find out that step functions and linear functions are difficult to optimize and can not solve a lot of problems. Therefore, **non-linear activation functions** come as a magical way to solve any complex problem, especially the non-linear ones. Common activation functions are logistic sigmoid, Tanh, and rectified linear unit (ReLU). You can see in Figure 2.3 that **logistic sigmoid** outputs a value between 0 and 1, but suffers from vanishing gradients during training. While **Tanh** is similar to sigmoid but outputs values between -1 and 1. A more frequently used activation function is **ReLU (Rectified Linear Unit)** which is simple and efficient, outputs the input directly if positive, otherwise outputs zero. There are variants of ReLU; like Leaky ReLU that address the "dying ReLU" problem (<a href="https://doi.org/10.48550/arXiv.1505.00853">Bing Xu et al., 2015</a>).
 
 <figure>
   <img src="./images/non-linear-activation-functions.png">
-  <figcaption>Figure 2.3: Non-linear activation function like logistic sigmoid, Tanh, and ReLU. (Designed by Mohamed Yosef)</figcaption>
+  <figcaption>Figure 8: Non-linear activation function like logistic sigmoid, Tanh, and ReLU.</figcaption>
 </figure>
 
 ### 2.2 Loss
@@ -183,7 +183,7 @@ In any machine learning and deep learning model, we want to minimize the loss fu
 
 <figure>
   <img src="./images/loss-landscape.png">
-  <figcaption>Figure 2.4: Red areas show regions of parameter space where the loss is high, blue areas show regions where the loss is low. Convex loss functions (a) can be found in traditional machine learning models and are easily to optimize, while neural network architectures can lead to complicated loss landscapes (b). Reproduced by <a href="https://www.media.mit.edu/publications/social-and-affective-machine-learning/">Jaques (2019)</a> from <a href="https://doi.org/10.48550/arXiv.1712.09913">Li et al. (2018a)</a>.</figcaption>
+  <figcaption>Figure 9: Red areas show regions of parameter space where the loss is high, blue areas show regions where the loss is low. Convex loss functions (a) can be found in traditional machine learning models and are easily to optimize, while neural network architectures can lead to complicated loss landscapes (b). Reproduced by <a href="https://www.media.mit.edu/publications/social-and-affective-machine-learning/">Jaques (2019)</a> from <a href="https://doi.org/10.48550/arXiv.1712.09913">Li et al. (2018a)</a>.</figcaption>
 </figure>
 
 So, to find a good optimizer, we need a more complicated technique like **gradient-based optimization** which finds the minimum by dividing the loss landscape into steps with size $\alpha$ or learning rate. A most basic gradient algorithm is **stochastic gradient descent (SGD)** where at each step, SGD randomly samples a batch of training data (a smaller group of the dataset) and computes the gradient loss with respect to the model parameters $\nabla_w \hat L(X_B; w)$. The parameters are then updated by moving in the direction of the steepest descent (opposite to the gradient). 
@@ -196,14 +196,14 @@ Model building projects (shown in Figure 2.5) follow a well-established life cyc
 
 <figure>
   <img src="./images/ml-workflow.png">
-  <figcaption>Figure 2.5: Model building follows a cycle: create a baseline model, train, test, diagnose the issues like overfitting and underfitting, improve, train it again, and repeat this process until it meets your performance goals. (Designed by the author)</figcaption>
+  <figcaption>Figure 10: Model building follows a cycle: create a baseline model, train, test, diagnose the issues like overfitting and underfitting, improve, train it again, and repeat this process until it meets your performance goals. (Designed by the author)</figcaption>
 </figure>
 
 How to diagnose what’s happening in your model? The first thing that you need to know is that it’s good to have one main metric to evaluate your model, like the MSE that we used before. Other evaluation metrics like **accuracy** which is the proportion of correct predictions for a classification task. We also have **Precision and Recall** (shown in figure 2.6) are used to measure the ability of the model to identify true positives and avoid false positives/negatives (relevant for imbalanced datasets). Sometimes you want to free your head and use **F1-Score** which is the harmonic mean of precision and recall.
 
 <figure>
   <img src="./images/precision-recall.png">
-  <figcaption>Figure 2.6: Precision and Recall reproduced by Mohamed Yosef from <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Wikipedia</a>.</figcaption>
+  <figcaption>Figure 11: Precision and Recall reproduced by Mohamed Yosef from <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Wikipedia</a>.</figcaption>
 </figure>
 
 ### 2.5 Neural Network Architectures
@@ -212,14 +212,14 @@ Until now, we only talked about one type of neural networks which is a fully-con
 
 <figure>
   <img src="./images/computer-vision.png">
-  <figcaption>Figure 2.6: A brief illustration of a ventral stream of the visual cortex in the human vision system. It consists of primary visual cortex (V1), visual areas (V2 and V4) and inferior temporal gyrus (<a href="https://doi.org/10.48550/arXiv.1702.07800">Wang & Raj, 2017</a>).</figcaption>
+  <figcaption>Figure 12: A brief illustration of a ventral stream of the visual cortex in the human vision system. It consists of primary visual cortex (V1), visual areas (V2 and V4) and inferior temporal gyrus (<a href="https://doi.org/10.48550/arXiv.1702.07800">Wang & Raj, 2017</a>).</figcaption>
 </figure>
 
 Another type of architecture is **recurrent neural networks** (RNNs) which model **sequential data**, meaning they have **sequential memory**. An RNN takes in different kinds of inputs (text, words, letters, parts of an image, sounds, etc.) and returns different kinds of outputs (the next word/letter in the sequence, paired with a fully-connected network it can return a classification, etc.). While this can give an RNN a rudimentary form of **memory**, it also exacerbates problems with **vanishing and exploding gradients**. Because computing the gradient depends on multiplying by the same parameter values repeatedly, this can cause the gradients to explode (if the parameter is greater than one) or vanish (if the parameter is less than one). **Long Short-Term Memory** (LSTM) networks (<a href="https://www.bioinf.jku.at/publications/older/2604.pdf">Hochreiter and Schmidhuber, 1997</a>) help to address this problem by adding an **input, output, and forget gate** to each recurrent cell. These gates allow the network to learn when to update the information in the cell and when to erase it, rather than simply multiplying by the same parameters each time.
 
 <figure>
   <img src="./images/recurrent-neural-network.png">
-  <figcaption>A recurrent neural network with one hidden unit (left) and its unrolling version in time (right). The unrolling version illustrates what happens in time: $S_{t-1}$, $S_t$, and $S_{t+1}$ are the same unit with different states at different time steps. (<a href="http://pages.cs.wisc.edu/~dyer/cs540/handouts/deep-learning-nature2015.pdf">LeCun, Bengio, and Hinton, 2015</a>)</figcaption>
+  <figcaption>Figure 13: A recurrent neural network with one hidden unit (left) and its unrolling version in time (right). The unrolling version illustrates what happens in time: $S_{t-1}$, $S_t$, and $S_{t+1}$ are the same unit with different states at different time steps. (<a href="http://pages.cs.wisc.edu/~dyer/cs540/handouts/deep-learning-nature2015.pdf">LeCun, Bengio, and Hinton, 2015</a>)</figcaption>
 </figure>
 
 
