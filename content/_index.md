@@ -15,7 +15,7 @@ sections:
       username: admin
 
   ### FEATURED ###
-  - block: collection
+  - block: features
     id: featured
     content:
       title: Featured
@@ -25,7 +25,7 @@ sections:
         featured_only: true
     design:
       columns: '2'
-      view: compact
+      view: card
 
   ### PUBLICATIONS ###
   - block: portfolio
@@ -54,7 +54,7 @@ sections:
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '1'
-      view: compact
+      view: masonry
 
 
   ### TALKS ### 

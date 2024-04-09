@@ -78,7 +78,7 @@
     {{ with $resource }}
       {{ $image := .Resize "720x" }}
       {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "resize 400x webp" }}{{ end }}
-      <a href="{{$link}}" {{ $target | safeHTMLAttr }}>
+      <a href="{{$link}}" {{ $target | safeHTMLAttr }} class="img-hover-zoom">
         <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"
             alt="{{ $item.Title }}" loading="lazy">
       </a>

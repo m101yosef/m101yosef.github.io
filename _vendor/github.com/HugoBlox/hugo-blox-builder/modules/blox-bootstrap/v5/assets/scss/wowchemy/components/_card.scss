@@ -3,13 +3,20 @@
  **************************************************/
 
 .card-simple {
-  background: #ffffff;
+  background: whitesmoke;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.09);
   border-radius: 3px;
-  margin-top: 20px;
   padding: 1rem 1.2rem;
-  max-width: 720px;
+  text-overflow: ellipsis;
+  
+  @include media-breakpoint-up(lg) {
+    width: fit-content;
+  }
+}
+
+.card-simple:hover {
+  background-color: white;
 }
 
 .card-simple:first-of-type {
@@ -18,6 +25,13 @@
 
 .card-simple p.read-more {
   margin: 0;
+}
+
+.card-simple p{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
 }
 
 .dark .card-simple {
@@ -36,7 +50,7 @@ a.summary-link {
   margin-bottom: 1.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
-  background: #ebfffa;
+  background: whitesmoke;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-out;
 }
@@ -113,6 +127,7 @@ a.summary-link {
 }
 
 .card:hover {
+  background-color: white;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 

@@ -32,3 +32,12 @@
   overflow: hidden;
   word-wrap: normal;
 }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  @include media-breakpoint-up(lg) {
+    flex-wrap: nowrap;
+  }
+}
+
