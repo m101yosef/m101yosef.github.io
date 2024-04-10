@@ -85,7 +85,7 @@
   translation: Poster
 
 - id: btn_source
-  translation: Source Document
+  translation: Tex Source
 
 - id: btn_copy
   translation: Copy
