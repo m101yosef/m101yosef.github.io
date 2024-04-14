@@ -40,13 +40,15 @@ links:
   url: "https://www.kaggle.com/code/mohamedyosef101/get-into-deep-learning-with-pytorch-ann-cnn"
 - name: "TensorFlow"
   url: 'https://www.kaggle.com/code/mohamedyosef101/build-your-first-neural-network'
-url_pdf: ''
+- name: 'ResearchGate'
+  url: 'https://www.researchgate.net/publication/379820153_The_foundations_of_machine_learning_and_deep_learning'
+url_pdf: 'https://mohamedyosef101.github.io/publication/ml-dl-101/ml-dl-101.pdf'
 url_code: ''
 url_dataset: ''
 url_poster: ''
 url_project: ''
 url_slides: 'https://docs.google.com/presentation/d/1De7ZUupq3EAmqrgDaNwJvc-4yPAXQvtaqldoBC2dE-E/edit?usp=sharing'
-url_source: ''
+url_source: 'https://mohamedyosef101.github.io/publication/ml-dl-101/ml-dl-101.zip'
 url_video: ''
 ---
 
@@ -226,7 +228,7 @@ Recently, **transformers** have emerged as an alternative to RNNs (Vaswani et al
 
 ## Final words 
 In the article, I tried to get you through the foundation of machine learning and deep learning, but there are many concepts to learn. For this reason, you may like to take a look at the following resources: 
-(<a href="https://youtu.be/i_LwzRVP7bg?si=KeY5CgAfQhAdtOGV">Ying, 2022) for traditional ML algorithms, and
+(<a href="https://youtu.be/i_LwzRVP7bg?si=KeY5CgAfQhAdtOGV">Ying, 2022</a>) for traditional ML algorithms, and
 (<a href="https://d2l.ai/d2l-en.pdf">Zhang et al., 2021</a>);
 (<a href="https://youtube.com/playlist?list=PLM8lYG2MzHmQn55ii0duXdO9QSoDF5myF&si=s1pe9cRtFjKCPqR5">Turp, 2023</a>); 
 (<a href="https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&si=ieGLDzRU2Ln9L0RO">Sanderson, 2017</a>) for deep learning. Also, I'll try to update this article from time to time to make it more informative and easy to understand. At the same time, if you found any error, or you want to give me some suggestions, feel free to email me: mohamedyosef101@outlook.com.
