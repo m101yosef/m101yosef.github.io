@@ -36,18 +36,16 @@ tags:
 - Transformers
 
 links:
-- name: "Kaggle"
-  url: "https://www.kaggle.com/code/mohamedyosef101/build-your-first-neural-network"
-- name: "Medium"
-  url: 'https://medium.com/@mohamedyosef101/understanding-neural-networks-by-building-one-from-scratch-using-numpy-61500b9ca882'
-- name: "ANN & CNN"
+- name: "PyTorch"
   url: "https://www.kaggle.com/code/mohamedyosef101/get-into-deep-learning-with-pytorch-ann-cnn"
+- name: "TensorFlow"
+  url: 'https://www.kaggle.com/code/mohamedyosef101/build-your-first-neural-network'
 url_pdf: ''
-url_code: 'https://github.com/mohamedyosef101/101_learning_area/tree/area/PyTorch'
+url_code: ''
 url_dataset: ''
 url_poster: ''
 url_project: ''
-url_slides: ''
+url_slides: 'https://docs.google.com/presentation/d/1De7ZUupq3EAmqrgDaNwJvc-4yPAXQvtaqldoBC2dE-E/edit?usp=sharing'
 url_source: ''
 url_video: ''
 ---
@@ -88,9 +86,9 @@ $$
 \arg \min_s \sum_{i=1}^k \sum_{x \in S_i} ||x- \mu_i ||^2
 $$
 
-where $\mu_i$ is the mean of the points in cluster $S_i$. Figure 1.3 (right) shows an example of k-means clustering applied to the iris data. In this example, with only two features and no access to the true labels, k-means is not able to learn a partitioning of the data into clusters that matches the true labels.
+where $\mu_i$ is the mean of the points in cluster $S_i$. [Figure 3](#figure3) (right) shows an example of k-means clustering applied to the iris data. In this example, with only two features and no access to the true labels, k-means is not able to learn a partitioning of the data into clusters that matches the true labels.
 
-<figure>
+<figure id="figure3">
   <img src="./images/unsupervised.png">
   <figcaption>Figure 3: Data from the iris dataset proposed by Fisher (1936). The x and y axes are two of the features. The left figure shows the true labels for each of the data points, where red points belong to the setosa class, pink are virginica, and green are versicolor. The right figure shows an assignment of each point to a cluster, learned via k-means clustering (<a href="https://medium.com/@belen.sanchez27/predicting-iris-flower-species-with-k-means-clustering-in-python-f6e46806aaee">Sanchez, 2018</a>).</figcaption>
 </figure>
@@ -146,7 +144,7 @@ An **activation function** is a fancy way of saying that we are making the outpu
   <figcaption>Figure 7: (a) Binary step activation function when the inputs is greater than or equal to zero, it is activated, else it is deactivated. (b) simple linear activation function follow the equation x = y at any point in real numbers.</figcaption>
 </figure>
 
-If you think for a moment, you will find out that step functions and linear functions are difficult to optimize and can not solve a lot of problems. Therefore, **non-linear activation functions** come as a magical way to solve any complex problem, especially the non-linear ones. Common activation functions are logistic sigmoid, Tanh, and rectified linear unit (ReLU). You can see in Figure 2.3 that **logistic sigmoid** outputs a value between 0 and 1, but suffers from vanishing gradients during training. While **Tanh** is similar to sigmoid but outputs values between -1 and 1. A more frequently used activation function is **ReLU (Rectified Linear Unit)** which is simple and efficient, outputs the input directly if positive, otherwise outputs zero. There are variants of ReLU; like Leaky ReLU that address the "dying ReLU" problem (<a href="https://doi.org/10.48550/arXiv.1505.00853">Bing Xu et al., 2015</a>).
+If you think for a moment, you will find out that step functions and linear functions are difficult to optimize and can not solve a lot of problems. Therefore, **non-linear activation functions** come as a magical way to solve any complex problem, especially the non-linear ones. Common activation functions are logistic sigmoid, Tanh, and rectified linear unit (ReLU). You can see in Figure 8 that **logistic sigmoid** outputs a value between 0 and 1, but suffers from vanishing gradients during training. While **Tanh** is similar to sigmoid but outputs values between -1 and 1. A more frequently used activation function is **ReLU (Rectified Linear Unit)** which is simple and efficient, outputs the input directly if positive, otherwise outputs zero. There are variants of ReLU; like Leaky ReLU that address the "dying ReLU" problem (<a href="https://doi.org/10.48550/arXiv.1505.00853">Bing Xu et al., 2015</a>).
 
 <figure>
   <img src="./images/non-linear-activation-functions.png">
@@ -192,14 +190,14 @@ The computational cost of SGD is linear in the size of the batch. Using a smalle
 
 ### 2.4 Model Evaluation
 
-Model building projects (shown in Figure 2.5) follow a well-established life cycle. The first step involves creating a baseline model, a simple initial version that serves as a foundation for further development. Next, you feed your data into the model, which trains it to learn the underlying patterns and relationships. This training process is followed by rigorous testing to evaluate the model's performance. During testing, you can identify issues like overfitting, where the model memorizes the training data too closely and performs poorly on unseen data, or underfitting, where the model fails to capture the complexities of the data and has low accuracy. Based on the results of this evaluation, you can diagnose these issues and make adjustments to improve the model's performance. This might involve trying different algorithms, tweaking parameters, or gathering more data. You then train the improved model again and repeat the entire process until it meets your desired level of accuracy and generalizability.
+Model building projects (shown in Figure 10) follow a well-established life cycle. The first step involves creating a baseline model, a simple initial version that serves as a foundation for further development. Next, you feed your data into the model, which trains it to learn the underlying patterns and relationships. This training process is followed by rigorous testing to evaluate the model's performance. During testing, you can identify issues like overfitting, where the model memorizes the training data too closely and performs poorly on unseen data, or underfitting, where the model fails to capture the complexities of the data and has low accuracy. Based on the results of this evaluation, you can diagnose these issues and make adjustments to improve the model's performance. This might involve trying different algorithms, tweaking parameters, or gathering more data. You then train the improved model again and repeat the entire process until it meets your desired level of accuracy and generalizability.
 
 <figure>
   <img src="./images/ml-workflow.png">
   <figcaption>Figure 10: Model building follows a cycle: create a baseline model, train, test, diagnose the issues like overfitting and underfitting, improve, train it again, and repeat this process until it meets your performance goals. (Designed by the author)</figcaption>
 </figure>
 
-How to diagnose what’s happening in your model? The first thing that you need to know is that it’s good to have one main metric to evaluate your model, like the MSE that we used before. Other evaluation metrics like **accuracy** which is the proportion of correct predictions for a classification task. We also have **Precision and Recall** (shown in figure 2.6) are used to measure the ability of the model to identify true positives and avoid false positives/negatives (relevant for imbalanced datasets). Sometimes you want to free your head and use **F1-Score** which is the harmonic mean of precision and recall.
+How to diagnose what’s happening in your model? The first thing that you need to know is that it’s good to have one main metric to evaluate your model, like the MSE that we used before. Other evaluation metrics like **accuracy** which is the proportion of correct predictions for a classification task. We also have **Precision and Recall** (shown in figure 11) are used to measure the ability of the model to identify true positives and avoid false positives/negatives (relevant for imbalanced datasets). Sometimes you want to free your head and use **F1-Score** which is the harmonic mean of precision and recall.
 
 <figure>
   <img src="./images/precision-recall.png">
