@@ -248,7 +248,7 @@ Yosef, M. (2023). The foundations of machine learning and deep learning. MY101. 
 
 <hr>
 
-## Some References
+## References
 [1] Natasha Jaques. (2019). [Social and Affective Learning. MIT Media Lab](https://www.media.mit.edu/publications/social-and-affective-machine-learning/). <br>
 [2] Goodfellow, I., Courville, A., and Bengio, Y. (2016). [Deep learning](https://mitpress.mit.edu/9780262035613/deep-learning/). MIT Press. <br>
 [3] Yu, N. (2007). [Gradient methods for minimizing composite objective function](https://ideas.repec.org/p/cor/louvco/2007076.html). CORE Discussion Papers. <br>
