@@ -4,6 +4,16 @@
         font-family: $sta-font-heading;
     }
 }
+
+img.avatar.avatar-circle {
+  filter: grayscale(0%);
+}
+
+img.avatar.avatar-circle:hover {
+  filter: grayscale(100%);
+}
+
+
 .projects-container {
 
   .media-body {
