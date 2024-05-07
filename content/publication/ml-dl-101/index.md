@@ -39,9 +39,8 @@ links:
 - name: "PyTorch"
   url: "https://www.kaggle.com/code/mohamedyosef101/get-into-deep-learning-with-pytorch-ann-cnn"
 - name: "TensorFlow"
-  url: 'https://www.kaggle.com/code/mohamedyosef101/build-your-first-neural-network'
-- name: 'ResearchGate'
-  url: 'https://www.researchgate.net/publication/379820153_The_foundations_of_machine_learning_and_deep_learning'
+  url: 'https://www.kaggle.com/code/mohamedyosef101/build-your-first-neural-network' 
+  
 url_pdf: 'https://mohamedyosef101.github.io/publication/ml-dl-101/ml-dl-101.pdf'
 url_code: ''
 url_dataset: ''
