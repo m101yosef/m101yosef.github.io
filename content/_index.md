@@ -10,9 +10,9 @@ sections:
     id: hero
     demo: false
     content:
-      title: 'Turning Data into Answers:'
+      title: 'Turning Data into Answers'
       image:
-        filename: hero-light.png
+        filename: hero.png
       cta:
         label: 'More about me ↴'
         url: '#bio'
@@ -20,12 +20,14 @@ sections:
         label: Send me an email
         url: mailto:mohamedyosef101.outlook.com
       text: |-
-        **You can say that I Use Data Science to Explore the Unknown**
+        **You can say that I use data science to learn and explore**
 
         <div><br></div>
 
-        I'm curious about how data can help us understand our world better (more importantly: the human brain). 
-        My research mainly focuses on deep reinforcement learning, human-AI interaction, and --sometimes-- computational neuroscience.
+        <p style="font-size: 90%; color: whitesmoke;">
+        In fact, I'm curious about how data can help us understand our world better (more importantly: the human brain). That's why 
+        my research focuses on deep reinforcement learning, human-AI interaction, and the brain with --some-- computational neuroscience.
+        </p>
 
         <div><br></div>
 
@@ -33,9 +35,9 @@ sections:
         <div class="mb-3"></div>
     design:
       background:
-        gradient_end: '#Fefefe'
-        gradient_start: '#Fefefe'
-        text_color_light: false
+        gradient_end: '#21201E'
+        gradient_start: '#21201E'
+        text_color_light: true
 
   ### BIO ###
   - block: about.biography

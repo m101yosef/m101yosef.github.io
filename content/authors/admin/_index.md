@@ -84,8 +84,8 @@ This passion for design and creative thinking fuels my current work in data scie
 
 At Mansoura University, I lead a project called **AQSA** (2023-now) with a goal to help small businesses by using time-series and RL techniques to analyze and forecaste their data. So, you can say that AQSA is all about giving startups the tools to succeed!
 
-While I don't design for businesses anymore, my love for art and creativity remains a strong personal passion. I still design the figures for my research papers and articles. The reason behind that is it feels special -- having complete control over the visual representation of my story-- which allows me to tell a clearer, more impactful work.
+While I don't design for businesses anymore, my love for art and creativity remains a strong personal passion. I still design the figures for my research papers and articles. The reason behind that is it feels special -- having complete control over the visual representation of my story-- which allows me to craft a clearer, more impactful work.
 
-Finally, my main aim is to better understand our world and more importantly our brain. Using my design skills and data science techniques, I try to explain what I have discovered or known so that we can all RISE.
+At the end of the day, my main aim is to better understand the world around me and more importantly the brain inside my head. With the help of my design skills and data science techniques that I've learned over the last couple of years, I want to explain what I have discovered or known so that we can all RISE.
 
 {style="text-align: justify;"}
