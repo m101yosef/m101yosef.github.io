@@ -47,7 +47,7 @@ url_dataset: ''
 url_poster: ''
 url_project: ''
 url_slides: 'https://docs.google.com/presentation/d/1De7ZUupq3EAmqrgDaNwJvc-4yPAXQvtaqldoBC2dE-E/edit?usp=sharing'
-url_source: 'https://mohamedyosef101.github.io/publication/ml-dl-101/ml-dl-101.zip'
+url_source: ''
 url_video: ''
 ---
 
