@@ -20,7 +20,7 @@ sections:
         label: Send me an email
         url: mailto:mohamedyosef101.outlook.com
       text: |-
-        **I Use Data Science to Explore the Unknown**
+        **You can say that I Use Data Science to Explore the Unknown**
 
         <div><br></div>
 
@@ -58,11 +58,23 @@ sections:
       columns: '2'
       view: card
 
+  ### LEARNINGS ###
+  - block: collection
+    content:
+      title: Learnings
+      filters:
+        folders:
+          - publication
+        publication_type: "Learnings"
+    design:
+      columns: '2'
+      view: compact
+
   ### PUBLICATIONS ###
   - block: portfolio
     id: publications
     content:
-      title: Publications
+      title: All Publications
       filters:
         folders:
           - publication
@@ -80,6 +92,7 @@ sections:
           tag: Reinforcement Learning
         - name: Analytics
           tag: Data Analysis
+          tag: Data Science 
         - name: User Experience
           tag: User Experience
     design:
