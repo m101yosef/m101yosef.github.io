@@ -19,13 +19,13 @@ organizations:
   - name: Mansoura University
 
 # Short bio (displayed in user profile at end of posts)
-bio: Data scientist and Reinforcement Learning Researcher.
+bio: A Data Scientist and Researcher, focusing on deep reinforcement learning, human-AI interaction, and human brain. Also, I love to design my visuals by myself.
 
 # Interests to show in About widget
 interests:
-   - Reinforcement Learning
+   - Deep Reinforcement Learning
    - Human-AI Interaction
-   - Multi-agent Learning
+   - The Human Brain 
 
 # Education to show in About widget
 education:
@@ -59,13 +59,13 @@ social:
     link: 'https://www.twitter.com/mohamedyosef101'
     label: Twitter
     display: 
+      header: false
+  - icon: medium
+    icon_pack: fab
+    link: https://medium.com/@mohamedyosef101
+    label: Medium
+    display: 
       header: true
-  # - icon: medium
-  #   icon_pack: fab
-  #   link: https://medium.com/@mohamedyosef101
-  #   label: Medium
-  #   display: 
-  #     header: false
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/mohamedyosef101
@@ -79,10 +79,13 @@ highlight_name: true
 
 <br>
 
-My name is Mohamed Yosef, a data scientist and researcher from Egypt. I started out in user experience design, which means I worked on making apps and websites easy and enjoyable to use. After that, I got into **data science**, where I now focus on **deep reinforcement learning** (deep RL).
+My name is Mohamed Yosef, a data scientist and researcher from Egypt. I started as a user experience (UX) designer (2021-2023), making apps and websites easy and enjoyable to use. 
+This passion for design and creative thinking fuels my current work in data science, specifically  **deep reinforcement learning** (deep RL). Deep RL is a type of machine learning that helps machines make decisions by trying different actions and learning from the results. I also study **multi-agent learning**, which is about teaching multiple AI agents to work together and learn and solve problems. 
 
-**Deep RL** is a type of machine learning that helps machines make decisions by trying different actions and learning from the results. I also study **multi-agent learning**, which is about teaching multiple AI agents to work together and solve problems. At Mansoura University, I lead a project called **AQSA** where we help small businesses by using time-series and RL techniques to analyze and forecaste their sales data.
+At Mansoura University, I lead a project called **AQSA** (2023-now) with a goal to help small businesses by using time-series and RL techniques to analyze and forecaste their data. So, you can say that AQSA is all about giving startups the tools to succeed!
 
-My main aim is to make AI agents helpful partners for people in their work and daily life. I believe that by combining my design skills with my knowledge of data, I can make AI agents that are not only smart but also easy and pleasant to use.
+While I don't design for businesses anymore, my love for art and creativity remains a strong personal passion. I still design the figures for my research papers and articles. The reason behind that is it feels special -- having complete control over the visual representation of my story-- which allows me to tell a clearer, more impactful work.
+
+Finally, my main aim is to better understand our world and more importantly our brain. Using my design skills and data science techniques, I try to explain what I have discovered or known so that we can all RISE.
 
 {style="text-align: justify;"}
