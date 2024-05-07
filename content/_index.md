@@ -14,8 +14,8 @@ sections:
       image:
         filename: hero-light.png
       cta:
-        label: 'Talk a look at my work ↴'
-        url: https://mohamedyosef101.github.io/#publication
+        label: 'More about me ↴'
+        url: '#bio'
       cta_alt:
         label: Send me an email
         url: mailto:mohamedyosef101.outlook.com
