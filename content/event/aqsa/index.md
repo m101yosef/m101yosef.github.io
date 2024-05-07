@@ -15,7 +15,7 @@ date_end: ''#'2024-05-01T11:10:00Z'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: '2024-07-07T00:00:00Z'
+publishDate: '2024-05-07T00:00:00Z'
 
 
 tags: 
