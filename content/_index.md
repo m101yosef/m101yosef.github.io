@@ -26,7 +26,7 @@ sections:
 
         <p style="font-size: 90%; color: whitesmoke;">
         In fact, I'm curious about how data can help us understand our world better (more importantly: the human brain). That's why 
-        my research focuses on deep reinforcement learning, human-AI interaction, and the brain with --some-- computational neuroscience.
+        my research focuses on deep reinforcement learning, human-AI interaction, and the brain with <i>some</i> computational neuroscience.
         </p>
 
         <div><br></div>
