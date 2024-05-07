@@ -25,7 +25,7 @@ sections:
         <div><br></div>
 
         I'm curious about how data can help us understand our world better (more importantly: the human brain). 
-        My research mainly focuses on deep reinforcement learning, human-AI interaction, and sometimes computational neuroscience.
+        My research mainly focuses on deep reinforcement learning, human-AI interaction, and --sometimes-- computational neuroscience.
 
         <div><br></div>
 
@@ -60,6 +60,7 @@ sections:
 
   ### LEARNINGS ###
   - block: collection
+    id: learnings
     content:
       title: Learnings
       filters:

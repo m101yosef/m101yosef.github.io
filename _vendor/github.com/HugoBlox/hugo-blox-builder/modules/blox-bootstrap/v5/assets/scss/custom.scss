@@ -13,8 +13,19 @@ img.avatar.avatar-circle:hover {
   filter: grayscale(100%);
 }
 
+#talks div.article-style{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+}
 
-
+#learnings div.article-style{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+}
 
 .projects-container {
 
