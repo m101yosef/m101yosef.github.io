@@ -13,8 +13,8 @@ name = "Minimal"
 
   # Home sections
   background = "#FEFEFE"
-  home_section_odd = "#Fefefe"
-  home_section_even = "#efefef"
+  home_section_odd = "#efefef"
+  home_section_even = "#fefefe"
 
   link_hover = "#808080"
 
