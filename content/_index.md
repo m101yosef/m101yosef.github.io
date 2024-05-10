@@ -6,39 +6,6 @@ type: landing
 
 sections:
 
-  - block: hero
-    id: hero
-    demo: false
-    content:
-      title: 'Turning Data into Answers'
-      image:
-        filename: hero.png
-      cta:
-        label: 'More about me ↴'
-        url: '#bio'
-      cta_alt:
-        label: Send me an email
-        url: mailto:mohamedyosef101.outlook.com
-      text: |-
-        **You can say that I use data science to learn and explore**
-
-        <div><br></div>
-
-        <p style="font-size: 90%; color: whitesmoke;">
-        In fact, I'm curious about how data can help us understand our world better (more importantly: the human brain). That's why 
-        my research focuses on deep reinforcement learning, human-AI interaction, and the brain with <i>some</i> computational neuroscience.
-        </p>
-
-        <div><br></div>
-
-        <!--Custom spacing-->
-        <div class="mb-3"></div>
-    design:
-      background:
-        gradient_end: '#21201E'
-        gradient_start: '#21201E'
-        text_color_light: true
-
   ### BIO ###
   - block: about.biography
     id: bio
