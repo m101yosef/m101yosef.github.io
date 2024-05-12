@@ -19,7 +19,7 @@ organizations:
   - name: Mansoura University
 
 # Short bio (displayed in user profile at end of posts)
-bio: A Data Scientist and Researcher, focusing on deep reinforcement learning, human-AI interaction, and human brain. Also, I love to design my visuals by myself.
+bio: A Data Scientist and Researcher, focusing on deep reinforcement learning, human-AI interaction, and human brain.
 
 # Interests to show in About widget
 interests:
