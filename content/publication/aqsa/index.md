@@ -42,10 +42,10 @@ tags:
 - Time Series Analysis  
 
 links:
-- name: "ResearchGate"
-  url: "https://www.researchgate.net/publication/380290979_AQSA_AI_for_Startups"
-url_pdf: 'https://mohamedyosef101.github.io/publication/aqsa/main.pdf'
-url_code: ''
+- name: "Analyzer"
+  url: "https://aqsa-analyzer-v1.streamlit.app/analyzer"
+url_pdf: 'https://www.researchgate.net/publication/380290979_AQSA_AI_for_Startups'
+url_code: 'https://github.com/mohamedyosef101/aqsa-analyzer'
 url_dataset: ''
 url_poster: ''
 url_project: ''
