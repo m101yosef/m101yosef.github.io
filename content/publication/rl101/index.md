@@ -9,7 +9,7 @@ share: false
 show_related: true
 featured: true
 
-publication_types: ["Learnings"]
+publication_types: ["Literature Review"]
 
 # Publication name and optional abbreviated publication name.
 publication: "MohamedYosef101"

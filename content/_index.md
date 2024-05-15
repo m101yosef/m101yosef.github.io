@@ -58,13 +58,13 @@ sections:
 
   ### LEARNINGS ###
   - block: collection
-    id: learnings
+    id: reviews
     content:
-      title: Learnings
+      title: Lit. Reviews
       filters:
         folders:
           - publication
-        publication_type: "Learnings"
+        publication_type: "Literature Review"
     design:
       columns: '2'
       view: compact
