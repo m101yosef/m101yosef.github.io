@@ -64,7 +64,7 @@ sections:
       filters:
         folders:
           - publication
-        publication_type: "Literature Review"
+        publication_type: "review"
     design:
       columns: '2'
       view: compact
