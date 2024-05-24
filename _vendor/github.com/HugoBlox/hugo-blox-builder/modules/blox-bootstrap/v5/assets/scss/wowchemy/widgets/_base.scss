@@ -37,6 +37,7 @@
 
 .home-section.light a {
   color: $sta-link;
+  text-decoration: none;
 }
 
 .home-section.dark a {
@@ -54,7 +55,7 @@
 
 /* Underline links in dark sections to separate them from text */
 .home-section.dark a:not(.btn):not(.hero-cta-alt) {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Revert Alert Box Link style (.home-section.dark style above should not be applied to it) */

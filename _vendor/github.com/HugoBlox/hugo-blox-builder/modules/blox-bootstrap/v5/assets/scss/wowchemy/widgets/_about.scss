@@ -41,8 +41,14 @@
 .portrait-title h3 {
   font-size: 1rem;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.54);
   margin: 0 0 10px;
+  a {
+    color: rgba(0, 0, 0, 0.85);
+  }
+  a:hover {
+    color: teal; 
+    text-decoration: none;
+  }
 }
 
 ul.network-icon {
@@ -61,6 +67,12 @@ ul.network-icon {
 
 .network-icon li {
   margin-right: 10px;
+  a {
+    color:rgba(0, 0, 0, 0.80);
+  }
+  a:hover {
+    color: teal;
+  }
 }
 
 .network-icon li:last-of-type {

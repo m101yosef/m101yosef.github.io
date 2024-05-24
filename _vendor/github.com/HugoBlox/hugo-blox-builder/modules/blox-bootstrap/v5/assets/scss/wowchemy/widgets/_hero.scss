@@ -3,18 +3,20 @@
  **************************************************/
 
  .wg-hero {
-  padding: 3em 0; // More compact top and bottom padding for Hero.
+  padding: 3em 3rem; // More compact top and bottom padding for Hero.
 }
 
 .hero-title {
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   margin-top: 0;
+  padding-bottom: 1rem; 
   line-height: 1;
 }
 
 .hero-lead {
   max-width: 768px;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
+  padding-bottom: 1rem; 
   color: rgba(0,0,0,0.75)
 }
 
@@ -82,5 +84,43 @@ a.hero-cta-alt:hover {
   align-items: center;
   justify-content: center;
   height: 100%;
+  max-width: 480px;
   text-align: center;
+}
+
+
+#hero ul.network-icon {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#hero .network-icon {
+  margin-top: 0.5rem;
+}
+
+#hero .network-icon li {
+  margin-right: 10px;
+  a {
+    color: rgba(255, 255, 255, 0.85); 
+  }
+  a:hover {
+    color: white;
+  }
+}
+
+#hero .network-icon li:last-of-type {
+  margin-right: 0;
+}
+
+#hero .network-icon li:hover {
+  transform: scale(1.3);
+}
+
+#hero .big-icon {
+  font-size: 1.5rem;
 }

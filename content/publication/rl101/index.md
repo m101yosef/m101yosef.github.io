@@ -15,6 +15,8 @@ publication_types: ["review"]
 publication: "MohamedYosef101"
 publication_short: "MY101"
 
+bibliography: ref.bib
+
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
@@ -46,19 +48,22 @@ url_source: 'https://mohamedyosef101.github.io/publication/rl101/rl101.zip'
 url_video: ''
 ---
 
+<hr>
+
+
 {{< toc >}}
 
 
 <hr>
 
-Reinforcement Learning, learning through trial and error, is a rapidly growing field in AI. Unlike supervised learning, reinforcement learning provides you with the ability to learn directly from the world and adapt to new situations which makes it a valuable option for complex, real-world problems. From AlphaGo beating the world champion in Go, to the newest updates on large language models and what they can do, RL algorithms with no doubt have a huge impact in the present and the future of automation and Human-AI interaction. With this collection of RL principles, you’ll gain a deeper understand of how RL work and you may gain insights applicable in your own work, leading to innovative solutions.
+Reinforcement Learning, learning through trial and error, is a rapidly growing field in AI. Unlike supervised learning, reinforcement learning provides you with the ability to learn directly from the world and adapt to new situations which makes it a valuable option for complex, real-world problems. From AlphaGo beating the world champion in Go, to the newest updates on large language models and what they can do, RL algorithms with no doubt have a huge impact in the present and the future of automation and Human-AI interaction. With this collection of RL principles, you’ll gain a deeper understand of how RL work and you may gain insights applicable in your own work, leading to innovative solutions. 
 
 
 ## 1 What is Reinforcement Learning?
 
-If you think about how you learn and the nature of learning, you will clearly see that you learn by interacting with your world (or environment). In the same time, you are acutely aware of how your world responds to what you do, and your goal is to get the best results through your actions. The same thing happens with our little RL agent; the **agent** learns from the **world or environment** by interacting with it, through trial and error, and receiving **rewards**, negative or positive, as a feedback for performing actions. The agent is not told which actions to take at first, but the agent use the feedback from the environment to discover which actions yield the most reward.
+If you think about how you learn and the nature of learning, you will clearly see that you learn by interacting with your world (or environment). In the same time, you are acutely aware of how your world responds to what you do, and your goal is to get the best results through your actions. The same thing happens with our little RL agent; the **agent** learns from the **world or environment** by interacting with it, through trial and error, and receiving **rewards**, negative or positive, as a feedback for performing actions. The agent is not told which actions to take at first, but the agent use the feedback from the environment to discover which actions yield the most reward. 
 
-Reinforcement learning is different from supervised learning; supervised learning is learning from a training set of labeled examples provided by a knowledgeable external supervisor giving the AI the solution and the right action to take in a specific situation. The goal of supervised learning is to generalize a rule for the AI to deal with other situations that is not in the training set. BUT in real world interactive problems, the answer often emerges through exploration and trial-and-error. There might not be a definitive "correct" answer for every situation the agent encounters. Even if there is a right answer for some situations, it will not work well as a general solution (<a href="https://mitpress.mit.edu/9780262352703/reinforcement-learning/">Sutton & Barto, 2018</a>).
+Reinforcement learning is different from supervised learning; supervised learning is learning from a training set of labeled examples provided by a knowledgeable external supervisor giving the AI the solution and the right action to take in a specific situation. The goal of supervised learning is to generalize a rule for the AI to deal with other situations that is not in the training set. BUT in real world interactive problems, the answer often emerges through exploration and trial-and-error. There might not be a definitive "correct" answer for every situation the agent encounters. Even if there is a right answer for some situations, it will not work well as a general solution (<a style="text-decoration: none;" class='citation' href="#sutton2018">Sutton & Barto, 2018</a>).
 
 Reinforcement learning is also different from unsupervised learning; unsupervised learning is finding structure hidden in collection of unlabeled data. Understanding the hidden structure can be useful in reinforcement leaning, but unsupervised leaning itself does not maximize the reward signal.
 
@@ -67,11 +72,11 @@ So, reinforcement learning is the third machine learning paradigm alongside with
 
 ### 1.1 Reinforcement Learning Process
 
-The process of reinforcement learning (as shown in [Figure 1](#figure1)) starts with the agent observing a **state** $s_t$ which is a representation of the current situation the agent is in within its environment. Each state gives the agent information about the world (environment). Based on the state, the agent selects an **action** $a_t$ which is the move, or decision made by the agent in a given state of the environment -- the agent decides what to do using **policy** $\pi$, the agent’s brain, decides what actions to take based on the observed state-- then, the environment provides **rewards** $r_t$ to guide the agent after taking the action. The idea of rewards came from points in games; i.e., in football, the team gets 3 points for winning and 1 point for a draw and 0 points for losing.
+The process of reinforcement learning (as shown in Figure <a class=num href=#figure1>1</a>) starts with the agent observing a **state** $s_t$ which is a representation of the current situation the agent is in within its environment. Each state gives the agent information about the world (environment). Based on the state, the agent selects an **action** $a_t$ which is the move, or decision made by the agent in a given state of the environment -- the agent decides what to do using **policy** $\pi$, the agent’s brain, decides what actions to take based on the observed state-- then, the environment provides **rewards** $r_t$ to guide the agent after taking the action. The idea of rewards came from points in games; i.e., in football, the team gets 3 points for winning and 1 point for a draw and 0 points for losing.
 
 <figure id="figure1">
   <img alt="RL Process" src="./images/rl-process.png">
-  <figcaption>Figure 1: Reinforcement Learning process starts with the agent observing the current state in the environment, choosing an action, get a reward from the environment, then adjust the policy, and repeat. Based on a similar figure in (<a href="https://mitpress.mit.edu/9780262352703/reinforcement-learning/">Sutton & Barto, 2018</a>)</figcaption>
+  <figcaption>Figure 1: Reinforcement Learning process starts with the agent observing the current state in the environment, choosing an action, get a reward from the environment, then adjust the policy, and repeat. Based on a similar figure in (<a style="text-decoration: none;" class='citation' href="#sutton2018">Sutton & Barto, 2018</a>)</figcaption>
 </figure>
 
 <p style="color: crimson; font-weight: bold;">🎯 Note: the agent’s goal is to maximize its expected return (cumulative reward).</p>
@@ -85,12 +90,12 @@ $$
 <br>
 
 ### 1.2 Types of Reinforcement Learning tasks
-A task is a specific instance of a problem that you face everyday in your job. There are mainly two categories of tasks in reinforcement learning: episodic and continuous as shown in [Figure 2](#figure2). **Episodic** tasks  have a clear beginning and specific end, or a terminal state. In contrast, **continuous** tasks are ongoing, lacking a definitive endpoint, which requires the agent to improve the policy continuously while interacting with the environment.
+A task is a specific instance of a problem that you face everyday in your job. There are mainly two categories of tasks in reinforcement learning: episodic and continuous as shown in Figure [2](#figure2). **Episodic** tasks  have a clear beginning and specific end, or a terminal state. In contrast, **continuous** tasks are ongoing, lacking a definitive endpoint, which requires the agent to improve the policy continuously while interacting with the environment.
 
 <figure id="figure2">
   <img alt="types of RL tasks; episodic and continuous" 
   src="./images/types-of-rl-tasks.png">
-  <figcaption>Figure 2: Types of RL tasks; episodic (has a terminal state) and continuous that continues forever.</figcaption>
+  <figcaption>Figure 2: Types of RL tasks; episodic (has a terminal state) and continuous that continues forever. (Figure created by the author)</figcaption>
 </figure>
 
 ### 1.3 The Exploration/Exploitation trade-off
@@ -100,7 +105,7 @@ Sometimes, agents need to explore to learn new things and exploit to use what th
   <figure style="max-width: 540px;">
     <img alt="You have four paths and you can exploit you knowledge and choose the path you know or explore the other three paths" 
     src="./images/exploration-exploitation-tradoff.png">
-    <figcaption>Figure 3: You have four paths; one that you know so you can exploit your knowledge and choose easily. The other three paths are new so you might want to do some exploration.</figcaption>
+    <figcaption>Figure 3: You have four paths; one that you know so you can exploit your knowledge and choose easily. The other three paths are new so you might want to do some exploration. (Figure created by the author)</figcaption>
   </figure>
 </div>
 
@@ -114,19 +119,19 @@ The Policy is the function we want to learn. Our goal is to find the optimal 
 <div><br></div>
 
 ## 2 Markov Decision Processes
-The major goal of AI and reinforcement learning is to help us make better decisions. Markov decision process is a classical way to set up almost any problem in reinforcement learning. All states in the Markov decision process have MP, Markov property, which means the future only depends on the present, current state, not the past, all previous states:
+The major goal of AI and reinforcement learning is to help us make better decisions. Markov decision process is a classical way to set up almost any problem in reinforcement learning. All states in the Markov decision process have MP, Markov property (<a style="text-decoration: none;" class=citation href=#corcoran2023>Corcoran, 2023</a>), which means the future only depends on the present, current state, not the past, all previous states:
 
 $$
 \mathbb P[s_{t+1}|s_t]= \mathbb P[s_{t+1}|s_1,...,s_t]
 $$
 
-Here, we will take about Markov decision processes assuming we have complete information about the environment. In most cases, we don’t know exactly how an environment will react or the rewards for our actions. However, Markov Decision Processes (MDPs) lay the theoretical foundation for many reinforcement learning algorithms. Markov decision process consists of five elements $\mathcal{M} = \langle \mathcal{S}, \mathcal{A}, P, R, \gamma \rangle$, where $\mathcal{S}$ → a set of states; $\mathcal{A}$ → a set of actions; $P$ → transition probability function which specify the probability distribution over the next states given the current state (shown in [Figure 2.1](#figure2-1)); $R$ → reward function; $\gamma$ → discounting factor that specifies how much immediate rewards are favored over future rewards, $\gamma \in [0,1]$, when $\gamma$ equals 1, it implies that the future rewards are equally important as the present rewards. When $\gamma$  equals 0, this implies that we only care about present rewards.
+Here, we will take about Markov decision processes assuming we have complete information about the environment. In most cases, we don’t know exactly how an environment will react or the rewards for our actions. However, Markov Decision Processes (MDPs) lay the theoretical foundation for many reinforcement learning algorithms. Markov decision process consists of five elements $\mathcal{M} = \langle \mathcal{S}, \mathcal{A}, P, R, \gamma \rangle$, where $\mathcal{S}$ → a set of states; $\mathcal{A}$ → a set of actions; $P$ → transition probability function which specify the probability distribution over the next states given the current state (shown in Figure [4](#figure4)); $R$ → reward function; $\gamma$ → discounting factor that specifies how much immediate rewards are favored over future rewards, $\gamma \in [0,1]$, when $\gamma$ equals 1, it implies that the future rewards are equally important as the present rewards. When $\gamma$  equals 0, this implies that we only care about present rewards.
 
 <div align="center">
 <figure style="max-width: 540px;" id="figure4">
   <img alt="Markov Transition Dynamics among three states; A, B, and C" 
       src="./images/transition-probability.png">
-  <figcaption> Figure 4: Markov Transition Dynamics among three states; A, B, and C with the probabilities from moving from one state to the other. Let's say the agent starts in state $s_1 = C$, the dynamics describe the chances it transitions to other states $s_2=B$ has a probability of $0.1$.</figcaption>
+  <figcaption> Figure 4: Markov Transition Dynamics among three states; A, B, and C with the probabilities from moving from one state to the other. Let's say the agent starts in state $s_1 = C$, the dynamics describe the chances it transitions to other states $s_2=B$ has a probability of $0.1$. (Figure created by the author)</figcaption>
 </figure>
 </div>
 
@@ -134,7 +139,7 @@ Here, we will take about Markov decision processes assuming we have complete inf
 
 ### 2.1 The Bellman Equations
 
-The key idea is that we want to calculate the expected long-term return starting from any given state. This is called the value of that state, denoted $V(s)$. One way to calculate $V(s)$ is through simulation — we could sample many episodes starting from state, $s$, calculate the sum of discounted rewards in each one, and take the average. Here is a formula for state-value function (<a href="https://lilianweng.github.io/posts/2018-02-19-rl-overview/">Weng, 2018</a>),
+The key idea is that we want to calculate the expected long-term return starting from any given state. This is called the value of that state, denoted $V(s)$. One way to calculate $V(s)$ is through simulation — we could sample many episodes starting from state, $s$, calculate the sum of discounted rewards in each one, and take the average. Here is a formula for state-value function (<a style="text-decoration: none;" class='citation' href='#weng2018'>Weng, 2018</a>),
 
 $$
 \begin{aligned}
@@ -172,7 +177,7 @@ Consider the following figure as a summary of what I'm going to cover in the nex
 
 <figure id="figure5">
   <img alt="Comparison of the backup diagrams of Monte-Carlo, Temporal-Difference learning, and Dynamic Programming for state value functions." src="./images/TD_MC_DP_backups.png">
-  <figcaption>Figure 5: Comparison of the backup diagrams of Monte-Carlo, Temporal-Difference learning, and Dynamic Programming for state value functions (<a href="https://youtu.be/PnHCvfgC_ZA?si=_idcaKWaLDalAila">Silver, 2015</a>)
+  <figcaption>Figure 5: Comparison of the backup diagrams of Monte-Carlo, Temporal-Difference learning, and Dynamic Programming for state value functions (<a style="text-decoration: none;" href=#silver2015 class=citation>Silver, 2015</a>)
   </figcaption>
 </figure>
 
@@ -237,7 +242,7 @@ $$
 
 ### 2.4 Temporal Difference Learning
 
-<p style="color: teal;"><b>“If one had to identify one idea as central and novel to reinforcement learning, it would undoubtedly be temporal-difference learning.” </b> (<a style="color: teal;" href="https://mitpress.mit.edu/9780262352703/reinforcement-learning/">Sutton & Barto, 2018</a>).
+<p style="color: gray;"><b>“If one had to identify one idea as central and novel to reinforcement learning, it would undoubtedly be temporal-difference learning.” </b> (<a style="text-decoration: none; color:gray;" class=citation href=#sutton2018>Sutton & Barto, 2018</a>).
 </p>
 
 TD Learning is a combination of dynamic programming and Monte Carlo ideas that estimates the quality of a given policy at each time step, think of it as an exam and your grads are updated after each question, instead of just averaging all grads, returns, at the end of the exam, an episode, like Monte Carlo. Because we didn’t experience an entire episode, we don’t have return $G_t$. Instead, we estimate the return by adding reward and the discounted value of the next state, $\gamma\; V(s_{t+1})$:
@@ -258,7 +263,7 @@ $$
 
 <figure id="figure6">
   <img src="./images/rl-algorithms.png">
-  <figcaption>Figure 6: A non-exhaustive, but useful taxonomy of algorithms in reinforcement learning (<a href="https://spinningup.openai.com/en/latest/spinningup/rl_intro2.html">OpenAI, 2018</a>)</figcaption>
+  <figcaption>Figure 6: A non-exhaustive, but useful taxonomy of algorithms in reinforcement learning (<a href=#openai2018 class=citation>OpenAI, 2018</a>)</figcaption>
 </figure>
 
 ### 3.1 Q-learning and DQN
@@ -292,16 +297,16 @@ $$
 
 By iteratively optimizing this loss function using [gradient-based optimization](https://mohamedyosef101.github.io/publication/ml-dl-101/#23-optimization), we can refine our Q-value estimates until they converge to their actual expected value. 
 
-**Deep Q-learning** (<a href="https://arxiv.org/abs/1312.5602">Mnih et al., 2015</a>) is an advanced form of Q-learning that integrates deep neural networks with reinforcement learning. Deep Q-network (DQN) uses a deep neural network to estimate the quality of the action $Q(a, s)$ by treating the state $s$ as input, and having an output neuron for each possible action $K$ to estimate Q(a^k, s). But DQN struggle with temporal limitation where one state in not enough (shown in [Figure 7](#figure3-2)). Deep Q-learning addresses this by considering multiple future states, allowing the agent to evaluate actions based on both immediate and future rewards. Another problem is that the agent sometimes forgets previous lessons, so we first store all observed 
+**Deep Q-learning** (<a style="text-decoration: none;" class=citation href="https://arxiv.org/abs/1312.5602">Mnih et al., 2015</a>) is an advanced form of Q-learning that integrates deep neural networks with reinforcement learning. Deep Q-network (DQN) uses a deep neural network to estimate the quality of the action $Q(a, s)$ by treating the state $s$ as input, and having an output neuron for each possible action $K$ to estimate Q(a^k, s). But DQN struggle with temporal limitation where one state in not enough (shown in Figure [7](#figure7)). Deep Q-learning addresses this by considering multiple future states, allowing the agent to evaluate actions based on both immediate and future rewards. Another problem is that the agent sometimes forgets previous lessons, so we first store all observed 
 ($s_t, a_t, r_t, s_{t+1}$) tuples into an **experience replay** buffer, and randomly sample batches from this buffer to calculate the loss. 
 
     
 <figure id="figure7">
   <img alt="The problem of temporal difference where one frame or state was not enough to determine the direction of the ball. But when we used three frames, we can see easily that the ball was going form left to the right." src="./images/temporal-limitation.png">
-  <figcaption>Figure 7: The problem of temporal difference where one frame or state was not enough to determine the direction of the ball. So we used three frames instead.</figcaption>
+  <figcaption>Figure 7: The problem of temporal difference where one frame or state was not enough to determine the direction of the ball. So we used three frames instead. Reproduced by the author from (<a style="text-decoration: none;" href=#simonini2018 class=citation>Simonini, 2018</a>).</figcaption>
 </figure>
     
-In the early stages of Q-learning, the Q estimates are based on very few samples which can be quite noisy and tend to be optimistic about the future rewards. That's why we need to have a **target Q-network** (<a href="https://ojs.aaai.org/index.php/AAAI/article/view/10295">Hasselt et al., 2016</a>) which is initialized randomly, and slowly updated so the parameters move towards the values of the main Q-network (since we now have two the new, target network and the old, main one). 
+In the early stages of Q-learning, the Q estimates are based on very few samples which can be quite noisy and tend to be optimistic about the future rewards. That's why we need to have a **target Q-network** (<a style="text-decoration: none;" href=#hasselt2016 class=citation>Hasselt et al., 2016</a>) which is initialized randomly, and slowly updated so the parameters move towards the values of the main Q-network (since we now have two the new, target network and the old, main one). 
 
 
 ### 3.2 Policy gradients
@@ -332,16 +337,16 @@ The problem of any gradient is that the algorithm often get trapped in local max
 
 
 ### 3.3 Actor critic
-Actor-Critic methods are a hybrid architecture combining value-based (e.g., Q-learning) and policy-based (e.g., policy gradients). Therefore, it solves the problem of high variance in policy gradients and makes our agent train faster and better. Actor-critic methods have two key components (shown in Figure 8); **Actor** which aims to choose actions that will lead to high rewards in the long run, and **Critic** helps the actor learn better by providing feedback on the chosen actions. With that said, you can see that we have two function approximations (i.e., two neural networks); the first one is a policy function represents the actor while the other one is the value function represents the critic. 
+Actor-Critic methods are a hybrid architecture combining value-based (e.g., Q-learning) and policy-based (e.g., policy gradients). Therefore, it solves the problem of high variance in policy gradients and makes our agent train faster and better. Actor-critic methods have two key components (shown in Figure [8](#figure8)); **Actor** which aims to choose actions that will lead to high rewards in the long run, and **Critic** helps the actor learn better by providing feedback on the chosen actions. With that said, you can see that we have two function approximations (i.e., two neural networks); the first one is a policy function represents the actor while the other one is the value function represents the critic. 
 
 <div align="center">
-<figure style="max-width: 540px;">
+<figure style="max-width: 540px;" id=figure8>
   <img alt="In the image there is a person playing a game represents the actor and another person saying 'this is a really bad move' represents the critic" src="./images/a2c.jpg">
-  <figcaption>Figure 8: Two persons; one is playing a game represents the actor and another saying 'this is a really bad move' represents the critic (<a href="https://huggingface.co/learn/deep-rl-course/unit6/advantage-actor-critic">Simonini, 2018</a>).</figcaption>
+  <figcaption>Figure 8: Two persons; one is playing a game represents the actor and another saying 'this is a really bad move' represents the critic (<a style="text-decoration: none;" href=#simonini2018 class=citation >Simonini, 2018</a>).</figcaption>
 </figure>
 </div>
 
-The process (<a href="https://huggingface.co/learn/deep-rl-course/unit6/advantage-actor-critic">Simonini, 2018</a>) starts at timestep, t, where we get the current state $S_t$ from the environment and pass it as input through our Actor and Critic where our policy takes the state and outputs an action $A_t$. The critic takes takes the action as input as well and computes the quality of the action (Q-value). Since the action is taken, the environment outputs a reward $R_{t+1}$ and a new state $S_{t+1}$. Now, the actor is ready to update its policy using the Q-value: 
+The process (<a style="text-decoration: none;" href=#simonini2018 class=citation>Simonini, 2018</a>) starts at timestep, t, where we get the current state $S_t$ from the environment and pass it as input through our Actor and Critic where our policy takes the state and outputs an action $A_t$. The critic takes takes the action as input as well and computes the quality of the action (Q-value). Since the action is taken, the environment outputs a reward $R_{t+1}$ and a new state $S_{t+1}$. Now, the actor is ready to update its policy using the Q-value: 
 
 $$
 \Delta \theta = \alpha \nabla_\theta (\log \pi_\theta (s,a)) \hat q_w(s,a)
@@ -350,13 +355,12 @@ $$
 where $\Delta\theta$ is the change in policy parameters/weights and $\hat q_w(s,a)$ is the action value estimate. With that, the Actor produces the next action to take $a_{t+1}$ in the new state $s_{t+1}$. The Critic then updates its value parameters: 
 
 $$
-\Delta w = \beta (r_{t+1} + \gamma \hat q_w (s_{t+1}, a_{t+1}) 
-- \hat q_w (s_t, a_t)) \nabla_w \hat q_w (s_t, a_t)
+\Delta w = \beta (r_{t+1} + \gamma \hat q_w (s_{t+1}, a_{t+1}) - \hat q_w (s_t, a_t)) \nabla_w \hat q_w (s_t, a_t)
 $$
 
 where $\beta$ is the value learning rate which is different from $\alpha$ (the policy learning rate), $\nabla_w \hat q_w (s_t, a_t)$ is the gradient of our value function, and the rest of the equation is the TD error. 
 
-We can stabilize learning further by directly using the advantage function as Critic instead of the action-value function (<a href="https://huggingface.co/learn/deep-rl-course/unit6/advantage-actor-critic">Simonini, 2018</a>). The idea is that the Advantage function calculates the relative advantage of an action compared to other possible at a state: how taking that action at a state is better compared to the average value of the state. It's subtracting the mean value of the state from the state-action pair: 
+We can stabilize learning further by directly using the advantage function as Critic instead of the action-value function (<a style="text-decoration: none;" href=#simonini2018 class=citation>Simonini, 2018</a>). The idea is that the Advantage function calculates the relative advantage of an action compared to other possible at a state: how taking that action at a state is better compared to the average value of the state. It's subtracting the mean value of the state from the state-action pair: 
 
 $$
 \begin{aligned}
@@ -365,7 +369,7 @@ A(a,s) &= Q(a,s) - V(s_t) \\\
 \end{aligned}
 $$
 
-The advantage function describes how much better the current reward is than what we expect to get. If we substitute the advantage function into policy gradients, we obtain the Advantage Actor-Critic (A2C) algorithm (<a href="https://arxiv.org/abs/1602.01783v2">Mnih et al., 2016</a>): 
+The advantage function describes how much better the current reward is than what we expect to get. If we substitute the advantage function into policy gradients, we obtain the Advantage Actor-Critic (A2C) algorithm (<a style="text-decoration: none;" class=citation href=minh2016>Mnih et al., 2016</a>): 
 
 $$
 \begin{aligned}
@@ -378,27 +382,33 @@ $$
 
 
 ## Final words
-This article reviewed the basic concepts in reinforcement learning, there are for sure many concepts that I was not able to cover in this article. So, consider the following resources: 
+My goal in this review was to go over the basic concepts in reinforcement learning, there are for sure many concepts that I was not able to cover in this article. So, consider the following resources: 
 (<a href="https://youtube.com/playlist?list=PLLyj1Zd4UWrP3rME2XvFvE4Q5vI3H_7_Z&si=HJ_Jg1z5q20oRf45">Corcoran, 2023</a>) for Markov processes, 
 (<a href="https://mitpress.mit.edu/9780262352703/reinforcement-learning/">Sutton & Barto, 2018</a>) for RL concepts, (<a href="https://huggingface.co/learn/deep-rl-course/unit6/advantage-actor-critic">Simonini, 2018</a>) for some RL implementation, and (<a href="https://www.media.mit.edu/publications/social-and-affective-machine-learning/">Jaques, 2019</a>) for social learning. Also, I'll try to update this article from time to time to make it more informative and easy to understand. At the same time, if you found any error, or you want to give me some suggestions, feel free to email me: mohamedyosef101@outlook.com.
 
 <div align="center">
 <p style="font-size: 32px; padding-top: 12px;">تم بحمد الله</p>
 </div>
+
 <hr>
 
 cite as 
 
 ```
-Yosef, M. (2024). Reinforcement learning: All the basics. MY101. https://mohamedyosef101.github.io/publication/rl101/
+Mohamed Yosef. Reinforcement learning: All the basics, 2024. URL https://mohamedyosef101.github.io/publication/rl101/
 ```
+
 <hr>
 
 ## References
-[1] Sutton & Barto. (2018, 2020). [Reinforcement learning: An introduction](https://mitpress.mit.edu/9780262352703/reinforcement-learning/). MIT Press. <br>
-[2] Thomas Simonini. (2018). [Deep Reinforcement Learning course](https://huggingface.co/learn/deep-rl-course/unit0/introduction). Hugging Face. <br>
-[3] Lilian Weng. (Feb 2018). [A (Long) Peek into Reinforcement Learning](https://lilianweng.github.io/posts/2018-02-19-rl-overview/) [Personal]. <br>
-[4] Duane Rich. (2022). [Reinforcement learning by the book](https://youtube.com/playlist?list=PLzvYlJMoZ02Dxtwe-MmH4nOB5jYlMGBjr&si=M0Si454X5bz9cEbx). YouTube. <br>
-[5] Emma Brunskill. (2019). [CS234: Reinforcement Learning](https://youtube.com/playlist?list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u&si=iDTVkCL63ER_LWvm). Stanford Online. <br>
-[6] Jem Corcoran. (2023). [Markov Processes](https://youtube.com/playlist?list=PLLyj1Zd4UWrP3rME2XvFvE4Q5vI3H_7_Z&si=HJ_Jg1z5q20oRf45). A Probability Space. <br>
-[7] Natasha Jaques. (2019). [Social and Affective Learning](https://www.media.mit.edu/publications/social-and-affective-machine-learning/). MIT Media Lab.
+[<span id=corcoran2023>1</span>] Jem Corcoran. [Markov processes](https://www.youtube.com/playlist?list=PLLyj1Zd4UWrP3rME2XvFvE4Q5vI3H_7_Z), 2023. A Probability Space, YouTube Playlist.<br>
+[<span id=jaques2019>2</span>] Natasha Jaques. [Social and Affective Machine Learning](https://www.media.mit.edu/publications/social-and-affective-machine-learning/). PhD dissertation, Massachusetts Institute of Technology, 2019. <br>
+[<span id=minh2013>3</span>] Mnih V., Kavukcuoglu K., Silver D., Graves A., Antonoglou I., Wierstra D., and Riedmiller M. [Playing atari with deep reinforcement learning](http://arxiv.org/abs/1312.5602), December 2013.
+[<span id=minh2016>4</span>] Mnih V., Badia A., Mirza M., Graves A., Lillicrap T., Harley T., Silver D., and Kavukcuoglu K. [Asynchronous Methods
+for Deep Reinforcement Learning](http://arxiv.org/abs/1602.01783), arXiv:1602.01783 [cs], June 2016.
+[<span id='openai2018'>5</span>] OpenAI Spinning Up. [A Taxonomy of RL Algorithms](https://spinningup.openai.com/en/latest/spinningup/rl_intro2.html#a-taxonomy-of-rl-algorithms), 2018. <br>
+[<span id='silver2015'>6</span>] David Silver. (2015). [RL Course by David Silver - Lecture 4: Model-Free Prediction](https://youtu.be/PnHCvfgC_ZA?si=_idcaKWaLDalAila). DeepMind. <br>
+[<span id='simonini2018'>7</span>] Thomas Simonini. [Introduction - hugging face deep rl course](https://huggingface.co/learn/deep-rl-course/unit0/introduction), 2018. <br>
+[<span id='sutton2018'>8</span>] Sutton & Barto. [Reinforcement learning: An introduction](https://mitpress.mit.edu/9780262352703/reinforcement-learning/), 2018-2020. MIT Press. <br>
+[<span id=hasselt2016>9</span>] Hasselt H., Guez A., and Silver D. [Deep reinforcement learning with double q-learning](https://ojs.aaai.org/index.php/AAAI/article/view/10295), March 2016. ISSN 2374-3468, 2159-5399. doi: 10.1609/aaai.v30i1.10295.
+[<span id='weng2018'>10</span>] Lilian Weng. [A (Long) Peek into Reinforcement Learning](https://lilianweng.github.io/posts/2018-02-19-rl-overview/), 2018. <br>

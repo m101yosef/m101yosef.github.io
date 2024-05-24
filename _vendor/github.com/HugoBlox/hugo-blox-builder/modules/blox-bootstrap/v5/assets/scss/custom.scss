@@ -64,3 +64,21 @@ img.avatar.avatar-circle:hover {
   }
 }
 
+#tags a{
+  color: rgba(0, 0, 0, 0.75);
+}
+#tags a:hover {
+  color: gray;
+}
+
+.citation {
+  color: green;
+}
+
+.num {
+  color: crimson;
+}
+
+.article-container a{
+  text-decoration: none;
+}

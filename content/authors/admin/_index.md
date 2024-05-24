@@ -53,19 +53,18 @@ social:
     label: GitHub
     display:
       header: false
-
-  - icon: twitter
+  - icon: square-x-twitter 
     icon_pack: fab
     link: 'https://www.twitter.com/mohamedyosef101'
     label: Twitter
     display: 
-      header: false
+      header: true
   - icon: medium
     icon_pack: fab
     link: https://medium.com/@mohamedyosef101
     label: Medium
     display: 
-      header: true
+      header: false
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/mohamedyosef101
@@ -86,6 +85,6 @@ At Mansoura University, I lead a project called **AQSA** (2023-now) with a goal 
 
 While I don't design for businesses anymore, my love for art and creativity remains a strong personal passion. I still design the figures for my research papers and articles. The reason behind that is it feels special -- having complete control over the visual representation of my story -- which allows me to craft a clearer, more impactful work.
 
-At the end of the day, my main aim is to better understand the world around me and more importantly the brain inside my head. With the help of my design skills and data science techniques that I've learned over the last couple of years, I want to explain what I have discovered or known so that we can all RISE.
+At the end, my main aim is to better understand the world around me and more importantly the brain inside my head. With the help of my design skills and data science techniques that I've learned over the last couple of years, I want to explain what I have discovered or known so that we can all RISE.
 
 {style="text-align: justify;"}
