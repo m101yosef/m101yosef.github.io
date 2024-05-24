@@ -22,7 +22,7 @@ bibliography: ref.bib
 image:
   caption: 'Designed by Mohamed Yosef'
   focal_point: ""
-  preview_only: true
+  preview_only: false
 
 abstract: The way we learn is the core thing in any part of our life. So, can we move from the traditional learning way in machine learning which is about learning from labeled examples (supervised) or unlabeled examples (unsupervised)? Reinforcement learning provides a solution for this, where you have an agent (the AI) that learns through trial and error and learn from mistakes or achievements. There are two main approaches to solve almost any reinforcement learning problem; value-based and policy-based. Around these two approaches, I created this piece covering the basics, Markov decision processes, and main RL algorithms. All of this with a goal to help you understand all the basics by reading this one piece.
 
@@ -72,11 +72,11 @@ So, reinforcement learning is the third machine learning paradigm alongside with
 
 ### 1.1 Reinforcement Learning Process
 
-The process of reinforcement learning (as shown in Figure <a class=num href=#figure1>1</a>) starts with the agent observing a **state** $s_t$ which is a representation of the current situation the agent is in within its environment. Each state gives the agent information about the world (environment). Based on the state, the agent selects an **action** $a_t$ which is the move, or decision made by the agent in a given state of the environment -- the agent decides what to do using **policy** $\pi$, the agent’s brain, decides what actions to take based on the observed state-- then, the environment provides **rewards** $r_t$ to guide the agent after taking the action. The idea of rewards came from points in games; i.e., in football, the team gets 3 points for winning and 1 point for a draw and 0 points for losing.
+The process of reinforcement learning (as shown in <a href=#figure1>Figure 1</a>) starts with the agent observing a **state** $s_t$ which is a representation of the current situation the agent is in within its environment. Each state gives the agent information about the world (environment). Based on the state, the agent selects an **action** $a_t$ which is the move, or decision made by the agent in a given state of the environment -- the agent decides what to do using **policy** $\pi$, the agent’s brain, decides what actions to take based on the observed state-- then, the environment provides **rewards** $r_t$ to guide the agent after taking the action. The idea of rewards came from points in games; i.e., in football, the team gets 3 points for winning and 1 point for a draw and 0 points for losing.
 
 <figure id="figure1">
   <img alt="RL Process" src="./images/rl-process.png">
-  <figcaption>Figure 1: Reinforcement Learning process starts with the agent observing the current state in the environment, choosing an action, get a reward from the environment, then adjust the policy, and repeat. Based on a similar figure in (<a style="text-decoration: none;" class='citation' href="#sutton2018">Sutton & Barto, 2018</a>)</figcaption>
+  <figcaption>Figure 1: Reinforcement Learning process starts with the agent observing the current state in the environment, choosing an action, get a reward from the environment, then adjust the policy, and repeat. Based on a similar figure in (<a class='citation' href="#sutton2018">Sutton & Barto, 2018</a>)</figcaption>
 </figure>
 
 <p style="color: crimson; font-weight: bold;">🎯 Note: the agent’s goal is to maximize its expected return (cumulative reward).</p>
@@ -90,7 +90,7 @@ $$
 <br>
 
 ### 1.2 Types of Reinforcement Learning tasks
-A task is a specific instance of a problem that you face everyday in your job. There are mainly two categories of tasks in reinforcement learning: episodic and continuous as shown in Figure [2](#figure2). **Episodic** tasks  have a clear beginning and specific end, or a terminal state. In contrast, **continuous** tasks are ongoing, lacking a definitive endpoint, which requires the agent to improve the policy continuously while interacting with the environment.
+A task is a specific instance of a problem that you face everyday in your job. There are mainly two categories of tasks in reinforcement learning: episodic and continuous as shown in <a href=#figure2>Figure 2</a>. **Episodic** tasks  have a clear beginning and specific end, or a terminal state. In contrast, **continuous** tasks are ongoing, lacking a definitive endpoint, which requires the agent to improve the policy continuously while interacting with the environment.
 
 <figure id="figure2">
   <img alt="types of RL tasks; episodic and continuous" 
@@ -403,12 +403,12 @@ Mohamed Yosef. Reinforcement learning: All the basics, 2024. URL https://mohamed
 ## References
 [<span id=corcoran2023>1</span>] Jem Corcoran. [Markov processes](https://www.youtube.com/playlist?list=PLLyj1Zd4UWrP3rME2XvFvE4Q5vI3H_7_Z), 2023. A Probability Space, YouTube Playlist.<br>
 [<span id=jaques2019>2</span>] Natasha Jaques. [Social and Affective Machine Learning](https://www.media.mit.edu/publications/social-and-affective-machine-learning/). PhD dissertation, Massachusetts Institute of Technology, 2019. <br>
-[<span id=minh2013>3</span>] Mnih V., Kavukcuoglu K., Silver D., Graves A., Antonoglou I., Wierstra D., and Riedmiller M. [Playing atari with deep reinforcement learning](http://arxiv.org/abs/1312.5602), December 2013.
+[<span id=minh2013>3</span>] Mnih V., Kavukcuoglu K., Silver D., Graves A., Antonoglou I., Wierstra D., and Riedmiller M. [Playing atari with deep reinforcement learning](http://arxiv.org/abs/1312.5602), December 2013. <br>
 [<span id=minh2016>4</span>] Mnih V., Badia A., Mirza M., Graves A., Lillicrap T., Harley T., Silver D., and Kavukcuoglu K. [Asynchronous Methods
-for Deep Reinforcement Learning](http://arxiv.org/abs/1602.01783), arXiv:1602.01783 [cs], June 2016.
+for Deep Reinforcement Learning](http://arxiv.org/abs/1602.01783), June 2016. <br>
 [<span id='openai2018'>5</span>] OpenAI Spinning Up. [A Taxonomy of RL Algorithms](https://spinningup.openai.com/en/latest/spinningup/rl_intro2.html#a-taxonomy-of-rl-algorithms), 2018. <br>
 [<span id='silver2015'>6</span>] David Silver. (2015). [RL Course by David Silver - Lecture 4: Model-Free Prediction](https://youtu.be/PnHCvfgC_ZA?si=_idcaKWaLDalAila). DeepMind. <br>
 [<span id='simonini2018'>7</span>] Thomas Simonini. [Introduction - hugging face deep rl course](https://huggingface.co/learn/deep-rl-course/unit0/introduction), 2018. <br>
 [<span id='sutton2018'>8</span>] Sutton & Barto. [Reinforcement learning: An introduction](https://mitpress.mit.edu/9780262352703/reinforcement-learning/), 2018-2020. MIT Press. <br>
-[<span id=hasselt2016>9</span>] Hasselt H., Guez A., and Silver D. [Deep reinforcement learning with double q-learning](https://ojs.aaai.org/index.php/AAAI/article/view/10295), March 2016. ISSN 2374-3468, 2159-5399. doi: 10.1609/aaai.v30i1.10295.
+[<span id=hasselt2016>9</span>] Hasselt H., Guez A., and Silver D. [Deep reinforcement learning with double q-learning](https://ojs.aaai.org/index.php/AAAI/article/view/10295), March 2016. <br>
 [<span id='weng2018'>10</span>] Lilian Weng. [A (Long) Peek into Reinforcement Learning](https://lilianweng.github.io/posts/2018-02-19-rl-overview/), 2018. <br>

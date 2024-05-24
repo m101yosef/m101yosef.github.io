@@ -6,35 +6,35 @@ type: landing
 
 sections:
 
-  - block: hero
-    id: hero
-    demo: false
-    content:
-      title: '👋 Welcome to MY101'
-      username: admin
-      image:
-        filename: 'hero.png'
-      cta:
-        label: 
-        url: 
-      cta_alt:
-        label: 
-        url: 
-      text: |-
-        <p style="font-size: 90%; color: rgba(255, 255, 255, 0.8); padding-top: 1rem;">
-        Hi, I'm Mohamed and this is all about my work in data science and research. I care about how data can help us understand our world better and, more importantly, the world inside us (the brain). 
-        </p>
-    design:
-      background:
-        gradient_end: '#21201E'
-        gradient_start: '#21201E'
-        text_color_light: true
+  # - block: hero
+  #   id: hero
+  #   demo: false
+  #   content:
+  #     title: '👋 Welcome to MY101'
+  #     username: admin
+  #     image:
+  #       filename: 'hero.png'
+  #     cta:
+  #       label: 
+  #       url: 
+  #     cta_alt:
+  #       label: 
+  #       url: 
+  #     text: |-
+  #       <p style="font-size: 90%; color: rgba(255, 255, 255, 0.8); padding-top: 1rem;">
+  #       Hi, I'm Mohamed, and this is all about my work in data science and research. I'm curious about how data can help us understand our world better and, more importantly, the world inside us (the brain).
+  #       </p>
+  #   design:
+  #     background:
+  #       gradient_end: '#21201E'
+  #       gradient_start: '#21201E'
+  #       text_color_light: true
 
   ### BIO ###
   - block: about.biography
     id: bio
     content:
-      title: ''
+      title: '👋 Welcome to MY101'
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
 

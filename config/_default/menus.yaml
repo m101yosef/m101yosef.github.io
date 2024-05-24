@@ -10,8 +10,8 @@ main:
   - name: Featured
     url: '#featured'
     weight: 20
-  - name: Learnings
-    url: '#learnings'
+  - name: Lit. Reviews
+    url: '#reviews'
     weight: 30
   - name: Publications
     url: '#publications'
