@@ -53,7 +53,7 @@ social:
     label: GitHub
     display:
       header: false
-  - icon: square-x-twitter 
+  - icon: twitter 
     icon_pack: fab
     link: 'https://www.twitter.com/mohamedyosef101'
     label: Twitter
