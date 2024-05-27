@@ -297,6 +297,11 @@ $$
 
 By iteratively optimizing this loss function using [gradient-based optimization](https://mohamedyosef101.github.io/publication/ml-dl-101/#23-optimization), we can refine our Q-value estimates until they converge to their actual expected value. 
 
+<p style='color: crimson; padding: 18px; text-align: center; font-weight: bold;'>
+--<br>
+If you want to build Q-Learning algorithm by your self, <br>take a look at <a href="https://github.com/mohamedyosef101/rl-algorithms/blob/main/Q-Learning/main.ipynb">this notebook</a>.<br> --
+</p>
+
 **Deep Q-learning** (<a style="text-decoration: none;" class=citation href="https://arxiv.org/abs/1312.5602">Mnih et al., 2015</a>) is an advanced form of Q-learning that integrates deep neural networks with reinforcement learning. Deep Q-network (DQN) uses a deep neural network to estimate the quality of the action $Q(a, s)$ by treating the state $s$ as input, and having an output neuron for each possible action $K$ to estimate Q(a^k, s). But DQN struggle with temporal limitation where one state in not enough (shown in Figure [7](#figure7)). Deep Q-learning addresses this by considering multiple future states, allowing the agent to evaluate actions based on both immediate and future rewards. Another problem is that the agent sometimes forgets previous lessons, so we first store all observed 
 ($s_t, a_t, r_t, s_{t+1}$) tuples into an **experience replay** buffer, and randomly sample batches from this buffer to calculate the loss. 
 
