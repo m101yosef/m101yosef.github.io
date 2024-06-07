@@ -3,13 +3,15 @@
  **************************************************/
 
  .wg-hero {
-  padding: 3em 3rem; // More compact top and bottom padding for Hero.
+  padding: 8em 3rem; // More compact top and bottom padding for Hero.
+  height: max-content;
 }
 
 .hero-title {
   font-size: 2.1rem;
   margin-top: 0;
   padding-bottom: 1rem; 
+  padding-top: 2rem;
   line-height: 1;
 }
 
@@ -84,7 +86,7 @@ a.hero-cta-alt:hover {
   align-items: center;
   justify-content: center;
   height: 100%;
-  max-width: 480px;
+  max-width: 560px;
   text-align: center;
 }
 

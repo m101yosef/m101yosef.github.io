@@ -34,7 +34,7 @@ sections:
   - block: about.biography
     id: bio
     content:
-      title: '👋 Welcome to MY101'
+      title: ''
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
 
