@@ -37,7 +37,7 @@ url_source: ''
 url_video: ''
 ---
 
-## **0. Find the WHY of my research**
+## 0. Find the WHY of my research
 
 Without a clear understanding of why you are conducting UX research, you run **the risk of collecting irrelevant or inconclusive data**, which can lead to wasted time, effort, and resources.
 
@@ -55,13 +55,13 @@ By answering these questions, I can establish a clear research objective that wi
 
 Now, a question for you: did you know the **UXR process can be broken down into four distinct stages**?
 
-## **What are the 4 stages of the UX Research Process?**
+## What are the 4 stages of the UX Research Process?
 
 It’s worth noting that the UX research process isn’t always a linear journey. In fact, **it often feels more like a loop**, where you discover, define, design, and rerun the process one more time.
 
 But by breaking the process down into these four stages, you can **ensure that you’re gathering the right insights** at the right time and creating a user-centered product that meets your users’ needs.
 
-## **1. Discovery Phase in the UXR Process**
+## 1. Discovery Phase in the UXR Process
 
 The first stage of the UX research process is the discovery phase. In this phase, you’re trying to gain a broad understanding of your users and their needs. This might involve conducting user interviews, analyzing user data, or performing competitive research to see how other apps or products are solving similar problems.
 
@@ -73,7 +73,7 @@ Here is how my discovery stage look like:
 - **Hunt for data sources**. Who has the information I need, and [how can I gather it?](https://medium.com/@mohamedyosef101/how-to-uncover-your-customers-true-desires-the-power-of-data-analytics-47442983bee2)
 - **Determine UX metrics.** [Find the right metrics](https://medium.com/design-bootcamp/what-are-the-right-metrics-to-create-a-successful-product-9cb44b6041b8) to measure how well the system is working for its users.
 
-## **2. Exploring Phase in UXR Process**
+## 2. Exploring Phase in UXR Process
 
 One of the great things about the exploration phase is that it overlaps with your active phase in the design process. Whenever you need to validate your design assumptions, you can use one of the exploring methods to gather feedback and insights from your users.
 
@@ -85,7 +85,7 @@ Here is what I do in the exploring phase:
 - **Map features to needs**. [Create user journey maps](https://careerfoundry.com/en/blog/ux-design/how-to-make-customer-journey-map-with-template/) that track the steps users take when interacting with your product.
 - **Avoid waste**. Reducing and eliminating nonessential packaging and disposable parts, as well as avoiding wasting people’s time.
 
-## **3. Testing Phase in UXR Process**
+## 3. Testing Phase in UXR Process
 
 Once you have some design concepts to work with, you move on to the testing phase. This is where you start to validate your design ideas and evaluate their effectiveness. This might involve conducting usability tests, A/B testing different design variations, or gathering feedback from users to see how well your designs meet their needs.
 
@@ -95,7 +95,7 @@ Here are some activities that I may do at this stage:
 - **Include diverse users**. People can be very different culturally and physically. They also have a range of abilities and language skills. Personas are not enough to prevent serious problems, so be sure your testing includes as wide a variety of people as you can.
 - **Track usability bugs**. If usability bugs don’t have a place in the bug database, start your own database to track important issues.
 
-## **4. Listening in the UXR Process**
+## 4. Listening in the UXR Process
 
 Finally, once you’ve refined your design based on user feedback, you move on to the listening phase. This is where you launch your product and continue to gather feedback and insights from users. This might involve monitoring user behavior, conducting surveys, or analyzing user feedback to identify areas for improvement.
 
