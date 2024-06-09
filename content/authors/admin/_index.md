@@ -59,12 +59,6 @@ social:
     label: Twitter
     display: 
       header: true
-  - icon: medium
-    icon_pack: fab
-    link: https://medium.com/@mohamedyosef101
-    label: Medium
-    display: 
-      header: false
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/mohamedyosef101
