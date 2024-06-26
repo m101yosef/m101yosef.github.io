@@ -31,14 +31,12 @@ tags:
 - Data Analysis
 - Data Science
 
-links:
-- name: "Kaggle"
-  url: "https://www.kaggle.com/code/mohamedyosef101/economic-data-analysis-with-fredapi"
+
 url_pdf: ''
 url_code: 'https://github.com/mohamedyosef101/growth-vs-unemployment'
 url_dataset: 'https://www.kaggle.com/datasets/mohamedyosef101/economic-growth-and-unemployment-rate'
 url_poster: ''
-url_project: ''
+url_project: 'https://www.kaggle.com/code/mohamedyosef101/economic-data-analysis-with-fredapi'
 url_slides: ''
 url_source: ''
 url_video: ''

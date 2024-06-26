@@ -24,9 +24,7 @@ summary: Many people might find the idea of conducting UX research daunting, as 
 tags:
 - User Experience
 
-links:
-- name: "Medium"
-  url: "https://medium.com/@mohamedyosef101/the-4-stages-of-any-ux-research-process-f9db949434a3"
+
 url_pdf: ''
 url_code: ''
 url_dataset: ''
