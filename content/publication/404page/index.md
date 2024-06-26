@@ -34,16 +34,11 @@ summary: Error pages should reassure, delight and guide the user to interesting 
 tags:
 - User Experience
 
-links:
-- name: "Medium"
-  url: "https://medium.com/design-bootcamp/turn-your-404-error-page-into-opportunity-c473cad69d42"
-- name: "Behance"
-  url: "https://www.behance.net/gallery/163769529/Turn-404-Error-into-branding-opportunity-UX-Research"
 url_pdf: ''
 url_code: ''
 url_dataset: ''
 url_poster: ''
-url_project: ''
+url_project: 'https://www.behance.net/gallery/163769529/Turn-404-Error-into-branding-opportunity-UX-Research'
 url_slides: ''
 url_source: ''
 url_video: ''

@@ -24,6 +24,10 @@ sections:
         <p style="font-size: 90%; color: rgba(255, 255, 255, 0.8); padding-top: 1rem;">
         Hi, I'm Mohamed, and this is all about my work in data science and research. I'm curious about how data can help us understand our world better and, more importantly, the world inside us (the brain).
         </p>
+
+        <p style="font-size: 90%; color: rgba(255, 255, 255, 0.8); padding-top: 1rem;">
+        You can also visit me on: 
+        </p>
     design:
       background:
         gradient_end: '#21201E'

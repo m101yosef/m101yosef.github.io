@@ -82,3 +82,10 @@ img.avatar.avatar-circle:hover {
 .article-container a{
   text-decoration: none;
 }
+
+#reviews .article-style{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+}

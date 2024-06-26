@@ -53,6 +53,12 @@ social:
     label: GitHub
     display:
       header: false
+  - icon: youtube
+    icon_pack: fab
+    link: 'https://www.youtube.com/channel/UCy3s95fHNIbeOUIGYEamReg'
+    label: YouTube 
+    display: 
+      header: false
   - icon: twitter
     icon_pack: fab
     link: 'https://www.twitter.com/mohamedyosef101'

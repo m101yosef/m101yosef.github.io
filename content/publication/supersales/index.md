@@ -33,9 +33,6 @@ tags:
 - Data Visualization
 - Data Science
 
-links:
-- name: "Medium"
-  url: "https://medium.com/@mohamedyosef101/build-an-interactive-sales-dashboard-with-streamlit-and-python-4f02fe49b470"
 url_pdf: ''
 url_code: 'https://github.com/mohamedyosef101/Super-Dashboard'
 url_dataset: 'https://www.kaggle.com/datasets/aungpyaeap/supermarket-sales'

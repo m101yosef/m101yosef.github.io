@@ -165,13 +165,15 @@ $$
 If we only care about finding the optimal values and the optimal policy, $\pi^*$, which dictates the best action to take in each state. The Bellman optimality equation gives us a faster way and break down the values recursively, without having to simulate full episodes (bootstrapping). It says:
 
 $$
-V_*(s)=\max_{a \in \mathcal{A}} \;(R(s, a)+\gamma V(s'))
+V_*(s)=\max_{a \in \mathcal{A}} \ (R(s, a)+\gamma V(s'))
 $$
 
 where $R(s)$ is the immediate reward received after taking action $a$ in state $s$; $\gamma$ is the discount factor; $V(s’)$ is the value of the next state $s’$ that follows $s$. So instead of calculating $V(s)$ from scratch using many episodes, we can build it up iteratively using the values of the next states.
 
-
 <br>
+
+I will continue talking about the use of Bellman optimality equation in [Q-learning](#31-q-learning-and-dqn) section but first we need to discover more ways to calculate the state-value function (as shown in [figure 5](#figure5))
+
 
 Consider the following figure as a summary of what I'm going to cover in the next three sections.
 
@@ -185,9 +187,9 @@ Consider the following figure as a summary of what I'm going to cover in the nex
 
 ### 2.2 Dynamic Programming (DP)
 
-A collection of algorithms that can be used to compute optimal policies given a perfect model of the environment as a Markov decision process (MDP).A **model** is how the environment change in response to the agent's actions. While if we have complete information about the environment, we call it **model-based learning** and model-free is the opposite; where we know nothing about the environment dynamics. However in dynamic programming, the key idea is to break down complex problems into smaller, simpler subproblems and then solves them recursively, reusing the solutions of subproblems to find the solution to the larger problem. DP algorithms leverage Bellman equations iteratively to update the value functions, starting from an initial guess and progressively getting closer to the optimal values.
+A collection of algorithms that can be used to compute optimal policies given a perfect model of the environment as a Markov decision process (MDP). A **model** is how the environment change in response to the agent's actions. While if we have complete information about the environment, we call it **model-based learning** and model-free is the opposite; where we know nothing about the environment dynamics. However in dynamic programming, the key idea is to break down complex problems into smaller, simpler subproblems and then solves them recursively, reusing the solutions of subproblems to find the solution to the larger problem. DP algorithms leverage Bellman equations iteratively to update the value functions, starting from an initial guess and progressively getting closer to the optimal values.
 
-There are two main dynamic programming algorithms value iteration and policy iteration; (1) **Value Iteration, VI** updates the state-value function, $V(s)$, for all states. In each iteration, VI uses the current estimate of $V(s)$ to calculate an improved estimate based on the Bellman optimality equation for $V(s)$. This process continues until the values converge to the optimal $V_*(s)$.
+There are two main dynamic programming algorithms for reinforcement learning value iteration and policy iteration; (1) **Value Iteration, VI** updates the state-value function, $V(s)$, for all states. In each iteration, VI uses the current estimate of $V(s)$ to calculate an improved estimate based on the Bellman optimality equation for $V(s)$. This process continues until the values converge to the optimal $V_*(s)$.
 
 $$
 \begin{aligned} 
@@ -242,7 +244,7 @@ $$
 
 ### 2.4 Temporal Difference Learning
 
-<p style="color: gray;"><b>“If one had to identify one idea as central and novel to reinforcement learning, it would undoubtedly be temporal-difference learning.” </b> (<a style="text-decoration: none; color:gray;" class=citation href=#sutton2018>Sutton & Barto, 2018</a>).
+<p style="color: gray;"><b>“If one had to identify one idea as central and novel to reinforcement learning, it would undoubtedly be temporal-difference learning.” </b> (<a style="text-decoration: none; color:gray;" class=citation href=#sutton2018>Sutton & Barto</a>).
 </p>
 
 TD Learning is a combination of dynamic programming and Monte Carlo ideas that estimates the quality of a given policy at each time step, think of it as an exam and your grads are updated after each question, instead of just averaging all grads, returns, at the end of the exam, an episode, like Monte Carlo. Because we didn’t experience an entire episode, we don’t have return $G_t$. Instead, we estimate the return by adding reward and the discounted value of the next state, $\gamma\; V(s_{t+1})$:
@@ -260,6 +262,7 @@ $$
 <br>
 
 ## 3 RL Algorithms 
+There are two main categories of reinforcement learning algorithms: model-free (where we do not know the environment dynamics) and model-based (where we know the environment dynamics)
 
 <figure id="figure6">
   <img src="./images/rl-algorithms.png">
