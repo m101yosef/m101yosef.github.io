@@ -270,34 +270,21 @@ There are two main categories of reinforcement learning algorithms: model-free (
 </figure>
 
 ### 3.1 Q-learning and DQN
-I told you before that **model-free** means that the agent doesn't know 
-anything about the environment dynamics or how it works. I also want you 
-remember that a policy is the agent's brain; it is the center of decision 
-making. Therefore, when the agent try to improve this policy by learning 
-from its own action, this is called **on-policy**. In contrast, when the 
-agent learns from the actions of the others, this is **off-policy**. Now, I 
-can say that Q-learning is a model-free, off-policy reinforcement learning 
-algorithm. So, rather than learning a value estimate, we learn 
-**action-value** or the quality of the action, $Q_\pi(a,s)$, and to get the 
-expected future reward of starting in state $s$ and taking action $a$ by 
-using a Temporal Difference (TD) learning approach to optimize the value 
-function:
+I told you before that **model-free** means that the agent doesn't know anything about the environment dynamics or how it works. I also want you remember that a policy is the agent's brain; it is the center of decision making. Therefore, when the agent try to improve this policy by learning from its own action, this is called **on-policy**. In contrast, when the agent learns from the actions of the others, this is **off-policy**. Now, I can say that Q-learning is a model-free, off-policy reinforcement learning algorithm. So, rather than learning a value estimate, we learn **action-value** or the quality of the action, $Q_\pi(a,s)$, and to get the expected future reward of starting in state $s$ and taking action $a$ by using a Temporal Difference (TD) learning approach to optimize the value function:
 
 $$
 Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha [R_{t+1} + 
 \gamma \max_a Q(s_{t+1}, a) - Q(s_t, a_t)]
 $$
 
-If you recall from [section 1.3](#13-the-explorationexploitation-trade-off), 
-the agent doesn't know when to explore and when to exploit. Therefore, Q-learning often uses an epsilon-greedy policy ($\epsilon-greeds$) in which the agent exploits by taking the best action according to the agent information $1 - \epsilon$ times and explore a random action $\epsilon$ times. Using the outsourced policy (epsilon-greed policy), the agent updates the Q-values to determine the best action in each state (agent's policy), aiming for optimal performance. 
+If you recall from [section 1.3](#13-the-explorationexploitation-trade-off), the agent doesn't know when to explore and when to exploit. Therefore, Q-learning often uses an epsilon-greedy policy ($\epsilon-greeds$) in which the agent exploits by taking the best action according to the agent information $1 - \epsilon$ times and explore a random action $\epsilon$ times. Using the outsourced policy (epsilon-greed policy), the agent updates the Q-values to determine the best action in each state (agent's policy), aiming for optimal performance. 
 
 <p style='color: crimson; padding: 18px; text-align: center; font-weight: bold;'>
 --<br>
 If you want to build Q-Learning algorithm by yourself, <br>take a look at <a href="https://github.com/mohamedyosef101/rl-algorithms/blob/main/Q-Learning/main.ipynb" target="_blank">this notebook</a>.<br> --
 </p>
 
-**Deep Q-learning** (<a class=citation href="#minh2013">Mnih et al., 2013</a>) is an advanced form of Q-learning that integrates deep neural networks with reinforcement learning. Deep Q-network (DQN) uses a deep neural network to estimate the quality of the action $Q(a, s)$ by treating the state $s$ as input, and having an output neuron for each possible action $K$ to estimate Q(a^k, s). But DQN struggle with temporal limitation where one state in not enough (shown in Figure [7](#figure7)). Deep Q-learning addresses this by considering multiple future states, allowing the agent to evaluate actions based on both immediate and future rewards. Another problem is that the agent sometimes forgets previous lessons, so we first store all observed 
-($s_t, a_t, r_t, s_{t+1}$) tuples into an **experience replay** buffer, and randomly sample batches from this buffer to calculate the loss. 
+**Deep Q-learning** (<a class=citation href="#minh2013">Mnih et al., 2013</a>) is an advanced form of Q-learning that integrates deep neural networks with reinforcement learning. Deep Q-network (DQN) uses a deep neural network to estimate the quality of the action $Q(a, s)$ by treating the state $s$ as input, and having an output neuron for each possible action $K$ to estimate Q(a^k, s). But DQN struggle with temporal limitation where one state in not enough (shown in Figure [7](#figure7)). Deep Q-learning addresses this by considering multiple future states, allowing the agent to evaluate actions based on both immediate and future rewards. Another problem is that the agent sometimes forgets previous lessons, so we first store all observed ($s_t, a_t, r_t, s_{t+1}$) tuples into an **experience replay** buffer, and randomly sample batches from this buffer to calculate the loss. 
 
     
 <figure id="figure7">
