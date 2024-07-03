@@ -81,7 +81,7 @@ highlight_name: true
 My name is Mohamed Yosef, a data scientist and researcher from Egypt. I started as a user experience (UX) designer (2021-2023), making apps and websites easy and enjoyable to use. 
 My passion for design and creative thinking helps me a lot in my current work in data science, specifically  **deep reinforcement learning** (deep RL), a type of machine learning that helps machines make decisions by trying different actions and learning from the results. I also study **multi-agent learning**, which is about teaching multiple AI agents to work together and learn and solve problems. 
 
-At Mansoura University, I lead a project called **AQSA** (2023-now) with a goal to help small businesses by using time-series and RL techniques to analyze and forecaste their data. So, you can say that AQSA is all about giving startups the tools to succeed!
+At Mansoura University, I lead a project called **AQSA** (2023-now) with a goal to help small businesses by using time-series and RL techniques to analyze and forecast their data. So, you can say that AQSA is all about giving startups the tools to succeed!
 
 While I don't design for businesses anymore, my love for art and creativity remains a strong personal passion. I still design the figures for my research papers and articles. The reason behind that is it feels special -- having complete control over the visual representation of my story -- which allows me to craft a clearer, more impactful work.
 
