@@ -19,20 +19,20 @@ organizations:
   - name: Mansoura University
 
 # Short bio (displayed in user profile at end of posts)
-bio: A Data Scientist and Researcher, focusing on deep reinforcement learning, human-AI interaction, and human brain.
+bio: A Data Scientist and Researcher, focusing on deep reinforcement learning and human-AI interaction.
 
 # Interests to show in About widget
-interests:
-   - Deep Reinforcement Learning
-   - Human-AI Interaction
-   - The Human Brain 
+# interests:
+#    - Deep Reinforcement Learning
+#    - Human-AI Interaction
+#    - The Human Brain 
 
 # Education to show in About widget
-education:
-  courses:
-    - course: Statistics & Computer Science
-      institution: Faculty of Science, Mansoura University
-      year: 
+# education:
+#   courses:
+#     - course: Statistics & Computer Science
+#       institution: Faculty of Science, Mansoura University
+#       year: 
 
 
 # Social/Academic Networking
@@ -78,13 +78,23 @@ highlight_name: true
 
 <br>
 
-My name is Mohamed Yosef, a data scientist and researcher from Egypt. I started as a user experience (UX) designer (2021-2023), making apps and websites easy and enjoyable to use. 
-My passion for design and creative thinking helps me a lot in my current work in data science, specifically  **deep reinforcement learning** (deep RL), a type of machine learning that helps machines make decisions by trying different actions and learning from the results. I also study **multi-agent learning**, which is about teaching multiple AI agents to work together and learn and solve problems. 
+My name is Mohamed Yosef, a data scientist and AI researcher from Egypt. I started as a user experience (UX) designer (2021-2023), making apps and websites easy and enjoyable to use. My passion for design and creative thinking helps me a lot in my current work in data science, specifically  **deep reinforcement learning** (deep RL), a machine learning approach that helps systems make decisions by trying different actions and learning from the results. I also study **human-AI interaction**, which is about exploring how people and AI systems can effectively collaborate and enhance each other's capabilities. 
 
-At Mansoura University, I lead a project called **AQSA** (2023-now) with a goal to help small businesses by using time-series and RL techniques to analyze and forecast their data. So, you can say that AQSA is all about giving startups the tools to succeed!
+At Mansoura University, I lead a project called **AQSA** (Sep 2023 - May 2024) aimed at using the new AI techniques to help small businesses as well as bridging the gap between research and real-world applications. The project consists of three key components: Generative Chatbot (tailored for information about startup ecosystem and other parts of AQSA), Automated Data Analysis (get visual representation of any given data), and Forecasting module (combining historical data, market trends, and external factors like currency exchange rates and oil prices to generate reliable predictions for sales or interest rates).
 
 While I don't design for businesses anymore, my love for art and creativity remains a strong personal passion. I still design the figures for my research papers and articles. The reason behind that is it feels special -- having complete control over the visual representation of my story -- which allows me to craft a clearer, more impactful work.
 
-At the end, my main aim is to better understand the world around me and more importantly the brain inside my head. With the help of my design skills and data science techniques that I've learned over the last couple of years, I want to explain what I have discovered or known so that we can all RISE.
+My ultimate goal is for my research and work to help us understand our world and, more importantly, the world inside us—the brain.
+
+<div align="center" 
+style="padding-top: 1em;
+font-family:Droid Arabic Naskh, san-serif;
+font-size:26px;
+color: gray;"
+>
+سَنُرِيهِمْ آيَاتِنَا فِي الْآفَاقِ وَفِي أَنْفُسِهِمْ حَتَّى يَتَبَيَّنَ لَهُمْ أَنَّهُ الْحَقُّ
+
+<p style="font-size:16px">We will show them Our signs in the horizons and within themselves <br> until it becomes clear to them that it is the truth.</p>
+</div>
 
 {style="text-align: justify;"}
