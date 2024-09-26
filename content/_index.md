@@ -10,7 +10,7 @@ sections:
     id: hero
     demo: false
     content:
-      title: '👋 Welcome to MY101'
+      title: 'Putting data into action'
       username: admin
       image:
         filename: 'hero-img.png'
@@ -22,7 +22,7 @@ sections:
         url: 
       text: |-
         <p style="font-size: 90%; padding-top: 1rem;">
-        Hi, I'm Mohamed, and this is all about my work in data science and research. I'm curious about how data can help us understand our world better and, more importantly, the world inside us (the brain).
+        Hi, I'm Mohamed, and this is all about my work in data science, AI research, and MLOps. With data, we can have a better understanding of our world and, more importantly, the world inside us (<i>the brain</i>).
         </p>
 
     design:
@@ -35,7 +35,7 @@ sections:
   - block: about.biography
     id: bio
     content:
-      title: ''
+      title: 'About Me'
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
 
