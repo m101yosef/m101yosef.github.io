@@ -1,0 +1,58 @@
+{{/* Hugo Blox: Hero */}}
+{{/* Documentation: https://hugoblox.com/blocks/ */}}
+{{/* License: https://github.com/HugoBlox/hugo-blox-builder/blob/main/LICENSE.md */}}
+
+{{/* Initialise */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $bg := $block.design.background }}
+
+{{ if $block.content.image.filename }} 
+<div class="row">
+  <div class="col-12 col-md-6 text-center text-md-left">
+{{ end }}
+
+    {{ with $block.content.title }}
+      <h1 class="hero-title">{{ . | markdownify }}</h1>
+    {{ end }}
+
+    {{ with $block.content.text }}
+      <div class="hero-lead">
+        {{ . | $page.RenderString | emojify }}
+        
+      </div>
+      <div class="cta-btns">
+        <a role="button" class="btn" style="color: white;" href="#publications">Explore my work</a>
+      </div>
+    </div>
+    {{ end }}
+
+  {{/* Hero image */}}
+  {{ if $block.content.image.filename }}
+  <div class="col-12 mx-auto col-md-6 {{if $block.content.design.flip}}order-md-first{{end}} hero-media">
+    {{- $image := resources.Get (path.Join "media" $block.content.image.filename) -}}
+    {{ if $image }}
+      {{ $isSVG := eq $image.MediaType.SubType "svg" }}
+      {{ if $isSVG -}}
+        <img src="{{ $image.RelPermalink }}" alt="{{ $block.Title }}">
+      {{- else }}
+        {{ $legacy_img := $image.Resize "400x" }}
+        {{ $img_src := "" }}
+        {{ $img_src_set := slice }}
+        {{ $widths := slice 1200 800 400 }}
+
+        {{ range $widths }}
+          {{ $src_link := ($image.Resize (printf "%dx" .)).RelPermalink }}
+          {{ if eq $img_src "" }}
+            {{ $img_src = $src_link }}
+          {{ end }}
+          {{ $img_src_set = $img_src_set | append (printf "%s %dw" $src_link .) }}
+        {{ end }}
+        {{ $img_src_set = delimit $img_src_set "," }}
+
+        <img src="{{ $legacy_img.RelPermalink }}" srcset="{{ $img_src_set }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $block.Title }}">
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}

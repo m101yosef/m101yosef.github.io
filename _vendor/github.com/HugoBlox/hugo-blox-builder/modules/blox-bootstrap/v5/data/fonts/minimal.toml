@@ -1,0 +1,11 @@
+# Font style metadata
+name = "Minimal"
+
+# Optional Google font URL
+google_fonts = "family=Nunito:wght@200..1000&display=swap"
+
+# Font families
+heading_font = "Nunito"
+body_font = "Nunito"
+nav_font = "Nunito"
+mono_font = "mono_font"
