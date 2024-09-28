@@ -19,7 +19,7 @@ organizations:
   - name: Mansoura University
 
 # Short bio (displayed in user profile at end of posts)
-bio: A Data Scientist and Researcher, focusing on deep reinforcement learning and human-AI interaction.
+bio: An MLOps Engineer and AI Researcher, specialising in deep reinforcement learning, NLP, and human-AI interaction.
 
 # Interests to show in About widget
 interests:
