@@ -22,7 +22,7 @@ sections:
         url: 
       text: |-
         <p style="font-size: 90%; padding-top: 1rem;">
-        Hi, I'm Mohamed, and this is all about my work in data science, AI research, and MLOps. With data, we can have a better understanding of our world and, more importantly, the world inside us (<i>the brain</i>).
+        Hi, I'm Mohamed, and this is all about my work in MLOps, AI research, and data science. I specialise in operationalising machine learning models and exploring how AI, particularly NLP and reinforcement learning, can help us better understand the world around us and, most importantly, the world inside us (<i>the brain</i>).
         </p>
 
     design:
