@@ -21,8 +21,9 @@ sections:
         label: 
         url: 
       text: |-
-        <p style="font-size: 90%; padding-top: 1rem;">
-        Hi, I'm Mohamed, and this is all about my work in MLOps, AI research, and data science. I specialise in operationalising machine learning models and exploring how AI, particularly NLP and reinforcement learning, can help us better understand the world around us and, most importantly, the world inside us (<i>the brain</i>).
+        <p style="font-size: 90%; padding-top: 0.1rem;">
+        <b> Hi, I’m Mohamed, and this is all about my work in Data Science, MLOps, and Reinforcement Learning (RL).</b><br><br>
+        I specialise in operationalising machine learning models and advancing research in Reinforcement Learning to solve complex real-world problems. My work bridges MLOps and AI research, exploring how AI systems can deepen our understanding of both the world around us and the world inside us (the human brain).
         </p>
 
     design:
