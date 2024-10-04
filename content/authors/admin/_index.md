@@ -15,7 +15,7 @@ superuser: true
 # Organizations/Affiliations to show in About widget
 organizations:
   - name: Data Scientist, RL Researcher
-    url: https://orcid.org/0009-0003-3052-8404
+    url: https://kaggle.com/mohamedyosef101
   - name: Mansoura University
 
 # Short bio (displayed in user profile at end of posts)
