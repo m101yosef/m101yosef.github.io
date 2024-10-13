@@ -22,10 +22,10 @@ image:
   focal_point: ""
   preview_only: false
 
-abstract: This report investigates the relationship between a country's economic factors, such as GDP and population, and its performance in the Olympic Games. Using data that includes total medals won by each country, their GDP, and population, the analysis introduces two key features, medals per capita and medals per GDP, which normalize performance based on these economic indicators. Through a series of visualisations and data exploration, the study reveals that while countries with larger GDPs often win more medals, smaller nations like St. Lucia, Dominica, and Grenada excel when their performance is adjusted for population size. 
+abstract: Exploring the relationship between a country’s economic standing and its performance in Paris 2024 Olympics. At first, you'll assume that wealthier countries with larger populations dominate the Olympics, but I'm not taking about that. The thing is what countries did better despite their "median" or "low" economy. 
 
 # Summary. An optional shortened abstract.
-summary: While economic power and population size contribute to a country's Olympic success, they are not the only factors. Smaller countries with less economic power can outperform expectations when normalized for population or GDP.
+summary: Exploring the relationship between a country’s economic standing and its performance in Paris 2024 Olympics. At first, you'll assume that wealthier countries with larger populations dominate the Olympics, but I'm not taking about that. The thing is what countries did better despite their "median" or "low" economy. 
 
 tags:
 - Data Analysis
