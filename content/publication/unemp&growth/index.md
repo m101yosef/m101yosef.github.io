@@ -12,8 +12,8 @@ featured: false
 publication_types: ["report"]
 
 # Publication name and optional abbreviated publication name.
-publication: "MohamedYosef101"
-publication_short: "MY101"
+publication: "Kaggle"
+
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
