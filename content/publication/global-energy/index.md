@@ -13,8 +13,7 @@ share: false
 publication_types: ["report"]
 
 # Publication name and optional abbreviated publication name.
-publication: "MohamedYosef101"
-publication_short: "MY101"
+publication: "Kaggle"
 
 featured: false
 
