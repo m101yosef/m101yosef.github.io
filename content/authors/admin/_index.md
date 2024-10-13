@@ -19,7 +19,7 @@ organizations:
   - name: Mansoura University
 
 # Short bio (displayed in user profile at end of posts)
-bio: Data Scientist with a focus on MLOps and Reinforcement Learning (RL).
+bio: Data scientist and AI researcher with expertise in Reinforcement Learning, developing practical machine learning solutions to drive insights and optimise decision-making across industries.
 
 # Interests to show in About widget
 interests:
