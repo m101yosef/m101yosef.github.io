@@ -87,6 +87,10 @@ a.summary-link {
   color: rgba(0, 0, 0, 0.9)
 }
 
+.card .card-text a:hover{
+  color: whitesmoke;
+}
+
 .card .card-text p {
   color: rgba(0, 0, 0, 0.54);
   font-size: 0.75rem;
