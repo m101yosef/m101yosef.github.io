@@ -78,13 +78,12 @@ highlight_name: true
 
 <br>
 
-My journey began with a strong interest in data and mathematics, which has led me to work on diverse projects that apply machine learning and AI to real-world problems.
+My passion for data and mathematics has fuelled a diverse career where I apply machine learning and AI to solve real-world problems.
 
-I've worked with businesses to help them use AI to improve decision-making, develop chatbots, and automate tasks. My experience includes building recommendation systems, forecasting models, and conducting time-series analysis for various industries. I’ve also led research projects that explore the intersection of economic trends like [Unemployment rate after COVID-19](https://mohamedyosef101.github.io/publication/unempgrowth/), [energy consumption](https://mohamedyosef101.github.io/publication/global-energy/), and human performance, like my recent analysis of the [2024 Olympics](https://mohamedyosef101.github.io/publication/olympics-economics/).
+I’ve collaborated with businesses to leverage AI for smarter decision-making, automate workflows, and create advanced chatbots. My experience spans building recommendation systems, time-series forecasting models, and applying AI across various industries. I’ve led research projects at the intersection of [economic trends](https://mohamedyosef101.github.io/publication/unempgrowth/), [energy consumption](https://mohamedyosef101.github.io/publication/global-energy/), and human performance, such as my recent analysis of the [2024 Olympics](https://mohamedyosef101.github.io/publication/olympics-economics/).
 
-Beyond my freelance work, I’ve developed apps ([AQSA](https://mohamedyosef101.github.io/publication/aqsa/) & [EVNTO](https://mohamedyosef101.github.io/publication/evnto/)) for universities and startups, leveraging AI to create meaningful user experiences. I enjoy collaborating with different teams to bring AI-driven solutions to life, and I’m always looking for new opportunities to explore how AI can shape the future.
+In addition to my freelance projects, I’ve developed apps like [AQSA](https://mohamedyosef101.github.io/publication/aqsa/) and [EVNTO](https://mohamedyosef101.github.io/publication/evnto/) for universities and startups, using AI to enhance user experiences. My work thrives in collaborative environments, and I’m always looking for innovative ways AI can transform industries and impact the future.
 
-Currently, I’m focused on mastering reinforcement learning, while continually expanding my knowledge in Natural Language Processing and Time Series Analysis.
-
+Currently, I’m focusing on mastering reinforcement learning, expanding my expertise in Natural Language Processing and Time Series Analysis, while exploring how AI can drive human-AI interaction and deeper insights into the brain.
 
 {style="text-align: justify;"}
