@@ -23,7 +23,7 @@ sections:
       text: |-
         <p style="font-size: 90%; padding-top: 0.1rem;">
         <b> Hi, I’m Mohamed, and this is all about my work in Data Science, AI, and Reinforcement Learning (RL).</b><br><br>
-        I specialise in developing machine learning models and advancing research in Reinforcement Learning to solve complex real-world problems. My work bridges data science and AI research, exploring how AI systems can help us make smarter decisions in various industries, better understand the world around us and the world inside us (the brain).
+        My focus is on developing machine learning models and advancing cutting-edge research in Reinforcement Learning to tackle real-world challenges. From optimizing business processes to understanding complex systems, my work bridges data science with AI research, striving to enhance decision-making, deepen our understanding of industries, and unlock the mysteries of the human brain.
         </p>
 
     design:
