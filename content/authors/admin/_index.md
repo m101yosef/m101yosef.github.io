@@ -10,16 +10,16 @@ last_name: Yosef
 superuser: true
 
 # Role/position/tagline
-# role: Data Scientist, RL Researcher.
+# role: ---
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: Data Scientist, RL Researcher
+  - name: Applied AI/ML Researcher
     url: https://kaggle.com/mohamedyosef101
   - name: Mansoura University
 
 # Short bio (displayed in user profile at end of posts)
-bio: Data scientist and AI researcher with expertise in Reinforcement Learning, developing practical machine learning solutions to drive insights and optimise decision-making across industries.
+bio: Applied AI/ML Researcher specialising in Reinforcement Learning (RL) with a focus on developing AI-driven tools like chatbots, recommendation systems, and predictive models that solve real-world problems. 
 
 # Interests to show in About widget
 interests:
