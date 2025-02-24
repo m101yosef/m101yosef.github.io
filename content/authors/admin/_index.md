@@ -14,17 +14,17 @@ superuser: true
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: Applied AI/ML Researcher
+  - name: Applied Data Scientist
     url: https://kaggle.com/mohamedyosef101
   - name: Mansoura University
 
 # Short bio (displayed in user profile at end of posts)
-bio: Applied AI/ML Researcher specialising in Reinforcement Learning (RL) with a focus on developing AI-driven tools like chatbots, recommendation systems, and predictive models that solve real-world problems. 
+bio: Applied Data Scientist specialising in AI/ML with a focus on predictive analytics, time series forecasting, and developing data-driven tools that solve real-world business challenges.
 
 # Interests to show in About widget
 interests:
+   - Time Series Analysis
    - Deep Reinforcement Learning
-   - Human-AI Interaction
    - The Human Brain 
 
 # Education to show in About widget
@@ -78,12 +78,12 @@ highlight_name: true
 
 <br>
 
-My passion for data and mathematics has fuelled a diverse career where I apply machine learning and AI to solve real-world problems.
+My passion for data and mathematics has driven a diverse career where I apply data science and AI to solve real-world business challenges.
 
-I’ve collaborated with businesses to leverage AI for smarter decision-making, automate workflows, and create advanced chatbots. My experience spans building recommendation systems, time-series forecasting models, and applying AI across various industries. I’ve led research projects at the intersection of [economic trends](https://mohamedyosef101.github.io/publication/unempgrowth/), [energy consumption](https://mohamedyosef101.github.io/publication/global-energy/), and human performance, such as my recent analysis of the [2024 Olympics](https://mohamedyosef101.github.io/publication/olympics-economics/).
+I’ve collaborated with businesses to leverage data for smarter decision-making, build predictive models, and develop advanced analytics solutions. My experience spans creating recommendation systems, time-series forecasting models, and delivering actionable insights across various industries. I’ve led data-driven research projects at the intersection of [economic trends](https://mohamedyosef101.github.io/publication/unempgrowth/), [energy consumption](https://mohamedyosef101.github.io/publication/global-energy/), and human performance, such as my recent analysis of the [2024 Olympics](https://mohamedyosef101.github.io/publication/olympics-economics/).
 
-In addition to my freelance projects, I’ve developed apps like [AQSA](https://mohamedyosef101.github.io/publication/aqsa/) and [EVNTO](https://mohamedyosef101.github.io/publication/evnto/) for universities and startups, using AI to enhance user experiences. My work thrives in collaborative environments, and I’m always looking for innovative ways AI can transform industries and impact the future.
+In addition to my freelance projects, I’ve developed data-focused applications like [AQSA](https://mohamedyosef101.github.io/publication/aqsa/) and [EVNTO](https://mohamedyosef101.github.io/publication/evnto/) for universities and startups, using data analysis and AI to enhance user experiences. My work thrives in collaborative environments, and I’m always seeking new ways data science can transform industries and provide a competitive edge.
 
-Currently, I’m focusing on mastering reinforcement learning, expanding my expertise in Natural Language Processing and Time Series Analysis, while exploring how AI can drive human-AI interaction and deeper insights into the brain.
+Currently, I’m focusing on mastering time series analysis, expanding my expertise in predictive analytics, and exploring how AI can drive deeper insights and business value.
 
 {style="text-align: justify;"}
