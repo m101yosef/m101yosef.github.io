@@ -1,0 +1,116 @@
+{{/* Brands Section */}}
+{{ $block := .wcBlock }}
+{{ $page := .wcPage }}
+
+<section class="relative bg-gradient-to-b from-white/50 to-gray-50 dark:from-gray-900/50 dark:to-gray-800">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="text-center mb-6">
+      <h2 class="font-medium text-gray-600 dark:text-gray-300">
+        {{ $block.content.title | default "Trusted by innovative teams at" }}
+      </h2>
+      
+    </div>
+
+    <!-- Carousel Container -->
+    <div class="carousel-container relative overflow-hidden py-12">
+      <!-- Carousel Track -->
+      <div class="carousel-track flex transition-transform duration-500">
+        {{ range $index, $brand := $block.content.brands }}
+          <div class="carousel-item flex-shrink-0 w-full flex justify-center">
+            {{ $image := resources.Get (printf "brand/%s" $brand.logo) }}
+            <a href="{{ print "https://" $brand.url }}" target="_blank">
+              <img src="{{ $image.RelPermalink }}" alt="{{ $brand.name }}"
+                   class="brand-img max-w-[96px] md:max-w-[128px] transition-opacity duration-300">
+            </a>
+          </div>
+        {{ end }}
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button class="carousel-prev mt-12 absolute left-0 top-0 transform -translate-y-0 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg focus:outline-none">
+        <svg class="w-6 h-6 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <button class="carousel-next mt-12 absolute right-0 top-0 transform -translate-y-0 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg focus:outline-none">
+        <svg class="w-6 h-6 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <style>
+    .carousel-item {
+      min-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .brand-img {
+      filter: grayscale(60%);
+      transition: all 1s ease;
+      max-height: 132px;
+    }
+
+    .brand-img:hover {
+      filter: grayscale(0%);
+      transform: scale(1.1);
+    }
+
+    /* Responsive arrow adjustments */
+    @media (max-width: 640px) {
+      .carousel-prev, .carousel-next {
+        padding: 1rem;
+        background: rgba(255,255,255,0.9);
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.querySelector('.carousel-track');
+      const items = document.querySelectorAll('.carousel-item');
+      const prevBtn = document.querySelector('.carousel-prev');
+      const nextBtn = document.querySelector('.carousel-next');
+      let currentIndex = 0;
+      let autoPlayInterval;
+
+      const showItem = (index) => {
+        currentIndex = index;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        resetAutoPlay();
+      };
+
+      const nextItem = () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        showItem(currentIndex);
+      };
+
+      const prevItem = () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        showItem(currentIndex);
+      };
+
+      const startAutoPlay = () => {
+        autoPlayInterval = setInterval(nextItem, 2000); // 5 seconds
+      };
+
+      const resetAutoPlay = () => {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+      };
+
+      // Event listeners
+      prevBtn.addEventListener('click', prevItem);
+      nextBtn.addEventListener('click', nextItem);
+      track.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+      track.addEventListener('mouseleave', startAutoPlay);
+
+      // Initialize
+      startAutoPlay();
+    });
+  </script>
+</section>

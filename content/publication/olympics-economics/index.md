@@ -5,7 +5,7 @@ authors:
 date: "2024-10-04"
 doi: ""
 publishDate: "2024-10-07"
-share: false
+share: true
 show_related: true
 featured: true
 
@@ -28,9 +28,7 @@ abstract: Exploring the relationship between a country’s economic standing and
 summary: Exploring the relationship between a country’s economic standing and its performance in Paris 2024 Olympics. At first, you'll assume that wealthier countries with larger populations dominate the Olympics, but I'm not taking about that. The thing is what countries did better despite their "median" or "low" economy. 
 
 tags:
-- Data Analysis
-- Sports
-- Economics
+- Data Analytics
 
 links:
 - name: "Kaggle"

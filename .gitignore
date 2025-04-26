@@ -11,3 +11,16 @@ go.sum
 
 # latex files
 **/latex
+
+# personal
+desktop.ini 
+
+# underdevelopment
+content/post
+content/project
+content/teaching
+content/event
+
+
+# test
+test.html

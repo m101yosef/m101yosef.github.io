@@ -1,0 +1,62 @@
+{{/* Hugo Blox: Tags Cloud */}}
+{{/* Documentation: https://hugoblox.com/blocks/ */}}
+{{/* License: https://github.com/HugoBlox/hugo-blox-builder/blob/main/LICENSE.md */}}
+
+{{/* Initialise */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center mb-8">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
+      {{ $block.content.title | default "Tags Cloud" }}
+    </h2>
+    {{ with $block.content.subtitle }}
+    <p class="mt-2 text-lg text-gray-500 dark:text-gray-400">{{ . }}</p>
+    {{ end }}
+  </div>
+
+  {{ $tags := site.Taxonomies.tags }}
+  {{ $publication_tags := slice }}
+  
+  {{/* Filter tags to only those used in publications */}}
+  {{ range $tag, $pages := $tags }}
+    {{ $publication_count := 0 }}
+    {{ range $pages.Pages }}
+      {{ if eq .Type "publication" }}{{ $publication_count = add $publication_count 1 }}{{ end }}
+    {{ end }}
+    {{ if gt $publication_count 0 }}
+      {{ $publication_tags = $publication_tags | append (dict 
+        "name" $tag 
+        "count" $publication_count 
+        "url" (printf "/tags/%s" ($tag | urlize))) 
+      }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $publication_tags }}
+    {{ $sorted_tags := sort $publication_tags "count" "desc" }}
+    <div class="flex flex-wrap justify-center gap-4">
+      {{ range $sorted_tags }}
+        {{ $count := .count }}
+        {{ $textSize := cond (gt $count 20) "text-2xl" (cond (gt $count 10) "text-xl" (cond (gt $count 5) "text-lg" "text-base")) }}
+        <a href="{{ .url }}" 
+           class="{{ $textSize }} px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 
+                  hover:bg-primary-100 hover:text-primary-600 dark:hover:bg-primary-900 dark:hover:text-primary-100 
+                  transition-all duration-300 flex items-center gap-2">
+          <span>{{ .name | humanize }}</span>
+          <span class="text-sm bg-primary-500 text-white rounded-full px-2 py-1">{{ .count }}</span>
+        </a>
+      {{ end }}
+    </div>
+  {{ else }}
+    <div class="text-center text-gray-500 dark:text-gray-400">
+      <p>No tags found. Ensure:</p>
+      <ul class="list-disc list-inside mt-2">
+        <li>Publications exist with tags</li>
+        <li>Tags are defined in config.toml</li>
+        <li>Tags are used in publication front matter</li>
+      </ul>
+    </div>
+  {{ end }}
+</div>

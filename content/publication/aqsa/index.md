@@ -13,7 +13,7 @@ authors:
 date: "2024-04-30"
 doi: "http://dx.doi.org/10.13140/RG.2.2.24153.33122"
 publishDate: "2024-01-22"
-share: false
+share: true
 show_related: true
 featured: false
 
@@ -37,9 +37,8 @@ summary: AQSA is a comprehensive AI-driven solution for startups and small busin
 
 tags:
 - Deep Learning
-- Data Science 
-- Business Intelligence 
 - Time Series Analysis  
+- Automation
 
 links:
 - name: "Analyzer"

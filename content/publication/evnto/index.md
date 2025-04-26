@@ -11,7 +11,7 @@ authors:
 date: "2024-09-07"
 publishDate: "2024-09-23"
 
-share: false
+share: true
 show_related: true
 featured: false
 
@@ -34,9 +34,7 @@ summary: This project is part of the EVNTO app aimed at improving engagement for
 
 tags:
 - Deep Learning
-- Sentiment Analysis
 - Natural Language Processing
-- Generative AI 
 
 # links:
 # - name: ""

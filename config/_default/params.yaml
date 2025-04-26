@@ -4,112 +4,65 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 # Appearance
-
 appearance:
-  theme_day: minimal
-  font: minimal
-  font_size: M
+  mode: light
+  color: cyan
+  custom_css:
+    - css/custom.css
 
 # SEO
-
 marketing:
   seo:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'Data Scientist, Reinforcement Learning Researcher'
-    twitter: 'MohamedYosef101'
+    description: 
+      'Applied Data Scientist specialising in AI/ML with a focus on predictive analytics, 
+      time series forecasting, and developing data-driven tools that solve real-world business challenges'
+    twitter: 'mohahmedyosef101'
   analytics:
-    GoogleAnalytics: 'G-3SRNFYHRL4'
+    google_analytics: 'G-3SRNFYHRL4'
     baidu_tongji: ''
-    google_tag_manager: ''
-    microsoft_clarity: ''
+    plausible: ''
+    fathom: ''
+    pirsch: ''
   verification:
     google: ''
     baidu: ''
 
 # Site header
-
 header:
   navbar:
     enable: true
-    align: l
-    show_logo: true
-    show_language: false
-    show_day_night: false
+    blox: "navbar"
+    fixed_to_top: true
     show_search: true
-    highlight_active_link: true
+    show_theme_chooser: false
+    logo:
+      text: "Mohamed Yosef"
 
 # Site footer
-
 footer:
   copyright:
-    notice: '© {year}'
+    notice: '© {year} MohamedYosef101. This work is licensed under {license}'
     license:
-      enable: false
+      enable: true
       allow_derivatives: false
-      share_alike: false
+      share_alike: true
       allow_commercial: false
 
 # Localization
-
 locale:
-  date_format: '2 Jan 2006'
-  time_format: ''#'3:04 PM'
-  address_format: en-us
+  date_format: 'Mon, 02 Jan 2006'
+  time_format: '3:04 PM'
 
 # Site features
-
 features:
-  syntax_highlighter:
-    theme_light: github-dark
-    theme_dark: github-dark
   math:
-    enable: true
+    enable: false
   privacy_pack:
     enable: false
-  repository:
-    url: 'https://github.com/<username>/<repository>'
-    content_dir: content
-    branch: main
-  avatar:
-    gravatar: false
-    shape: circle
-  comment:
-    provider: ''
-    disqus:
-      shortname: ''
-      show_count: true
-    commento:
-      url: ''
-    giscus:
-      repo: ''
-      repo_id: ''
-      category: ''
-      category_id: ''
-  search:
-    provider: wowchemy
-    algolia:
-      app_id: ''
-      api_key: ''
-      index_name: ''
-      show_logo: false
-  map:
-    provider: 'mapnik'
-    api_key: ''
-    zoom: 15
 
-# Extensions
-
-extensions:
-  cms:
-    branch: main
-    local_backend: false
-  academicons:
-    enable: true
-
-# Security
-
-security:
-  # Allow frame for embedding speaker notes in slides
-  allow_frame: true
+assets:
+  js:
+    - path: 'js/motion.js'

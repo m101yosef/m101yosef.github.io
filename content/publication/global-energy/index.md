@@ -5,7 +5,7 @@ authors:
 date: "2023-10-24"
 doi: ""
 publishDate: "2023-10-24"
-share: false
+share: true
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
@@ -31,9 +31,7 @@ abstract: The energy system has transformed dramatically since the Industrial Re
 summary: The energy system has transformed dramatically since the Industrial Revolution. We found that the fastest growing energy source is Solar Energy. While the slowest  energy source is Traditional biomass.
 
 tags:
-- Energy
-- Data Analysis
-- Data Science
+- Data Analytics
 
 
 url_pdf: ''

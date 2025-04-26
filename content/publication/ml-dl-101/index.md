@@ -5,7 +5,7 @@ authors:
 date: "2024-04-10"
 doi: ""
 publishDate: "2024-04-14"
-share: false
+share: true
 show_related: true
 featured: true
 
@@ -31,9 +31,6 @@ tags:
 - Machine Learning
 - Deep Learning
 - Reinforcement Learning
-- Convolutional Neural Network
-- Recurrent Neural Network
-- Transformers
 
 links:
 - name: "PyTorch"

@@ -1,119 +1,124 @@
 ---
 # Leave the homepage title empty to use the site title
-title: ''
-date: 2024-02-14
+title: ""
+date: 2022-10-24
 type: landing
+
+design:
+  # Default section spacing
+  spacing: "6rem"
 
 sections:
 
-  - block: hero
-    id: hero
-    demo: false
-    content:
-      title: 'Putting data into action'
-      username: admin
-      image:
-        filename: 'hero-img.png'
-      cta:
-        label: 
-        url: 
-      cta_alt: 
-        label: 
-        url: 
-      text: |-
-        <p style="font-size: 90%; padding-top: 0.1rem;">
-        <b> Hi, I’m Mohamed, and welcome to my journey in Data Science and Analytics.</b><br><br>
-        My focus is on building data-driven solutions and leveraging advanced analytics to solve real-world challenges. I specialise in developing machine learning models, predictive analytics, and time series forecasting to help businesses make smarter, data-backed decisions. By bridging the gap between data science theory and practical application, I explore how analytics can drive innovation across industries and provide deeper insights into the world around us.
-        </p>
-
-    design:
-      background:
-        gradient_end: '#FEFEFE'
-        gradient_start: '#FEFEFE'
-        text_color_light: false
-
-  ### BIO ###
-  - block: about.biography
+  - block: resume-biography-3
     id: bio
     content:
-      title: 'About Me'
-      # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
+      text: |- 
+       **Hi, I’m Mohamed, a data scientist specialising in machine learning and reinforcement learning.**
 
-  ### FEATURED ###
-  - block: features
-    id: featured
+       I build and deploy data-driven models to solve real-world problems across industries. From time-series forecasting and predictive analytics to reinforcement-learning agents, I turn raw data into clear insights and actionable solutions. My work bridges rigorous analysis with hands-on implementation, helping businesses make smarter decisions, optimise processes and uncover patterns that drive growth.                   
+    design:
+      css_class: light 
+      background:
+        color: whitesmoke
+
+  - block: brands
+    content: 
+      title:
+      brands: 
+        - name: "Al Zamil Company"
+          logo: 'alzamil-logo.png'
+          url: "zamilco.com"
+        - name: "NineSigma"
+          logo: 'nineSigma.png'
+          url: "ninesigma.com"
+        - name: "MOCKUP"
+          logo: 'mockup.png'
+          url: 
+        - name: "meter w nos"
+          logo: 'meterWnos.png'
+          url: "facebook.com/meter.w.nos"
+
+
+
+  - block: collection
+    id: papers
     content:
-      title: Featured
+      title: Featured Items
       filters:
         folders:
           - publication
         featured_only: true
     design:
-      columns: '2'
-      view: card
+      background: 
+        color: whitesmoke
+      view: article-grid
+      columns: 3
 
-  ### LEARNINGS ###
   - block: collection
-    id: reviews
     content:
-      title: Lit. Reviews
-      filters:
-        folders:
-          - publication
-        publication_type: "review"
-    design:
-      columns: '2'
-      view: compact
-
-  ### PUBLICATIONS ###
-  - block: portfolio
-    id: publications
-    content:
-      title: All Publications
-      filters:
-        folders:
-          - publication
-      # Default filter index (e.g. 0 corresponds to the first `filter_button` instance below).
-      default_button_index: 0
-      # Filter toolbar (optional).
-      # Add or remove as many filters (`filter_button` instances) as you like.
-      # To show all items, set `tag` to "*".
-      # To filter by a specific tag, set `tag` to an existing tag name.
-      # To remove the toolbar, delete the entire `filter_button` block.
-      buttons:
-        - name: All
-          tag: '*'
-        - name: Reinforcement Learning
-          tag: Reinforcement Learning
-        - name: Analytics
-          tag: Data Analysis
-          tag: Data Science 
-        - name: User Experience
-          tag: User Experience
-    design:
-      # Choose how many columns the section has. Valid values: '1' or '2'.
-      columns: '1'
-      view: masonry
-
-
-  ### TALKS ### 
-  - block: collection
-    id: talks
-    content: 
-      title: Talks
+      title: Most Recent
       filters: 
         folders: 
-          - event
+          - publication
+      count: 3
+      order: desc
     design: 
-      columns: '2'
-      view: youtube
+      view: date-title-summary
 
-  ### TAGS ###
-  - block: tag_cloud
-    id: tags
-    content:
-      title: 
-    design:
-      columns: '1'
+
+  # - block: collection
+  #   id: talks
+  #   content:
+  #     title: Recent & Upcoming Talks
+  #     filters:
+  #       folders:
+  #         - event
+  #   design:
+  #     background: 
+  #       color: rgb(235, 235, 235)
+  #     view: article-grid
+  #     columns: 1
+
+
+  - block: tags-cloud
+    content: 
+      title: Explore by topic
+    design: 
+      background: 
+        color: whitesmoke
+
+  # - block: collection
+  #   id: news
+  #   content:
+  #     title: Recent News
+  #     subtitle: ''
+  #     text: ''
+  #     # Page type to display. E.g. post, talk, publication...
+  #     page_type: post
+  #     # Choose how many pages you would like to display (0 = all pages)
+  #     count: 5
+  #     # Filter on criteria
+  #     filters:
+  #       author: ""
+  #       category: ""
+  #       tag: ""
+  #       exclude_featured: false
+  #       exclude_future: false
+  #       exclude_past: false
+  #       publication_type: ""
+  #     # Choose how many pages you would like to offset by
+  #     offset: 0
+  #     # Page order: descending (desc) or ascending (asc) date.
+  #     order: desc
+  #   design:
+  #     # Choose a layout view
+  #     view: date-title-summary
+  #     # Reduce spacing
+  #     spacing:
+  #       padding: [0, 0, 0, 0]
+  
+ 
+ 
 ---

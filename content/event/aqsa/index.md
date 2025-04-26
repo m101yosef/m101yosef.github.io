@@ -29,6 +29,7 @@ featured: false
 image:
   caption: ''
   focal_point: Right
+  preview_only: ture
 
 links:
   - icon: linkedin

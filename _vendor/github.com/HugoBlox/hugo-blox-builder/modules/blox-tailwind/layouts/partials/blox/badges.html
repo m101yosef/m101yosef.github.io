@@ -1,0 +1,71 @@
+{{/* Hugo Blox: Badges */}}
+{{/* Documentation: https://hugoblox.com/blocks/ */}}
+{{/* License: https://github.com/HugoBlox/hugo-blox-builder/blob/main/LICENSE.md */}}
+
+{{/* Initialise */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $author := $block.content.username | default "admin" }}
+
+{{ $person_page_path := (printf "/authors/%s" $author) }}
+{{ $person_page := site.GetPage $person_page_path }}
+{{ if not $person_page }}
+{{ errorf "Could not find an author page at `%s`. Please check the value of `author` in your Skill block and create an associated author page if one does not already exist. See https://docs.hugoblox.com/page-builder/#about " $person_page_path }}
+{{end}}
+{{ $badges := $person_page.Params.badges }}
+
+<div class="flex flex-col items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="mb-8 text-3xl font-bold text-gray-900 dark:text-white">
+    {{ $block.content.title | markdownify | emojify }}
+  </div>
+
+  {{ with $block.content.text }}<p class="mb-8 text-center text-gray-600 dark:text-gray-400">{{ . | markdownify | emojify }}</p>{{ end }}
+
+  {{ if $badges }}
+  <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {{ range $badges }}
+      {{ with .url }}
+      <a href="{{ . }}" target="_blank" rel="noopener noreferrer" 
+         class="group block transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400">
+      {{ end }}
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden h-full border border-transparent group-hover:border-primary-500/20 dark:group-hover:border-primary-400/20">
+          <div class="relative">
+            {{ if hasPrefix .image "http" }}
+              <img src="{{ .image }}" 
+                   alt="{{ .title }}" 
+                   class="w-full h-48 object-contain p-4 border-b border-gray-100 dark:border-gray-700"
+                   loading="lazy"
+                   width="400"
+                   height="300">
+            {{ else }}
+              {{ $image := resources.Get (printf "media/badges/%s" .image) }}
+              {{ with $image }}
+                <img src="{{ .RelPermalink }}" 
+                     alt="{{ .Title }}" 
+                     class="w-full h-48 object-contain p-4 border-b border-gray-100 dark:border-gray-700"
+                     loading="lazy"
+                     width="{{ .Width }}"
+                     height="{{ .Height }}">
+              {{ end }}
+            {{ end }}
+          </div>
+          
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+              {{ .title }}
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+              {{ .issuer }}
+            </p>
+            <div class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">
+              Issued {{ .date | time.Format "1/2/06" }}
+            </div>
+          </div>
+        </div>
+      {{ if .url }}</a>{{ end }}
+    {{ end }}
+  </div>
+  {{ else }}
+  <div class="text-gray-500 dark:text-gray-400 py-12">No certifications to display</div>
+  {{ end }}
+</div>

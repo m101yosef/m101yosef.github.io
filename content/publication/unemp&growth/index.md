@@ -5,7 +5,7 @@ authors:
 date: "2023-09-18"
 doi: ""
 publishDate: "2023-09-21"
-share: false
+share: true
 show_related: true
 featured: false
 
@@ -28,8 +28,7 @@ abstract: I investigated the relationship between economic growth and unemployme
 summary: TThe goal of the project was to explore the relationship between the growth rate of the economy and the unemployment rate in the last four years since COVID-19.
 
 tags:
-- Data Analysis
-- Data Science
+- Data Analytics
 
 
 url_pdf: ''

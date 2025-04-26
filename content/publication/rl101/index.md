@@ -5,7 +5,7 @@ authors:
 date: "2024-01-08"
 doi: ""
 publishDate: "2024-01-22"
-share: false
+share: true
 show_related: true
 featured: true
 
@@ -31,9 +31,6 @@ summary: From AlphaGo beating the world champion in Go, to the newest updates on
 
 tags:
 - Reinforcement Learning 
-- Markov
-- Q-Learning
-- Policy Gradients 
 
 # links:
 # - name: ""
