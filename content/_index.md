@@ -64,6 +64,8 @@ sections:
           - publication
       count: 3
       order: desc
+      archive: 
+        link: "/publications"
     design: 
       view: date-title-summary
 
