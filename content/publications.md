@@ -1,5 +1,5 @@
 ---
-title: 'About'
+title: 'Publications'
 date: 2023-10-24
 type: landing
 
@@ -10,10 +10,6 @@ design:
 
 # Page sections
 sections:
-
-  - block: tags-cloud
-    content: 
-      title: "  "
 
   - block: collection
     content: 
@@ -48,4 +44,8 @@ sections:
     design: 
       view: article-grid
       columns: 2
+
+  - block: tags-cloud
+    content: 
+      title: "  "
 ---
