@@ -16,25 +16,9 @@ sections:
       username: admin
       text: ''
 
-  - block: brands
+  - block: badges
     content: 
-      title:
-      brands: 
-        - name: "Al Zamil Company"
-          logo: 'alzamil-logo.png'
-          url: "zamilco.com"
-        - name: "NineSigma"
-          logo: 'nineSigma.png'
-          url: "ninesigma.com"
-        - name: "MOCKUP"
-          logo: 'mockup.png'
-          url: 
-        - name: "meter w nos"
-          logo: 'meterWnos.png'
-          url: "facebook.com/meter.w.nos"
-    design: 
-      background: 
-        color: whitesmoke
+      title: Badges
 
   - block: resume-experience
     content:
@@ -44,18 +28,14 @@ sections:
       # Education or Experience section first?
       is_education_first: false
 
-  - block: resume-skills
-    content:
-      title: Skills & Hobbies
-      username: admin
-    design:
-      show_skill_percentage: false
-      background: 
-        color: whitesmoke
-
-  - block: badges
-    content: 
-      title: Badges
+  # - block: resume-skills
+  #   content:
+  #     title: Skills & Hobbies
+  #     username: admin
+  #   design:
+  #     show_skill_percentage: false
+  #     background: 
+  #       color: whitesmoke
 
 
   # - block: resume-awards
