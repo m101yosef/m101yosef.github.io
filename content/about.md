@@ -19,6 +19,9 @@ sections:
   - block: badges
     content: 
       title: Badges
+    design: 
+      background: 
+        color: whitesmoke
 
   - block: resume-experience
     content:
