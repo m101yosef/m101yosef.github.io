@@ -42,7 +42,7 @@ a.hb-attachment-link {
     mix-blend-mode: multiply;
   }
   
-  h1 {
+  .hero h1 {
     font: 900 4.5rem/1.1 system-ui, sans-serif;
     color: #fff;
     text-align: center;
@@ -194,3 +194,4 @@ footer a {
 footer a:hover {
     color: cyan !important;
 }
+
