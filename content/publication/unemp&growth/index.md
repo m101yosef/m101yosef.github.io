@@ -41,9 +41,6 @@ url_source: ''
 url_video: ''
 ---
 
-<br>
-
-
 This project embarked on a data-driven exploration to uncover the relationship between economic growth, as measured by Gross Domestic Product (GDP), and unemployment rates over the past four years. This period significantly overlapped with the unprecedented economic challenges brought about by the COVID-19 pandemic. Our analysis yielded a compelling correlation between these two factors. As anticipated, the year 2020, characterized by widespread economic hardship, saw a sharp rise in unemployment rates. This coincided with a significant decline in GDP, demonstrating a negative real-world relationship between the two. In essence, our findings support established economic principles that suggest lower unemployment rates tend to accompany periods of economic expansion, signified by higher GDP.
 
 

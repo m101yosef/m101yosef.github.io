@@ -48,15 +48,6 @@ url_source: ''
 url_video: ''
 ---
 
-<hr>
-
-{{< toc >}}
-
-
-<hr>
-
-<br>
-
 Machine learning (ML) and deep learning (DL) have rapidly transformed from academic papers to  real applications driving innovation across industries. From powering recommendation systems and personal assistants to enabling breakthroughs in healthcare, ML and DL have proven their ability to solve complex problems in ways traditional methods cannot. Despite the vast advancements in both fields, the foundational concepts are valuable for building robust, efficient, and interpretable models.
 
 The importance of understanding these foundations cannot be overstated. Whether you're a beginner or an experienced researcher, grasping the underlying mechanisms of ML and DL models is essential for choosing the right model for a given task, optimising its performance, and ensuring it remains interpretable. In an era where models are often seen as black boxes, this knowledge provides the clarity needed to trust and refine AI systems.

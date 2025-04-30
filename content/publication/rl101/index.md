@@ -45,14 +45,6 @@ url_source: 'https://mohamedyosef101.github.io/publication/rl101/rl101.zip'
 url_video: ''
 ---
 
-<hr>
-
-
-{{< toc >}}
-
-
-<hr>
-
 Reinforcement Learning, learning through trial and error, is a rapidly growing field in AI. Unlike supervised learning, reinforcement learning provides you with the ability to learn directly from the world and adapt to new situations which makes it a valuable option for complex, real-world problems. From AlphaGo beating the world champion in Go, to the newest updates on large language models and what they can do, RL algorithms with no doubt have a huge impact in the present and the future of automation and Human-AI interaction. With this collection of RL principles, you’ll gain a deeper understand of how RL work and you may gain insights applicable in your own work, leading to innovative solutions. 
 
 
