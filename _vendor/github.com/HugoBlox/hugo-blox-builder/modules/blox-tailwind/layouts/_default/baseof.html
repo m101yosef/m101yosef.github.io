@@ -24,21 +24,22 @@
     {{ if .IsHome }}
     <!-- Hero Section -->
     <div class="hero py-16 md:py-24 lg:py-32">
-      <p class="text-white text-xl pt-12">Welcome to my place where I</p>
+      <p class="text-white text-xl pt-12">Welcome to the place where we ...</p>
       <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mt-4">
-        Put the data into action
+        put the data into action
       </h1>
-       <svg 
+      <svg 
           width="48" height="48" viewBox="0 0 24 24" 
           fill="none" stroke="white" stroke-width="3"
-          class="mt-12 cursor-pointer"
-          id="scrollButton">
+          class="block mt-12 cursor-pointer hover:translate-y-1 transition-transform duration-300"
+          id="scrollButton"
+          onclick="document.getElementById('PAGE_BODY').scrollIntoView({behavior: 'smooth'})">
           <path d="M3 9l9 6 9-6"/>
-        </svg>
+      </svg>
     </div>
     {{ end }}
 
-    <div class="page-body {{if ne .Type "landing"}} my-10{{end}}">
+    <div id="PAGE_BODY" class="page-body {{if ne .Type "landing"}} my-10{{end}}">
       {{ block "main" . }}{{ end }}
     </div>
     <div class="page-footer">
