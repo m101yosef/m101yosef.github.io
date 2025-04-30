@@ -15,9 +15,9 @@ sections:
     content:
       username: admin
       text: |- 
-       **Hi, I’m Mohamed, a data scientist specialising in machine learning and reinforcement learning.**
+       **Hi, I’m Mohamed, a data scientist with a focus on reinforcement learning.**
 
-       I build and deploy data-driven models to solve real-world problems across industries. From time-series forecasting and predictive analytics to reinforcement-learning agents, I turn raw data into clear insights and actionable solutions. My work bridges rigorous analysis with hands-on implementation, helping businesses make smarter decisions, optimise processes and uncover patterns that drive growth.                   
+       From time-series forecasting and predictive analytics to reinforcement-learning agents, I turn raw data into clear insights and actionable solutions. My work bridges rigorous analysis with hands-on implementation, helping businesses make smarter decisions, optimise processes and uncover patterns that drive growth.                   
     design:
       css_class: light 
       background:
@@ -86,7 +86,7 @@ sections:
 
   - block: tags-cloud
     content: 
-      title: Explore by topic
+      title: "  "
     design: 
       background: 
         color: whitesmoke
