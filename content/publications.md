@@ -48,4 +48,7 @@ sections:
   - block: tags-cloud
     content: 
       title: "  "
+    design: 
+      background: 
+        color: whitesmoke
 ---
