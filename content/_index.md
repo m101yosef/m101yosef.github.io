@@ -15,9 +15,11 @@ sections:
     content:
       username: admin
       text: |- 
-       **Hi, I’m Mohamed, a data scientist with a focus on reinforcement learning.**
+       **Hi, I’m Mohamed, an independent applied AI researcher** with a focus on solving real-world problems using machine learning, forecasting, and data analysis. I publish my work through personal projects, case studies, and research reviews — covering topics like energy, economics, and business performance.
 
-       From time-series forecasting and predictive analytics to reinforcement-learning agents, I turn raw data into clear insights and actionable solutions. My work bridges rigorous analysis with hands-on implementation, helping businesses make smarter decisions, optimise processes and uncover patterns that drive growth.                   
+        I work on AI tools that help people make better decisions: from forecasting systems and dashboards to AI-enhanced analytics. In 2024, I led the AI development for the [AQSA project](/publication/aqsa) at Mansoura University, building tools to support startups with automatic analysis, forecasting, and chatbots.
+        
+        [Read more >](/about)
     design:
       css_class: light 
       background:

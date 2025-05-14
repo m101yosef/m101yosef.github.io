@@ -186,4 +186,6 @@ I’ve collaborated with businesses to leverage data for smarter decision-making
 
 In addition to my freelance projects, I’ve developed data-focused applications like [AQSA](https://mohamedyosef101.github.io/publication/aqsa/) and [EVNTO](https://mohamedyosef101.github.io/publication/evnto/) for universities and startups, using data analysis and AI to enhance user experiences. My work thrives in collaborative environments, and I’m always seeking new ways data science can transform industries and provide a competitive edge.
 
-Currently, I’m focusing on mastering time series analysis, expanding my expertise in predictive analytics, and exploring how AI can drive deeper insights and business value.
+My main interest is reinforcement learning, and I’m currently studying and experimenting with it through self-driven projects. In the future, I hope to combine this with neuroscience — but for now, I’m focused on building strong foundations and solving practical problems.
+
+Whether it’s through AI research, forecasting, or analytics, my goal is always the same: make data useful and put it into action.
