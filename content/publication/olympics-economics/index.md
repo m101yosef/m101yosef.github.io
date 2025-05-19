@@ -25,6 +25,8 @@ image:
 
 abstract: "When we think about Olympic success, our minds often jump to economic powerhouses like the United States and China. But what happens when we look beyond the raw medal counts? This research dives into a more nuanced question: Which nations are truly punching above their economic weight in the Olympic arena?."
 
+summary: "When we think about Olympic success, our minds often jump to economic powerhouses like the United States and China. But what happens when we look beyond the raw medal counts? This research dives into a more nuanced question: Which nations are truly punching above their economic weight in the Olympic arena?."
+
 tags:
 - Data Analytics
 
