@@ -15,9 +15,9 @@ sections:
     content:
       username: admin
       text: |- 
-       **Hi, I’m Mohamed, an independent applied AI researcher** with a focus on solving real-world problems using machine learning, forecasting, and data analysis. I publish my work through personal projects, case studies, and research reviews — covering topics like energy, economics, and business performance.
+       **Hi, I’m Mohamed, an independent applied data scientist** with a focus on solving real-world problems using machine learning, forecasting, and data analysis. I publish my work through personal projects, case studies, and research reviews — covering topics like energy, economics, and business performance.
 
-        I work on AI tools that help people make better decisions: from forecasting systems and dashboards to AI-enhanced analytics. In 2024, I led the AI development for the [AQSA project](/publication/aqsa) at Mansoura University, building tools to support startups with automatic analysis, forecasting, and chatbots.
+        I work on AI tools that help people make better decisions: from forecasting systems and dashboards to AI-enhanced analytics. In 2024, I led the development for the [AQSA project](/publication/aqsa) at Mansoura University, building tools to support startups with automatic analysis, forecasting, and chatbots.
         
         [Read more >](/about)
     design:
