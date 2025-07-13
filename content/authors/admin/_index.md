@@ -31,14 +31,14 @@ organizations:
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:mohamedyosef101@outlook.com'
+    url: 'mailto:m101yosef@outlook.com'
     label: Email Me
   - icon: brands/x
-    url: https://twitter.com/mohamedyosef101
+    url: https://twitter.com/m101yosef
   - icon: brands/github
-    url: https://github.com/mohamedyosef101
+    url: https://github.com/m101yosef
   - icon: brands/linkedin
-    url: https://www.linkedin.com/in/mohamedyosef101
+    url: https://www.linkedin.com/in/m101yosef
 
 # Interests to show in About widget
 interests:
@@ -182,9 +182,9 @@ badges:
 
 My passion for data and mathematics has driven a diverse career where I apply data science and AI to solve real-world business challenges.
 
-I’ve collaborated with businesses to leverage data for smarter decision-making, build predictive models, and develop advanced analytics solutions. My experience spans creating recommendation systems, time-series forecasting models, and delivering actionable insights across various industries. I’ve led data-driven research projects at the intersection of [economic trends](https://mohamedyosef101.github.io/publication/unempgrowth/), [energy consumption](https://mohamedyosef101.github.io/publication/global-energy/), and human performance, such as my recent analysis of the [2024 Olympics](https://mohamedyosef101.github.io/publication/olympics-economics/).
+I’ve collaborated with businesses to leverage data for smarter decision-making, build predictive models, and develop advanced analytics solutions. My experience spans creating recommendation systems, time-series forecasting models, and delivering actionable insights across various industries. I’ve led data-driven research projects at the intersection of [economic trends](https://m101yosef.github.io/publication/unempgrowth/), [energy consumption](https://m101yosef.github.io/publication/global-energy/), and human performance, such as my recent analysis of the [2024 Olympics](https://m101yosef.github.io/publication/olympics-economics/).
 
-In addition to my freelance projects, I’ve developed data-focused applications like [AQSA](https://mohamedyosef101.github.io/publication/aqsa/) and [EVNTO](https://mohamedyosef101.github.io/publication/evnto/) for universities and startups, using data analysis and AI to enhance user experiences. My work thrives in collaborative environments, and I’m always seeking new ways data science can transform industries and provide a competitive edge.
+In addition to my freelance projects, I’ve developed data-focused applications like [AQSA](https://m101yosef.github.io/publication/aqsa/) and [EVNTO](https://m101yosef.github.io/publication/evnto/) for universities and startups, using data analysis and AI to enhance user experiences. My work thrives in collaborative environments, and I’m always seeking new ways data science can transform industries and provide a competitive edge.
 
 My main interest is reinforcement learning, and I’m currently studying and experimenting with it through self-driven projects. In the future, I hope to combine this with neuroscience — but for now, I’m focused on building strong foundations and solving practical problems.
 

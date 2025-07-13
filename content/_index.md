@@ -37,7 +37,7 @@ sections:
           url: "ninesigma.com"
         - name: "MOCKUP"
           logo: 'mockup.png'
-          url: 
+          url: 'https://www.facebook.com/profile.php?id=61577716330176'
         - name: "meter w nos"
           logo: 'meterWnos.png'
           url: "facebook.com/meter.w.nos"
