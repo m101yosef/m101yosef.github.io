@@ -31,7 +31,7 @@ organizations:
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:m101yosef@outlook.com'
+    url: 'mailto:mohamed101yosef@gmail.com'
     label: Email Me
   - icon: brands/x
     url: https://twitter.com/m101yosef
