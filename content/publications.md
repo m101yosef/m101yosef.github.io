@@ -11,15 +11,15 @@ design:
 # Page sections
 sections:
 
-  - block: collection
-    content: 
-      title: Analytics
-      count: 0
-      filters: 
-        tag: "Data Analytics"
-    design: 
-      view: article-grid
-      columns: 3
+  # - block: collection
+  #   content: 
+  #     title: Analytics
+  #     count: 0
+  #     filters: 
+  #       tag: "Data Analytics"
+  #   design: 
+  #     view: article-grid
+  #     columns: 3
 
   - block: collection
     content: 
@@ -28,22 +28,21 @@ sections:
       filters: 
         folders: 
           - publication 
-        tag: "Deep Learning"
     design: 
       view: article-grid
       columns: 3
 
-  - block: collection
-    content: 
-      title: Reinforcement Learning
-      count: 0
-      filters: 
-        folders: 
-          - publication 
-        tag: "Reinforcement Learning"
-    design: 
-      view: article-grid
-      columns: 2
+  # - block: collection
+  #   content: 
+  #     title: Reinforcement Learning
+  #     count: 0
+  #     filters: 
+  #       folders: 
+  #         - publication 
+  #       tag: "Reinforcement Learning"
+  #   design: 
+  #     view: article-grid
+  #     columns: 2
 
   - block: tags-cloud
     content: 

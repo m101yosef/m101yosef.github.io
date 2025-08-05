@@ -19,7 +19,7 @@ sections:
 
         I work on AI tools that help people make better decisions: from forecasting systems and dashboards to AI-enhanced analytics. In 2024, I led the development for the [AQSA project](/publication/aqsa) at Mansoura University, building tools to support startups with automatic analysis, forecasting, and chatbots.
         
-        [Read more >](/about)
+        [Read more >>](/about)
     design:
       css_class: light 
       background:
@@ -47,7 +47,7 @@ sections:
   - block: collection
     id: papers
     content:
-      title: Featured Items
+      title: Featured Publications
       filters:
         folders:
           - publication
@@ -56,21 +56,38 @@ sections:
       background: 
         color: whitesmoke
       view: article-grid
-      columns: 3
+      columns: 2
 
   - block: collection
     content:
       title: Most Recent
+      count: 3
+      order: desc
       filters: 
         folders: 
           - publication
-      count: 3
-      order: desc
       archive: 
+        enable: true
+        text: See all publications  ->
         link: "/publications"
     design: 
       view: date-title-summary
 
+  - block: collection-2
+    content:
+      title: Courses I've had the privilege to teach
+      filters:
+        folders:
+          - teaching
+      archive: 
+        enable: true
+        text: See all courses  ->
+        link: /teaching
+    design:
+      view: article-grid
+      columns: 3
+      background: 
+        color: whitesmoke
 
   # - block: collection
   #   id: talks
@@ -88,10 +105,10 @@ sections:
 
   - block: tags-cloud
     content: 
-      title: "  "
+      title: "Explore by topic"
     design: 
       background: 
-        color: whitesmoke
+        color: white
 
   # - block: collection
   #   id: news
