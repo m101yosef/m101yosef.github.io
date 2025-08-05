@@ -35,13 +35,13 @@ tags:
 # links:
 # - name: ""
 #   url: ""
-url_pdf: 'https://mohamedyosef101.github.io/publication/rl101/reinforcement-learning-MY101.pdf'
-url_code: 'https://github.com/mohamedyosef101/101_learning_area/tree/area/Reinforcement%20Learning'
+url_pdf: 'https://m10yosef1.github.io/publication/rl101/reinforcement-learning-MY101.pdf'
+url_code: 'https://github.com/m101yosef/101_learning_area/tree/area/Reinforcement%20Learning'
 url_dataset: ''
 url_poster: ''
-url_project: 'https://huggingface.co/MohamedYosef101/PPO-LunarLander-v2'
+url_project: ''
 url_slides: ''
-url_source: 'https://mohamedyosef101.github.io/publication/rl101/rl101.zip'
+url_source: ''
 url_video: ''
 ---
 

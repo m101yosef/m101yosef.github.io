@@ -30,13 +30,6 @@ summary: This paper explores the foundational concepts of machine learning (ML) 
 tags:
 - Machine Learning
 - Deep Learning
-- Reinforcement Learning
-
-links:
-- name: "PyTorch"
-  url: "https://www.kaggle.com/code/mohamedyosef101/get-into-deep-learning-with-pytorch-ann-cnn"
-- name: "TensorFlow"
-  url: 'https://www.kaggle.com/code/mohamedyosef101/build-your-first-neural-network' 
   
 url_pdf: 'https://www.researchgate.net/publication/379820153_The_foundations_of_machine_learning_and_deep_learning'
 url_code: ''
