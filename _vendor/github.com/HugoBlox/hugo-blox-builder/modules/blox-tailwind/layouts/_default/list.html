@@ -23,6 +23,11 @@
 
   {{ partial "components/paginator" . }}
 
+  {{/* Explore other tags section */}}
+  <section class="mt-20">
+      {{ partial "blox/tags-cloud.html" (dict "wcPage" . "wcBlock" (dict "content" (dict "title" "Other Tags"))) }}
+  </section>
+
 </div>
 
 {{ end }}
