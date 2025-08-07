@@ -178,14 +178,17 @@ badges:
 #       - Practice model evaluation and interpretation
 
 ---
-## Okay, here's more about me...
+## Okay, here is what I'm doing and why...
 
-My passion for data and mathematics has driven a diverse career where I apply data science and AI to solve real-world business challenges.
+AI has the potential to support better decisions, uncover hidden patterns, and create tools that make people’s lives easier. My work focuses on applying machine learning to real-world problems — particularly in areas like small business performance, forecasting, and, increasingly, healthcare and neuroscience.
 
-I’ve collaborated with businesses to leverage data for smarter decision-making, build predictive models, and develop advanced analytics solutions. My experience spans creating recommendation systems, time-series forecasting models, and delivering actionable insights across various industries. I’ve led data-driven research projects at the intersection of [economic trends](https://m101yosef.github.io/publication/unempgrowth/), [energy consumption](https://m101yosef.github.io/publication/global-energy/), and human performance, such as my recent analysis of the [2024 Olympics](https://m101yosef.github.io/publication/olympics-economics/).
+I'm currently focused on applying data science and machine learning in these domains because I believe this is where AI can do the most good — and where I know my work won’t go in vain or be used in the wrong way.
 
-In addition to my freelance projects, I’ve developed data-focused applications like [AQSA](https://m101yosef.github.io/publication/aqsa/) and [EVNTO](https://m101yosef.github.io/publication/evnto/) for universities and startups, using data analysis and AI to enhance user experiences. My work thrives in collaborative environments, and I’m always seeking new ways data science can transform industries and provide a competitive edge.
+I’m an applied data scientist with a background in computer science and user experience design. My interest lies in building simple but useful systems that combine data, mathematical reasoning, and an understanding of human needs.
 
-My main interest is reinforcement learning, and I’m currently studying and experimenting with it through self-driven projects. In the future, I hope to combine this with neuroscience — but for now, I’m focused on building strong foundations and solving practical problems.
+In 2024, I led the AQSA Project at Mansoura University, where we developed tools to help small businesses with automatic data analysis, time-series forecasting, and chatbot support. I also contributed to EVNTO!, a campus events platform that includes event recommendations, sentiment analysis, and a generative chatbot — helping students engage with volunteer work and campus life more easily.
 
-Whether it’s through AI research, forecasting, or analytics, my goal is always the same: make data useful and put it into action.
+Outside of hands-on projects, I publish research reviews and reflective pieces to sharpen my understanding and contribute to the learning community. I’m currently exploring deep reinforcement learning, with long-term curiosity about the brain and how AI might help us learn from — or connect more deeply with — human cognition.
+
+My work is still in the early stages, and I’m constantly learning. But I’m driven by a clear question:
+How can AI become a tool that genuinely helps people — not just impresses them?

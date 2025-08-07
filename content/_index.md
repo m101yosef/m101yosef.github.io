@@ -15,11 +15,11 @@ sections:
     content:
       username: admin
       text: |- 
-       **Hi, I’m Mohamed, an independent applied data scientist** with a focus on solving real-world problems using machine learning, forecasting, and data analysis. I publish my work through personal projects, case studies, and research reviews — covering topics like energy, economics, and business performance.
-
-        I work on AI tools that help people make better decisions: from forecasting systems and dashboards to AI-enhanced analytics. In 2024, I led the development for the [AQSA project](/publication/aqsa) at Mansoura University, building tools to support startups with automatic analysis, forecasting, and chatbots.
-        
-        [Read more >>](/about)
+       **I'm a data scientist who's still early in the journey, but deeply interested in using data and machine learning in healthcare and neuroscience where my work will not go in-vain. 
+       
+       Outside doing paid data projects for companies and startups, I write research reviews and reflections to help myself learn and share what I've learned with others.
+       
+       [Read more >>](/about)
     design:
       css_class: light 
       background:
