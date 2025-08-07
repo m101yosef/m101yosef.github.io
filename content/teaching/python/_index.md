@@ -16,8 +16,8 @@ Also, you should know that I admire learn by doing. In fact, I never understood 
 
 ### Python Foundations (Refresher)
 
-[Lecture 1](#). Idiomatic Python & clean code (PEP8, variable naming, indentation) <br>
-[Lecture 2](#). Comprehensions, zip, enumerate, unpacking <br>
+[Lecture 1](lecture1). Code format & performance <br>
+[Lecture 2](#). Sequences, comprehensions, zip, enumerate, unpacking <br>
 [Lecture 3](#). `*args`, `**kwargs`, `lambda`, `map`, `filter`<br>
 [Lecture 4](#). Context managers & exception handling <br>
 [Lecture 5](#). Type hinting and static typing (`mypy`, `typing`) <br>
