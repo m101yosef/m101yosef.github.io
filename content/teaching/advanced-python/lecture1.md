@@ -159,6 +159,44 @@ There are a lot of aspects that affect the code performance from the data struct
 - Don't repeat yourself - never write the same code or similar code more than one time. Turn that code block that you keep using into a function or a class so you can use it again with a tiny change in parameters. 
 - Ignore every tip above if it will harm you code functionality, if applying any advice will change how your code work and go far from the desired result then don't apply it. Only apply the tips if you saw that it has helped your code. 
 
+
+## Exercises
+
+1. THe following code has bad formatting, poor naming, and unnecessary loops. Rewrite it so that it follows PEP 8 and performance tips. 
+```python
+def calc(A,B):
+  r=0
+  for i in A:
+    if i in B:
+      r += 1
+  for i in A:
+    if i in B:
+      print(i)
+  return r
+
+listA=[1,2,3,4,5]
+listB=[3,4,5]
+print(calc(listA,listB))
+```
+
+2. Write three short versions of a while-loop printing numbers 1 to 5:
+    - The good version (proper indentation and spacing)
+    - The bad version (single-line, hard to read)
+    - The ugly version (broken indentation)
+
+3. Rename the following so they follow correct Python naming conventions
+```python
+DaysInMonth = 30
+getuserName = lambda: "Ali"
+class paymentgateway: ...
+```
+
+4. Write a docstring for this function following the lecture's format
+```python
+def fahrenheit_to_celsius(temp):
+    return (temp - 32) * 5 / 9
+```
+
 ## Next lecture overview
 After seeing how clean formatting and smart coding habits can make your Python code easier to read and perform better, we will talk about sequences and dive into: 
 - Comprehensions - shortcut to write powerful loops in one line 
