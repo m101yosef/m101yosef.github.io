@@ -160,7 +160,7 @@ There are a lot of aspects that affect the code performance from the data struct
 
 ## Exercises
 
-1. THe following code has bad formatting, poor naming, and unnecessary loops. Rewrite it so that it follows PEP 8 and performance tips. 
+1. The following code has bad formatting, poor naming, and unnecessary loops. Rewrite it so that it follows PEP 8 and performance tips. 
 ```python
 def calc(A,B):
   r=0
