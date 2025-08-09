@@ -23,31 +23,11 @@ With no doubt reading the official [PEP 8](pep8) style guide will give more info
 ### Code layout 
 Again, in design, whitespace is not just something blank it is part of the art or maybe it is the most import part. What about enough taking and start coding...
 
-```python
-# The good: 
+ <figure id="fig:good-bad-ugly">
+  <img src="../images/good-bad-ugly.png">
+  <figcaption align="center" style="color: gray; "><strong>Fig 1: </strong>The good, the bad, and ugly categories here are trying to tell you one thing, you should respect levels. At the level of the loop when should indent everything under it until we finished the loop and so on with every other thing in Python whether it is a class, a function, or even a long list.</figcaption>
+</figure>
 
-for element in elements: 
-    print(element)
-else: 
-    print("No more elements")
-```
-
-```python
-# The bad: 
-
-for element in elements: print(element) else: print("No more elements")
-```
-
-```python
-# The ugly: 
-
-for element in elements: 
-print(element)
-else: 
-print("No more elements")
-```
-
-The good, the bad, and ugly categories here are trying to tell you one thing, you should respect levels. At the level of the loop when should indent everything under it until we finished the loop and so on with every other thing in Python whether it is a class, a function, or even a long list.
 
 
 ### Naming conventions
@@ -78,7 +58,10 @@ print(result)
 
 
 ### Comments
-Like everything we do in our life, almost all people can see what we do, but we want to tell them why we do it. Take a deep breath and think about the reason why you want to learn Python because I don't just want you to tell me that you are learning. 
+Like everything we do in our life, almost all people can see what we do, but we want to tell them why we do it. Take a deep breath and think about the reason why you want to learn Python because I don't just want you to tell me that you are learning. The same thing applies here with your code, but we are not explaining only the why, there is more...
+
+#### Inline comments
+The comments next to the code and in the same line are called inline comments and you should at least give 2 spaces between the code and the comment. Another important thing is that you have to explain why you wrote this line of code (The good) not what the code does (the bad) and not tell your sadness story and how hard your life is (the ugly). 
 
 ```python 
 # The good
@@ -92,14 +75,16 @@ x += 1    # Compensate for border
 x += 1    # Increment x
 ```
 
-By the way the comments next to the code and in the same line are called inline comments and should at least give 2 spaces between the code and the comment. 
-
 ```python 
 # The ugly
 
-x += 1     # UPDATING X: Incrementing var (x) by 1 because stupid boss Karen said so in ticket #DEADBEEF even though we already did this in load_data()!!! FIXME: revert when she quits. NOTE: x must be int or crashes. TODO: test null case???
+x += 1     # UPDATING X: Incrementing var (x) by 1 because stupid boss Karen said so ...
 ```
 
+#### Block comments
+Block comment should be a sentence and start with a capital letter except starting with a variable or something that you have defined before and starts with lower case letter. 
+
+**Why explanation comment** <br>
 Other times you will find writing comments is not about the why. Instead, it is about clarifying non-obvious algorithms, workarounds, or business rules. 
 
 ```python 
@@ -108,12 +93,18 @@ if user.is_loyal or is_holiday_season:
     discount = 0.15 if user.is_loyal else 0.10
 ```
 
-You can still give a warning (flag side effects or critical behaviours) as well as writing TODOs (track temporary fixes or future work). By the way, this is called a block code and it should be a sentence and start with a capital letter except starting with a variable or something that you have defined before and starts with lower case letter. 
+**Warning comment** <br>
+flag side effects or critical behaviours
 
 ```python 
-# ⚠️ Changing this threshold will break legacy integrations!
+# !! Changing this threshold will break legacy integrations!
 PAYMENT_TIMEOUT = 30000
+```
 
+**TODO comment** <br>
+track temporary fixes or future work
+
+```python
 # TODO: Migrate to Redis cache after resolving PROJ-142 infrastructure upgrade
 #       - Requires shared Redis cluster deployment
 #       - Remove temporary in-memory caching logic
@@ -121,7 +112,8 @@ PAYMENT_TIMEOUT = 30000
 temp_cache: dict[str, User] = {}
 ```
 
-The last but not least is writing a doc string. This is different from block comments and inline comments. It mainly used for functions/methods and should contain a brief overview of what the function do, parameters (or arguments), return values, and errors. 
+#### Docstring
+The last but not least is writing a doc string. This is different from block comments and inline comments. It mainly used for documenting functions and classes. It should contain a brief overview of what the function do, parameters (or arguments), return values, and errors. 
 
 ```python
 def calculate_invoice(total: float, tax_rate: float) -> float:
@@ -145,11 +137,17 @@ def calculate_invoice(total: float, tax_rate: float) -> float:
 ## Performance 
 The one constant in writing code is that it changes over time ([Nelson, 2024](#nelson_2024)). And, with take continuous change, there is a need for continuous enhancements. Also, I want you to understand that not all code is created equal. Two pieces of code can do the same thing, but one can be much faster or more efficient than the other. However, you should start analysing or trying to improve the performance of your code unless it works the way it should. So, "first make it work, then make it fast."
 
+<figure id="fig:what-is-performance">
+  <img src="../images/what-is-performance.png">
+  <figcaption align="center" style="color: gray; "><strong>Fig 2: </strong>The three primary factors that define the performance of Python code: Speed (how fast the code runs), Memory usage (the amount of system memory the code consumes), and Scalability (the code's ability to handle increasing workloads).</figcaption>
+</figure> 
+
 ### What is performance
 Although performance is not just about how fast you code run, the "performance" cover one (or more) of the following: 
 - Speed: how fast does your code run? (this is the one that we all know)
 - Memory usage: how much RAM does it need while running? (see [Gorelick, 2020](#gorelick_2020) for more)
 - Scalability: will it still work well if the data gets 100x bigger? (highly important when working with large systems)
+
 
 ### Performance tips
 There are a lot of aspects that affect the code performance from the data structure that you use to the library that you work with, every bit of code matters and can impact the performance. So, to keep this lecture simple (to some point), I will just give you some performance quick tips: 
