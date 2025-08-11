@@ -5,6 +5,8 @@ date: 2025-07-30
 type: docs
 math: true
 weight: 1
+
+url_pdf: '#'
 ---
 
 If you know me at all, you will know that I always ecourage thinking over having a knowledge but here I am creating a course on the most theoritical concepts in programming. Understanding OOP, data structures, and algorithms will give you the ability to see what is behind the code; the thinking process that the code creator had. You will be able to see why they structured their code like this or even discover mistakes or ways of improvements.
@@ -17,7 +19,7 @@ Also, you should know that I admire learn by doing. In fact, I never understood 
 ### Python Foundations (Refresher)
 
 [Lecture 1](lecture1). Code format & performance <br>
-[Lecture 2](#). Sequences, comprehensions, zip, enumerate, unpacking <br>
+[Lecture 2](lecture2). Pythonic iteration: sequences, comprehensions, and unpacking <br>
 [Lecture 3](#). `*args`, `**kwargs`, `lambda`, `map`, `filter`<br>
 [Lecture 4](#). Context managers & exception handling <br>
 [Lecture 5](#). Type hinting and static typing (`mypy`, `typing`) <br>
