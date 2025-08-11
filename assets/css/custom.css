@@ -78,9 +78,13 @@ a.hb-attachment-link:hover {
 }
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 3rem;
+  .hero h1 {
+    font-size: 2.5rem !important;
     max-width: 95%;
+  }
+
+  .hero p {
+    font-size: 1rem !important; /* ~text-base */
   }
 
   .hero {
@@ -88,6 +92,7 @@ a.hb-attachment-link:hover {
     animation-duration: 25s;
   }
 }
+
 
 /* End of hero section */
 

@@ -23,20 +23,23 @@
     
     {{ if .IsHome }}
     <!-- Hero Section -->
-    <div class="hero py-16 md:py-24 lg:py-32">
-      <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mt-4">
+    <div class="hero py-12 sm:py-16 md:py-24 lg:py-32 text-center px-4">
+      <h1 class="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4">
         Data → Decisions, Automated
       </h1>
-      <p class="text-white text-xl pt-12">Applied Research for Scalable, Human-Centric Intelligence</p>
+      <p class="text-white text-lg sm:text-xl pt-8 sm:pt-12">
+        Applied Research for Scalable, Human-Centric Intelligence
+      </p>
       <svg 
-          width="48" height="48" viewBox="0 0 24 24" 
-          fill="none" stroke="white" stroke-width="3"
-          class="block mt-12 cursor-pointer hover:translate-y-1 transition-transform duration-300"
-          id="scrollButton"
-          onclick="document.getElementById('PAGE_BODY').scrollIntoView({behavior: 'smooth'})">
-          <path d="M3 9l9 6 9-6"/>
+        width="48" height="48" viewBox="0 0 24 24" 
+        fill="none" stroke="white" stroke-width="3"
+        class="mx-auto mt-8 sm:mt-12 cursor-pointer hover:translate-y-1 transition-transform duration-300"
+        id="scrollButton"
+        onclick="document.getElementById('PAGE_BODY').scrollIntoView({behavior: 'smooth'})">
+        <path d="M3 9l9 6 9-6"/>
       </svg>
     </div>
+
     {{ end }}
 
     <div id="PAGE_BODY" class="page-body {{if ne .Type "landing"}} my-10{{end}}">
