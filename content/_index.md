@@ -15,7 +15,7 @@ sections:
     content:
       username: admin
       text: |- 
-       **I'm a data scientist who's still early in the journey, but deeply interested in using data and machine learning in healthcare and neuroscience where my work will not go in-vain. 
+       I'm a data scientist who's still early in the journey, but deeply interested in using data and machine learning in healthcare and neuroscience where my work will not go in-vain. 
        
        Outside doing paid data projects for companies and startups, I write research reviews and reflections to help myself learn and share what I've learned with others.
        
