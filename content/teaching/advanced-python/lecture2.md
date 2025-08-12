@@ -17,6 +17,11 @@ You might know that Guido is the creator of Python, and if you didn't know, it's
 
 Like ABC, Python has this uniform way of handling sequences. But before going any further, what is a sequence? Well, it is an ordered collection of items. There are two types of built-in sequences that are implemented in C as I told you in [lecture 1](https://m101yosef.github.io/teaching/advanced-python/lecture1); *container sequences* which can hold items of different data types, including nested containers. Some examples are `list`, `tuple`, and `collections.deque`. Also, we have *flat sequences* that can only hold items of one primitive data type (eg. `str`, `byte`, `numpy.array`). 
 
+<figure id="fig:sequences">
+  <img src="../images/sequences.png">
+  <figcaption align="center" style="color: gray; "><strong>Fig: </strong>Grouping sequences based on the number data types they can store at once. Container sequences can store more than one data type or even have nested ones while flat sequences only stores one data type.</figcaption>
+</figure>
+
 ### Flat and container sequences 
 Flat sequences can be very handy in cases when performance is needed like in AI models where container sequences is preferred when needing flexibility like in analysing complex data. Apart from that, I want us to go more in depth and test if a NumPy array (a flat sequence) will perform better than a list (a container sequence). And to do so, we will measure the time needed to sum a list verses an array. 
 
