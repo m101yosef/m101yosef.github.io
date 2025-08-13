@@ -31,7 +31,7 @@ tags:
 - Machine Learning
 - Deep Learning
   
-url_pdf: 'https://www.researchgate.net/publication/379820153_The_foundations_of_machine_learning_and_deep_learning'
+url_pdf: 'https://m101yosef.github.io/publication/ml-dl-101/ml-dl-101.pdf'
 url_code: ''
 url_dataset: ''
 url_poster: ''
