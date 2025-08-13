@@ -6,7 +6,6 @@ type: docs
 math: true
 weight: 1
 
-url_pdf: '#'
 ---
 
 If you know me at all, you will know that I always ecourage thinking over having a knowledge but here I am creating a course on the most theoritical concepts in programming. Understanding OOP, data structures, and algorithms will give you the ability to see what is behind the code; the thinking process that the code creator had. You will be able to see why they structured their code like this or even discover mistakes or ways of improvements.
