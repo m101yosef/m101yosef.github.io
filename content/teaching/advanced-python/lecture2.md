@@ -142,7 +142,7 @@ for x in range(17):
 total = sum(x**2 for x in range(17))  # even better than list comprehension
 ```
 
-So, as a rule of thumb, when you need the results stored to plot it or to use the points again in some how, then use list comprehensions. Meanwhile, if you only need to get the result and you don't care about the points use operation combined with the generator expression. And, don't forget that you can still use loops when the logic is too complex and involves multiples steps. 
+So, as a rule of thumb, when you need the results stored to plot it or to use the points again in some how, then use list comprehensions. Meanwhile, if you only need to get the result and you don't care about the points, use generator expression. This is called lazy evaluation (compute the value only when it is actually needed—and only as much as is needed). And, don't forget that you can still use loops when the logic is too complex and involves multiples steps. 
 
 <figure id="fig:loops-comprehension-flowchart">
   <img src="../images/loops-comprehension-flowchart.png">
