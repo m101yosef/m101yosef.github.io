@@ -1,5 +1,5 @@
 ---
-title: "3. Functional programming"
+title: "3. Higher-order functions"
 date: 2025-08-09
 weight: 3
 type: docs

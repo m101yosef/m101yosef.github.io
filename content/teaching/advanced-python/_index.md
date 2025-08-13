@@ -19,7 +19,7 @@ Also, you should know that I admire learn by doing. In fact, I never understood 
 
 [Lecture 1](lecture1). Code format & performance <br>
 [Lecture 2](lecture2). Pythonic iteration: sequences, comprehensions, and unpacking <br>
-[Lecture 3](#). `*args`, `**kwargs`, `lambda`, `map`, `filter`<br>
+[Lecture 3](lecture3). Function arguments & Higher-order functions<br>
 [Lecture 4](#). Context managers & exception handling <br>
 [Lecture 5](#). Type hinting and static typing (`mypy`, `typing`) <br>
 
