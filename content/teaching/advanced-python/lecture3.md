@@ -85,7 +85,7 @@ During my time at university, one of the professors who was teaching us the foun
 def sum_numbers(num1, num2, num3=0, num4=0): 
     """Summing up to four numbers
     - I used 0 to get some flexibility
-    - While it is doable to add more than 4 in the inputs when building the function, I will be repeating my self
+    - But this is limited due to the number of inputs
     """
     return num1 + num2 + num3 + num4
 
