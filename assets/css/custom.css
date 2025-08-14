@@ -377,6 +377,5 @@ html:not(.dark) .highlight {
 
 .chroma .line {
   display: block !important;
-  white-space: nowrap !important;
-  overflow-x: auto !important;
+  white-space: wrap !important;
 }
