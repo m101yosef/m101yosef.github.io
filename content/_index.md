@@ -29,9 +29,6 @@ sections:
     content: 
       title:
       brands: 
-        - name: "Al Zamil Company"
-          logo: 'alzamil-logo.png'
-          url: "zamilco.com"
         - name: "NineSigma"
           logo: 'nineSigma.png'
           url: "ninesigma.com"
