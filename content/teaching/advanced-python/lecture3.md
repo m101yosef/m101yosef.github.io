@@ -72,7 +72,7 @@ print(last)   # Output: Yosef
 This gives you the control over what to do with outcomes (like in my case with reinforcement learning agents). 
 
 
-## Flexible functions with `*args` and `**kwargs`
+## Flexible functions with arguments
 During my time at university, one of the professors who was teaching us the foundations of software engineering (and for some reason the cs department, made him teach the topic in Python). So, the professor was like Python is too silly to do software and he gave an example of the need to sum more than one number together with knowing how many number you will add. He was partially right; this is impossible unless we used `*args`. 
 
 ```python
@@ -225,14 +225,6 @@ print(
     sep="\n"
 )
 ```
-
-Since, I'm not that convinced with using function factories, I did some research and designed the following [flowchart](#fig:function-factories-flowchart) to help in determining if using function factories is helpful or not.
-
-
-<figure id="fig:function-factories-flowchart">
-  <img src="../images/function-factories-flowchart.png">
-  <figcaption align="center" style="color: gray; "><strong>Fig: </strong>-</figcaption>
-</figure> 
 
 
 ### Built-in higher-order functions
