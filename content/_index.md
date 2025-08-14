@@ -29,6 +29,9 @@ sections:
     content: 
       title:
       brands: 
+        - name: "Labelbox"
+          logo: 'labelbox.png'
+          url: "labelbox.com"
         - name: "NineSigma"
           logo: 'nineSigma.png'
           url: "ninesigma.com"
