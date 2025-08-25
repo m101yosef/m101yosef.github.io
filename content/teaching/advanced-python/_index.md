@@ -24,7 +24,7 @@ Also, you should know that I admire learn by doing. In fact, I never understood 
 [Lecture 5](lecture5). Type hinting and static typing (`mypy`, `typing`) <br>
 
 ### Object-Oriented Programming (OOP)
-[Lecture 6](#). Classes, instances, and constructors (`__init__`) <br>
+[Lecture 6](lecture6). Classes, instances, and constructors (`__init__`) <br>
 [Lecture 7](#). Instance, class, and static methods <br>
 [Lecture 8](#). Inheritance, polymorphism, and method overriding <br>
 [Lecture 9](#). Encapsulation, abstraction, and dunder methods (`__str__`, `__repr__`, etc.) <br>
