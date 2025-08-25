@@ -1,6 +1,6 @@
 ---
 title: "3. Higher-order functions"
-date: 2025-08-09
+date: 2025-08-11
 weight: 3
 type: docs
 tags: 
