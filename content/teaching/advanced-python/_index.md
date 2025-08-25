@@ -21,7 +21,7 @@ Also, you should know that I admire learn by doing. In fact, I never understood 
 [Lecture 2](lecture2). Pythonic iteration: sequences, comprehensions, and unpacking <br>
 [Lecture 3](lecture3). Function arguments & Higher-order functions <br>
 [Lecture 4](lecture4). Exception handling & context managers <br>
-[Lecture 5](#). Type hinting and static typing (`mypy`, `typing`) <br>
+[Lecture 5](lecture5). Type hinting and static typing (`mypy`, `typing`) <br>
 
 ### Object-Oriented Programming (OOP)
 [Lecture 6](#). Classes, instances, and constructors (`__init__`) <br>
