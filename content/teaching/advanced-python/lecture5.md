@@ -1,6 +1,6 @@
 ---
 title: "5. Type hinting, Static typing, and Testing"
-date: 2025-08-09
+date: 2025-08-20
 weight: 5
 type: docs
 tags: 
