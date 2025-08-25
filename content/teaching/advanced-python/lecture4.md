@@ -1,6 +1,6 @@
 ---
 title: "4. Context managers and resources handling"
-date: 2025-08-09
+date: 2025-08-15
 weight: 4
 type: docs
 tags: 
