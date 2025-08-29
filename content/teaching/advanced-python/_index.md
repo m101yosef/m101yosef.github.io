@@ -25,7 +25,7 @@ Also, you should know that I admire learn by doing. In fact, I never understood 
 
 ### Object-Oriented Programming (OOP)
 [Lecture 6](lecture6). Classes, instances, and constructors (`__init__`) <br>
-[Lecture 7](#). Instance, class, and static methods <br>
+[Lecture 7](lecture7). 7. OOP Methods: instance, class, and static <br>
 [Lecture 8](#). Inheritance, polymorphism, and method overriding <br>
 [Lecture 9](#). Encapsulation, abstraction, and dunder methods (`__str__`, `__repr__`, etc.) <br>
 [Lecture 10](#). Composition vs inheritance + simple design patterns <br>
