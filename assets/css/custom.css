@@ -244,6 +244,13 @@ code::after {
   white-space: pre !important;
 }
 
+.chroma:has(> code.language-fallback) {
+  background-color: #444 !important;
+  color: whitesmoke !important;
+  margin-top: 0;
+}
+
+
 /* GitHub Light theme */
 html:not(.dark) .highlight {
   background-color: #ffffff !important;
