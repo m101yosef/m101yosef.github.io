@@ -19,15 +19,15 @@ Also, you should know that I admire learn by doing. In fact, I never understood 
 
 [Lecture 1](lecture1). Code format & performance <br>
 [Lecture 2](lecture2). Pythonic iteration: sequences, comprehensions, and unpacking <br>
-[Lecture 3](lecture3). Function arguments & Higher-order functions <br>
-[Lecture 4](lecture4). Exception handling & context managers <br>
+[Lecture 3](lecture3). Function arguments & higher-order functions <br>
+[Lecture 4](lecture4). Resource handling & context managers <br>
 [Lecture 5](lecture5). Type hinting and static typing (`mypy`, `typing`) <br>
 
 ### Object-Oriented Programming (OOP)
-[Lecture 6](lecture6). Classes, instances, and constructors (`__init__`) <br>
-[Lecture 7](lecture7). 7. OOP Methods: instance, class, and static <br>
-[Lecture 8](#). Inheritance, polymorphism, and method overriding <br>
-[Lecture 9](#). Encapsulation, abstraction, and dunder methods (`__str__`, `__repr__`, etc.) <br>
+[Lecture 6](lecture6). OOP Intro: Classes, instances, and constructors (`__init__`) <br>
+[Lecture 7](lecture7). OOP Methods: instance, class, and static <br>
+[Lecture 8](lecture8). OOP principles part 1: Inheritance, polymorphism, and method overriding <br>
+[Lecture 9](#). OOP principles part 2: Encapsulation, abstraction, and dunder methods<br>
 [Lecture 10](#). Composition vs inheritance + simple design patterns <br>
 
 ### Data Stuctures

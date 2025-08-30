@@ -1,5 +1,5 @@
 ---
-title: "6. Classes, instances, and constructors"
+title: "6. OOP Introduction"
 date: 2025-08-25
 weight: 6
 type: docs

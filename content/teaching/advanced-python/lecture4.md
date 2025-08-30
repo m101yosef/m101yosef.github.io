@@ -1,5 +1,5 @@
 ---
-title: "4. Context managers and resources handling"
+title: "4. Context managers"
 date: 2025-08-15
 weight: 4
 type: docs

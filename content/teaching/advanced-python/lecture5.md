@@ -1,5 +1,5 @@
 ---
-title: "5. Type hinting, Static typing, and Testing"
+title: "5. Type hinting"
 date: 2025-08-20
 weight: 5
 type: docs
