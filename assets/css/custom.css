@@ -221,6 +221,22 @@ article pre .cl {
   background-color: lightcyan;
 }
 
+/* Code */
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 85%;
+  color: #24292e;
+  padding: 0.2em 0.4em;
+  margin: 0;
+  border-radius: 6px;
+}
+
+code::before,
+code::after {
+  content: none !important;
+}
+
+
 
 /* GitHub theme */
 
@@ -234,7 +250,7 @@ html:not(.dark) .highlight {
 }
 
 .chroma {
-  background-color: #ffffff !important;
+  background-color: ghostwhite !important;
   color: #24292f !important; /* Default text */
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace !important;
 }
