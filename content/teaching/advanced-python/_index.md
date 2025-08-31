@@ -1,6 +1,6 @@
 ---
 title: "Advanced Python"
-summary: "Data structures, OOP, and Algorithms"
+summary: "Data structures, Object-oriented Programming, and Algorithms"
 date: 2025-07-30
 type: docs
 math: true
