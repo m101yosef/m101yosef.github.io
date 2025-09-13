@@ -8,9 +8,9 @@ weight: 1
 
 ---
 
-If you know me at all, you will know that I always ecourage thinking over having a knowledge but here I am creating a course on the most theoritical concepts in programming. Understanding OOP, data structures, and algorithms will give you the ability to see what is behind the code; the thinking process that the code creator had. You will be able to see why they structured their code like this or even discover mistakes or ways of improvements.
+If you know me at all, you will know that I always encourage thinking over having a knowledge but here I am creating a course on the most theoritical concepts in programming. Understanding OOP, data structures, and algorithms will give you the ability to see what is behind the code; the thinking process that the code creator had. You will be able to see why they structured their code like this or even discover mistakes or ways of improvements.
 
-Also, you should know that I admire learn by doing. In fact, I never understood OOP until I used it to build neural networks in PyTorch or dynamic programming unitl using it for reinforcement learning. So, with no doubt, there will be a lot of practical exercises in this course.
+Also, you should know that I admire learn by doing. In fact, I never understood OOP until I used it to build neural networks in PyTorch or dynamic programming until using it for reinforcement learning. So, with no doubt, there will be a lot of practical exercises in this course.
 
 
 ## Course Outline
@@ -26,11 +26,12 @@ Also, you should know that I admire learn by doing. In fact, I never understood 
 ### Object-Oriented Programming (OOP)
 [Lecture 6](lecture6). OOP Intro: Classes, instances, and constructors (`__init__`) <br>
 [Lecture 7](lecture7). OOP Methods: instance, class, and static <br>
-[Lecture 8](lecture8). OOP principles part 1: Inheritance, polymorphism, and method overriding <br>
-[Lecture 9](#). OOP principles part 2: Encapsulation, abstraction, and dunder methods<br>
-[Lecture 10](#). Composition vs inheritance + simple design patterns <br>
+[Lecture 8](lecture8). OOP principles: Inheritance, polymorphism, Encapsulation and abstraction <br>
+[Lecture 9](#). Composition vs inheritance + simple design patterns <br>
+[Lecture 10](#). Modular code and testing <br>
 
-### Data Stuctures
+
+### Data Structures
 [Lecture 11](#). Lists, sets, dicts – advanced use cases <br>
 [Lecture 12](#). collections: `deque`, `defaultdict`, `Counter`, `namedtuple` <br>
 [Lecture 13](#). Stacks and queues using lists and deque <br>
