@@ -426,6 +426,7 @@ html:not(.dark) .highlight {
   background-color: rgba(255, 192, 203, 0.2); 
   border-radius: 4px; 
   margin: 2em 0;
+  padding-bottom: 16px;
 
   p, details {
     padding-left: 8px;
@@ -436,6 +437,12 @@ html:not(.dark) .highlight {
     color: gray;
     font-weight: 400;
   }
+}
+
+.exercise .highlight {
+  margin-left: 12px;
+  margin-right: 12px;
+  border-radius: 4px;
 }
 
 .exercise-head {
