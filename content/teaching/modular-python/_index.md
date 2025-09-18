@@ -11,7 +11,6 @@ If you know me at all, you will know that I always encourage thinking over havin
 
 Also, you should know that I admire learn by doing. In fact, I never understood OOP until I used it to build neural networks in PyTorch or dynamic programming until using it for reinforcement learning. So, with no doubt, there will be a lot of practical exercises in this course.
 
-content/teaching/modular-python/
 
 ## Course Outline
 
