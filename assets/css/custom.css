@@ -421,3 +421,31 @@ html:not(.dark) .highlight {
 /* .page-header, .page-footer, .hb-toc {
   display: none !important;
 } */
+
+.exercise {
+  background-color: rgba(255, 192, 203, 0.2); 
+  border-radius: 4px; 
+  margin: 2em 0;
+
+  p, details {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  details summary {
+    color: gray;
+    font-weight: 400;
+  }
+}
+
+.exercise-head {
+  background-color: crimson;
+  color: white;
+  font-weight: 500;
+  border-radius: 4px 4px 0 0; 
+  padding-left: 8px;
+
+  code {
+    color: white;
+  }
+}
