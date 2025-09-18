@@ -29,6 +29,65 @@ Again, in design, whitespace is not just something blank it is part of the art o
 </figure>
 
 
+<div class="exercise">
+<div id="practical-exercise-1" class="exercise-head">
+<b>Practical exercise 1:</b> the code clinic
+</div>
+
+Below are three different Python functions that all calculate the area of a rectangle. Read them all, then answer the questions that follow. 
+
+```python
+# ------------------
+# Version A
+# ------------------
+
+# A constant for a default value, clearly named.
+DEFAULT_WIDTH = 1
+
+def calculate_area(length, width=DEFAULT_WIDTH):
+    """Calculates the area of a rectangle."""
+    return length * width
+
+# ------------------
+# Version B
+# ------------------
+
+def area(x, y):
+ return x*y
+
+# ------------------
+# Version C
+# ------------------
+
+w=1
+def calc(l,wth=w):
+ d = (l, wth); return d[0]*d[1] # Using a tuple for no reason
+```
+
+**Questions**:
+1. Which version is the easiest to read and understand at a glance? Why?
+2. In Version B, what do the variables x and y represent? Is it immediately obvious?
+3. In Version C, the code is confusing. What makes it so difficult to follow?
+4. If you had to use one of these functions in a large project, which would you choose and why?
+
+<details>
+<summary>hint</summary>
+
+There's no code to write here! Just think about clarity. Good code should read a bit like plain English. Which version comes closest to that?
+
+</details>
+
+<details>
+<summary>solution</summary>
+
+1. Version A is the easiest to read. The function and variable names are descriptive (`calculate_area`, `length`, `width`), and it's well-spaced.
+2. In Version B, it's impossible to know what `x` and `y` are without guessing from the function name `area`. They could be length and width, or base and height. This ambiguity is bad.
+3. Version C is ugly because it uses an unclear variable name (`l`), creates an unnecessary tuple (`d`), and puts a comment on the same line as the code, making it cluttered.
+4. You should always choose Version A. It's predictable, readable, and easy to maintain. New developers can understand it instantly without having to decipher it like a puzzle.
+
+</details>
+</div>
+
 
 ### Naming conventions
 I don't need to tell you that the name is Python can only start with a letter or an underscore and can only contain English letters, underscores, and numbers. Apart from that, we have some nice to follow rules to help us clear our mind when choosing the naming style: 
@@ -55,6 +114,62 @@ result = calculate_hours(year_days=YEAR_DAYS, day_hours=DAY_HOURS)
 print(result)
 ```
 
+<div class="exercise">
+<div id="practical-exercise-2" class="exercise-head">
+<b>Practical exercise 2:</b> check the names
+</div>
+
+The following code calculates a shopping bill with tax. It works, but it's a mess! Copy this code and fix it by: 
+1. Correcting the indentation 
+2. Adding proper whitespace around operators (`=`, `*`, `+`)
+3. Renaming the variables and constants to be descriptive and follow Python conventions (`snake_case` for variables, `ALL_CAPS` for constants). 
+
+```python
+# some items
+items=[10,20,30]
+TAX=0.14
+
+def GETTOTAL(list_of_items):
+  total=0
+  for I in list_of_items:
+      total+=I
+  total=total+(total*TAX)
+  return total
+
+print(GETTOTAL(items))
+```
+
+<details>
+<summary>hint</summary>
+
+Remember that constants (like `TAX`) should be in all capital letters. Function and variable names should be in `snake_case` (all lowercase with underscores). Most operators need a space on either side.
+
+</details>
+
+<details>
+<summary>solution</summary>
+
+```python
+# A constant for the tax rate.
+TAX_RATE = 0.14
+
+# A list of prices for items in a shopping cart.
+item_prices = [10, 20, 30]
+
+def get_total_bill(prices):
+    """Calculates the sum of prices and adds tax."""
+    subtotal = 0
+    for price in prices:
+        subtotal += price
+    
+    final_total = subtotal + (subtotal * TAX_RATE)
+    return final_total
+
+print(get_total_bill(item_prices))
+```
+
+</details>
+</div>
 
 
 ### Comments
@@ -133,6 +248,61 @@ def calculate_invoice(total: float, tax_rate: float) -> float:
 ```
 
 
+<div class="exercise">
+<div id="practical-exercise-3" class="exercise-head">
+<b>Practical exercise 3:</b> get it documented
+</div>
+
+The function below is clean but lacks any explanation. Add comments to it: 
+1. Add a docstring that explains what the function does, its parameters, and what it returns.
+2. Add a block comment explaining the overall strategy of the `for` loop.
+3. Add an inline comment to clarify the purpose of the modulo operator (`%`) on the `if` line.
+
+```python
+def sum_of_even_numbers(number_list):
+    total = 0
+    for number in number_list:
+        if number % 2 == 0:
+            total += number
+    return total
+```
+
+<details>
+<summary>hint</summary>
+
+A docstring goes inside triple quotes `"""..."""` right after the `def` line. A block comment explains a chunk of code. An inline comment clarifies a single, potentially confusing part of a line.
+
+</details>
+
+<details>
+<summary>solution</summary>
+
+```python
+def sum_of_even_numbers(number_list):
+    """
+    Calculates the sum of only the even numbers in a list.
+
+    Args:
+        number_list: A list of integers.
+
+    Returns:
+        An integer representing the sum of the even numbers.
+    """
+    total = 0
+    
+    # We will iterate through each number in the provided list
+    # and check if it is even. If it is, we add it to our
+    # running total.
+    for number in number_list:
+        if number % 2 == 0:  # The modulo operator checks for a remainder of 0.
+            total += number
+            
+    return total
+```
+
+</details>
+</div>
+
 
 ## Performance 
 The one constant in writing code is that it changes over time ([Nelson, 2024](#nelson_2024)). And, with take continuous change, there is a need for continuous enhancements. Also, I want you to understand that not all code is created equal. Two pieces of code can do the same thing, but one can be much faster or more efficient than the other. However, you should start analysing or trying to improve the performance of your code unless it works the way it should. So, "first make it work, then make it fast."
@@ -158,42 +328,60 @@ There are a lot of aspects that affect the code performance from the data struct
 - Ignore every tip above if it will harm you code functionality, if applying any advice will change how your code work and go far from the desired result then don't apply it. Only apply the tips if you saw that it has helped your code. 
 
 
-## Exercises
+<div class="exercise">
+<div id="practical-exercise-4" class="exercise-head">
+<b>Practical exercise 4:</b> The speedster
+</div>
 
-1. The following code has bad formatting, poor naming, and unnecessary loops. Rewrite it so that it follows PEP 8 and performance tips. 
+**Tip**: In Python, repeatedly adding to a string in a loop using the + operator can be very slow because a new string has to be created in memory with every addition. A much faster way to build a string from many small pieces is to add them to a list and then use the `.join()` method at the end.
+
+The function below builds a long string of comma-separated numbers. Rewrite it to be more performant by using a list and the `.join()` method.
+
 ```python
-def calc(A,B):
-  r=0
-  for i in A:
-    if i in B:
-      r += 1
-  for i in A:
-    if i in B:
-      print(i)
-  return r
+def create_csv_string(count):
+    """Creates a string of numbers from 0 to count-1, separated by commas."""
+    result_string = ""
+    for i in range(count):
+        result_string += str(i)
+        if i < count - 1:
+            result_string += ","
+    return result_string
 
-listA=[1,2,3,4,5]
-listB=[3,4,5]
-print(calc(listA,listB))
+# Example usage (don't worry if this is slow, that's the point!)
+print(create_csv_string(10))
 ```
 
-2. Write three short versions of a while-loop printing numbers 1 to 5:
-    - The good version (proper indentation and spacing)
-    - The bad version (single-line, hard to read)
-    - The ugly version (broken indentation)
+<details>
+<summary>hint</summary>
 
-3. Rename the following so they follow correct Python naming conventions
+First, create an empty list. Inside the loop, `append` each number (as a string!) to the list. After the loop is finished, use `",".join(your_list_of_strings)` to create the final string in one efficient step.
+
+</details>
+
+<details>
+<summary>solution</summary>
+
 ```python
-DaysInMonth = 30
-getuserName = lambda: "Ali"
-class paymentgateway: ...
+def create_csv_string_fast(count):
+    """
+    Creates a string of numbers from 0 to count-1, separated by commas.
+    This version is much more performant by using a list and .join().
+    """
+    # Add all numbers (as strings) to a list first.
+    number_strings = []
+    for i in range(count):
+        number_strings.append(str(i))
+    
+    # Join the list elements into a single string with a comma separator.
+    # This is much faster than using '+' in a loop.
+    return ",".join(number_strings)
+
+# Example usage
+print(create_csv_string_fast(10))
 ```
 
-4. Write a docstring for this function following the lecture's format
-```python
-def fahrenheit_to_celsius(temp):
-    return (temp - 32) * 5 / 9
-```
+</details>
+</div>
 
 
 ## Additional Reading
