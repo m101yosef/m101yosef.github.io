@@ -92,7 +92,7 @@ There's no code to write here! Just think about clarity. Good code should read a
 ### Naming conventions
 I don't need to tell you that the name is Python can only start with a letter or an underscore and can only contain English letters, underscores, and numbers. Apart from that, we have some nice to follow rules to help us clear our mind when choosing the naming style: 
 - variables and functions: snake_case (lower case with underscores)
-- class names: CamelCase (capitalised words and abbreviations like `MITCourse` not `MitCourse`)
+- class names: PascalCase (capitalised words and abbreviations like `MITCourse` not `MitCourse`)
 - constants: UPPER_CASE (upper case with underscores)
 
 ```python
