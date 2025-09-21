@@ -36,7 +36,7 @@ class Car:
 When I write `class Car:`, Python bundles data and functions together into one unit. As the [official docs](https://docs.python.org/3/tutorial/classes.html) explain, "Classes provide a means of bundling data and functionality together". In the code snippet above, `Car` is a new type, and each instance will have a `color` and `speed` attribute (set by `__init__`). 
 
 ### Naming convention
-According to [PEP 8](https://peps.python.org/pep-0008/), class names should use the `PascalCase` convention. That means I write `class Car:` or `class BankAccount`, not `class car` or `class bank_account`. By contrast, methods and functions should be `snake_case`. As we said in [lecture 1](https://m101yosef.github.io/teaching/advanced-python/lecture1), following these naming rules helps coders (like you and me) read the code more easily. 
+According to [PEP 8](https://peps.python.org/pep-0008/), class names should use the `PascalCase` convention. That means I write `class Car:` or `class BankAccount`, not `class car` or `class bank_account`. By contrast, methods and functions should be `snake_case`. As we said in [lecture 1](https://m101yosef.github.io/teaching/modular-python/lecture1), following these naming rules helps coders (like you and me) read the code more easily. 
 
 ### The initialisation constructor 
 Every class can define a special method named `__init__()`, which Python calls automatically when creating a new instance. This method, as the name suggested, initialises the object's initial state. In my `Car` example, `__init__` takes color and speed as parameters and assigns them to the instance. So, consider `__init__` as your chance to set up any attributes the object needs. 
