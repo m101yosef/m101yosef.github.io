@@ -21,21 +21,20 @@ Also, you should know that I admire learn by doing. In fact, I never understood 
 [Lecture 3](lecture3). Core data structures: dictionaries, sets, queues, and stacks <br>
 [Lecture 4](lecture4). Functional Programming <br>
 [Lecture 5](lecture5). Resource handling & context managers <br>
+[Lecture 6](lecture6). Type hinting and static typing <br>
 
 
 ### Object-Oriented Programming (OOP)
-[Lecture 6](lecture6). OOP Intro: Classes, instances, and constructors <br>
-[Lecture 7](lecture7). OOP Methods: instance, class, and static <br>
-[Lecture 8](lecture8). Type hinting and static typing <br>
-[Lecture 9](lecture9). OOP principles: Inheritance, polymorphism, Encapsulation and abstraction <br>
+[Lecture 7](lecture7). OOP Intro: Classes, instances, and constructors <br>
+[Lecture 8](lecture8). OOP Methods: instance, class, and static <br>
+[Lecture 9](lecture9). OOP principles: Inheritance, polymorphism, & Encapsulation <br>
 [Lecture 10](lecture10). Special methods & data classes <br>
 [Lecture 11](lecture11). Advanced OOP design: composition & Abstract base classes (ABCs) <br>
 
 
-### From code to production
-[Lecture 12](lecture12). Version control & environment management <br>
-[Lecture 13](lecture13). Code Correctness: Testing & Debugging <br>
-[Lecture 14](lecture14). Code Quality: Refactoring & Optimisation <br>
-[Lecture 15](lecture15). Distribution: packaging & containerisation <br>
-[Lecture 16](lecture16). Automation: introduction to CI/CD 
+### Foundations of software practice 
+[Lecture 12](lecture12). Project & environment management <br>
+[Lecture 13](lecture13). Version control with Git <br>
+[Lecture 14](lecture14). Testing with PyTest <br>
+[Lecture 15](lecture15). Packaging your project
 
