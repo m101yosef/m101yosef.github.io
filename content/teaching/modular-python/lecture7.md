@@ -1,5 +1,5 @@
 ---
-title: "7. OOP Methods"
+title: "7. OOP Introduction"
 date: 2025-08-27
 weight: 7
 type: docs
@@ -7,91 +7,86 @@ tags:
 - Python
 ---
 
-Continuing our journey together in the world of OOP in Python, today, we are going to go deeper in one of the most important building blocks of the class which is the method. Up till now, we only used one type of methods (instance methods) that defines with `self` and considered to be the most common type of methods. While instance methods are great, there are two other type of methods: class methods and static methods. So, in this lecture, we will try to find out the (why, how, when) to use them. We will go only with one example; the `Book` class.
+When I first began programming in Python, I was doing messy code (most beginner data scientist are famous for their messy code). Then, I learned [functional programming](https://m101yosef.github.io/teaching/modular-python/lecture4); the Python main point of using functions is to avoid repetition as mention in [PEP 8](https://peps.python.org/pep-0008/) performance tips (DRY) which is: don't repeat yourself. While the true idea behind function programming is to use pure functions like `map`, `filter`, or `reduce` to transform your data without side effects&mdash;this means that the function only effects its input not other parts of the code. 
+
+However, when I start using PyTorch for building custom neural networks, I found that combining FP techniques with object-oriented programming (OOP) often yields cleaner code. Python is a multi-paradigm language, and mixing styles is common practice. In fact, for a lot of problems, you will often solve some parts of the problem in a functional way and other parts with objects ([Nelson, 2024](https://www.oreilly.com/library/view/software-engineering-for/9781098136192/)). So, Keeping both tools in my toolbox made my code cleaner, more flexible, and readable.
+
+From a historical perspective, OOP itself was born out of the need to model complex systems in code. In the 1960s, languages like Simula (1961 - 1967) introduced essential OOP ideas such as classes, inheritance, and dynamic binding. These allowed programmers to group data and behaviour into "objects" instead of only writing procedural steps. Over decades, many programming languages uses OOP as their main style like Java and C++. Today, many Python tools, library, even Python itself embraces OOP, providing classes, inheritance, and polymorphism similar to legendary programming languages. 
+
+## Defining classes
+A class itself defines an object, and you can think of it as a template for building various objects. An individual object is an instance of that class, and each object is an individual "thing" ([Nelson, 2024](https://www.oreilly.com/library/view/software-engineering-for/9781098136192/)). 
+
+```python
+class Car:
+    """A simple class representing a car."""
+
+    # attributes = adjectives or properties
+    def __init__(self, color, speed):
+        self.color = color
+        self.speed = speed
+    
+    # methods = actions
+    def start_engine(self): 
+        pass
+    
+    def stop_engine(self): 
+        pass
+```
+
+When I write `class Car:`, Python bundles data and functions together into one unit. As the [official docs](https://docs.python.org/3/tutorial/classes.html) explain, "Classes provide a means of bundling data and functionality together". In the code snippet above, `Car` is a new type, and each instance will have a `color` and `speed` attribute (set by `__init__`). 
+
+### Naming convention
+According to [PEP 8](https://peps.python.org/pep-0008/), class names should use the `PascalCase` convention. That means I write `class Car:` or `class BankAccount`, not `class car` or `class bank_account`. By contrast, methods and functions should be `snake_case`. As we said in [lecture 1](https://m101yosef.github.io/teaching/advanced-python/lecture1), following these naming rules helps coders (like you and me) read the code more easily. 
+
+### The initialisation constructor 
+Every class can define a special method named `__init__()`, which Python calls automatically when creating a new instance. This method, as the name suggested, initialises the object's initial state. In my `Car` example, `__init__` takes color and speed as parameters and assigns them to the instance. So, consider `__init__` as your chance to set up any attributes the object needs. 
 
 ```python
 class Book: 
+    def __init__(self, title, author, year, pages = None): 
+        """
+        Initialises the Book object with its basic properties. 
 
-  # Attributes / book's properties
-  def __init__(self, title, author, year, pages): 
-    self.title = title
-    self.author = author
-    self.year = year
-    self.pages = pages
+        Args: 
+            title (str): the name of the book.
+            author (str): the name of the book's author.
+            year (int): the year the book published.
+            pages (int, optional): the number of pages in the book.
+        """
+        self.title = title
+        self.author = author
+        self.year = year
+        self.pages = pages
 
-# example usage 
-spider = Book("The Spider", "Mustafa Mahmoud", 1995, 50)  # class instance
-print(f"I'm reading {book.title} by {book.author}")
-```
-The code here is very simple, we have just created a class `Book` with 4 attributes: title, author, year, and pages. Then I have created an instance of that class called `spider` which contains the spider book by Mustafa Mahmoud (one of my favourite author of all times). After that, I printed out only two attributes; the book's title and author. 
-
-## Instance methods
-At first, an instance is the object that we created from the class. Think of a class as a blueprint or a template that defines the properties (attributes) and actions (methods) that all objects of that type will have. An instance is one use case from that template (class). For our example `spider` will be an instance created from the class `Book`. So, instance methods is a function defined inside a class that operates on a given instance of the class. Its primary purpose is to access and manipulate the data (known as instance variables or attributes) that is unique to that particular object. In our case, at least the book title and author are unique to the `spider` book. No other book will have the same title and author in the same time since the author won't give the same title to two of his books (hopefully).
-
-One thing that is obviously important is that the first parameter in the method `self` is a reference to the instance itself (hint: the name!). This first parameter `self` allows the method to know which specific object it is working with. So, the advantage of instance methods over class and static methods is that it can read and modify instance's data and control the instance behaviour. 
-
-```python
-class Book: 
-
-  # Attributes / instance data
-  def __init__(self, title, author, year, pages): 
-    self.title = title
-    self.author = author
-    self.year = year
-    self.pages = pages
-  
-  # Methods
-  def reading_time(self, reading_speed_wpm=250): 
-    """
-    Calculates the approximate reading time based on a given speed. 
-    Assumes an average speed of 250 words per page. 
-    """
-    total_words = self.pages*250
-    print(f"total words = {total_words}")
-    total_time = total_words / reading_speed_wpm
-    print(f"total time = {total_time}")
-    hours = int(total_time // 60)
-    if hours == 0: 
-      return f"Approximate reading time: {int(total_time)} minutes"
-    else: 
-      minutes = int((total_time/60 - hours) * 60)
-      return f"Approximate reading time: {hours}h {minutes}m"
-
-# example 
-book = Book("The Spider", "Mustafa Mahmoud", 1995, 50)
-print(book.reading_time())
+# Create a new instance of Book
+book = Book(
+    title="The Spider", 
+    author="Mustafa Mahmoud", 
+    year=1995
+    pages=50
+    )
+print(book.title, book.year)
 ```
 
-```
-total words = 12500
-total time = 50.0
-Approximate reading time: 50 minutes
-```
-
-Here, `reading_time` is an instance method that uses the instance number of pages `self.pages` to estimate the reading time based on a given speed that is given by the user. 
-
-**When to use instance methods?** <br>
-You can consider instance methods as your default options for OOP methods. Use them for any action that requires reading and modifying the data of the object/instance. 
+When I write `book = Book(...)`, Python creates a new `Book` object and automatically calls `__init__`, setting all the properties that we have (title, author, year, pages). The `self` parameter inside `__init__` refers to the instance being created (more on `self` below). After construction, every `Book` object has its own title, author, year, pages attributes attached. 
 
 
 <div class="exercise">
 <div id="practical-exercise-1" class="exercise-head">
-<b>Practical exercise 1:</b> Basic <code>LogEntry</code>
+<b>Practical exercise 1:</b> The digital bookshelf
 </div>
 
-You are building a system that processes log files. A single log entry has a timestamp and a message. Your first task is to create a class that represents this entry.
-
-**Instructions**:
-1. Create a class named LogEntry.
-2. Write the constructor. The `__init__` method should accept a `message` string. It should also automatically capture the current time using Python's `datetime` module and store it as an instance attribute called `timestamp`.
-3. Create an instance method called `update_message(self, new_message)`. This method should change the `self.message` attribute to the new message provided.
-4. Implement the `__str__(self)` method to return a formatted string like: `[YYYY-MM-DD HH:MM:SS] - Log Message`.
-5. Create a LogEntry object. Print it. Then, call the `update_message` method to change its message. Print it again to see the change.
+You are building a system to catalogue your book collection. Your task is to define a `Book` class that can hold the title, author, and publication year of a book.
+1. Create a class named `Book`. Remember the `PascalCase` convention for class names. 
+2. Define the constructor `__init__` method. This method should accept `title`, `author`, and `year` as arguments. 
+3. Inside `__init__`, assign these arguments to instance attributes. It's conventional to use the same names, e.g., `self.title = title`. 
+4. After defining the class, create at least two different `Book` objects representing your favourite books. 
+5. Print out the `title` and `author` of each book object you created to make sure the attributes were set correctly. 
 
 <details>
 <summary>hint</summary>
 
-To get the current time, you can use `from datetime import datetime` at the top of your script, and then `self.timestamp = datetime.now()` inside your `__init__` method.
+The `__init__` method is the first place you'll use the `self` keyword. It refers to the specific instance of the class being created. Every time you create a new book, `self` points to that specific book.
 
 </details>
 
@@ -99,150 +94,167 @@ To get the current time, you can use `from datetime import datetime` at the top 
 <summary>solution</summary>
 
 ```python
-from datetime import datetime
+# 1. Define the Class with PascalCase naming
+class Book:
+    # 2. Write the constructor
+    def __init__(self, title, author, year):
+        """Initialises a new Book object."""
+        # 3. Assign attributes to the instance (self)
+        print(f"Creating a book: {title}...")
+        self.title = title
+        self.author = author
+        self.year = year
 
-class LogEntry:
-    """Represents a single entry in a log file."""
+# 4. Instantiate two objects from our Book class
+book1 = Book("Dune", "Frank Herbert", 1965)
+book2 = Book("The Pragmatic Programmer", "Andrew Hunt & David Thomas", 1999)
 
-    def __init__(self, message):
-        """Initialises a log entry with a message and the current timestamp."""
-        self.message = message
-        self.timestamp = datetime.now()
-
-    def update_message(self, new_message):
-        """Updates the message of this specific log entry."""
-        self.message = new_message
-
-    def __str__(self):
-        """Returns a user-friendly string representation of the log entry."""
-        # The .strftime('%F %T') formats the date and time nicely.
-        return f"[{self.timestamp.strftime('%F %T')}] - {self.message}"
-
-# --- Test Script ---
-print("--- Testing Instance Methods ---")
-log1 = LogEntry("User logged in successfully.")
-print(f"Original Log: {log1}")
-
-# Let's update the message to be more specific
-log1.update_message("User 'admin' logged in successfully.")
-print(f"Updated Log:  {log1}")
+# 5. Verify the attributes of each instance
+print("\n--- My Bookshelf ---")
+print(f"Book 1 Title: {book1.title}, Author: {book1.author}")
+print(f"Book 2 Title: {book2.title}, Author: {book2.author}")
 ```
 
 </details>
 </div>
 
 
-## Class methods
-Marked with the `@classmethod` decorator and take `cls` as its first parameter instead of `self` since we are referring to the class itself not the instance. 
+## Building a simple array class
+To tie everything together, I often build toy examples. For instance, I might write a simple class that mimics a tiny subset of a NumPy-like array. As you know every class has two main components: attributes (adjectives/properties) and methods (actions). So for `OurArray` we will use two attributes; `data` to store inputs as a list and shape to return the size of the array. Also, two methods; mean and sum. But first list see how these attributes and methods looks like in the real NumPy array. 
 
 ```python
-class MyClass: 
-    @classmethod
-    def my_class_method(cls, ...): 
-        ...
-```
+import numpy as np 
+data = [1, 2, 3, 4]
 
-Since `cls` refers to the class itself, you would except that we will be able to work with class data not with instance data this time and that is completely true. However, I thing it is best to see the major possible ways that we can apply class methods to our `Book` class...
+# Creating an array instance
+numpy_array = np.array(data)
 
-
-### Alternative constructors (factory methods)
-It's another simple, descriptive way of creating class instance. This approach offers clarity and flexibility beyond the standard `__init__` constructor. 
-
-```python
-class Book: 
-    def __init__(self, title, author, year, pages): 
-        # rest code is the same 
-    
-    # alternative way to create class instance
-    @classmethod
-    def from_string(cls, book_string): 
-        try: 
-            title, author, year, pages = [part.strip() for part in book_string.split(',')]
-            return cls(title, author, int(year), int(pages))
-        except ValueError as e: 
-            print(f"Error creating book from string: {e}")
-            return None
-
-# --- Example Usage ---
-book2 = Book.from_string("Soul and Body, Mustafa Mahmoud, 1986, 116")
+# Attributes
 print(
-    "Second book data: ", 
-    f"Title: {book2.title}",
-    f"Author: {book2.author}",
-    f"Year: {book2.year}", 
-    f"Pages: {book2.pages}",
+    f"Attributes",
+    f"Data: {data}", 
+    f"Shape: {numpy_array.shape}", 
+    sep="\n"
+)
+
+# Methods
+np_mean = numpy_array.mean()
+np_sum = numpy_array.sum()
+
+print(
+    f"\nMethods",
+    f"The mean is: {np_mean}",
+    f"The sum is: {np_sum}",
     sep="\n"
 )
 ```
-
 ```
-Second book data: 
-Title: Soul and Body
-Author: Mustafa Mahmoud
-Year: 1986
-Pages: 116
+Attributes
+Data: [1, 2, 3, 4]
+Shape: (4,)
+
+Methods
+The mean is: 2.5
+The sum is: 10
 ```
-Here `from_string` is a class method that uses `cls(title, author, int(year), int(pages))` to create a new instance. This helps your users as they will not have to deal with putting a year as integers not as string and so on. 
 
-### Managing class-level state
-As I just said class methods are ideal for interacting with class variables that are shared across all instances of a class. By this, you can maintain a count of all instances created from your class. 
-
+Since we have seen how the attributes and methods we chose work in the NumPy world, let's try to build something like them within our world under a class named `OurArray`. 
 ```python
-class Book: 
-    total_books_created = 0   # class variable 
+class OurArray:
+    """
+    A simple array class with methods for sum and mean.
+    """
+    def __init__(self, data): 
+        """Initialises the array with a list of numbers."""
+        self.data = data 
+        self.shape = len(self.data)
+    
+    def mean(self): 
+        """Calculates the mean (average) of all elements in the array."""
+        return sum(self.data) / len(self.data)
+    
+    def sum(self): 
+        """Calculates the sum of all elements in the array."""
+        total = 0
+        for item in self.data: 
+            total += item 
+        return total 
 
-    def __init__(self, title, author, year, pages): 
-        self.title = title 
-        self.author = author
-        self.year = year
-        self.pages = pages 
+# --- Example Usage ---
+# Create an instance of OurArray
+our_list_array = OurArray([1, 2, 3, 4])
 
-        Book.total_books_created += 1   # Increase the number of books created every time we create a new instance
+# Attributes
+print(
+    f"Attributes",
+    f"Data: {our_list_array.data}", 
+    f"Shape: {our_list_array.shape}", 
+    sep="\n"
+)
 
-    @classmethod 
-    def books_count(cls): 
-        """Returns the total number of books created."""
-        return cls.total_books_created 
+# Methods
+our_mean = our_list_array.mean()
+our_sum = our_list_array.sum()
 
-book1 = Book("The Spider", "Mustafa Mahmoud", 1995, 50)
-book2 = Book("Soul and Body", "Mustafa Mahmoud", 1986, 116)
-book3 = Book("Dreams", "Mustafa Mahmoud", 1992, 105)
-
-print(Book.books_count())
+print(
+    f"\nMethods",
+    f"The mean is: {our_mean}",
+    f"The sum is: {our_sum}",
+    sep="\n"
+)
 ```
-
 ```
-3
-```
+Attributes
+Data: [1, 2, 3, 4]
+Shape: 4
 
-Now, you may ask: why you used a class method like `books_count()` over directly accessing the class variable `Book.total_books_created`? Okay, this because it encapsulates the state-related logic within the class following the principle of encapsulation and data hiding (more on that later in the next lecture).
+Methods
+The mean is: 2.5
+The sum is: 10
+```
+Despite creating a successful array, there are still a lot of things needed like error and exception handling. But, I will leave that to you to play with.
 
 
 <div class="exercise">
 <div id="practical-exercise-2" class="exercise-head">
-<b>Practical exercise 2:</b> Tracking and creating logs
+<b>Practical exercise 2:</b> The <code>SimpleStack</code> Project
 </div>
 
-Extend your `LogEntry` class with class-level functionality.
+To build a custom `SimpleStack` class that encapsulates a list, implements the LIFO (Last-In, First-Out) principle, and integrates with Python's built-in functions via dunder methods 
 
-**Part A: Tracking total logs**
-1. Add a class attribute `log_count = 0` to the `LogEntry` class. 
-2. Modify the `__init__` method so that it increments `LogEntry.log_count` every time a new instance is created. 
-3. Add a class method called `get_total_log(cls)` that returns the current value of `cls.log_count` 
+**Note**: <br>
+Dunder methods, also known as magic methods or special methods, are a core feature of Python's object model. The term "dunder" is an abbreviation for "double underscore", referring to the characteristic naming convention where these methods are enclosed by double underscores (e.g., `__init__`, `__str__`, `__add__`)
 
-**Part B: Alternative constructor from a file line**
-Log files often have a standard format. Imagine we need to parse a line like `"ERROR: Database connection failed"`.
-1. Add a class method `from_log_line(cls, line)`.
-2. This method should parse the `line`, assuming the format is `"LEVEL: Message"`. It should extract the message part.
-3. It should then create and return a new instance of the `LogEntry` class by calling the primary constructor: `cls(message)`.
+**Part A: The initialisation**
+1. Define a class called `SimpleStack`. Its `__init__` method should create a single "internal" instance attribute, `items`, and initialise it as empty list. 
 
-**Part C: Test script**
-After updating your class, create a few logs normally. Then, create on log using your new `from_log_line` method. Finally, call `get_total_logs` to see the total count. 
+**Part B: Methods** <br>
+Implement the essential methods that define a stack's behaviour. <br>
+2. `push(self, item)` that adds an `item` to the top of the stack. <br>
+3. `pop(self)` that removes and returns the item from the top of the stack. If the stack is empty, this should raise an `IndexError` (which `list.pop()` does automatically). <br>
+4. `peek(self)` that returns the top item without removing it. <br>
+5. `is_empty(self)` that returns `True` if the stack has no items, `False` otherwise. <br>
+
+**Part c: Dunder methods** <br>
+Make your class feel more like a native Python object by implementing these dunder methods: <br>
+6. `__len__(self)` should return the number of items currently in the stack. <br>
+7. `__str__(self)` should return a user-friendly string representation, e.g., `SimpleStack([item1, item2, 'top'])`. <br>
+
+**Part D: Last touches** <br>
+Write a script after your class definition to test its LIFO functionality <br>
+8. Create an instance of `SimpleStack`. <br>
+9. Push the strings 'A', 'B', and 'C' onto the stack. <br>
+10. Print the stack to see its contents. <br>
+11. Print the length of the stack. <br>
+12. Use `.peek()` to see the top item ('C'). <br>
+13. Use `.pop()` to remove the top item and print the removed item. <br>
+14. Print the stack again to show that 'C' is gone. <br>
+
 
 <details>
 <summary>hint</summary>
 
-For Part B, the `.split(': ', 1)` string method is perfect for splitting the line into two parts at the first occurrence of `': '`.
+A Python list's `.append()` method is perfect for a `push` operation, and its `.pop()` method (with no arguments) already implements the LIFO behaviour you need for your `pop` method.
 
 </details>
 
@@ -250,168 +262,90 @@ For Part B, the `.split(': ', 1)` string method is perfect for splitting the lin
 <summary>solution</summary>
 
 ```python
-from datetime import datetime
+class SimpleStack:
+    """
+    A simple stack implementation that follows the LIFO principle.
+    """
+    # Part A: The Skeleton
+    def __init__(self):
+        """Initialises the SimpleStack with an empty list for storage."""
+        self._items = []
 
-class LogEntry:
-    # Part A: Class attribute
-    log_count = 0
+    # Part B: Core Stack Behaviour
+    def push(self, item):
+        """Adds an item to the top of the stack."""
+        self._items.append(item)
 
-    def __init__(self, message):
-        self.message = message
-        self.timestamp = datetime.now()
-        # Part A: Increment the class attribute via the class name
-        LogEntry.log_count += 1
+    def pop(self):
+        """Removes and returns the top item from the stack."""
+        if self.is_empty():
+            raise IndexError("pop from an empty stack")
+        return self._items.pop()
+
+    def peek(self):
+        """Returns the top item without removing it."""
+        if self.is_empty():
+            return None
+        return self._items[-1]
+
+    def is_empty(self):
+        """Returns True if the stack is empty, False otherwise."""
+        return len(self._items) == 0
+
+    # Part C: Python Integration
+    def __len__(self):
+        """Allows the len() function to work on this object."""
+        return len(self._items)
 
     def __str__(self):
-        return f"[{self.timestamp.strftime('%F %T')}] - {self.message}"
+        """Provides a user-friendly string representation of the stack."""
+        return f"SimpleStack({self._items})"
 
-    # Part A: Class method for managing class state
-    @classmethod
-    def get_total_logs(cls):
-        """Returns the total number of log entries created."""
-        return cls.log_count
+# Part D: Putting It All Together
+print("--- Testing SimpleStack ---")
 
-    # Part B: Class method as an alternative constructor
-    @classmethod
-    def from_log_line(cls, line):
-        """Creates a new log entry by parsing a string line."""
-        # Assuming format "LEVEL: Message"
-        try:
-            _, message_part = line.split(': ', 1)
-            return cls(message_part) # Calls the __init__ method
-        except ValueError:
-            # Handle cases where the line format is wrong
-            return cls(f"Malformed log line: '{line}'")
+# 1. Create an instance
+s = SimpleStack()
+print(f"Is stack empty? {s.is_empty()}")
 
-# --- Test Script ---
-print("\n--- Testing Class Methods ---")
-log1 = LogEntry("System start.")
-log2 = LogEntry("Checking connections.")
-print(f"Log 1: {log1}")
-print(f"Log 2: {log2}")
+# 2. Push items
+s.push('A')
+s.push('B')
+s.push('C')
 
-# Create a log from a string
-log_line = "INFO: User data processed."
-log3 = LogEntry.from_log_line(log_line)
-print(f"Log 3 (from string): {log3}")
+# 3. Print the stack
+print(f"Stack after pushes: {s}")
 
-# Check the total count using the class method
-total = LogEntry.get_total_logs()
-print(f"\nTotal logs created: {total}")
+# 4. Print the length
+print(f"Length of stack: {len(s)}")
+
+# 5. Peek at the top item
+top_item = s.peek()
+print(f"Peeking at top item: {top_item}")
+
+# 6. Pop the top item
+popped_item = s.pop()
+print(f"Popped item: {popped_item}")
+
+# 7. Print the stack again
+print(f"Stack after pop: {s}")
+print(f"Length after pop: {len(s)}")
 ```
 
 </details>
 </div>
 
 
-## Static methods
-They are more like a pure function in the class but just defined with `@staticmethod` decorator. So, they don't take `self` or `cls` at all. 
-
-```python
-class MyClass: 
-    @staticmethod
-    def my_static_method(...):
-        ...
-```
-
-The absence of `self` and `cls` indicates that the method doesn't have access to instance or class data. In practice, use a static method for utility functions&mdash;validate inputs, perform a calculation, or convert units. As an example, we will use a static method to validate one of our inputs (year) to be only between 1700 and 2025 (or the current year) since you cannot find any book out of this period.
-
-```python
-import datetime
-
-class Book: 
-    def __init__(self, title, author, year, pages): 
-
-        if not self.is_valid_year(year): 
-            raise ValueError(f"Invalid year: {year} must be between 1700 and the current year")
-
-        self.title = title 
-        self.author = author 
-        self.year = year
-        self.pages = pages 
-
-    @staticmethod
-    def is_valid_year(year): 
-        current_year = datetime.datetime.now().year 
-        return 1700 <= year <= current_year 
-
-# --- Example Usage ---
-book = Book("The Spider", "Mustafa Mahmoud", 195, 50)
-```
-
-```
-ValueError: Invalid year: 195 must be between 1700 and the current year
-```
-
-Some argue that if the method doesn't need `self` or `cls`, it shouldn't be in the class. But in my opinion, static methods are great when you used them as private helper or to hide utility logic from outside the class. 
-
-
-<div class="exercise">
-<div id="practical-exercise-3" class="exercise-head">
-<b>Practical exercise 3:</b> A log utility
-</div>
-
-Add a utility function to your `LogEntry` class to format a dictionary of metadata into a string. This is a common need in logging, but it doesn't require access to any specific log's data or the class's overall state.
-
-**Instructions**
-1. Create a static method called `format_metadata(metadata_dict)`.
-2. This method should take a dictionary and convert it into a string of key-value pairs, for example: `"[user_id=101, request_id=xyz-987]"`. If the dictionary is empty, it should return an empty string.
-3. Call this method directly on the class (`LogEntry.format_metadata(...)`) with a sample dictionary to see the output. You don't need to create an instance for this.
-
-
-<details>
-<summary>hint</summary>
-
-A static method is defined with the `@staticmethod` decorator and does not take `self` or `cls` as its first argument. You can use a list comprehension and the `.join()` method to build the string nicely.
-
-</details>
-
-<details>
-<summary>solution</summary>
-
-```python
-# (Assuming the LogEntry class from the previous exercise is here)
-class LogEntry:
-    # ... (all previous code from Exercise 2) ...
-
-    # Exercise 3: Static method as a utility function
-    @staticmethod
-    def format_metadata(metadata_dict):
-        """
-        Formats a dictionary of metadata into a standardised string.
-        This does not need access to instance or class state.
-        """
-        if not metadata_dict:
-            return ""
-        
-        parts = [f"{key}={value}" for key, value in metadata_dict.items()]
-        return f"[{', '.join(parts)}]"
-
-# --- Test Script ---
-print("\n--- Testing Static Methods ---")
-metadata = {
-    'user_id': 101,
-    'request_id': 'xyz-987'
-}
-
-# Call the static method directly on the class
-formatted_meta = LogEntry.format_metadata(metadata)
-print(f"Formatted metadata: {formatted_meta}")
-
-# Example of how it might be used with a log entry
-log4 = LogEntry("Payment processed.")
-print(f"{log4} {formatted_meta}")
-
-# Test with empty metadata
-empty_meta = LogEntry.format_metadata({})
-print(f"Formatted empty metadata: '{empty_meta}'")
-```
-
-</details>
-</div>
+## Final note on OOP
+From my small experience, OOP is valuable because it promotes modular, reusable, and maintainable code. OOP almost checks all performance books, it is optimised for speed, memory, and most importantly scalability. Whenever you need to extend the functionality of your program, I can often add a new class or method without rewriting everything. 
 
 
 
 ## References
-[<span>1</span>] Martin Breuss. (2025). Python's Instance, Class, and Static Methods Demystified. Real Python <br>
+
+[<span>1</span>] Guido van Rossum, Barry Warsaw, & Alyssa Coghlan. (2001). PEP 8 - Style Guide for Python Code. https://peps.python.org/pep-0008/ <br>
 [<span>2</span>] Catherine Nelson. (2024). Software Engineering for Data Scientists. O’Reilly Media, Inc. https://www.oreilly.com/library/view/software-engineering-for/9781098136192/ <br>
+
+
+
+
