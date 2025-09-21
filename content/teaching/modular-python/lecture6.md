@@ -1,5 +1,5 @@
 ---
-title: "6. OOP Introduction"
+title: "6. Type hinting"
 date: 2025-08-25
 weight: 6
 type: docs
@@ -7,86 +7,88 @@ tags:
 - Python
 ---
 
-When I first began programming in Python, I was doing messy code (most beginner data scientist are famous for their messy code). Then, I learned [functional programming](https://m101yosef.github.io/teaching/advanced-python/lecture3); the Python main point of using functions is to avoid repetition as mention in [PEP 8](https://peps.python.org/pep-0008/) performance tips (DRY) which is: don't repeat yourself. While the true idea behind function programming is to use pure functions like `map`, `filter`, or `reduce` to transform your data without side effects&mdash;this means that the function only effects its input not other parts of the code. 
+Throughout our journey so far, we can build complex, functional systems. Yet, as our projects grow in scale and complexity, a subtle but persistent challenge emerges: the problem of trust. 
 
-However, when I start using PyTorch for building custom neural networks, I found that combining FP techniques with object-oriented programming (OOP) often yields cleaner code. Python is a multi-paradigm language, and mixing styles is common practice. In fact, for a lot of problems, you will often solve some parts of the problem in a functional way and other parts with objects ([Nelson, 2024](https://www.oreilly.com/library/view/software-engineering-for/9781098136192/)). So, Keeping both tools in my toolbox made my code cleaner, more flexible, and readable.
+Consider a function signature like `def process_data(data): `. When you encounter this in a large codebase, what is `data`? Is it a list of numbers? A dictionary of user records from a database? A raw string from a web request? 
 
-From a historical perspective, OOP itself was born out of the need to model complex systems in code. In the 1960s, languages like Simula (1961 - 1967) introduced essential OOP ideas such as classes, inheritance, and dynamic binding. These allowed programmers to group data and behaviour into "objects" instead of only writing procedural steps. Over decades, many programming languages uses OOP as their main style like Java and C++. Today, many Python tools, library, even Python itself embraces OOP, providing classes, inheritance, and polymorphism similar to legendary programming languages. 
+Python, by default, is dynamically typed, meaning variables do not need an explicit type declaration. Despite the flexibility of dynamic typing, it makes the code prone to runtime errors. That’s why I came with this lecture today to look together for a solution to help us improve reliability.
 
-## Defining classes
-A class itself defines an object, and you can think of it as a template for building various objects. An individual object is an instance of that class, and each object is an individual "thing" ([Nelson, 2024](https://www.oreilly.com/library/view/software-engineering-for/9781098136192/)). 
+## Type hinting
+It's a way to give a hint to the computer about the data type that we expect to have for variables, functions, parameters, and return values. I should clearly tell you that type hinting does not change runtime behaviour&mdash;you will not get a direct error message if you entered the wrong type, but maybe a warning. Anyway, it help coders and tools like `mypy` catch mistakes earlier.
 
-```python
-class Car:
-    """A simple class representing a car."""
-
-    # attributes = adjectives or properties
-    def __init__(self, color, speed):
-        self.color = color
-        self.speed = speed
-    
-    # methods = actions
-    def start_engine(self): 
-        pass
-    
-    def stop_engine(self): 
-        pass
-```
-
-When I write `class Car:`, Python bundles data and functions together into one unit. As the [official docs](https://docs.python.org/3/tutorial/classes.html) explain, "Classes provide a means of bundling data and functionality together". In the code snippet above, `Car` is a new type, and each instance will have a `color` and `speed` attribute (set by `__init__`). 
-
-### Naming convention
-According to [PEP 8](https://peps.python.org/pep-0008/), class names should use the `PascalCase` convention. That means I write `class Car:` or `class BankAccount`, not `class car` or `class bank_account`. By contrast, methods and functions should be `snake_case`. As we said in [lecture 1](https://m101yosef.github.io/teaching/advanced-python/lecture1), following these naming rules helps coders (like you and me) read the code more easily. 
-
-### The initialisation constructor 
-Every class can define a special method named `__init__()`, which Python calls automatically when creating a new instance. This method, as the name suggested, initialises the object's initial state. In my `Car` example, `__init__` takes color and speed as parameters and assigns them to the instance. So, consider `__init__` as your chance to set up any attributes the object needs. 
+For example, the following function seems straightforward, but its contract is dangerously implicit. Take a moment and guess what is the expected type for `excited`? A boolean? An integer? A string? 
 
 ```python
-class Book: 
-    def __init__(self, title, author, year, pages = None): 
-        """
-        Initialises the Book object with its basic properties. 
+def create_greeting(name, excited):
+    greeting = f"Hello, {name}"
+    if excited:
+        greeting = greeting + "!"
+    return greeting
+```
+Due to the fact that Python is dynamically type as I've just told you, the code will "work" for many inputs, but not always as intended. While `create_greeting("Mohamed", True)` behaves as expected, `create_greeting("Yosef", 1)` also works because `if 1:` evaluates to `True`. Meanwhile `create_greeting("Faiz", "yes")`also works but `create_greeting("Ibrahim", 0)` produces a result that might surprise the caller. The function's behaviour is un predictable because its inputs are not clearly defined.  
 
-        Args: 
-            title (str): the name of the book.
-            author (str): the name of the book's author.
-            year (int): the year the book published.
-            pages (int, optional): the number of pages in the book.
-        """
-        self.title = title
-        self.author = author
-        self.year = year
-        self.pages = pages
+### Explicit is better than implicit 
+Introduced formally in [PEP 484](https://peps.python.org/pep-0484/), type hinting provides a standard syntax for annotating the expected types of variables, function parameters, and return values. I don't know if you know but this is a direct application of a core tenet from [the Zen of Python](https://peps.python.org/pep-0020/): "Explicit is better than implicit". 
 
-# Create a new instance of Book
-book = Book(
-    title="The Spider", 
-    author="Mustafa Mahmoud", 
-    year=1995
-    pages=50
-    )
-print(book.title, book.year)
+### Basic type hinting
+For primitive data types, you only need to say the type like the following: 
+```python
+# Basic 
+item: str = "camera"
+serial: int = 707
+price: float = 20.8
+available: bool = True 
+
+# Built-in sequences
+numbers: list = [1, 2, 3]
+person: dict = {"name": "Mohamed", "country": "Egypt"}
+coords: tuple = (0, 0)
 ```
 
-When I write `book = Book(...)`, Python creates a new `Book` object and automatically calls `__init__`, setting all the properties that we have (title, author, year, pages). The `self` parameter inside `__init__` refers to the instance being created (more on `self` below). After construction, every `Book` object has its own title, author, year, pages attributes attached. 
+```python
+# The function's "contract" is now explicit and clear.
+# It accepts a string and a boolean, and guarantees it will return a string.
+def create_greeting(name: str, excited: bool) -> str:
+    greeting = f"Hello, {name}"
+    if excited:
+        greeting = greeting + "!"
+    return greeting
+
+print(greet(name="Mohamed", excited=True))
+```
+```
+Hello, Mohamed!
+```
+- `name: str` & `period: str` $\to$ parameters must be string
+- `-> str` $to$ return value must be a string
+
+However, if you call `greet(123, "yes")`, Python (by default) will not throw an error at runtime, but tools like `mypy` will flag it. 
 
 
 <div class="exercise">
 <div id="practical-exercise-1" class="exercise-head">
-<b>Practical exercise 1:</b> The digital bookshelf
+<b>Practical exercise 1:</b> Annotating a user profile function
 </div>
 
-You are building a system to catalogue your book collection. Your task is to define a `Book` class that can hold the title, author, and publication year of a book.
-1. Create a class named `Book`. Remember the `PascalCase` convention for class names. 
-2. Define the constructor `__init__` method. This method should accept `title`, `author`, and `year` as arguments. 
-3. Inside `__init__`, assign these arguments to instance attributes. It's conventional to use the same names, e.g., `self.title = title`. 
-4. After defining the class, create at least two different `Book` objects representing your favourite books. 
-5. Print out the `title` and `author` of each book object you created to make sure the attributes were set correctly. 
+You have been given a function that generates a summary string for a user profile. Your task is to add the correct basic type hints for its parameters and its return value.
+
+```python
+# Add type hints to this function
+def format_user_summary(username, age, is_active):
+    status = "Active" if is_active else "Inactive"
+    return f"User: {username}, Age: {age}, Status: {status}"
+```
+
+**Instructions**
+1. Examine the function `format_user_summary`.
+2. Identify the expected data type for `username`, `age`, and `is_active` based on their usage.
+3. Determine the data type of the value the function returns.
+4. Add the appropriate annotations to the function signature.
 
 <details>
 <summary>hint</summary>
 
-The `__init__` method is the first place you'll use the `self` keyword. It refers to the specific instance of the class being created. Every time you create a new book, `self` points to that specific book.
+Think about what types are commonly used for names, ages, and flags that represent a true/false state. The f-string at the end combines everything into a single data type.
 
 </details>
 
@@ -94,167 +96,58 @@ The `__init__` method is the first place you'll use the `self` keyword. It refer
 <summary>solution</summary>
 
 ```python
-# 1. Define the Class with PascalCase naming
-class Book:
-    # 2. Write the constructor
-    def __init__(self, title, author, year):
-        """Initialises a new Book object."""
-        # 3. Assign attributes to the instance (self)
-        print(f"Creating a book: {title}...")
-        self.title = title
-        self.author = author
-        self.year = year
-
-# 4. Instantiate two objects from our Book class
-book1 = Book("Dune", "Frank Herbert", 1965)
-book2 = Book("The Pragmatic Programmer", "Andrew Hunt & David Thomas", 1999)
-
-# 5. Verify the attributes of each instance
-print("\n--- My Bookshelf ---")
-print(f"Book 1 Title: {book1.title}, Author: {book1.author}")
-print(f"Book 2 Title: {book2.title}, Author: {book2.author}")
+def format_user_summary(username: str, age: int, is_active: bool) -> str:
+    status = "Active" if is_active else "Inactive"
+    return f"User: {username}, Age: {age}, Status: {status}"
 ```
 
 </details>
 </div>
 
-
-## Building a simple array class
-To tie everything together, I often build toy examples. For instance, I might write a simple class that mimics a tiny subset of a NumPy-like array. As you know every class has two main components: attributes (adjectives/properties) and methods (actions). So for `OurArray` we will use two attributes; `data` to store inputs as a list and shape to return the size of the array. Also, two methods; mean and sum. But first list see how these attributes and methods looks like in the real NumPy array. 
-
+### Advanced type hinting
+You can also apply type hinting to sequences with a more flexible way like determining the type of the data that a given sequence can contain. 
 ```python
-import numpy as np 
-data = [1, 2, 3, 4]
+# ----- Option 1 --------
+names: list[str] = ["Mohamed", "Yosef"]
+quantity: dict[str, int] = {"camera": 7, "lens": 18}
+origin: tuple[int, int] = (0,0)
 
-# Creating an array instance
-numpy_array = np.array(data)
+# ------ Option 2 --------
+from typing import List, Dict, Tuple
 
-# Attributes
-print(
-    f"Attributes",
-    f"Data: {data}", 
-    f"Shape: {numpy_array.shape}", 
-    sep="\n"
-)
-
-# Methods
-np_mean = numpy_array.mean()
-np_sum = numpy_array.sum()
-
-print(
-    f"\nMethods",
-    f"The mean is: {np_mean}",
-    f"The sum is: {np_sum}",
-    sep="\n"
-)
+names: List[str] = ["Mohamed", "Yosef"]
+quantity: Dict[str, int] = {"camera": 7, "lens": 18}
+origin: Tuple[int, int] = (0,0)
 ```
-```
-Attributes
-Data: [1, 2, 3, 4]
-Shape: (4,)
-
-Methods
-The mean is: 2.5
-The sum is: 10
-```
-
-Since we have seen how the attributes and methods we chose work in the NumPy world, let's try to build something like them within our world under a class named `OurArray`. 
-```python
-class OurArray:
-    """
-    A simple array class with methods for sum and mean.
-    """
-    def __init__(self, data): 
-        """Initialises the array with a list of numbers."""
-        self.data = data 
-        self.shape = len(self.data)
-    
-    def mean(self): 
-        """Calculates the mean (average) of all elements in the array."""
-        return sum(self.data) / len(self.data)
-    
-    def sum(self): 
-        """Calculates the sum of all elements in the array."""
-        total = 0
-        for item in self.data: 
-            total += item 
-        return total 
-
-# --- Example Usage ---
-# Create an instance of OurArray
-our_list_array = OurArray([1, 2, 3, 4])
-
-# Attributes
-print(
-    f"Attributes",
-    f"Data: {our_list_array.data}", 
-    f"Shape: {our_list_array.shape}", 
-    sep="\n"
-)
-
-# Methods
-our_mean = our_list_array.mean()
-our_sum = our_list_array.sum()
-
-print(
-    f"\nMethods",
-    f"The mean is: {our_mean}",
-    f"The sum is: {our_sum}",
-    sep="\n"
-)
-```
-```
-Attributes
-Data: [1, 2, 3, 4]
-Shape: 4
-
-Methods
-The mean is: 2.5
-The sum is: 10
-```
-Despite creating a successful array, there are still a lot of things needed like error and exception handling. But, I will leave that to you to play with.
-
+While built in generics in `option 1` are a bit faster at runtime because they don't involve extra typing machinery, I introduced `typing` module since we will need it later (so you can say it is for the learning purpose).
 
 <div class="exercise">
 <div id="practical-exercise-2" class="exercise-head">
-<b>Practical exercise 2:</b> The <code>SimpleStack</code> Project
+<b>Practical exercise 2:</b> Annotating a data processing function
 </div>
 
-To build a custom `SimpleStack` class that encapsulates a list, implements the LIFO (Last-In, First-Out) principle, and integrates with Python's built-in functions via dunder methods 
+Below is a function that processes a list of student records, where each record is a dictionary. It finds and returns the name of the student with the highest score. Add the correct type hints for the complex `student_data` parameter and the function's return value.
 
-**Note**: <br>
-Dunder methods, also known as magic methods or special methods, are a core feature of Python's object model. The term "dunder" is an abbreviation for "double underscore", referring to the characteristic naming convention where these methods are enclosed by double underscores (e.g., `__init__`, `__str__`, `__add__`)
+**Instructions**
+1. Analyse the structure of `student_data`. It's a list, but what does each element of the list contain?
+2. Examine the structure of the dictionaries inside the list. What are the key types and value types? Note that the values are of mixed types.
+3. Consider the return value. What happens if the input list is empty? What is the type of the student's name? Use the pipe `|` operator to indicate that the function can return one of two types.
+4. Construct the full type hint for the parameter and the return value.
 
-**Part A: The initialisation**
-1. Define a class called `SimpleStack`. Its `__init__` method should create a single "internal" instance attribute, `items`, and initialise it as empty list. 
+```python
+# Add type hints to this function
+def get_top_performer(student_data):
+    if not student_data:
+        return None
 
-**Part B: Methods** <br>
-Implement the essential methods that define a stack's behaviour. <br>
-2. `push(self, item)` that adds an `item` to the top of the stack. <br>
-3. `pop(self)` that removes and returns the item from the top of the stack. If the stack is empty, this should raise an `IndexError` (which `list.pop()` does automatically). <br>
-4. `peek(self)` that returns the top item without removing it. <br>
-5. `is_empty(self)` that returns `True` if the stack has no items, `False` otherwise. <br>
-
-**Part c: Dunder methods** <br>
-Make your class feel more like a native Python object by implementing these dunder methods: <br>
-6. `__len__(self)` should return the number of items currently in the stack. <br>
-7. `__str__(self)` should return a user-friendly string representation, e.g., `SimpleStack([item1, item2, 'top'])`. <br>
-
-**Part D: Last touches** <br>
-Write a script after your class definition to test its LIFO functionality <br>
-8. Create an instance of `SimpleStack`. <br>
-9. Push the strings 'A', 'B', and 'C' onto the stack. <br>
-10. Print the stack to see its contents. <br>
-11. Print the length of the stack. <br>
-12. Use `.peek()` to see the top item ('C'). <br>
-13. Use `.pop()` to remove the top item and print the removed item. <br>
-14. Print the stack again to show that 'C' is gone. <br>
-
+    top_student = max(student_data, key=lambda student: student["score"])
+    return top_student["name"]
+```
 
 <details>
 <summary>hint</summary>
 
-A Python list's `.append()` method is perfect for a `push` operation, and its `.pop()` method (with no arguments) already implements the LIFO behaviour you need for your `pop` method.
+The parameter `student_data` is a list of dictionaries. The dictionaries have `str` keys, but the values can be either a `str` (for the name) or an `int` (for the score). The function can return either a `str` or `None`.
 
 </details>
 
@@ -262,86 +155,309 @@ A Python list's `.append()` method is perfect for a `push` operation, and its `.
 <summary>solution</summary>
 
 ```python
-class SimpleStack:
+# Note: We will learn a better way to handle the 'None' return case shortly.
+# For now, this is a valid, if incomplete, annotation.
+def get_top_performer(student_data: list[dict[str, str | int]]) -> str | None:
+    if not student_data:
+        return None
+
+    top_student = max(student_data, key=lambda student: student["score"])
+    return top_student["name"]
+```
+
+</details>
+</div>
+
+As you see, this is more efficient because it determines the sequence type and the data type within. But we still have more advance hints like `Union` which adds more flexibility to the table by allowing your data to hold more than one data type at once. Okay, let's clarify this by an example: 
+```python
+# Union in practice 
+from typing import Union
+
+# This variable can be either an integer or a sting 
+my_variable: Union[int, str] = 10
+my_variable = "hello"
+
+def process_data(data: Union[int, float, str]) -> str: 
     """
-    A simple stack implementation that follows the LIFO principle.
+    Processes an integer, float, or string 
+    and returns a string.
     """
-    # Part A: The Skeleton
-    def __init__(self):
-        """Initialises the SimpleStack with an empty list for storage."""
-        self._items = []
+    if isinstance(data, (int, float)): 
+        return f"The number is {data}"
+    else: 
+        return f"The string is '{data}'"
 
-    # Part B: Core Stack Behaviour
-    def push(self, item):
-        """Adds an item to the top of the stack."""
-        self._items.append(item)
+print(
+    process_data(5), 
+    process_data(3.14), 
+    process_data("Python), 
+    sep="\n"
+)
+```
+`isinstance(object, classinfo)` is a built-in function that checks if an object belongs to a specific type (or class)
+- `True` $\to$ if the object is an instance (or subclass instance) of the given class
+- `False` $\to$ otherwise 
 
-    def pop(self):
-        """Removes and returns the top item from the stack."""
-        if self.is_empty():
-            raise IndexError("pop from an empty stack")
-        return self._items.pop()
+```python
+x = 5
+print(
+    isinstance(x, int),   # True
+    isinstance(x, str),   # False 
+    sep="\n"
+)
+```
 
-    def peek(self):
-        """Returns the top item without removing it."""
-        if self.is_empty():
-            return None
-        return self._items[-1]
+Another advanced hint is `Optional` which allows you to leave it as `None`.
 
-    def is_empty(self):
-        """Returns True if the stack is empty, False otherwise."""
-        return len(self._items) == 0
+```python
+# Optional idea
+last_name: Optional[str] = None
+```
+Same like what we did with `Union`, let's clarify `Optional` with a practical example...
 
-    # Part C: Python Integration
-    def __len__(self):
-        """Allows the len() function to work on this object."""
-        return len(self._items)
+```python
+# Optional in practice 
+from typing import Optional 
 
-    def __str__(self):
-        """Provides a user-friendly string representation of the stack."""
-        return f"SimpleStack({self._items})"
+def get_username(user_id: int) -> Optional[str]: 
+    """
+    Returns a username if the user_id is valid, 
+    otherwise returns None
+    """
+    if user_id == 123: 
+        return "JaneDoe"
+    return None
 
-# Part D: Putting It All Together
-print("--- Testing SimpleStack ---")
+# Example usage 
+if username is not None: 
+    print(f"Username found: {username}")
+else: 
+    print("User not found")
+```
 
-# 1. Create an instance
-s = SimpleStack()
-print(f"Is stack empty? {s.is_empty()}")
+We also have `TypeAlias` that is effective when type hints become long and complex (e.g., `dict[str, list[tuple[int, str]]]`), this can harm readability. So, with the help of `TypeAlias` you will be able to create a simple, descriptive name for a complex type signature, making your code cleaner and more maintainable. Additionally, there is `Any`, the easy one, that you can use whenever a value could be any type. Yes, just as simple as that.
 
-# 2. Push items
-s.push('A')
-s.push('B')
-s.push('C')
 
-# 3. Print the stack
-print(f"Stack after pushes: {s}")
+```python
+from typing import Union, Optional, Any, TypeAlias
 
-# 4. Print the length
-print(f"Length of stack: {len(s)}")
+# Using a TypeAlias to create a clear, reusable name for a complex type.
+# This indicates a user ID can be either an integer or a string.
+UserID: TypeAlias = int | str  # Modern syntax for Union[int, str]
 
-# 5. Peek at the top item
-top_item = s.peek()
-print(f"Peeking at top item: {top_item}")
+# This function can find a user by either a numeric ID or a username.
+# Its return value is a dictionary where values can be of any type.
+def find_user_data(user_id: UserID) -> dict[str, Any]:
+    # In a real application, this would query a database.
+    print(f"Searching for user: {user_id}")
+    if isinstance(user_id, int) and user_id == 1:
+        return {"id": 1, "username": "alice", "roles": ["admin", "editor"], "active": True}
+    # For demonstration, we return a dictionary with mixed-type values.
+    return {"id": user_id, "data": {}}
 
-# 6. Pop the top item
-popped_item = s.pop()
-print(f"Popped item: {popped_item}")
+# This function might not find a user's email, so the return type is Optional[str].
+# This clearly communicates to the caller that they must handle the 'None' case.
+def get_user_email(user_id: UserID) -> Optional[str]:
+    # Let's imagine only user '1' has an email.
+    if user_id == 1:
+        return "alice@example.com"
+    return None # Explicitly return None if no email is found.
+```
 
-# 7. Print the stack again
-print(f"Stack after pop: {s}")
-print(f"Length after pop: {len(s)}")
+
+<div class="exercise">
+<div id="practical-exercise-3" class="exercise-head">
+<b>Practical exercise 3:</b> Refactoring with advanced types
+</div>
+
+You are given a function that processes a batch of jobs. The input can be a single job ID (as an `int`) or a list of many job IDs (`list[int]`). The current function signature is not type-hinted. Your task is to refactor it using a `TypeAlias` and a `Union` to accurately describe its input parameter. 
+
+```python
+# Refactor this function signature with advanced type hints
+def process_jobs(job_ids):
+    if isinstance(job_ids, int):
+        # If it's a single int, wrap it in a list to process uniformly
+        job_ids = [job_ids]
+    
+    for job_id in job_ids:
+        print(f"Processing job #{job_id}...")
+    
+    return len(job_ids)
+```
+
+**Instructions**
+1. Import `TypeAlias` from the `typing` module.
+2. Define a new `TypeAlias` named `JobInput` that represents the two possible input types: a single `int` or a list of integers.
+3. Update the function signature of `process_jobs` to use your new `JobInput` alias for the `job_ids` parameter.
+4. Add the correct return type hint to the function.
+
+<details>
+<summary>hint</summary>
+
+The complex input type can be described as `int | list[int]`. Create a `TypeAlias` to give this combination a simpler name. The function returns the number of jobs processed, which will always be an integer.
+
+</details>
+
+<details>
+<summary>solution</summary>
+
+```python
+from typing import TypeAlias
+
+# 1. Create a TypeAlias for the complex input type.
+JobInput: TypeAlias = int | list[int]
+
+# 2. Use the alias to annotate the function parameter and add the return type.
+def process_jobs(job_ids: JobInput) -> int:
+    # The logic remains the same, but the contract is now clear.
+    if isinstance(job_ids, int):
+        job_ids = [job_ids]
+    
+    for job_id in job_ids:
+        print(f"Processing job #{job_id}...")
+    
+    return len(job_ids)
+
+# Example calls
+process_jobs(101)
+process_jobs([201, 202, 203])
 ```
 
 </details>
 </div>
 
 
-## Final note on OOP
-From my small experience, OOP is valuable because it promotes modular, reusable, and maintainable code. OOP almost checks all performance books, it is optimised for speed, memory, and most importantly scalability. Whenever you need to extend the functionality of your program, I can often add a new class or method without rewriting everything. 
+## Static typing 
+I mentioned earlier that Python typing is not static and the way to make it static is by using a tool like `mypy`. So, it's time to use `mypy` to check our code. But before going any further, make sure you have `mypy` installed: 
+
+```bash
+pip install mypy
+```
+
+Now, let's build the file using context manager that we have learned in [lecture 4](https://m101yosef.github.io/teaching/modular-python/lecture5). 
+
+```python
+code = """
+def get_name_length(name: str) -> int:
+    # This function expects a string and returns its length.
+    return len(name)
+
+# This function call is correct and will pass type checking.
+print(get_name_length("Alice"))
+
+# This line contains a type error! We are passing an integer, not a string.
+# A standard Python run would execute the first print, then crash with a TypeError here.
+# Mypy will find this error without running any of the code.
+print(get_name_length(123))
+"""
+
+with open('function.py', 'w') as f: 
+    f.write(code)
+```
+
+As a final step, go back to the terminal and run the following command: 
+```bash
+mypy function.py
+```
+```
+$ mypy mypy_demo.py
+mypy_demo.py:10: error: Argument 1 to "get_name_length" has incompatible type "int"; expected "str"  [arg-type]
+Found 1 error in 1 file (checked 1 source file)
+```
+
+It will be great if you compared the results of `mypy function.py` with the result of `python function.py` 
 
 
+<div class="exercise">
+<div id="practical-exercise-4" class="exercise-head">
+<b>Practical exercise 4:</b> Bug hunting
+</div>
 
-## References
+The script below contains a subtle bug. It calculates the total price of items in a shopping cart, but there's a mistake in how the final price is calculated. The script might run without crashing under some conditions, but the logic is flawed. Your task is to add type hints to the functions and then use `mypy` to find and fix the bug that a simple visual inspection might miss.
 
-[<span>1</span>] Guido van Rossum, Barry Warsaw, & Alyssa Coghlan. (2001). PEP 8 - Style Guide for Python Code. https://peps.python.org/pep-0008/ <br>
-[<span>2</span>] Catherine Nelson. (2024). Software Engineering for Data Scientists. O’Reilly Media, Inc. https://www.oreilly.com/library/view/software-engineering-for/9781098136192/ <br>
+```python
+# Original buggy code
+def calculate_item_total(price, quantity):
+    return price * quantity
+
+def get_cart_total(cart_items):
+    total_price = 0
+    for item in cart_items:
+        # The 'price' is a float, but 'quantity' is an integer.
+        total_price += calculate_item_total(item["price"], item["quantity"])
+    
+    # BUG: A string discount code is being subtracted from a numeric total!
+    discount_code = "SAVE10"
+    final_price = total_price - discount_code
+    
+    return final_price
+
+cart = [
+    {"name": "apple", "price": 0.5, "quantity": 4},
+    {"name": "banana", "price": 0.25, "quantity": 6}
+]
+
+print(f"Final price: {get_cart_total(cart)}")
+```
+
+**Instructions**
+1. Save the buggy code into a file named `cart_checker.py`.
+2. Add appropriate type hints to both `calculate_item_total` and `get_cart_total` functions. Pay close attention to the `cart_items` structure and the types of the variables involved in calculations.
+3. Run `mypy cart_checker.py` in your terminal.
+4. Analyse the error message from `mypy`. It should point directly to the logical flaw.
+5. Fix the bug in the code and run `mypy` again to confirm the fix.
+
+
+<details>
+<summary>hint</summary>
+
+The core bug is an impossible mathematical operation. Make sure to annotate all variables, including `total_price` and `discount_code`, to give `mypy` the most information possible.
+
+</details>
+
+<details>
+<summary>solution</summary>
+
+First, add the type hints: 
+```python
+# file: cart_checker.py
+def calculate_item_total(price: float, quantity: int) -> float:
+    return price * quantity
+
+def get_cart_total(cart_items: list[dict[str, str | float | int]]) -> float:
+    total_price: float = 0.0
+    for item in cart_items:
+        # Mypy can infer that item["price"] and item["quantity"] might not be the right types
+        # but the biggest error is below.
+        price = item.get("price", 0.0)
+        quantity = item.get("quantity", 0)
+        if isinstance(price, float) and isinstance(quantity, int):
+             total_price += calculate_item_total(price, quantity)
+    
+    discount_code: str = "SAVE10"
+    # This is the line where mypy will report a clear error
+    final_price = total_price - discount_code
+    
+    return final_price
+
+cart = [
+    {"name": "apple", "price": 0.5, "quantity": 4},
+    {"name": "banana", "price": 0.25, "quantity": 6}
+]
+
+print(f"Final price: {get_cart_total(cart)}")
+```
+
+Now, run `mypy`: 
+```bash
+$ mypy cart_checker.py
+cart_checker.py:15: error: Unsupported operand types for - ("float" and "str")  [operator]
+Found 1 error in 1 file (checked 1 source file)
+```
+
+`mypy` instantly identifies the logical impossibility of subtracting a string (`discount_code`) from a float (`total_price`). The fix would involve correctly parsing the discount from the string or removing the line entirely. 
+
+</details>
+</div>
+
+
