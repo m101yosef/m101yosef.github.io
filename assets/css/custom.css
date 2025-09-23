@@ -418,7 +418,7 @@ html:not(.dark) .highlight {
 }
 
 /* Hide parts for local testing */
-/* .page-header, .page-footer, .hb-toc {
+/* .page-header, .page-footer, .hb-toc, .hb-sidebar-container {
   display: none !important;
 } */
 
