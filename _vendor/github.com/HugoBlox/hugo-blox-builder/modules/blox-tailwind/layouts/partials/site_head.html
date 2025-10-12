@@ -79,9 +79,13 @@
     <link href="{{ $hb_community_styles.RelPermalink }}" rel="stylesheet" />
   {{ end }}
 
-  {{ if fileExists "assets/css/custom.css" }}
-    {{ $styles := resources.Get "css/custom.css" | minify | fingerprint "sha256" }}
-    <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+  {{ $custom_css := resources.Match "css/*.css" }}
+  {{ with $custom_css }}
+    {{ $custom_css = $custom_css | resources.Concat "css/all-custom.css" }}
+    {{- if hugo.IsProduction -}}
+      {{- $custom_css = $custom_css | minify | fingerprint "sha256" -}}
+    {{- end -}}
+    <link href="{{ $custom_css.RelPermalink }}" rel="stylesheet" />
   {{ end }}
 
   <script>
@@ -279,6 +283,12 @@
   {{- if hugo.IsProduction -}}
     {{ $js_bundle = $js_bundle | fingerprint "sha256" }}
   {{- end -}}
+
+  {{ range resources.Match "js/**.js" }}
+    {{ $script := . | resources.Minify }}
+    <script src="{{ $script.RelPermalink }}" defer></script>
+  {{ end }}
+
   <script
     defer
     src="{{ $js_bundle.RelPermalink }}"

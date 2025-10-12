@@ -1,0 +1,61 @@
+
+header svg {
+  fill: white;
+}
+
+.hero svg:hover {
+  stroke: cyan;
+  scale: 1.2;
+}
+
+header {
+  background-color: #222 !important;
+}
+
+header button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+header button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+}
+
+header .navbar-brand:hover {
+  color: cyan !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: cyan !important;
+    background-color: #444;
+    border-radius: 0.5rem;
+}
+
+
+header button path {
+    fill: white
+}
+
+header button:hover path {
+    fill: cyan;
+}
+
+
+footer {
+    background-color: #222;
+    padding: 2rem;
+    color: white;
+}
+
+footer a {
+    color: cyan !important;
+    text-decoration: none !important;
+}
+footer a:hover {
+    color: cyan !important;
+    opacity: 0.8;
+}
+

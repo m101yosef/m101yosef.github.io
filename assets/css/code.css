@@ -1,0 +1,189 @@
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 85%;
+  color: #24292e;
+  padding: 0.2em;
+  margin: 0;
+  border-radius: 6px;
+}
+
+code::before,
+code::after {
+  content: none !important;
+}
+
+/* GitHub theme */
+
+.cl {
+  white-space: pre !important;
+}
+
+.chroma:has(> code.language-fallback) {
+  background-color: #444 !important;
+  color: whitesmoke !important;
+  margin-top: 0;
+}
+
+
+/* GitHub Light theme */
+html:not(.dark) .highlight {
+  background-color: #ffffff !important;
+}
+
+.chroma {
+  background-color: ghostwhite !important;
+  color: #24292f !important; /* Default text */
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace !important;
+}
+
+/* Error */
+.chroma .err {
+  color: #cb2431 !important;
+  background-color: #ffeef0 !important;
+}
+
+/* Highlighted line */
+.chroma .hl {
+  background-color: #fffbdd !important;
+}
+
+/* Line numbers */
+.chroma .ln,
+.chroma .lnt {
+  color: #6e7781 !important;
+}
+
+/* Keywords (import, as, def, return, if, else, etc.) */
+.chroma .k,
+.chroma .kc,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr,
+.chroma .kt {
+  color: #cf222e !important;
+}
+
+/* Names (functions, variables, modules) */
+.chroma .n,
+.chroma .na {
+  color: #24292f !important;
+}
+.chroma .nb {
+  color: #0550ae !important;
+}
+.chroma .bp {
+  color: #0550ae !important;
+}
+.chroma .nc {
+  color: #953800 !important;
+}
+.chroma .no {
+  color: #0550ae !important;
+}
+.chroma .nd {
+  color: #8250df !important;
+}
+.chroma .ni {
+  color: #24292f !important;
+}
+.chroma .ne {
+  color: #953800 !important;
+}
+.chroma .nf {
+  color: #8250df !important;
+}
+.chroma .nl {
+  color: #24292f !important;
+}
+.chroma .nn {
+  color: #24292f !important;
+}
+.chroma .nt {
+  color: #116329 !important;
+}
+.chroma .nv,
+.chroma .vc,
+.chroma .vg,
+.chroma .vi {
+  color: #24292f !important;
+}
+.chroma .py {
+  color: #24292f !important;
+}
+
+/* Strings (including file paths) */
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .se,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .s1 {
+  color: #0a3069 !important;
+}
+.chroma .sr {
+  color: #0a3069 !important;
+}
+.chroma .ss {
+  color: #0a3069 !important;
+}
+
+/* Numbers */
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo {
+  color: #0550ae !important;
+}
+
+/* Operators (+, -, =) */
+.chroma .o,
+.chroma .ow {
+  color: #cf222e !important;
+}
+
+/* Comments (# ...) */
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1 {
+  color: #6e7781 !important;
+  font-style: italic !important;
+}
+.chroma .cs,
+.chroma .cp,
+.chroma .cpf {
+  color: #6e7781 !important;
+  font-weight: bold !important;
+  font-style: italic !important;
+}
+
+/* Diff highlights */
+.chroma .gd {
+  color: #82071e !important;
+  background-color: #ffebe9 !important;
+}
+.chroma .gi {
+  color: #116329 !important;
+  background-color: #dafbe1 !important;
+}
+
+/* Whitespace */
+.chroma .w {
+  color: #6e7781 !important;
+}
+
+.chroma .line {
+  display: block !important;
+  white-space: wrap !important;
+}

@@ -1,0 +1,82 @@
+
+article h1, article h2, article h3, article h4, article h5, article h6, article p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+article h1 {
+  font-size: 2.75rem !important; 
+  font-weight: bold !important;
+  line-height: 1.1 !important;
+}
+
+.tag-link:hover {
+  background-color: lightcyan !important;
+  color: #222 !important;
+}
+
+a.hb-attachment-link {
+  opacity: 1;
+  background-color: whitesmoke;
+  border-radius: 0.25rem;
+  color: #222;
+  padding: 0.25rem .8rem;
+  font-weight: 500;
+  font-size: smaller;
+}
+
+.dark a.hb-attachment-link {
+  background-color: gray;
+  color: #eee;
+}
+
+a.hb-attachment-link:hover {
+  background-color: lightcyan;
+}
+
+.content figure {
+  a {
+    color: rgb(90, 90, 90);
+  }
+}
+
+.pub.prose a {
+  color: crimson;
+  text-decoration: none;
+}
+
+.citation {
+  color: darkcyan !important; 
+}
+
+.cite {
+  color: darkcyan; 
+}
+
+.cite:hover {
+  background-color: lightyellow;
+  cursor: pointer;
+}
+
+.pub.prose a:hover {
+  background-color: lightyellow;
+}
+
+article pre .cl {
+  white-space: wrap;
+  overflow: hidden;
+  word-wrap: normal;
+}
+
+.pub-type {
+  color: #222;
+  font-weight: 500;
+}
+
+.pub-type:hover {
+  background-color: lightyellow;
+}
+
+/* Rotate the toggle icon when the section is open */
+.hb-toc li.open svg {
+  transform: rotate(90deg);
+}
