@@ -15,33 +15,13 @@ sections:
     content:
       username: admin
       text: |- 
-       I'm a data scientist who's still early in the journey, but deeply interested in using data and machine learning in healthcare and neuroscience where my work will not go in-vain. 
-       
-       Outside doing paid data projects for companies and startups, I write research reviews and reflections to help myself learn and share what I've learned with others.
+       Mohamed Yosef. Jr. Applied Data Scientist holding a 2024 BSc in Statistics and Computer Science. My focus is applying data analysis, time-series forecasting, and foundational ML principles to solve practical problems, demonstrated through projects like AQSA (tools for small businesses). Authored literature reviews covering ML, DL, and RL fundamentals. A Linux user committed to rigorous application of data methods and contributing to open-source.
        
        [Read more >>](/about)
     design:
       css_class: light 
       background:
         color: whitesmoke
-
-  - block: brands
-    content: 
-      title:
-      brands: 
-        - name: "Labelbox"
-          logo: 'labelbox.png'
-          url: "labelbox.com"
-        - name: "NineSigma"
-          logo: 'nineSigma.png'
-          url: "ninesigma.com"
-        - name: "MOCKUP"
-          logo: 'mockup.png'
-          url: 'https://www.facebook.com/profile.php?id=61577716330176'
-        - name: "meter w nos"
-          logo: 'meterWnos.png'
-          url: "facebook.com/meter.w.nos"
-
 
 
   - block: collection
@@ -53,8 +33,6 @@ sections:
           - publication
         featured_only: true
     design:
-      background: 
-        color: whitesmoke
       view: article-grid
       columns: 2
 
@@ -71,6 +49,8 @@ sections:
         text: See all publications  ->
         link: "/publications"
     design: 
+      background: 
+        color: whitesmoke
       view: date-title-summary
 
   - block: collection-2
@@ -86,8 +66,7 @@ sections:
     design:
       view: article-grid
       columns: 3
-      background: 
-        color: whitesmoke
+
 
   # - block: collection
   #   id: talks
@@ -108,7 +87,7 @@ sections:
       title: "Explore by topic"
     design: 
       background: 
-        color: white
+        color: whitesmoke
 
   # - block: collection
   #   id: news

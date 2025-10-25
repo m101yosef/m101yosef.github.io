@@ -180,15 +180,14 @@ badges:
 ---
 ## Okay, here is what I'm doing and why...
 
-AI has the potential to support better decisions, uncover hidden patterns, and create tools that make people’s lives easier. My work focuses on applying machine learning to real-world problems — particularly in areas like small business performance, forecasting, and, increasingly, healthcare and neuroscience.
+Data has the potential to support better decisions, uncover hidden patterns, and guide the creation of tools that genuinely improve people's experiences. My work focuses on **applying data analysis and statistical methods to understand real-world product usage and user needs**; particularly in areas like small business performance and forecasting.
 
-I'm currently focused on applying data science and machine learning in these domains because I believe this is where AI can do the most good — and where I know my work won’t go in vain or be used in the wrong way.
+Currently I'm focused on using data science in these domains because I believe this is where rigorous analysis can lead to clear product improvements, ensuring the work addresses tangible problems effectively.
 
-I’m an applied data scientist with a background in computer science and user experience design. My interest lies in building simple but useful systems that combine data, mathematical reasoning, and an understanding of human needs.
+Simply, I’m a Jr. Applied Data Scientist with a background in Statistics and Computer Science. My interest lies in building a deep understanding from data, using statistical reasoning, and connecting those insights back to human needs to make products more useful.
 
-In 2024, I led the AQSA Project at Mansoura University, where we developed tools to help small businesses with automatic data analysis, time-series forecasting, and chatbot support. I also contributed to EVNTO!, a campus events platform that includes event recommendations, sentiment analysis, and a generative chatbot — helping students engage with volunteer work and campus life more easily.
+In 2024, I worked on the AQSA Project at Mansoura University, where we analysed data to provide insights for small businesses, developed time-series forecasts for trends, and built a supporting chatbot. I also contributed to EVNTO!, a campus events platform, by analysing event engagement, performing sentiment analysis on feedback, and exploring event recommendations — aiming to help students connect with volunteer work and campus life more easily.
 
-Outside of hands-on projects, I publish research reviews and reflective pieces to sharpen my understanding and contribute to the learning community. I’m currently exploring deep reinforcement learning, with long-term curiosity about the brain and how AI might help us learn from — or connect more deeply with — human cognition.
+Outside of hands-on projects, I publish analyses and practical insights based on my work and learning, aiming to share useful approaches with the data community. While I maintain a curiosity about machine learning techniques like reinforcement learning and the long-term potential of neuroscience, my current professional focus is on grounded data analysis and statistical inference for product improvement.
 
-My work is still in the early stages, and I’m constantly learning. But I’m driven by a clear question:
-How can AI become a tool that genuinely helps people — not just impresses them?
+My work is still in the early stages, and I’m constantly learning. But I’m driven by a clear question: How can data analysis become a tool that genuinely helps improve products and services for the people using them?
