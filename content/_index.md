@@ -15,7 +15,7 @@ sections:
     content:
       username: admin
       text: |- 
-       Mohamed Yosef. Jr. Applied Data Scientist holding a 2024 BSc in Statistics and Computer Science. My focus is applying data analysis, time-series forecasting, and foundational ML principles to solve practical problems, demonstrated through projects like AQSA (tools for small businesses). Authored literature reviews covering ML, DL, and RL fundamentals. A Linux user committed to rigorous application of data methods and contributing to open-source.
+       I leverage a deep background in Applied Data Science and Machine Learning research to oversee digital infrastructure and architect functional business systems. My focus is on bridging the gap between business goals and technical execution, ensuring technology solves practical problems rather than creating them.
        
        [Read more >>](/about)
     design:
@@ -36,36 +36,36 @@ sections:
       view: article-grid
       columns: 2
 
-  - block: collection
-    content:
-      title: Most Recent
-      count: 3
-      order: desc
-      filters: 
-        folders: 
-          - publication
-      archive: 
-        enable: true
-        text: See all publications  ->
-        link: "/publications"
-    design: 
-      background: 
-        color: whitesmoke
-      view: date-title-summary
+  # - block: collection
+  #   content:
+  #     title: Most Recent
+  #     count: 3
+  #     order: desc
+  #     filters: 
+  #       folders: 
+  #         - publication
+  #     archive: 
+  #       enable: true
+  #       text: See all publications  ->
+  #       link: "/publications"
+  #   design: 
+  #     background: 
+  #       color: whitesmoke
+  #     view: date-title-summary
 
-  - block: collection-2
-    content:
-      title: Courses I've had the privilege to teach
-      filters:
-        folders:
-          - teaching
-      archive: 
-        enable: true
-        text: See all courses  ->
-        link: /teaching
-    design:
-      view: article-grid
-      columns: 3
+  # - block: collection-2
+  #   content:
+  #     title: Courses I've had the privilege to teach
+  #     filters:
+  #       folders:
+  #         - teaching
+  #     archive: 
+  #       enable: true
+  #       text: See all courses  ->
+  #       link: /teaching
+  #   design:
+  #     view: article-grid
+  #     columns: 3
 
 
   # - block: collection

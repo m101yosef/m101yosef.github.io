@@ -20,15 +20,14 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Applied Data Scientist
+role: Technical Program Manager 
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: 
-    url: 
+  - name: Khalas-ha Sah
+    url: '' 
 
 # Social network links
-# Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
     url: 'mailto:mohamed101yosef@gmail.com'
@@ -42,15 +41,16 @@ profiles:
 
 # Interests to show in About widget
 interests:
-   - Time Series Analysis
-   - Deep Reinforcement Learning
-   - The Human Brain 
+   - Technical Program Management
+   - Applied Data Science
+   - System Architecture
+   - Workflow Automation
 
 education:
   - area: B.Sc Statistics & Computer Science
     institution: Mansoura University
     date_start: 2020-10-14
-    date_end: 2024-10-14
+    date_end: 2024-01-01
     summary: |
       Graduation project on _AI for startups_. Supervised by Prof Mohamed Ibrahim.
     button:
@@ -59,57 +59,81 @@ education:
 
 
 work:
-  - position: Data Scientist
+  - position: Technical Program Manager
+    company_name: Khalas-ha Sah
+    company_url: ''
+    company_logo: ''
+    date_start: '2025-11-22'
+    date_end: ''
+    summary: |2-
+      Leading technical delivery and operational workflows.
+      - **Service Delivery:** Implementing the "Right from the first time" standard across all client deliverables.
+      - **Talent Management:** Overseeing a network of top 3% creatives.
+      - **Process Optimization:** Creating seamless, organised workflows to remove client friction.
+
+  - position: Applied Data Specialist
     company_name: Freelance
     company_url: ''
     company_logo: ''
     date_start: '2022-10-01'
-    date_end: ''
+    date_end: '2025-12-07'
     summary: |2-
-      I help businesses make smarter, data-backed decisions and stay ahead of the competition by extracting actionable insights from their data.
-
-      Here’s how I can support your business:
-      - Sales and Market Forecasting – Build accurate models for predicting sales trends, interest rates, and market behaviours to inform strategic decisions. 
-      - Advanced Data Analytics – Perform in-depth data analysis and visualizations to help you understand your business performance and customer behaviours.
-      - Custom AI Solutions – Tailor AI-driven tools, such as forecasting systems, to automate business processes, improving efficiency and driving growth.
-      - Feature Engineering – Enhance your machine learning models by refining the input data for higher accuracy and better performance.
+      Supported businesses in making evidence-based decisions through statistical modelling.
+      - **Forecasting:** Built models for sales trends and market behaviour.
+      - **Analytics:** Performed exploratory data analysis to diagnose business performance issues.
   
-  - position: Lead Data Scientist 
-    company_name: AQSA Project, Mansoura University
+
+  - position: AI Engineer
+    company_name: Meter we Nos (متر ونص)
     company_url: ''
     company_logo: ''
-    date_start: 2023-08-01
-    date_end: 2024-04-15
-    summary: |
-      - Spearheaded a data analysis module within AQSA, leveraging data pre-processing techniques and statistical analysis to extract actionable insights for small businesses.
-      - Developed a forecasting system using historical data, currency exchange rates, and market trends to provide predictive insights into sales and business growth.
-      - Utilized Python and SQL to manipulate and analyse large datasets streamlining the decision-making process for business stakeholders.
-  
-  - position: Product Designer
-    company_name: Media Community DPR
-    date_start: 2021-11-01
-    date_end: 2022-05-15
-    summary: |
-      - Conducted data-driven research to improve the UX/UI design of the company’s digital products, ensuring the platform was optimized for user engagement. 
-      - Collaborated with cross-functional teams to deliver high-quality design and prototype solutions
+    date_start: '2024-11-01'
+    date_end: '2025-01-31'
+    summary: |2-
+      Contract Role. Developed and deployed an AI-powered chatbot to handle client intake and answer common legal questions, significantly improving firm efficiency.
 
+  - position: Machine Learning Engineer
+    company_name: IEEE (Swarms - EVNTO)
+    company_url: ''
+    company_logo: ''
+    date_start: '2024-08-01'
+    date_end: '2024-11-01'
+    summary: |2-
+      - Developed and deployed NLP (Sentiment Analysis) and Recommendation System models for a university event application.
+      - Engineered a scalable REST API using FastAPI to serve model predictions (real-time ratings and recommendations).
+      - Containerised the entire application using Docker for consistent deployment.
+      - Collaborated with backend and Flutter teams; the AI components won 3rd place in the competition track.
+
+  - position: Data & AI Lead
+    company_name: Mansoura University
+    company_url: ''
+    company_logo: ''
+    date_start: '2023-09-01'
+    date_end: '2024-05-01'
+    summary: |2-
+      - Led the development of a multi-component AI system to provide data-driven insights for startups.
+      - Built a generative chatbot for startup queries and a time-series forecasting system to predict sales/market trends.
+      - Utilised Python and SQL to build an automated data analysis system.
 
 # Skills
-# Add your own SVG icons to `assets/media/icons/`
 skills:
   - name: Technical Skills
     items:
-      - name: Python
+      - name: Python (FastAPI/Data)
         description: ''
-        percent: 80
+        percent: 90
         icon: code-bracket
-      - name: Data Science
+      - name: Machine Learning (NLP/RecSys)
         description: ''
-        percent: 100
+        percent: 85
         icon: chart-bar
+      - name: DevOps (Docker)
+        description: ''
+        percent: 60
+        icon: circle-stack
       - name: SQL
         description: ''
-        percent: 40
+        percent: 60
         icon: circle-stack
 
 languages:
@@ -119,13 +143,6 @@ languages:
     percent: 80
   - name: French
     percent: 20
-
-  # - title: 
-  #   issuer: 
-  #   date: 
-  #   image: 
-  #   url: 
-
 
 badges: 
   - title: "Data Analysis with Python"
@@ -159,35 +176,13 @@ badges:
     image: "https://images.credly.com/size/340x340/images/5fc2d535-e716-46c4-881a-f4822b8da0e5/Cognitive_Class_-_What_is_Data_Science.png"
     url: "https://www.credly.com/badges/b1581101-d4b8-4ac6-87c8-ec1109769fcd/public_url"
 
-# Awards.
-#   Add/remove as many awards below as you like.
-#   Only `title`, `awarder`, and `date` are required.
-#   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
-# awards:
-#   - title: 'Regression Analysis: Simplify Complex Data Relationships'
-#     url: https://www.coursera.org/learn/regression-analysis-simplify-complex-data-relationships
-#     certificate_url: https://www.coursera.org/account/accomplishments/verify/ZWENJ32JPU8T
-#     date: '2023-12-07'
-#     awarder: Google
-#     icon: coursera
-#     summary: |
-#       I've learned to: 
-#       - Investigate relationships in datasets
-#       - Identify regression model assumptions 
-#       - Perform linear and logistic regression using Python
-#       - Practice model evaluation and interpretation
-
 ---
-## Okay, here is what I'm doing and why...
+## The Intersection of Operations and AI
 
-Data has the potential to support better decisions, uncover hidden patterns, and guide the creation of tools that genuinely improve people's experiences. My work focuses on **applying data analysis and statistical methods to understand real-world product usage and user needs**; particularly in areas like small business performance and forecasting.
+My work focuses on bridging the gap between complex technical requirements and clear, seamless delivery. I am currently the **Technical Program Manager** at **Khalas-ha Sah**, where I oversee the execution of digital services, ensuring that every project is delivered accurately and professionally. I position myself as the "organised mind" that ensures work is done right the first time.
 
-Currently I'm focused on using data science in these domains because I believe this is where rigorous analysis can lead to clear product improvements, ensuring the work addresses tangible problems effectively.
+My technical background is rooted in **Applied Data Science** and **Machine Learning Engineering**. I have practical experience deploying NLP models and scalable REST APIs for organisations like **IEEE** and **Meter we Nos**, where I built systems ranging from event recommendation engines to legal-tech chatbots.
 
-Simply, I’m a Jr. Applied Data Scientist with a background in Statistics and Computer Science. My interest lies in building a deep understanding from data, using statistical reasoning, and connecting those insights back to human needs to make products more useful.
+In 2024, I led the Data & AI module for the AQSA Project at Mansoura University, developing forecasting systems and analytical tools for small businesses. While I maintain a strong interest in the theoretical foundations of machine learning and computational neuroscience, my professional priority is applying these technical skills to create reliable, transparent systems for business operations.
 
-In 2024, I worked on the AQSA Project at Mansoura University, where we analysed data to provide insights for small businesses, developed time-series forecasts for trends, and built a supporting chatbot. I also contributed to EVNTO!, a campus events platform, by analysing event engagement, performing sentiment analysis on feedback, and exploring event recommendations — aiming to help students connect with volunteer work and campus life more easily.
-
-Outside of hands-on projects, I publish analyses and practical insights based on my work and learning, aiming to share useful approaches with the data community. While I maintain a curiosity about machine learning techniques like reinforcement learning and the long-term potential of neuroscience, my current professional focus is on grounded data analysis and statistical inference for product improvement.
-
-My work is still in the early stages, and I’m constantly learning. But I’m driven by a clear question: How can data analysis become a tool that genuinely helps improve products and services for the people using them?
+I am driven by accuracy, responsibility, and the belief that professional services should be seamless.

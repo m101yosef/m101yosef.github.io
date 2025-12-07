@@ -19,10 +19,11 @@ desktop.ini
 # underdevelopment
 content/post
 content/event
+content/teaching
 
 # test, template
 **/sample
 **/template
 **/test
 test.** 
-0*
+0*content/teaching
