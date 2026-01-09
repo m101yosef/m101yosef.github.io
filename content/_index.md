@@ -15,7 +15,7 @@ sections:
     content:
       username: admin
       text: |- 
-       Machine Learning Engineer at ERTAQY. Leveraging a background in Statistics and Computer Science to build data-driven software solutions. Focused on practical model deployment and data analysis. Previously developed 'AQSA', a chatbot and forecasting tool for small businesses.
+       Machine Learning Engineer at ERTAQY. Leveraging a background in Statistics and Computer Science to build data-driven software solutions. Focused on practical model deployment and data analysis. Previously developed 'AQSA', a chatbot and forecasting tool for small businesses
        
        [Read more >>](/about)
     design:
