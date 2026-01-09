@@ -15,7 +15,7 @@ sections:
     content:
       username: admin
       text: |- 
-       I leverage a deep background in Applied Data Science and Machine Learning research to oversee digital infrastructure and architect functional business systems. My focus is on bridging the gap between business goals and technical execution, ensuring technology solves practical problems rather than creating them.
+       Machine Learning Engineer at ERTAQY. Leveraging a background in Statistics and Computer Science to build data-driven software solutions. Focused on practical model deployment and data analysis. Previously developed 'AQSA', a chatbot and forecasting tool for small businesses.
        
        [Read more >>](/about)
     design:

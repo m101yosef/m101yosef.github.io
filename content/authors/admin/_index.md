@@ -20,20 +20,20 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Technical Program Manager 
+role: Machine Learning Engineer
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Khalas-ha Sah
-    url: '' 
+  - name: Ertaqy
+    url: 'https://www.ertaqy.com/' 
 
 # Social network links
 profiles:
   - icon: at-symbol
     url: 'mailto:mohamed101yosef@gmail.com'
     label: Email Me
-  - icon: brands/x
-    url: https://twitter.com/m101yosef
+  # - icon: brands/x
+  #   url: https://twitter.com/m101yosef
   - icon: brands/github
     url: https://github.com/m101yosef
   - icon: brands/linkedin
@@ -41,10 +41,9 @@ profiles:
 
 # Interests to show in About widget
 interests:
-   - Technical Program Management
+   - Reinforcement Learning
+   - Human-AI Interaction
    - Applied Data Science
-   - System Architecture
-   - Workflow Automation
 
 education:
   - area: B.Sc Statistics & Computer Science
@@ -59,28 +58,17 @@ education:
 
 
 work:
-  - position: Technical Program Manager
-    company_name: Khalas-ha Sah
-    company_url: ''
+  - position: ML Engineer
+    company_name: Ertaqy
+    company_url: 'https://www.ertaqy.com/'
     company_logo: ''
-    date_start: '2025-11-22'
+    date_start: '2025-12-25'
     date_end: ''
     summary: |2-
-      Leading technical delivery and operational workflows.
-      - **Service Delivery:** Implementing the "Right from the first time" standard across all client deliverables.
-      - **Talent Management:** Overseeing a network of top 3% creatives.
-      - **Process Optimization:** Creating seamless, organised workflows to remove client friction.
-
-  - position: Applied Data Specialist
-    company_name: Freelance
-    company_url: ''
-    company_logo: ''
-    date_start: '2022-10-01'
-    date_end: '2025-12-07'
-    summary: |2-
-      Supported businesses in making evidence-based decisions through statistical modelling.
-      - **Forecasting:** Built models for sales trends and market behaviour.
-      - **Analytics:** Performed exploratory data analysis to diagnose business performance issues.
+      - Developing and deploying machine learning models to support local software solutions.
+      - Building data pipelines for automated analysis and reporting.
+      - Collaborating with software engineering teams to integrate AI features into existing products.
+      - Applying statistical methods to optimise model performance and data reliability.
   
 
   - position: AI Engineer
@@ -104,7 +92,7 @@ work:
       - Containerised the entire application using Docker for consistent deployment.
       - Collaborated with backend and Flutter teams; the AI components won 3rd place in the competition track.
 
-  - position: Data & AI Lead
+  - position: Data Scientist
     company_name: Mansoura University
     company_url: ''
     company_logo: ''
@@ -177,12 +165,9 @@ badges:
     url: "https://www.credly.com/badges/b1581101-d4b8-4ac6-87c8-ec1109769fcd/public_url"
 
 ---
-## The Intersection of Operations and AI
+### Data, ML & Inference 
+At the intersection of machine learning models and inference, you will find me. My background in statistics and product design shapes my approach to machine learning and large language models as systems that must run reliably in production not as isolated models. 
 
-My work focuses on bridging the gap between complex technical requirements and clear, seamless delivery. I am currently the **Technical Program Manager** at **Khalas-ha Sah**, where I oversee the execution of digital services, ensuring that every project is delivered accurately and professionally. I position myself as the "organised mind" that ensures work is done right the first time.
+I love doing data science experimentation and that is why I use experimentation as the first step in moving the ideas to deployed products. My process includes going through research, design, development, deployment, monitoring, and iterating... (Yes, the process never ends, it's a continuous loop of iterations). This was the core philosophy behind my work on previous projects like AQSA & EVNTO and continues now in my role as Machine Learning Engineer at ERTAQY.
 
-My technical background is rooted in **Applied Data Science** and **Machine Learning Engineering**. I have practical experience deploying NLP models and scalable REST APIs for organisations like **IEEE** and **Meter we Nos**, where I built systems ranging from event recommendation engines to legal-tech chatbots.
-
-In 2024, I led the Data & AI module for the AQSA Project at Mansoura University, developing forecasting systems and analytical tools for small businesses. While I maintain a strong interest in the theoretical foundations of machine learning and computational neuroscience, my professional priority is applying these technical skills to create reliable, transparent systems for business operations.
-
-I am driven by accuracy, responsibility, and the belief that professional services should be seamless.
+At the end of the day, machine learning and data are one part of a wider software ecosystem, not the centre of it. For that reason, I prioritise clarity, reproducibility, and system health over short-term performance gains or academic novelty.
