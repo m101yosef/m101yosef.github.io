@@ -51,7 +51,7 @@ education:
     date_start: 2020-10-14
     date_end: 2024-01-01
     summary: |
-      Graduation project on _AI for startups_. Supervised by Prof Mohamed Ibrahim.
+      Research project on _AI for startups_. Supervised by Prof Mohamed Ibrahim.
     button:
       text: 'Read Paper'
       url: 'https://www.researchgate.net/publication/380290979_AQSA_AI_for_Startups'
@@ -99,7 +99,7 @@ work:
     date_start: '2023-09-01'
     date_end: '2024-05-01'
     summary: |2-
-      Graduation capstone — [AQSA](/project/aqsa/), "AI for startups".
+      Research project: [AQSA](/project/aqsa/), "AI for startups".
 
       - Defined the system design for a three-part decision-support tool for early-stage founders: a generative chatbot, an automated data analyser, and a sales/market forecasting module.
       - Built the proof-of-concept with the team in Python and SQL — documented in the published project report.
