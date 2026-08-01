@@ -16,6 +16,7 @@ hugo_stats.json
 # personal
 desktop.ini
 proposals/
+/applications/
 specs/
 CLAUDE.md
 AGENTS.md
