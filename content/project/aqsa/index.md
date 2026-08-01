@@ -11,7 +11,8 @@ image:
   preview_only: false
 
 tags:
-  - Research Project
+  - Time Series Analysis
+  - Automation
 ---
 
 ## The problem

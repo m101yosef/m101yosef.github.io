@@ -11,7 +11,9 @@ image:
   preview_only: false
 
 tags:
-  - IEEE Vectories
+  - Recommendation system
+  - Sentiment Analysis
+  - Generative AI
 ---
 
 ## The problem

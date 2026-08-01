@@ -11,8 +11,8 @@ image:
   preview_only: false
 
 tags:
+  - Generative AI
   - RAG & LLMs
-  - Legal Tech
   - LangChain
 ---
 
