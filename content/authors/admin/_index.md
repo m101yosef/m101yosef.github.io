@@ -77,7 +77,7 @@ work:
     date_start: '2024-11-01'
     date_end: '2025-01-31'
     summary: |2-
-      Contract role. Developed and deployed a chatbot that handles the firm's client intake and answers clients' most common legal questions.
+      Contract role. Developed and deployed a RAG-powered chatbot ([Meter we Nos](/project/metrwnos-chatbot/)) that handles the firm's client intake and answers clients' most common legal questions.
 
   - position: Machine Learning Engineer
     company_name: IEEE (Swarms - EVNTO)
