@@ -3,17 +3,10 @@ title: "The foundations of Machine Learning and Deep Learning"
 authors:
 - admin
 date: "2024-04-10"
-doi: ""
 publishDate: "2024-04-14"
 share: true
 show_related: true
 featured: true
-
-publication_types: ["review"]
-
-# Publication name and optional abbreviated publication name.
-publication: "MohamedYosef101"
-publication_short: "MY101"
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
@@ -22,10 +15,8 @@ image:
   focal_point: ""
   preview_only: false
 
-abstract: This paper explores the foundational concepts of machine learning (ML) and deep learning (DL), providing a detailed understanding for both researchers and beginners aiming to develop a solid grasp of when and how to use different models effectively. It delves into essential techniques for improving model performance, including regularization and hyperparameter tuning and highlights core components of deep learning such as activation functions, loss functions, and optimizers, while focusing on foundational methods that remain impactful today. CNNs, RNNs, and Transformers are briefly discussed, along with an in-depth examination of model evaluation metrics, interpretability techniques, and the full model life cycle from development to deployment. The paper aims to provide a comprehensive guide for choosing, tuning, and improving ML and DL models across various applications.
-
 # Summary. An optional shortened abstract.
-summary: This paper explores the foundational concepts of machine learning (ML) and deep learning (DL), providing a detailed understanding for both researchers and beginners aiming to develop a solid grasp of when and how to use different models effectively.
+summary: A practical guide to ML and DL foundations, regularization, hyperparameter tuning, CNNs, RNNs, Transformers, evaluation, and the model lifecycle.
 
 tags:
 - Machine Learning
@@ -34,10 +25,8 @@ tags:
 url_pdf: 'https://m101yosef.github.io/publication/ml-dl-101/ml-dl-101.pdf'
 url_code: ''
 url_dataset: ''
-url_poster: ''
 url_project: ''
 url_slides: 'https://docs.google.com/presentation/d/1De7ZUupq3EAmqrgDaNwJvc-4yPAXQvtaqldoBC2dE-E/edit?usp=sharing'
-url_source: ''
 url_video: ''
 ---
 

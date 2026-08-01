@@ -1,65 +1,185 @@
+/* ============================================================
+   Hero banner — decision systems
+   ------------------------------------------------------------
+   Hand-authored (no Tailwind utilities): dominant black/gray,
+   cyan for the "signal", crimson for the single decision mark.
+   Echoes the bio widget's graph-paper + decision-boundary motif
+   so the hero and the bio read as one visual language.
+   ============================================================ */
+
 .hero {
-  background: linear-gradient(45deg,
-      rgba(0, 0, 0, 1),       /* black full opacity */
-      rgba(30, 30, 30, 0.9),  /* slightly lighter black */
-      rgba(10, 10, 10, 0.8),  /* darker black */
-      rgba(50, 50, 50, 0.85), /* lighter gray */
-      rgba(5, 5, 5, 0.9),     /* very dark black */
-      rgba(0, 0, 0, 1)) 0 0 / 600% 600%;
-  animation: gradientFlow 20s ease infinite;
+  position: relative;
   display: grid;
   place-items: center;
-  position: relative;
   overflow: hidden;
+  padding: 4.5rem 1rem 3.5rem;
+  background: #050506;
+  isolation: isolate;
 }
 
-.hero h1 {
-  font: 900 4.5rem/1.1 system-ui, sans-serif;
-  color: #fff;
-  text-align: center;
-  max-width: 90%;
+/* Faint graph-paper texture, same language as .dsbio__grid */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: 26px 26px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 40%, transparent 90%);
+}
+
+/* Soft cyan glow, off-centre, kept subtle */
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -10%;
+  left: 50%;
+  width: 60rem;
+  height: 30rem;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(34, 211, 238, 0.16), transparent 72%);
+  pointer-events: none;
+}
+
+.hero-inner {
   position: relative;
-  padding: 1rem;
-  background: linear-gradient(45deg,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.5));
-  -webkit-background-clip: text;
-  background-clip: text;
+  z-index: 1;
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+  text-align: center;
 }
 
-@keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #67e8f9;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.28);
+  border-radius: 9999px;
+}
+.hero-eyebrow-dot {
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 9999px;
+  background: #22d3ee;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.18);
 }
 
-@keyframes textGlow {
-  from {
-    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
-  }
-  to {
-    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.7));
-  }
+.hero-title {
+  margin: 1.5rem 0 0;
+  font: 800 clamp(2rem, 4.6vw, 3.4rem)/1.15 system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  color: #fafafa;
 }
 
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem !important;
-    max-width: 95%;
-  }
+.hero-sub {
+  margin: 1.1rem auto 0;
+  max-width: 38rem;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.6;
+  color: #a1a1aa;
+}
 
-  .hero p {
-    font-size: 1rem !important; /* ~text-base */
-  }
+/* Signature: a decision line — a signal settles at a crimson mark */
+.hero-signal {
+  position: relative;
+  width: 14rem;
+  height: 1.5rem;
+  margin: 2.25rem auto 0;
+}
+.hero-signal-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(34, 211, 238, 0.55) 30%, rgba(34, 211, 238, 0.55) 70%, transparent);
+}
+.hero-signal-mark {
+  position: absolute;
+  top: 50%;
+  left: 68%;
+  width: 0.55rem;
+  height: 0.55rem;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+  background: #e11d48;
+  box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.16);
+}
 
+/* Tracer: a signal travels the line and is absorbed at the decision
+   mark, which answers with one soft ring pulse — then several seconds
+   of stillness. One meaningful event, not ambient motion. */
+.hero-signal-tracer {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 2.75rem;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, transparent, #22d3ee);
+  box-shadow: 0 0 6px rgba(34, 211, 238, 0.6);
+  opacity: 0;
+  animation: hero-tracer 9s cubic-bezier(0.4, 0, 0.15, 1) infinite;
+}
+.hero-signal-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 1px solid rgba(225, 29, 72, 0.55);
+  opacity: 0;
+  animation: hero-ring 9s ease-out infinite;
+}
+
+@keyframes hero-tracer {
+  0%    { transform: translate(0, -50%); opacity: 0; }
+  3%    { opacity: 1; }
+  28%   { transform: translate(9.5rem, -50%); opacity: 1; }
+  31%, 100% { transform: translate(9.5rem, -50%); opacity: 0; }
+}
+@keyframes hero-ring {
+  0%, 27% { opacity: 0; transform: scale(1); }
+  29%     { opacity: 0.55; transform: scale(1); }
+  42%     { opacity: 0; transform: scale(2.6); }
+  100%    { opacity: 0; transform: scale(2.6); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-signal-tracer { display: none; }
+  .hero-signal-mark::after { animation: none; opacity: 0; }
+}
+
+.hero-scroll {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 2rem auto 0;
+  cursor: pointer;
+  color: #71717a;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.hero-scroll:hover {
+  color: #22d3ee;
+  transform: translateY(2px);
+}
+
+@media (max-width: 640px) {
   .hero {
-    background-size: 800% 800%;
-    animation-duration: 25s;
+    padding: 3.5rem 1rem 2.75rem;
+  }
+  .hero-title {
+    font-size: 2rem;
   }
 }

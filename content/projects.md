@@ -11,21 +11,33 @@ design:
 # Page sections
 sections:
 
+  - block: ds-masthead
+    content:
+      eyebrow: "Case studies"
+      title: "Projects"
+      folder: project
+      meta_unit: projects
+      text: >-
+        Design and UX coursework, written up in full — the problem each one set out to
+        solve, the constraints, what I actually did, and what I'd credit as the outcome.
+    design:
+      spacing:
+        padding: ['3.5rem', '0', '1.75rem', '0']
+
   - block: collection
     content: 
-      title: Projects
-      text: | 
-        <p style="max-width:38rem; margin:0 auto 2.5rem; font-size:1.05rem; line-height:1.7; color:#333; text-align:center;"> 
-        Here you’ll find a mix of&nbsp;<strong>AI&nbsp;applications</strong>, <strong>UX&nbsp;research</strong>, and <strong>data-driven&nbsp;tools</strong>. Each one taught me something&nbsp;new—about people, tech, or both.
-        </p>
+      title: ''
+      count: 0
       filters: 
         folders: 
           - project 
       archive: 
         enable: false
     design: 
-      view: article-grid
+      view: ds-projects
       columns: 3
+      spacing:
+        padding: ['0.5rem', '0', '4rem', '0']
 
 
 ---

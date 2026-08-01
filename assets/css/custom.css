@@ -1,3 +1,38 @@
+/* ============================================================
+   Site-wide brand tokens
+   ------------------------------------------------------------
+   Black -> gray -> teal/cyan -> crimson, in that priority order.
+   Cyan/teal is already wired site-wide via the HugoBlox "cyan"
+   color theme (see assets/css/themes/cyan.css, consumed by the
+   `primary-*` Tailwind utilities already compiled into the
+   frozen bundle: text-primary-600, bg-primary-600, etc). These
+   tokens exist for the hand-authored CSS (hero, nav, footer,
+   bio widget, why-101) that can't reach Tailwind's `dark:`
+   variant or the `primary-*` scale directly.
+   ============================================================ */
+:root {
+  --brand-ink: #0a0a0b;
+  --brand-ink-soft: #27272a;
+  --brand-gray: #52525b;
+  --brand-gray-soft: #a1a1aa;
+  --brand-gray-line: #e4e4e7;
+  --brand-cyan: #0891b2;
+  --brand-cyan-bright: #06b6d4;
+  --brand-crimson: #be123c;        /* rose-700: rare, high-impact accent */
+  --brand-crimson-bright: #e11d48; /* rose-600 */
+}
+.dark {
+  --brand-ink: #fafafa;
+  --brand-ink-soft: #d4d4d8;
+  --brand-gray: #a1a1aa;
+  --brand-gray-soft: #71717a;
+  --brand-gray-line: #27272a;
+  --brand-cyan: #22d3ee;
+  --brand-cyan-bright: #22d3ee;
+  --brand-crimson: #fb7185;        /* rose-400: reads on dark bg */
+  --brand-crimson-bright: #fb7185;
+}
+
 #page-bg {
   background-color: white;
 }
@@ -68,4 +103,1327 @@
   }
 }
 
+/* ============================================================
+   Decision Systems Bio Widget  (self-contained)
+   ------------------------------------------------------------
+   This site serves a PRE-BUILT Tailwind bundle (dist/wc.min.css);
+   Tailwind is NOT recompiled from templates (no PostCSS/JIT).
+   So the widget must NOT rely on utility classes that aren't
+   already in that frozen bundle. Everything below is plain CSS
+   under the `.dsbio` namespace so the widget renders correctly
+   regardless of the Tailwind build. Native nesting is fine here
+   (custom.css is concatenated, never PostCSS-processed) but
+   @apply / theme() are NOT — colours/sizes are hardcoded.
 
+   Design intent (2nd pass): the v1 widget was a bordered,
+   graph-paper "dashboard card" — a box full of smaller boxes
+   (avatar card, chip pills, viz card). This pass treats it as a
+   dossier / spec sheet page instead: no outer card, just hairline
+   rules top and bottom; a full-width masthead unifies both
+   columns under one label instead of repeating it; the avatar
+   trades its card frame for two corner brackets (a viewfinder /
+   confidence-interval bracket, on-theme for "decision under
+   uncertainty"); interests/currently drop their pill chips for a
+   plain marked list; and the probability-curve signature is
+   promoted from a small boxed widget into a full-width strip that
+   closes the section, like a seismograph trace under a document.
+   ============================================================ */
+
+.dsbio {
+  /* light theme tokens */
+  --dsb-bg: #ffffff;
+  --dsb-bg-soft: #fafafa;
+  --dsb-bg-inset: #f9fafb;
+  --dsb-border: #e4e4e7;        /* zinc-200 */
+  --dsb-border-soft: #f0f0f2;
+  --dsb-text: #18181b;          /* zinc-900 */
+  --dsb-text-soft: #52525b;     /* zinc-600 */
+  --dsb-text-mute: #a1a1aa;     /* zinc-400 */
+  --dsb-accent: #0891b2;        /* cyan-600 */
+  --dsb-accent-bright: #06b6d4; /* cyan-500 */
+  --dsb-accent-bg: #ecfeff;     /* cyan-50 */
+  --dsb-accent-line: rgba(6, 182, 212, 0.35);
+  --dsb-crimson: #be123c;        /* crimson: decision boundary + optimal action */
+  --dsb-crimson-mark: #be123c;
+  --dsb-ci: rgba(6, 182, 212, 0.14);
+  --dsb-live: #10b981;          /* emerald-500 */
+
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 68rem;
+  margin-inline: auto;
+  padding: 2.75rem 1.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  border-top: 1px solid var(--dsb-border);
+  border-bottom: 1px solid var(--dsb-border);
+  color: var(--dsb-text);
+}
+
+.dark .dsbio {
+  --dsb-bg: #18181b;                  /* zinc-900 */
+  --dsb-bg-soft: rgba(24, 24, 27, 0.6);
+  --dsb-bg-inset: rgba(24, 24, 27, 0.5);
+  --dsb-border: #27272a;              /* zinc-800 */
+  --dsb-border-soft: #202023;
+  --dsb-text: #fafafa;
+  --dsb-text-soft: #a1a1aa;           /* zinc-400 */
+  --dsb-text-mute: #71717a;           /* zinc-500 */
+  --dsb-accent: #22d3ee;              /* cyan-400 */
+  --dsb-accent-bright: #22d3ee;
+  --dsb-accent-bg: rgba(8, 51, 68, 0.4);
+  --dsb-accent-line: rgba(34, 211, 238, 0.28);
+  --dsb-crimson: #fb7185;              /* crimson (dark mode): rose-400 */
+  --dsb-crimson-mark: #fb7185;
+  --dsb-ci: rgba(34, 211, 238, 0.13);
+}
+
+/* ---- Masthead (spans both columns; states the section once) ---- */
+.dsbio__masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--dsb-border);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dsb-text-mute);
+  user-select: none;
+}
+.dsbio__masthead-id { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--dsb-text-soft); }
+.dsbio__dot {
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 9999px;
+  background: var(--dsb-live);
+}
+
+/* ---- Body: aside + main ---- */
+.dsbio__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+.dsbio__aside,
+.dsbio__main {
+  min-width: 0;
+}
+.dsbio__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+.dsbio__main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* ---- Banner ---- */
+.dsbio__banner {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--dsb-border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--dsb-bg-soft);
+}
+.dsbio__banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ---- Profile / avatar ---- */
+.dsbio__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Corner-bracket frame instead of a boxed card: a viewfinder /
+   confidence-interval mark, echoing the probability-curve motif
+   without another nested box. */
+.dsbio__avatar-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+.dsbio__avatar-wrap--overlap { margin-top: -2.5rem; }
+.dsbio__avatar-wrap::before,
+.dsbio__avatar-wrap::after {
+  content: "";
+  position: absolute;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-color: var(--dsb-accent);
+  border-style: solid;
+  pointer-events: none;
+}
+.dsbio__avatar-wrap::before { top: -0.55rem; left: -0.55rem; border-width: 2px 0 0 2px; }
+.dsbio__avatar-wrap::after { bottom: -0.55rem; right: -0.55rem; border-width: 0 2px 2px 0; }
+.dsbio__avatar {
+  display: block;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 0.4rem;
+  object-fit: cover;
+  filter: grayscale(0.25) contrast(1.03);
+  transition: filter 0.3s ease;
+}
+.dsbio__avatar-wrap:hover .dsbio__avatar { filter: grayscale(0) contrast(1); }
+.dsbio__status {
+  position: absolute;
+  top: -0.6rem;
+  right: -0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  font-size: 0.9rem;
+  line-height: 1;
+  border-radius: 9999px;
+  background: var(--dsb-bg);
+  border: 1px solid var(--dsb-border);
+  box-shadow: 0 1px 3px rgba(9, 9, 11, 0.12);
+  user-select: none;
+}
+
+/* ---- Identity block ---- */
+.dsbio__ident { width: 100%; }
+.dsbio__name {
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--dsb-text);
+}
+.dsbio__name ruby rt { font-size: 0.55em; font-weight: 500; color: var(--dsb-text-soft); }
+.dsbio__role {
+  display: inline-block;
+  margin-top: 0.7rem;
+  padding: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  color: var(--dsb-text-soft);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+.dsbio__role p,
+.dsbio__col-head span p { margin: 0; display: inline; }
+.dsbio__org {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--dsb-text-soft);
+}
+.dsbio__org a,
+.dsbio__org > span,
+.dsbio__org-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: inherit;
+  text-decoration: none;
+}
+.dsbio__org a:hover { color: var(--dsb-accent); }
+.dsbio__org svg { width: 0.9rem; height: 0.9rem; color: var(--dsb-text-mute); flex: none; }
+
+/* ---- Social icons ---- */
+.dsbio__socials {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.dsbio__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--dsb-text-mute);
+  transition: color 0.2s ease;
+}
+.dsbio__social:hover {
+  color: var(--dsb-text-soft);
+  border: none;
+  background: transparent;
+  transform: none;
+}
+.dsbio__social svg { width: 1.15rem; height: 1.15rem; }
+
+/* ---- Bio prose ---- */
+.dsbio__bio { margin: 0; }
+.dsbio__bio.prose { max-width: none; font-size: 1.02rem; line-height: 1.7; color: var(--dsb-text-soft); }
+.dsbio__bio .bio-text > :first-child { margin-top: 0; }
+.dsbio__bio .bio-text a {
+  font-weight: 600;
+  color: var(--dsb-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--dsb-accent-line);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.dsbio__bio .bio-text a:hover {
+  color: var(--dsb-crimson);
+  border-bottom-color: var(--dsb-crimson);
+}
+
+/* ---- Action button ---- */
+.dsbio__actions { margin-top: -0.75rem; }
+.dsbio__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  background: #18181b;
+  border: 1px solid transparent;
+  border-radius: 0.4rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.dsbio__button:hover { background: var(--dsb-accent); color: #ffffff; }
+.dsbio__button svg { width: 1rem; height: 1rem; }
+.dark .dsbio__button { color: #09090b; background: #fafafa; }
+.dark .dsbio__button:hover { background: var(--dsb-accent); color: #09090b; }
+
+/* ---- Interests / Education / Currently two-column ---- */
+.dsbio__cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--dsb-border);
+}
+.dsbio__col-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dsb-text-mute);
+}
+.dsbio__col-head svg { width: 1rem; height: 1rem; color: var(--dsb-accent-bright); flex: none; }
+
+/* Plain marked list — replaces the v1 bordered pill chips. */
+.dsbio__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.65rem; }
+.dsbio__list li {
+  position: relative;
+  padding-left: 1.05rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--dsb-text-soft);
+}
+.dsbio__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 9999px;
+  background: var(--dsb-accent-bright);
+}
+.dsbio__list li p { display: inline; margin: 0; }
+
+.dsbio__timeline { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
+.dsbio__timeline li {
+  position: relative;
+  padding-left: 1.15rem;
+  border-left: 1px solid var(--dsb-border);
+}
+.dsbio__timeline li::before {
+  content: "";
+  position: absolute;
+  left: -0.3rem;
+  top: 0.35rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--dsb-accent-bright);
+  border: 1px solid var(--dsb-bg);
+}
+.dsbio__edu-area { font-size: 0.9rem; font-weight: 600; color: var(--dsb-text); line-height: 1.25; }
+.dsbio__edu-meta {
+  margin-top: 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--dsb-text-soft);
+}
+.dsbio__edu-year { color: var(--dsb-accent); font-weight: 700; }
+.dsbio__edu-sep { color: var(--dsb-border); }
+
+/* ---- Signature strip: full-width, closes the section ----
+   Promoted from a small boxed widget under the avatar to a
+   panoramic strip spanning the whole section, like a seismograph
+   trace at the foot of a document. */
+.dsbio__viz {
+  margin: 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--dsb-border);
+  width: 100%;
+}
+.dsbio__viz-cap {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.85rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dsb-text-mute);
+}
+.dsbio__viz-box svg { display: block; width: 100%; height: auto; max-height: 8rem; margin-inline: auto; }
+
+/* SVG element styling (avoids Tailwind currentColor classes) */
+.dsbio-viz__axis   { stroke: var(--dsb-text-mute); stroke-width: 1; }
+.dsbio-viz__curve  { stroke: var(--dsb-text-soft); stroke-width: 1.6; fill: none; }
+.dsbio-viz__ci     { fill: var(--dsb-ci); stroke: none; }
+.dsbio-viz__ci-edge{ stroke: var(--dsb-accent); stroke-width: 1; stroke-dasharray: 2 2; }
+.dsbio-viz__decision { stroke: var(--dsb-crimson); stroke-width: 1.4; stroke-dasharray: 3 1.5; }
+.dsbio-viz__mark   { fill: var(--dsb-crimson-mark); }
+.dsbio-viz__vector { stroke: var(--dsb-crimson-mark); stroke-width: 1.5; fill: none; }
+.dsbio-viz__t      { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace; font-size: 11px; }
+.dsbio-viz__t--accent { fill: var(--dsb-accent); }
+.dsbio-viz__t--orange { fill: var(--dsb-crimson); font-weight: 700; }
+.dsbio-viz__t--mute   { fill: var(--dsb-text-mute); }
+
+/* ---- Desktop layout ---- */
+@media (min-width: 768px) {
+  .dsbio { padding: 3rem 2rem 2.75rem; }
+  .dsbio__body {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3.5rem;
+  }
+  .dsbio__aside {
+    flex: none;
+    width: 260px;
+    align-items: center;
+    text-align: center;
+  }
+  .dsbio__profile { align-items: center; }
+  .dsbio__socials { justify-content: center; }
+  .dsbio__cols { grid-template-columns: 1fr 1fr; }
+}
+
+
+/* ============================================================
+   "Why 101" section  (self-contained, `.dswhy` namespace)
+   ------------------------------------------------------------
+   Same rationale as `.dsbio`: this site serves a pre-built
+   Tailwind bundle with no JIT, so this widget is plain
+   hand-authored CSS rather than Tailwind utilities. Reuses the
+   `--dsb-*` tokens set on `.dsbio` isn't possible here (different
+   subtree), so `.dswhy` carries its own light/dark tokens that
+   mirror them for visual consistency.
+   ============================================================ */
+
+.dswhy {
+  --dsw-bg: #ffffff;
+  --dsw-bg-soft: #fafafa;
+  --dsw-border: #e4e4e7;
+  --dsw-text: #18181b;
+  --dsw-text-soft: #52525b;
+  --dsw-text-mute: #a1a1aa;
+  --dsw-accent: #0891b2;
+  --dsw-accent-bright: #06b6d4;
+  --dsw-crimson: #be123c;
+  --dsw-grid: rgba(9, 9, 11, 0.045);
+  --dsw-term-bg: #0a0a0b;
+  --dsw-term-bar: #18181b;
+  --dsw-term-text: #d4d4d8;
+
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  color: var(--dsw-text);
+  overflow: hidden;
+}
+
+.dark .dswhy {
+  --dsw-bg: rgba(24, 24, 27, 0.55);
+  --dsw-bg-soft: #18181b;
+  --dsw-border: #27272a;
+  --dsw-text: #fafafa;
+  --dsw-text-soft: #a1a1aa;
+  --dsw-text-mute: #71717a;
+  --dsw-accent: #22d3ee;
+  --dsw-accent-bright: #22d3ee;
+  --dsw-crimson: #fb7185;
+  --dsw-grid: rgba(255, 255, 255, 0.03);
+  --dsw-term-bg: #050506;
+  --dsw-term-bar: #111114;
+  --dsw-term-text: #d4d4d8;
+}
+
+.dswhy__grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-size: 22px 22px;
+  background-image:
+    linear-gradient(to right, var(--dsw-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--dsw-grid) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 80% 100% at 50% 50%, black 30%, transparent 85%);
+}
+
+.dswhy__col { position: relative; z-index: 1; min-width: 0; }
+
+/* ---- Terminal / release-log visual ---- */
+.dswhy__terminal {
+  border-radius: 0.85rem;
+  overflow: hidden;
+  background: var(--dsw-term-bg);
+  border: 1px solid var(--dsw-border);
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.35);
+}
+.dswhy__term-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 0.85rem;
+  background: var(--dsw-term-bar);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.dswhy__term-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.18);
+}
+.dswhy__term-path {
+  margin-left: 0.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+.dswhy__term-body {
+  padding: 1.1rem 1.15rem 1.25rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.82rem;
+  line-height: 1.9;
+}
+.dswhy__line { white-space: pre; }
+.dswhy__line--cmd { color: var(--dsw-term-text); opacity: 0.55; }
+.dswhy__line--cmd::before { content: "$ "; opacity: 0.6; }
+.dswhy__line--rm { color: var(--dsw-crimson); }
+.dswhy__line--add { color: var(--dsw-accent-bright); }
+.dswhy__line--tag {
+  margin-top: 0.35rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.12);
+  color: #fafafa;
+  font-weight: 700;
+}
+.dswhy__badge {
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0a0a0b;
+  background: var(--dsw-accent-bright);
+  border-radius: 9999px;
+}
+
+/* ---- Text column ---- */
+.dswhy__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dsw-text-mute);
+}
+.dswhy__dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 9999px;
+  background: var(--dsw-crimson);
+  flex: none;
+}
+.dswhy__title {
+  margin: 0 0 1rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--dsw-text);
+}
+.dswhy__title code {
+  font: inherit;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.94em;
+  color: inherit;
+}
+.dswhy__p {
+  margin: 0 0 0.9rem;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--dsw-text-soft);
+}
+.dswhy__p:last-child { margin-bottom: 0; }
+.dswhy__p code {
+  padding: 0.1rem 0.35rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.88em;
+  color: var(--dsw-accent);
+  background: var(--dsw-bg-soft);
+  border: 1px solid var(--dsw-border);
+  border-radius: 0.3rem;
+}
+
+/* ---- Desktop layout ---- */
+@media (min-width: 768px) {
+  .dswhy {
+    flex-direction: row;
+    align-items: center;
+    gap: 3.5rem;
+    padding: 2.5rem 2rem;
+  }
+  .dswhy__col--visual { flex: 0 0 46%; }
+  .dswhy__col--text { flex: 1 1 auto; }
+}
+
+/* ============================================================
+   Decision Systems Collection views  (`.dscol` namespace)
+   ------------------------------------------------------------
+   One card/list system shared by three custom Hugo Blox "views":
+   layouts/partials/views/ds-writing.*   (Latest Writing — log list)
+   layouts/partials/views/ds-papers.*    (Start here — pinned grid)
+   layouts/partials/views/ds-projects.*  (Top Projects / Projects — grid)
+   Same hairline-border / monospace-eyebrow / cyan-accent language as
+   `.dsbio` and `.dswhy`. Content differs (log vs. grid), chrome doesn't —
+   self-contained plain CSS for the same frozen-Tailwind-bundle reason.
+   ============================================================ */
+
+.dscol {
+  --dsc-bg: #ffffff;
+  --dsc-bg-soft: #fafafa;
+  --dsc-border: #e4e4e7;
+  --dsc-text: #18181b;
+  --dsc-text-soft: #52525b;
+  --dsc-text-mute: #a1a1aa;
+  --dsc-accent: #0891b2;
+  --dsc-accent-bright: #06b6d4;
+  --dsc-crimson: #be123c;
+
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+.dark .dscol {
+  --dsc-bg: #18181b;
+  --dsc-bg-soft: rgba(24, 24, 27, 0.55);
+  --dsc-border: #27272a;
+  --dsc-text: #fafafa;
+  --dsc-text-soft: #a1a1aa;
+  --dsc-text-mute: #71717a;
+  --dsc-accent: #22d3ee;
+  --dsc-accent-bright: #22d3ee;
+  --dsc-crimson: #fb7185;
+}
+
+/* ---- Log list (ds-writing) ---- */
+.dscol--log {
+  display: flex;
+  flex-direction: column;
+}
+.dscol__entry {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.35rem 0;
+  border-top: 1px solid var(--dsc-border);
+}
+.dscol__entry:first-child { border-top: none; padding-top: 0; }
+.dscol__entry-date {
+  flex: 0 0 auto;
+  width: 4.5rem;
+  padding-top: 0.2rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--dsc-text-mute);
+}
+.dscol__entry-body { flex: 1; min-width: 0; }
+.dscol__entry-title { margin: 0; font-size: 1.05rem; font-weight: 600; line-height: 1.35; }
+.dscol__entry-title a { color: var(--dsc-text); text-decoration: none; }
+.dscol__entry-title a:hover { color: var(--dsc-accent); }
+.dscol__entry-summary { margin: 0.45rem 0 0; font-size: 0.92rem; line-height: 1.6; color: var(--dsc-text-soft); }
+.dscol__entry-tag {
+  display: inline-block;
+  margin-top: 0.65rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dsc-accent);
+}
+.dscol__entry-thumb {
+  flex: none;
+  order: 1;
+  display: none;
+  width: 8rem;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  background: var(--dsc-bg-soft);
+  border: 1px solid var(--dsc-border);
+}
+.dscol__entry-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+@media (min-width: 640px) {
+  .dscol__entry-date { width: 5.5rem; }
+  .dscol__entry-thumb { display: block; width: 9rem; }
+}
+@media (min-width: 768px) {
+  .dscol__entry-thumb { width: 11rem; }
+}
+
+/* ---- Card grid (ds-papers / ds-projects) ---- */
+.dscol--grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 640px) {
+  .dscol--grid { grid-template-columns: repeat(var(--dscol-cols, 2), 1fr); }
+}
+
+.dscol__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--dsc-bg-soft);
+  border: 1px solid var(--dsc-border);
+  border-radius: 0.6rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.dscol__card:hover { border-color: var(--dsc-accent-bright); transform: translateY(-2px); }
+
+.dscol__card-image {
+  display: block;
+  margin: -1.5rem -1.5rem 1.1rem;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 0.6rem 0.6rem 0 0;
+  border-bottom: 1px solid var(--dsc-border);
+  background: var(--dsc-bg-soft);
+}
+.dscol__card-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+.dscol__card:hover .dscol__card-image img { transform: scale(1.03); }
+
+.dscol__card-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dsc-text-mute);
+}
+.dscol__dot { flex: none; width: 0.4rem; height: 0.4rem; border-radius: 9999px; background: var(--dsc-accent-bright); }
+.dscol__dot--crimson { background: var(--dsc-crimson); }
+.dscol__badge {
+  margin-left: auto;
+  padding: 0.12rem 0.5rem;
+  border: 1px solid var(--dsc-border);
+  border-radius: 9999px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  color: var(--dsc-text-mute);
+}
+.dscol__card-title { margin: 0 0 0.6rem; font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.3; }
+.dscol__card-title a { color: var(--dsc-text); text-decoration: none; }
+.dscol__card-title a:hover { color: var(--dsc-accent); }
+.dscol__card-summary {
+  flex: 1;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--dsc-text-soft);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ---- Section wrappers (homepage `id`s from content/_index.md) ----
+   Targets the `<section id="...">` wrapper Hugo Blox already renders
+   (see parse_block_v2.html) — no template change needed for section-level
+   chrome, just plain CSS against ids that already exist.
+
+   Background rhythm down the homepage (dark hero -> gray bio, both
+   untouched, then a fade-to-white-and-hold with an A/B plate alternation
+   carrying the rhythm once tone runs out of room): why-101 and writing
+   sit on the "textured" plate A (#fafafa, set via YAML in content/_index.md
+   to match the existing bio/tags-cloud convention of a literal background
+   color rather than fighting the inline style Hugo Blox already renders),
+   bounded by hairlines; papers/top-projects stay on the clean plate B
+   (page default) so their `.dscol__card` fill (--dsc-bg-soft: #fafafa)
+   pops instead of vanishing. The why-101 grid texture — the one the
+   owner said they loved — recurs once more, softer, behind Latest
+   Writing (a dated log list reads like a lab notebook under graph
+   paper), so it's a motif rather than wallpaper. */
+#why-101, #writing {
+  position: relative;
+  isolation: isolate;
+  border-top: 1px solid var(--brand-gray-line);
+  border-bottom: 1px solid var(--brand-gray-line);
+}
+#writing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-size: 22px 22px;
+  background-image:
+    linear-gradient(to right, rgba(9, 9, 11, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(9, 9, 11, 0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 40%, black 30%, transparent 85%);
+}
+.dark #writing::before {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+#writing, #papers, #top-projects {
+  padding-top: 1rem;
+}
+#papers .dscol--grid,
+#top-projects .dscol--grid {
+  margin-top: 0.5rem;
+}
+
+/* ============================================================
+   "Colophon" polish — content/about.md's "Why 101?" markdown block.
+   ------------------------------------------------------------
+   Targets the stock `markdown` blox's own utility-class hooks
+   (`.mb-6.text-3xl`, `.prose code`) rather than adding new Tailwind
+   classes to the template — same "Brand origin" eyebrow wording and
+   monospace-code treatment as the homepage `.dswhy` widget, so the
+   About page's version of this idea reads as the same brand voice.
+   ============================================================ */
+.colophon .mb-6.text-3xl::before {
+  content: "Brand origin";
+  display: block;
+  margin-bottom: 0.65rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0891b2;
+}
+.dark .colophon .mb-6.text-3xl::before { color: #22d3ee; }
+
+.colophon .prose code {
+  padding: 0.1rem 0.35rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.85em;
+  color: #0891b2;
+  background: rgba(8, 145, 178, 0.08);
+  border: 1px solid rgba(8, 145, 178, 0.22);
+  border-radius: 0.3rem;
+}
+.dark .colophon .prose code {
+  color: #22d3ee;
+  background: rgba(34, 211, 238, 0.08);
+  border-color: rgba(34, 211, 238, 0.25);
+}
+
+/* ============================================================
+   Editorial masthead  (`.dshead` namespace) — archive front doors
+   ------------------------------------------------------------
+   Same frozen-Tailwind rationale as `.dsbio`/`.dswhy`/`.dscol`:
+   self-contained plain CSS, no new utility classes, light + dark
+   tokens mirroring the others.
+
+   Signature element for the Writing/Projects pages: a spec-sheet
+   masthead. A monospace index eyebrow, an oversized display title,
+   a calm lead, and a hairline META RULE whose cells are live archive
+   data (count / topics / last-updated month). Left-aligned at the
+   same 64rem measure as the `.dscol` lists it introduces, so the page
+   reads as one aligned column rather than a centered island — a
+   deliberate break from the Blox default "everything centered".
+   ============================================================ */
+.dshead {
+  --dsh-border: #e4e4e7;        /* zinc-200 */
+  --dsh-text: #18181b;          /* zinc-900 */
+  --dsh-text-soft: #52525b;     /* zinc-600 */
+  --dsh-text-mute: #a1a1aa;     /* zinc-400 */
+  --dsh-accent: #0891b2;        /* cyan-600 */
+  --dsh-grid: rgba(9, 9, 11, 0.05);
+  --dsh-live: #10b981;          /* emerald-500 */
+
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: 0 1.5rem;
+  color: var(--dsh-text);
+}
+
+.dark .dshead {
+  --dsh-border: #27272a;              /* zinc-800 */
+  --dsh-text: #fafafa;
+  --dsh-text-soft: #a1a1aa;           /* zinc-400 */
+  --dsh-text-mute: #71717a;           /* zinc-500 */
+  --dsh-accent: #22d3ee;              /* cyan-400 */
+  --dsh-grid: rgba(255, 255, 255, 0.035);
+}
+
+/* Faint graph-paper texture, pooled behind the left-aligned title and
+   fading out to the right — the hero/why-101 motif recurring once. */
+.dshead__grid {
+  position: absolute;
+  inset: -1rem 0 -0.5rem;
+  z-index: -1;
+  pointer-events: none;
+  background-size: 22px 22px;
+  background-image:
+    linear-gradient(to right, var(--dsh-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--dsh-grid) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 55% 130% at 8% 42%, black 15%, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse 55% 130% at 8% 42%, black 15%, transparent 72%);
+}
+
+.dshead__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dsh-text-mute);
+}
+.dshead__live {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 9999px;
+  background: var(--dsh-live);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+  flex: none;
+}
+
+.dshead__title {
+  margin: 0.9rem 0 0;
+  font-family: system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.1rem, 4.6vw, 3rem);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--dsh-text);
+}
+
+.dshead__lead {
+  margin: 1.05rem 0 0;
+  max-width: 44rem;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  line-height: 1.65;
+  color: var(--dsh-text-soft);
+}
+.dshead__lead > :first-child { margin-top: 0; }
+.dshead__lead > :last-child { margin-bottom: 0; }
+.dshead__lead strong { font-weight: 600; color: var(--dsh-text); }
+
+/* Meta rule: a hairline carrying live archive data in monospace,
+   numbers picked out in cyan. */
+.dshead__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.9rem;
+  margin-top: 1.9rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--dsh-border);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dsh-text-mute);
+}
+.dshead__meta-cell { display: inline-flex; align-items: baseline; gap: 0.4rem; }
+.dshead__meta-num {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--dsh-accent);
+}
+.dshead__meta-sep { color: var(--dsh-border); }
+
+@media (min-width: 768px) {
+  .dshead { padding: 0 2rem; }
+}
+
+/* ============================================================
+   Homepage section-title accent — a miniature decision-line
+   ------------------------------------------------------------
+   The centered section headings (Start here / Latest Writing /
+   Top Projects, and the shared "Explore by topic" tags-cloud) get
+   a scaled-down copy of the HERO signature: a cyan signal line that
+   settles at a small crimson decision mark. Ties every section
+   heading to the brand's core motif instead of leaving them as plain
+   bold text. Scoped to the homepage section ids + the tags-cloud blox
+   so it never touches the archive mastheads or the About colophon.
+   Uses the global `--brand-*` tokens (defined on :root and .dark).
+   ============================================================ */
+#papers .mb-6.text-3xl,
+#writing .mb-6.text-3xl,
+#top-projects .mb-6.text-3xl,
+.blox-tags-cloud .text-center h2 {
+  position: relative;
+  padding-bottom: 1.1rem;
+}
+#papers .mb-6.text-3xl::before,
+#writing .mb-6.text-3xl::before,
+#top-projects .mb-6.text-3xl::before,
+.blox-tags-cloud .text-center h2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3.25rem;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--brand-cyan-bright) 22%,
+    var(--brand-cyan-bright) 78%,
+    transparent
+  );
+}
+#papers .mb-6.text-3xl::after,
+#writing .mb-6.text-3xl::after,
+#top-projects .mb-6.text-3xl::after,
+.blox-tags-cloud .text-center h2::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: calc(50% + 0.72rem);
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: var(--brand-crimson-bright);
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.14);
+}
+
+/* ============================================================
+   About-page custom sections  (`.dsabout` namespace)
+   ------------------------------------------------------------
+   Same frozen-Tailwind rationale as .dsbio/.dscol/.dshead. Two
+   override partials share this namespace:
+   layouts/partials/blox/resume-experience.html — a spec-sheet work
+     log: hairline timeline, cyan dot markers, a green live-dot for the
+     current role, monospace date range.
+   layouts/partials/blox/badges.html — a credential shelf: compact
+     hairline cards (badge mark + name + monospace issuer · year).
+   Section titles reuse the homepage decision-line accent so About
+   reads as the same system as the rest of the site.
+   ============================================================ */
+.dsabout {
+  --dsa-bg: #ffffff;
+  --dsa-bg-soft: #fafafa;
+  --dsa-border: #e4e4e7;        /* zinc-200 */
+  --dsa-text: #18181b;          /* zinc-900 */
+  --dsa-text-soft: #52525b;     /* zinc-600 */
+  --dsa-text-mute: #a1a1aa;     /* zinc-400 */
+  --dsa-accent: #0891b2;        /* cyan-600 */
+  --dsa-crimson: #be123c;
+  --dsa-live: #10b981;          /* emerald-500 */
+
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 0 1.5rem;
+  color: var(--dsa-text);
+}
+.dsabout--cred { max-width: 60rem; }
+
+.dark .dsabout {
+  --dsa-bg: #18181b;
+  --dsa-bg-soft: rgba(24, 24, 27, 0.55);
+  --dsa-border: #27272a;              /* zinc-800 */
+  --dsa-text: #fafafa;
+  --dsa-text-soft: #a1a1aa;
+  --dsa-text-mute: #71717a;
+  --dsa-accent: #22d3ee;              /* cyan-400 */
+  --dsa-crimson: #fb7185;
+}
+
+.dsabout__group + .dsabout__group { margin-top: 3.25rem; }
+
+/* Section title — reuses the homepage decision-line accent (cyan
+   signal settling at a crimson mark), centered. */
+.dsabout__title {
+  position: relative;
+  margin: 0 0 2rem;
+  padding-bottom: 1.1rem;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.55rem, 3vw, 1.95rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--dsa-text);
+}
+.dsabout__title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3.25rem;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--brand-cyan-bright) 22%,
+    var(--brand-cyan-bright) 78%,
+    transparent
+  );
+}
+.dsabout__title::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: calc(50% + 0.72rem);
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: var(--brand-crimson-bright);
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.14);
+}
+.dsabout__lead {
+  margin: -1rem 0 1.75rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--dsa-text-soft);
+}
+
+/* ---- Experience / Education timeline ---- */
+.dsabout__timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid var(--dsa-border);
+}
+.dsabout__item {
+  position: relative;
+  padding: 0 0 2rem 1.6rem;
+}
+.dsabout__item:last-child { padding-bottom: 0; }
+.dsabout__marker {
+  position: absolute;
+  left: -0.36rem;
+  top: 0.4rem;
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 9999px;
+  background: var(--dsa-accent);
+  box-shadow: 0 0 0 4px var(--dsa-bg);
+}
+.dsabout__item--current .dsabout__marker {
+  background: var(--dsa-live);
+  box-shadow: 0 0 0 4px var(--dsa-bg), 0 0 0 6px rgba(16, 185, 129, 0.18);
+}
+.dsabout__role {
+  font-size: 1.04rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--dsa-text);
+  line-height: 1.35;
+}
+.dsabout__at { font-weight: 500; color: var(--dsa-text-soft); }
+.dsabout__now {
+  display: inline-block;
+  margin-left: 0.5rem;
+  transform: translateY(-1px);
+  padding: 0.08rem 0.45rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dsa-live);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 9999px;
+  vertical-align: middle;
+}
+.dsabout__when {
+  margin-top: 0.3rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dsa-text-mute);
+}
+.dsabout__summary {
+  margin-top: 0.7rem;
+  font-size: 0.94rem;
+  line-height: 1.62;
+  color: var(--dsa-text-soft);
+}
+.dsabout__summary.prose { max-width: none; }
+.dsabout__summary > :first-child { margin-top: 0; }
+.dsabout__summary > :last-child { margin-bottom: 0; }
+.dsabout__summary ul { margin: 0.4rem 0 0; padding: 0; list-style: none; }
+.dsabout__summary li {
+  position: relative;
+  padding-left: 1rem;
+  margin-top: 0.4rem;
+}
+.dsabout__summary li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 9999px;
+  background: var(--dsa-accent);
+}
+.dsabout__summary a {
+  color: var(--dsa-accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(8, 145, 178, 0.3);
+}
+.dsabout__summary a:hover { color: var(--dsa-crimson); border-bottom-color: var(--dsa-crimson); }
+.dsabout__summary em { color: var(--dsa-text); font-style: italic; }
+
+.dsabout__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--dsa-text);
+  background: transparent;
+  border: 1px solid var(--dsa-border);
+  border-radius: 0.4rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.dsabout__btn:hover { border-color: var(--dsa-accent); color: var(--dsa-accent); }
+.dsabout__btn svg { width: 0.85rem; height: 0.85rem; }
+
+/* ---- Certifications / credential shelf ---- */
+.dsabout__cred-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+@media (min-width: 560px) { .dsabout__cred-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .dsabout__cred-grid { grid-template-columns: repeat(3, 1fr); } }
+.dsabout__cred {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1rem;
+  background: var(--dsa-bg);
+  border: 1px solid var(--dsa-border);
+  border-radius: 0.6rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.dsabout__cred:hover { border-color: var(--dsa-accent); transform: translateY(-2px); }
+.dsabout__cred-img {
+  flex: none;
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+}
+.dsabout__cred-img img { width: 100%; height: 100%; object-fit: contain; }
+.dsabout__cred-body { min-width: 0; }
+.dsabout__cred-name {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--dsa-text);
+}
+.dsabout__cred-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dsa-text-mute);
+}
+.dsabout__cred-sep { color: var(--dsa-border); }

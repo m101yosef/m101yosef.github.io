@@ -3,13 +3,9 @@ header svg {
   fill: white;
 }
 
-.hero svg:hover {
-  stroke: cyan;
-  scale: 1.2;
-}
-
-header {
-  background-color: #222 !important;
+#site-header.header {
+  background-color: #0a0a0b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 header button {
@@ -25,12 +21,12 @@ header button:hover {
 }
 
 header .navbar-brand:hover {
-  color: cyan !important;
+  color: #22d3ee !important;
 }
 
 .navbar-nav .nav-link:hover {
-    color: cyan !important;
-    background-color: #444;
+    color: #22d3ee !important;
+    background-color: rgba(255, 255, 255, 0.08);
     border-radius: 0.5rem;
 }
 
@@ -40,22 +36,28 @@ header button path {
 }
 
 header button:hover path {
-    fill: cyan;
+    fill: #22d3ee;
 }
 
 
 footer {
-    background-color: #222;
+    background-color: #0a0a0b;
     padding: 2rem;
-    color: white;
+    color: #d4d4d8;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 footer a {
-    color: cyan !important;
+    color: #22d3ee !important;
     text-decoration: none !important;
 }
 footer a:hover {
-    color: cyan !important;
-    opacity: 0.8;
+    color: #67e8f9 !important;
+    opacity: 0.9;
 }
 
+/* "See all" archive links (Latest Writing / Top Projects) — crimson pop on hover */
+.mt-10.flex.justify-center > a:hover {
+  border-color: var(--brand-crimson) !important;
+  color: var(--brand-crimson) !important;
+}

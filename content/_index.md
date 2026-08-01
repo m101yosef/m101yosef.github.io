@@ -14,27 +14,71 @@ sections:
     id: bio
     content:
       username: admin
-      text: |- 
-       Machine Learning Engineer at ERTAQY. Leveraging a background in Statistics and Computer Science to build data-driven software solutions. Focused on practical model deployment and data analysis. Previously developed 'AQSA', a chatbot and forecasting tool for small businesses
-       
-       [Read more >>](/about)
+      show_education: false
+      interests_label: "Focus"
+      text: |-
+        **What to show:** an event recommender inside a campus app. **What to say:** a
+        chatbot that handles client intake and common legal questions. **What comes next:**
+        sales and market forecasts for early-stage startups. Different products, same
+        shape — a model, a Python backend, and a decision someone actually acts on.
+
+        [Read more »](/about)
     design:
       css_class: light 
       background:
         color: whitesmoke
 
+  - block: why-101
+    id: why-101
+    design:
+      background:
+        color: '#fafafa'
 
   - block: collection
     id: papers
     content:
-      title: Featured Publications
+      title: Start here
       filters:
         folders:
           - publication
         featured_only: true
     design:
-      view: article-grid
+      view: ds-papers
       columns: 2
+
+  - block: collection
+    id: writing
+    content:
+      title: Latest Writing
+      count: 4
+      filters:
+        folders:
+          - publication
+      archive:
+        enable: true
+        text: All writing →
+        link: /publications/
+    design:
+      view: ds-writing
+      background:
+        color: '#fafafa'
+
+  - block: collection
+    id: top-projects
+    content:
+      title: Top Projects
+      count: 3
+      filters:
+        folders:
+          - project
+        featured_only: true
+      archive:
+        enable: true
+        text: All projects →
+        link: /projects/
+    design:
+      view: ds-projects
+      columns: 3
 
   # - block: collection
   #   content:

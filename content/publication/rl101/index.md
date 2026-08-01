@@ -3,19 +3,10 @@ title: "Reinforcement Learning: All the Basics"
 authors:
 - admin
 date: "2024-01-08"
-doi: ""
 publishDate: "2024-01-22"
 share: true
 show_related: true
 featured: true
-
-publication_types: ["review"]
-
-# Publication name and optional abbreviated publication name.
-publication: "MohamedYosef101"
-publication_short: "MY101"
-
-bibliography: ref.bib
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
@@ -24,10 +15,8 @@ image:
   focal_point: ""
   preview_only: false
 
-abstract: The way we learn is the core thing in any part of our life. So, can we move from the traditional learning way in machine learning which is about learning from labeled examples (supervised) or unlabeled examples (unsupervised)? Reinforcement learning provides a solution for this, where you have an agent (the AI) that learns through trial and error and learn from mistakes or achievements. There are two main approaches to solve almost any reinforcement learning problem; value-based and policy-based. Around these two approaches, I created this piece covering the basics, Markov decision processes, and main RL algorithms. All of this with a goal to help you understand all the basics by reading this one piece.
-
 # Summary. An optional shortened abstract.
-summary: From AlphaGo beating the world champion in Go, to the newest updates on large language models and what they can do, RL algorithms with no doubt have a huge impact in the present and the future of automation and Human-AI interaction. With this collection of RL principles, you'll gain a deeper understand of how RL work and you may gain insights applicable in your own work, leading to innovative solutions.
+summary: A practical walkthrough of value-based and policy-based reinforcement learning, MDPs, and the main algorithms for engineers getting started with RL.
 
 tags:
 - Reinforcement Learning 
@@ -35,13 +24,11 @@ tags:
 # links:
 # - name: ""
 #   url: ""
-url_pdf: 'https://m10yosef1.github.io/publication/rl101/reinforcement-learning-MY101.pdf'
+url_pdf: 'https://m101yosef.github.io/publication/rl101/reinforcement-learning-MY101.pdf'
 url_code: 'https://github.com/m101yosef/101_learning_area/tree/area/Reinforcement%20Learning'
 url_dataset: ''
-url_poster: ''
 url_project: ''
 url_slides: ''
-url_source: ''
 url_video: ''
 ---
 

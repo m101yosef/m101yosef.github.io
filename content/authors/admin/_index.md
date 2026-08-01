@@ -11,7 +11,7 @@ last_name: Yosef
 
 # Status emoji
 status:
-  icon: ☕️
+  icon: brands/twitter
 
 # Is this the primary user of the site?
 superuser: true
@@ -41,9 +41,9 @@ profiles:
 
 # Interests to show in About widget
 interests:
-   - Reinforcement Learning
-   - Human-AI Interaction
-   - Applied Data Science
+  - Reinforcement Learning & Decision-Making
+  - Recommendation & Forecasting Systems
+  - Product UX for AI
 
 education:
   - area: B.Sc Statistics & Computer Science
@@ -65,10 +65,9 @@ work:
     date_start: '2025-12-25'
     date_end: ''
     summary: |2-
-      - Developing and deploying machine learning models to support local software solutions.
-      - Building data pipelines for automated analysis and reporting.
-      - Collaborating with software engineering teams to integrate AI features into existing products.
-      - Applying statistical methods to optimise model performance and data reliability.
+      - Design and build the Python backends for Ertaqy's AI features, from API design to inference serving and deployment.
+      - Evaluate model changes and service reliability statistically — the evidence for what ships, and what stays shipped.
+      - Systems currently in production include a self-hosted LLM chat service and a realtime voice system.
   
 
   - position: AI Engineer
@@ -78,7 +77,7 @@ work:
     date_start: '2024-11-01'
     date_end: '2025-01-31'
     summary: |2-
-      Contract Role. Developed and deployed an AI-powered chatbot to handle client intake and answer common legal questions, significantly improving firm efficiency.
+      Contract role. Developed and deployed a chatbot that handles the firm's client intake and answers clients' most common legal questions.
 
   - position: Machine Learning Engineer
     company_name: IEEE (Swarms - EVNTO)
@@ -87,10 +86,11 @@ work:
     date_start: '2024-08-01'
     date_end: '2024-11-01'
     summary: |2-
-      - Developed and deployed NLP (Sentiment Analysis) and Recommendation System models for a university event application.
-      - Engineered a scalable REST API using FastAPI to serve model predictions (real-time ratings and recommendations).
-      - Containerised the entire application using Docker for consistent deployment.
-      - Collaborated with backend and Flutter teams; the AI components won 3rd place in the competition track.
+      Student competition team ([code on GitHub](https://github.com/swarmsTeam/swarms-ai)).
+
+      - Built the sentiment-analysis and recommendation models for EVNTO, a campus events app.
+      - Served both models through a FastAPI REST API — real-time ratings and event recommendations — and containerised the service with Docker.
+      - Worked alongside the backend and Flutter teams to integrate the AI service; the AI components took 3rd place in the competition track.
 
   - position: Data Scientist
     company_name: Mansoura University
@@ -99,9 +99,10 @@ work:
     date_start: '2023-09-01'
     date_end: '2024-05-01'
     summary: |2-
-      - Led the development of a multi-component AI system to provide data-driven insights for startups.
-      - Built a generative chatbot for startup queries and a time-series forecasting system to predict sales/market trends.
-      - Utilised Python and SQL to build an automated data analysis system.
+      Graduation capstone — [AQSA](/project/aqsa/), "AI for startups".
+
+      - Defined the system design for a three-part decision-support tool for early-stage founders: a generative chatbot, an automated data analyser, and a sales/market forecasting module.
+      - Built the proof-of-concept with the team in Python and SQL — documented in the published project report.
 
 # Skills
 skills:
@@ -165,9 +166,12 @@ badges:
     url: "https://www.credly.com/badges/b1581101-d4b8-4ac6-87c8-ec1109769fcd/public_url"
 
 ---
-### Data, ML & Inference 
-At the intersection of machine learning models and inference, you will find me. My background in statistics and product design shapes my approach to machine learning and large language models as systems that must run reliably in production not as isolated models. 
+### Data, ML & Inference
 
-I love doing data science experimentation and that is why I use experimentation as the first step in moving the ideas to deployed products. My process includes going through research, design, development, deployment, monitoring, and iterating... (Yes, the process never ends, it's a continuous loop of iterations). This was the core philosophy behind my work on previous projects like AQSA & EVNTO and continues now in my role as Machine Learning Engineer at ERTAQY.
+*I build ML systems that make decisions — recommendation, forecasting, conversational AI — and this site is where I write about how machines learn to decide, from statistics up to reinforcement learning.*
 
-At the end of the day, machine learning and data are one part of a wider software ecosystem, not the centre of it. For that reason, I prioritise clarity, reproducibility, and system health over short-term performance gains or academic novelty.
+My degree is in statistics, so "inference" has always meant two things to me: the conclusion a model draws, and the service that has to deliver it. I work on both ends — whether the estimate holds up, and whether the endpoint stays up. A model that is right in a notebook but unreliable in production hasn't shipped; it's just been demonstrated.
+
+That standard runs through everything I've built: a recommendation and sentiment system serving live predictions inside a campus events app, a chatbot handling client intake and common legal questions, and time-series forecasts of sales and market trends for early-stage startups. At Ertaqy, I design the Python backends behind AI features — inference serving, API design, and the statistical evaluation that tells us whether any of it actually works.
+
+Two convictions shape how I work. Machine learning is one component of a wider software system, not the centre of it — so I optimise for clarity, reproducibility, and system health before leaderboard scores or novelty. And the theory underneath deserves to be written down properly — the essays here climb from probability and optimization toward reinforcement learning, because deciding well is a harder problem than predicting well.

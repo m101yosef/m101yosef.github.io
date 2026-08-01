@@ -1,0 +1,45 @@
+{{/* Custom blox override: "badges" — a credential shelf.
+
+  NOTE: frozen pre-built Tailwind bundle (no JIT). Self-contained `.dsabout`
+  CSS (assets/css/custom.css), same rationale as .dsbio/.dscol. Replaces the
+  default large image cards with compact credential rows (badge mark + name +
+  monospace issuer · year) that match the site's hairline card language.
+*/}}
+
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $author := $block.content.username | default "admin" }}
+{{ $person_page := site.GetPage (printf "/authors/%s" $author) }}
+{{ if not $person_page }}{{ errorf "badges: author page /authors/%s not found" $author }}{{ end }}
+{{ $badges := $person_page.Params.badges }}
+
+<div class="dsabout dsabout--cred">
+  <h2 class="dsabout__title">{{ $block.content.title | default "Certifications" | markdownify }}</h2>
+  {{ with $block.content.text }}<p class="dsabout__lead">{{ . | markdownify | emojify }}</p>{{ end }}
+
+  {{ if $badges }}
+  <div class="dsabout__cred-grid">
+    {{ range $badges }}
+      {{ $src := "" }}
+      {{ if hasPrefix .image "http" }}
+        {{ $src = .image }}
+      {{ else }}
+        {{ with resources.Get (printf "media/badges/%s" .image) }}{{ $src = .RelPermalink }}{{ end }}
+      {{ end }}
+      <a class="dsabout__cred" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+        {{ with $src }}<span class="dsabout__cred-img"><img src="{{ . }}" alt="" loading="lazy" width="80" height="80"></span>{{ end }}
+        <span class="dsabout__cred-body">
+          <span class="dsabout__cred-name">{{ .title }}</span>
+          <span class="dsabout__cred-meta">
+            <span>{{ .issuer }}</span>
+            <span class="dsabout__cred-sep" aria-hidden="true">·</span>
+            <span>{{ .date | time.Format "2006" }}</span>
+          </span>
+        </span>
+      </a>
+    {{ end }}
+  </div>
+  {{ else }}
+  <p class="dsabout__lead">No certifications to display yet.</p>
+  {{ end }}
+</div>

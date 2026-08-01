@@ -1,0 +1,61 @@
+{{/* Custom blox: "Why 101" — brand-origin section for the homepage. */}}
+{{/*
+  NOTE: This site serves a PRE-BUILT Tailwind bundle and does not recompile
+  Tailwind from templates. This partial therefore avoids Tailwind utility
+  classes it isn't certain are in the frozen bundle, and instead relies on
+  self-contained `.dswhy` rules in assets/css/custom.css — same pattern as
+  the `.dsbio` bio widget (layouts/partials/blox/resume-biography-3.html).
+
+  Signature element: a git-diff / release-log motif — v1.0.0 (rough,
+  crimson "removed" lines) patched into v1.0.1 (fixed, cyan "added"
+  lines) — a literal visual of "ship, notice what's broken, fix, ship
+  again," the concept explained in content/about.md's colophon.
+*/}}
+
+{{ $block := .wcBlock }}
+{{ $title := $block.content.title | default "`m101yosef` is a version number" }}
+
+<div class="dswhy">
+  <div class="dswhy__grid" aria-hidden="true"></div>
+
+  <div class="dswhy__col dswhy__col--visual">
+    <div class="dswhy__terminal" role="img" aria-label="A release log: version 1.0.0 shipped with rough edges, then version 1.0.1 fixed what broke.">
+      <div class="dswhy__term-bar">
+        <span class="dswhy__term-dot"></span>
+        <span class="dswhy__term-dot"></span>
+        <span class="dswhy__term-dot"></span>
+        <span class="dswhy__term-path">~/m101yosef</span>
+      </div>
+      <div class="dswhy__term-body">
+        <div class="dswhy__line dswhy__line--cmd">release v1.0.0</div>
+        <div class="dswhy__line dswhy__line--rm">- shipped rough edges</div>
+        <div class="dswhy__line dswhy__line--rm">- untested assumptions</div>
+        <div class="dswhy__line dswhy__line--cmd">patch</div>
+        <div class="dswhy__line dswhy__line--add">+ noticed what broke</div>
+        <div class="dswhy__line dswhy__line--add">+ fixed it, documented it</div>
+        <div class="dswhy__line dswhy__line--tag">
+          release v1.0.1 <span class="dswhy__badge">current</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dswhy__col dswhy__col--text">
+    <div class="dswhy__eyebrow">
+      <span class="dswhy__dot"></span>
+      <span>Brand origin</span>
+    </div>
+    <h2 class="dswhy__title">{{ $title | markdownify }}</h2>
+    <p class="dswhy__p">
+      Read the middle of the handle: <code>1.0.1</code> — not the launch, the
+      patch right after it. A <code>1.0.1</code> only exists because something
+      real shipped, something broke, and someone fixed it. It's the most
+      honest version number there is.
+    </p>
+    <p class="dswhy__p">
+      Ship. Notice what breaks. Fix it. Ship again. That loop is the whole
+      brand — how I build, how I write. Nothing here is finished — just
+      versioned.
+    </p>
+  </div>
+</div>

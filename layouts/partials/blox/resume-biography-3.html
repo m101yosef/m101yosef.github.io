@@ -1,0 +1,241 @@
+{{/* Hugo Blox: Biography 3 */}}
+{{/* Documentation: https://hugoblox.com/blocks/ */}}
+{{/* License: https://github.com/HugoBlox/hugo-blox-builder/blob/main/LICENSE.md */}}
+{{/*
+  NOTE: This site serves a PRE-BUILT Tailwind bundle (dist/wc.min.css) and does
+  NOT recompile Tailwind from templates (no PostCSS/JIT — see site_head.html).
+  Therefore this override deliberately does NOT rely on Tailwind utility classes
+  that may be absent from the frozen bundle. All layout/typography/colour lives
+  in self-contained `.dsbio` rules in assets/css/custom.css (which is loaded
+  verbatim). Only `prose dark:prose-invert` (verified present) is reused, to
+  style the rendered markdown bio.
+*/}}
+
+{{/* Initialise */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+
+{{ $author := $block.content.username | default "admin" }}
+
+{{ $person_page_path := (printf "/authors/%s" $author) }}
+{{ $person_page := site.GetPage $person_page_path }}
+{{ if not $person_page }}
+  {{ errorf "Could not find an author page at `%s`. Please check the value of `author` in your About widget and create an associated author page if one does not already exist. See https://docs.hugoblox.com/page-builder/#about " $person_page_path }}
+{{end}}
+{{ $person := $person_page.Params }}
+{{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
+{{ $avatar_shape := site.Params.features.avatar.shape | default "circle" }}
+
+{{ $img := "" }}
+{{ with $block.design.banner.filename }}
+  {{- $img = resources.Get (path.Join "media" .) -}}
+  {{ if $img }}
+    {{- $img = $img.Process "webp" -}}
+  {{ end }}
+{{ end }}
+
+<div class="dsbio resume-biography">
+
+  {{/* -------- Masthead: labels the section itself (not the person) --------
+       Kept deliberately distinct from the role pill below — this is a
+       letterhead for the widget, not a second place to restate the role,
+       so it doesn't echo "Forecasting · Recommendation · RL" from the
+       role tag a few dozen pixels away. */}}
+
+  <div class="dsbio__body">
+
+    {{/* -------- Left: profile / agent spec -------- */}}
+    <aside class="dsbio__aside">
+
+      {{ if $img }}
+        <div class="dsbio__banner">
+          <img
+            src="{{ $img.RelPermalink }}"
+            width="{{ $img.Width }}"
+            height="{{ $img.Height }}"
+            alt="{{ $person_page.Title }} banner"
+            loading="lazy"
+          />
+        </div>
+      {{ end }}
+
+      <div id="profile" class="dsbio__profile">
+        {{ if $avatar }}
+          {{ $avatar_image := $avatar.Fill "280x280 Center" }}
+          <div class="dsbio__avatar-wrap{{ if $img }} dsbio__avatar-wrap--overlap{{ end }}">
+            <img
+              class="dsbio__avatar"
+              src="{{ $avatar_image.RelPermalink }}"
+              alt="{{ $person_page.Title }}"
+              width="{{ $avatar_image.Width }}"
+              height="{{ $avatar_image.Height }}"
+            >
+            {{ with $person.status.icon }}
+              <span class="dsbio__status">
+                {{- if or (hasPrefix . "fa-") (hasPrefix . "brands/") -}}
+                  {{ partial "functions/get_icon" (dict "name" . "attributes" "style=\"height: 1.1rem; width: 1.1rem;\"") }}
+                {{- else -}}
+                  {{ . | emojify }}
+                {{- end -}}
+              </span>
+            {{ end }}
+          </div>
+        {{ end }}
+
+        <div class="dsbio__ident">
+          <h2 class="dsbio__name">
+            {{- if $person.name_pronunciation -}}
+              <ruby>
+                <rb>{{ $person_page.Title }}</rb>
+                <rt>{{ $person.name_pronunciation }}</rt>
+              </ruby>
+            {{- else -}}
+              {{- $person_page.Title -}}
+            {{- end -}}
+          </h2>
+
+          {{ with $person.role }}
+            <div class="dsbio__role">{{ . | markdownify | emojify }}</div>
+          {{ end }}
+        </div>
+
+        {{ if $person.profiles }}
+          <ul class="dsbio__socials">
+            {{ range $person.profiles }}
+              {{ $pack := or .icon_pack "fas" }}
+              {{ $pack_prefix := $pack }}
+              {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+                {{ $pack_prefix = "fa" }}
+              {{ end }}
+              {{ $link := .url | default .link }}
+              {{ $scheme := (urls.Parse $link).Scheme }}
+              {{ $target := "" }}
+              {{ if not $scheme }}
+                {{ $link = (.url | default .link) | relLangURL }}
+                {{ if eq (path.Ext $link) ".pdf" }}{{ $target = "target=\"_blank\" rel=\"noopener\"" }}{{ end }}
+              {{ else if in (slice "http" "https") $scheme }}
+                {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+              {{ end }}
+              <li>
+                <a
+                  href="{{ $link | safeURL }}"
+                  {{ $target | safeHTMLAttr }}
+                  aria-label="{{ .icon }}"
+                  {{ with .label }} data-toggle="tooltip" data-placement="top" title="{{ . }}"{{ end }}
+                  class="dsbio__social"
+                >
+                  {{ partial "functions/get_icon" (dict "name" .icon "attributes" "style=\"height: 1.15rem; width: 1.15rem;\"") }}
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </div>
+    </aside>
+
+    {{/* -------- Right: bio / policy execution -------- */}}
+    <div class="dsbio__main">
+
+      {{ with ($block.content.text | emojify | $page.RenderString) | default $person_page.Content }}
+        <div class="dsbio__bio prose dark:prose-invert">
+          <div class="bio-text" {{ with $block.design.biography.style }}{{ (printf "style=\"%s\"" .) | safe.HTMLAttr }}{{ end }}>
+            {{ . }}
+          </div>
+        </div>
+      {{ end }}
+
+      {{ with $block.content.button }}
+        <div class="dsbio__actions">
+          <a href="{{ .url }}" target="_blank" class="dsbio__button">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            {{ .text }}
+          </a>
+        </div>
+      {{ end }}
+
+      {{/* `show_education` (bool) defaults to true when unset, so the About page
+           needs no changes. Set to false (as the homepage block does) to swap
+           the Education column for a "Focus"/current-role signal instead. */}}
+      {{ $show_education := true }}
+      {{ if isset $block.content "show_education" }}
+        {{ $show_education = $block.content.show_education }}
+      {{ end }}
+
+      {{/* `interests_label` (string) overrides the i18n "interests" heading —
+           e.g. the homepage sets this to "Focus" for a punchier first read. */}}
+      {{ $interests_label := $block.content.interests_label | default (i18n "interests") }}
+
+      <div class="dsbio__cols">
+        {{ with $person.interests }}
+          <div class="dsbio__col">
+            <div class="dsbio__col-head">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 01-2 2h0a2 2 0 01-2-2v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+              <span>{{ $interests_label | markdownify }}</span>
+            </div>
+            <ul class="dsbio__list">
+              {{ range . }}
+                <li>{{ . | markdownify | emojify }}</li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+
+        {{ if $show_education }}
+          {{ with $person.education }}
+            <div class="dsbio__col">
+              <div class="dsbio__col-head">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v7"></path>
+                </svg>
+                <span>{{ i18n "education" | markdownify }}</span>
+              </div>
+              <ul class="dsbio__timeline">
+                {{ range . }}
+                  <li>
+                    <div class="dsbio__edu-area">{{ .area }}</div>
+                    <div class="dsbio__edu-meta">
+                      <span>{{ .institution }}</span>
+                      {{ with .year }}
+                        <span class="dsbio__edu-sep">|</span>
+                        <span class="dsbio__edu-year">{{ . }}</span>
+                      {{ end }}
+                    </div>
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+          {{ end }}
+        {{ else }}
+          {{ with $person.work }}
+            {{ $current := index . 0 }}
+            <div class="dsbio__col">
+              <div class="dsbio__col-head">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <span>Currently</span>
+              </div>
+              <ul class="dsbio__timeline">
+                <li>
+                  <div class="dsbio__edu-area">{{ $current.position }}{{ with $current.company_name }} @ {{ . }}{{ end }}</div>
+                  {{ with $current.summary }}
+                    {{ $first_line := index (split (strings.TrimSpace .) "\n") 0 }}
+                    <div class="dsbio__edu-meta">
+                      <span>{{ $first_line | strings.TrimPrefix "- " | markdownify }}</span>
+                    </div>
+                  {{ end }}
+                </li>
+              </ul>
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>

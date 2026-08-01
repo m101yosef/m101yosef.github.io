@@ -14,7 +14,11 @@ hugo_stats.json
 **/latex
 
 # personal
-desktop.ini 
+desktop.ini
+proposals/
+specs/
+CLAUDE.md
+AGENTS.md
 
 # underdevelopment
 content/post
@@ -25,5 +29,27 @@ content/teaching
 **/sample
 **/template
 **/test
-test.** 
+test.**
 0*content/teaching
+
+# secrets / sensitive — public repo, never commit these
+.env
+.env.*
+!.env.example
+*.local
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+*.secret
+secrets.*
+**/secrets/
+credentials.json
+service-account*.json
+.netrc
+
+# OS / editor cruft
+.DS_Store
+.vscode/

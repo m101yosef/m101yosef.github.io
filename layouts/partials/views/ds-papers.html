@@ -1,0 +1,26 @@
+{{/* Custom view: "ds-papers" — one pinned card. See ds-papers.start.html. */}}
+{{ $item := .item }}
+{{ $summary := ($item.Params.summary | default $item.Summary) | plainify | htmlUnescape | chomp }}
+{{ $resource := partial "functions/get_featured_image.html" $item }}
+
+<article class="dscol__card">
+  {{ with $resource }}
+  {{ $image := .Fill "640x360 Center" }}
+  {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
+  <a class="dscol__card-image" href="{{ $item.RelPermalink }}">
+    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="" loading="lazy">
+  </a>
+  {{ end }}
+  <div class="dscol__card-eyebrow">
+    <span class="dscol__dot"></span>
+    {{ with first 1 ($item.GetTerms "tags") }}
+      {{ (index . 0).Page.LinkTitle }}
+    {{ else }}
+      Start here
+    {{ end }}
+  </div>
+  <h3 class="dscol__card-title">
+    <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>
+  </h3>
+  {{ with $summary }}<p class="dscol__card-summary">{{ . }}</p>{{ end }}
+</article>

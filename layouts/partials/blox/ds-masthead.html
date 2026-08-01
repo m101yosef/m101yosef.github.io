@@ -1,0 +1,87 @@
+{{/* Custom blox: "ds-masthead" — an editorial front-door header for archive
+     pages (Writing, Projects).
+
+  NOTE: This site serves a PRE-BUILT Tailwind bundle and does NOT recompile
+  Tailwind from templates (no PostCSS/JIT). Like `.dsbio` / `.dswhy` / `.dscol`,
+  this partial avoids uncertain Tailwind utilities and relies on self-contained
+  `.dshead` rules in assets/css/custom.css.
+
+  Signature element: a spec-sheet masthead. A monospace index eyebrow, an
+  oversized display title, a calm lead, and a hairline META RULE whose cells are
+  LIVE archive data — item count, distinct topics, last-updated month. Left-
+  aligned at the same 64rem measure as the `.dscol` lists below, so the page
+  reads as one aligned column instead of a centered island. Structure encodes
+  something true (real counts), not decorative sequence markers.
+
+  Config (content:):
+    eyebrow    string  — mono index label (optional)
+    title      string  — display title (falls back to page title)
+    text       string  — lead paragraph (markdown)
+    folder     string  — content type to summarise for the meta rule (optional)
+    meta_unit  string  — noun for the count, e.g. "pieces" / "projects" (default "pieces")
+*/}}
+
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+
+{{ $eyebrow := $block.content.eyebrow }}
+{{ $title := $block.content.title | default $page.Title }}
+{{ $lead := $block.content.text }}
+{{ $folder := $block.content.folder }}
+{{ $unit := $block.content.meta_unit | default "pieces" }}
+
+{{/* -------- Live meta: count / topics / last updated -------- */}}
+{{ $count := 0 }}
+{{ $topics := slice }}
+{{ $updated := "" }}
+{{ with $folder }}
+  {{ $items := where site.RegularPages "Type" . }}
+  {{ $count = len $items }}
+  {{ range $items }}
+    {{ range .GetTerms "tags" }}{{ $topics = $topics | append .LinkTitle }}{{ end }}
+  {{ end }}
+  {{ range first 1 (sort $items "Date" "desc") }}
+    {{ $updated = time.Format "2006.01" .Date }}
+  {{ end }}
+{{ end }}
+{{ $topicCount := len (uniq $topics) }}
+
+<header class="dshead">
+  <div class="dshead__grid" aria-hidden="true"></div>
+
+  {{ with $eyebrow }}
+    <div class="dshead__eyebrow">
+      <span class="dshead__live" aria-hidden="true"></span>
+      <span>{{ . }}</span>
+    </div>
+  {{ end }}
+
+  <h1 class="dshead__title">{{ $title }}</h1>
+
+  {{ with $lead }}
+    <div class="dshead__lead">{{ . | $page.RenderString }}</div>
+  {{ end }}
+
+  {{ if and $folder (gt $count 0) }}
+    <div class="dshead__meta">
+      <span class="dshead__meta-cell">
+        <span class="dshead__meta-num">{{ printf "%02d" $count }}</span>
+        <span>{{ $unit }}</span>
+      </span>
+      {{ if gt $topicCount 0 }}
+        <span class="dshead__meta-sep" aria-hidden="true">·</span>
+        <span class="dshead__meta-cell">
+          <span class="dshead__meta-num">{{ printf "%02d" $topicCount }}</span>
+          <span>topic{{ if ne $topicCount 1 }}s{{ end }}</span>
+        </span>
+      {{ end }}
+      {{ with $updated }}
+        <span class="dshead__meta-sep" aria-hidden="true">·</span>
+        <span class="dshead__meta-cell">
+          <span>updated</span>
+          <span class="dshead__meta-num">{{ . }}</span>
+        </span>
+      {{ end }}
+    </div>
+  {{ end }}
+</header>

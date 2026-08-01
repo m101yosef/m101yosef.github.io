@@ -1,0 +1,27 @@
+{{/* Custom view: "ds-writing" — one log entry. See ds-writing.start.html. */}}
+{{ $item := .item }}
+{{ $summary := $item.Params.summary | default $item.Params.description | default $item.Summary }}
+{{ $summary = $summary | page.RenderString | plainify | htmlUnescape | chomp }}
+{{ $resource := partial "functions/get_featured_image.html" $item }}
+
+<article class="dscol__entry">
+  <time class="dscol__entry-date" datetime="{{ time.Format "2006-01-02" $item.Date }}">
+    {{ time.Format "2006.01" $item.Date }}
+  </time>
+  <div class="dscol__entry-body">
+    <h3 class="dscol__entry-title">
+      <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>
+    </h3>
+    {{ with $summary }}<p class="dscol__entry-summary">{{ . }}</p>{{ end }}
+    {{ with first 1 ($item.GetTerms "tags") }}
+      <span class="dscol__entry-tag">{{ (index . 0).Page.LinkTitle }}</span>
+    {{ end }}
+  </div>
+  {{ with $resource }}
+  {{ $image := .Fill "320x180 Center" }}
+  {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
+  <a class="dscol__entry-thumb" href="{{ $item.RelPermalink }}">
+    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="" loading="lazy">
+  </a>
+  {{ end }}
+</article>

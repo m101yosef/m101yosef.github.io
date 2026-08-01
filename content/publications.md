@@ -11,26 +11,33 @@ design:
 # Page sections
 sections:
 
-  # - block: collection
-  #   content: 
-  #     title: Analytics
-  #     count: 0
-  #     filters: 
-  #       tag: "Data Analytics"
-  #   design: 
-  #     view: article-grid
-  #     columns: 3
+  - block: ds-masthead
+    content:
+      eyebrow: "Technical notes"
+      title: "Writing"
+      folder: publication
+      meta_unit: pieces
+      text: >-
+        **Practical engineering, written up properly.** Not academic papers —
+        these are things I built or worked out (recommendation, forecasting,
+        conversational AI, and how machines learn to decide — up to reinforcement
+        learning), documented with the structure and rigor of research notes so
+        they stay reliable and reusable. Build, teach, iterate.
+    design:
+      spacing:
+        padding: ['3.5rem', '0', '1.75rem', '0']
 
   - block: collection
     content: 
-      title: AI & Deep Learning
+      title: ''
       count: 0
       filters: 
         folders: 
           - publication 
     design: 
-      view: article-grid
-      columns: 3
+      view: ds-writing
+      spacing:
+        padding: ['0.5rem', '0', '4rem', '0']
 
   # - block: collection
   #   content: 
@@ -46,7 +53,7 @@ sections:
 
   - block: tags-cloud
     content: 
-      title: "  "
+      title: "Explore by topic"
     design: 
       background: 
         color: whitesmoke

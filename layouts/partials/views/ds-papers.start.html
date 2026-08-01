@@ -1,0 +1,4 @@
+{{/* Custom view: "ds-papers" — pinned/featured grid for "Start here".
+     Shares the `.dscol` card system with ds-writing/ds-projects. */}}
+{{ $columns := .config.columns | default 2 }}
+<div class="dscol dscol--grid" style="--dscol-cols: {{ $columns }};">

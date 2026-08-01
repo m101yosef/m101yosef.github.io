@@ -1,0 +1,6 @@
+{{/* Custom view: "ds-projects" — project write-up grid.
+     Shares the `.dscol` card system with ds-writing/ds-papers. Deliberately
+     links to the page's own RelPermalink, not `external_link` — these
+     project entries are self-contained write-ups, not pointers off-site. */}}
+{{ $columns := .config.columns | default 3 }}
+<div class="dscol dscol--grid" style="--dscol-cols: {{ $columns }};">
