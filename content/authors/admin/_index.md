@@ -77,7 +77,7 @@ work:
     date_start: '2024-11-01'
     date_end: '2025-01-31'
     summary: |2-
-      Contract role. Developed and deployed a RAG-powered chatbot ([Meter we Nos](/project/metrwnos-chatbot/)) that handles the firm's client intake and answers clients' most common legal questions.
+      Developed and deployed a RAG-powered chatbot ([Meter we Nos](/project/metrwnos-chatbot/)) that handles the firm's client intake and answers clients' most common legal questions.
 
   - position: Machine Learning Engineer
     company_name: IEEE (Swarms - EVNTO)
@@ -110,28 +110,20 @@ skills:
     items:
       - name: Python (FastAPI/Data)
         description: ''
-        percent: 90
         icon: code-bracket
       - name: Machine Learning (NLP/RecSys)
         description: ''
-        percent: 85
         icon: chart-bar
       - name: DevOps (Docker)
         description: ''
-        percent: 60
         icon: circle-stack
       - name: SQL
         description: ''
-        percent: 60
         icon: circle-stack
 
 languages:
   - name: Arabic
-    percent: 90
   - name: English
-    percent: 80
-  - name: French
-    percent: 20
 
 badges: 
   - title: "Data Analysis with Python"
@@ -172,6 +164,6 @@ badges:
 
 My degree is in statistics, so "inference" has always meant two things to me: the conclusion a model draws, and the service that has to deliver it. I work on both ends — whether the estimate holds up, and whether the endpoint stays up. A model that is right in a notebook but unreliable in production hasn't shipped; it's just been demonstrated.
 
-That standard runs through everything I've built: a recommendation and sentiment system serving live predictions inside a campus events app, a chatbot handling client intake and common legal questions, and time-series forecasts of sales and market trends for early-stage startups. At Ertaqy, I design the Python backends behind AI features — inference serving, API design, and the statistical evaluation that tells us whether any of it actually works.
+That standard runs through the systems I've shipped: a recommendation and sentiment system serving live predictions inside a campus events app, and a chatbot handling client intake and common legal questions for a law firm. Forecasting sales and market trends for early-stage startups is the piece I've so far only prototyped (in [AQSA](/project/aqsa/), my degree research project); turning it into an owned, public build is next. At Ertaqy, I design the Python backends behind AI features — inference serving, API design, and the statistical evaluation that tells us whether any of it actually works.
 
 Two convictions shape how I work. Machine learning is one component of a wider software system, not the centre of it — so I optimise for clarity, reproducibility, and system health before leaderboard scores or novelty. And the theory underneath deserves to be written down properly — the essays here climb from probability and optimization toward reinforcement learning, because deciding well is a harder problem than predicting well.

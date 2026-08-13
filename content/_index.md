@@ -17,10 +17,13 @@ sections:
       show_education: false
       interests_label: "Focus"
       text: |-
-        **What to show:** an event recommender inside a campus app. **What to say:** a
-        chatbot that handles client intake and common legal questions. **What comes next:**
-        sales and market forecasts for early-stage startups. Different products, same
-        shape — a model, a Python backend, and a decision someone actually acts on.
+        I build ML systems that make decisions: a recommendation and sentiment service
+        that served live predictions inside a campus events app, a RAG chatbot that
+        handles client intake and common legal questions for a law firm, and the Python
+        backends behind Ertaqy's AI features in production today. Different products,
+        same shape: a model, a Python backend, and a decision someone actually acts on.
+        Here I write about how machines learn to decide, from statistics up to
+        reinforcement learning.
 
         [Read more »](/about)
     design:

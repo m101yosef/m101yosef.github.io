@@ -1,5 +1,5 @@
 ---
-title: metrwnos chatbot
+title: Metrwnos Chatbot
 date: 2024-11-01
 summary: A RAG-powered legal intake and Q&A chatbot for an Egyptian law firm, answering common Egyptian law questions in Egyptian Arabic and handling first contact with prospective clients.
 status: archived
@@ -32,7 +32,7 @@ The business case is simple:
 
 ## System & Architecture
 
-Built as a contract AI engineering project around a Retrieval-Augmented Generation (RAG) pipeline:
+Built as an AI engineering project around a Retrieval-Augmented Generation (RAG) pipeline:
 
 - **LLM & Embeddings**: Google Gemini (`gemini-1.5-flash`) through LangChain's `RetrievalQA`.
 - **Vector Retrieval**: FAISS index over a corpus of Egyptian legal documents.
