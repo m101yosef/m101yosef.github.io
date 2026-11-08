@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://m101yosef.github.io/sitemap.xml

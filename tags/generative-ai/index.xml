@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Generative AI | Mohamed Yosef</title><link>https://m101yosef.github.io/tags/generative-ai/</link><atom:link href="https://m101yosef.github.io/tags/generative-ai/index.xml" rel="self" type="application/rss+xml"/><description>Generative AI</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Nov 2024 00:00:00 +0000</lastBuildDate><image><url>https://m101yosef.github.io/media/icon_hu_23bc55e615685232.png</url><title>Generative AI</title><link>https://m101yosef.github.io/tags/generative-ai/</link></image><item><title>Metrwnos Chatbot</title><link>https://m101yosef.github.io/project/metrwnos-chatbot/</link><pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate><guid>https://m101yosef.github.io/project/metrwnos-chatbot/</guid><description>&lt;h2 id="the-problem">The problem&lt;/h2>
+&lt;p>Most people who contact a law firm are not ready to hire a lawyer yet. They have a question: about a contract, a dispute, an inheritance, and they want a quick, understandable answer before committing to a paid consultation. For a small firm like Meter we Nos, answering those questions manually eats into billable time, and ignoring them loses potential clients.&lt;/p>
+&lt;h2 id="why-a-chatbot-and-why-now-nov-2024">Why a chatbot, and why now (Nov 2024)&lt;/h2>
+&lt;p>A year ago this would have been a hard sell. Generic chatbots gave generic answers, and no law firm can afford a bot that improvises legal advice. What changed in 2024 is that retrieval-augmented generation became practical and cheap: the model answers from the firm&amp;rsquo;s own indexed legal documents instead of its imagination, and fast, low-cost models like Gemini Flash make per-query costs negligible.&lt;/p>
+&lt;p>The business case is simple:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>First contact runs 24/7.&lt;/strong> Prospective clients get an immediate answer in Egyptian Arabic instead of waiting for office hours.&lt;/li>
+&lt;li>&lt;strong>Lawyers stop repeating themselves.&lt;/strong> The most common questions get consistent answers drawn from the firm&amp;rsquo;s own material, freeing lawyer time for cases that actually need a lawyer.&lt;/li>
+&lt;li>&lt;strong>Better-qualified consultations.&lt;/strong> By the time someone books a session, the basics are already covered, so the intake queue fills with real cases rather than FAQ traffic.&lt;/li>
+&lt;/ul>
+&lt;h2 id="system--architecture">System &amp;amp; Architecture&lt;/h2>
+&lt;p>Built as an AI engineering project around a Retrieval-Augmented Generation (RAG) pipeline:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>LLM &amp;amp; Embeddings&lt;/strong>: Google Gemini (&lt;code>gemini-1.5-flash&lt;/code>) through LangChain&amp;rsquo;s &lt;code>RetrievalQA&lt;/code>.&lt;/li>
+&lt;li>&lt;strong>Vector Retrieval&lt;/strong>: FAISS index over a corpus of Egyptian legal documents.&lt;/li>
+&lt;/ul>
+&lt;h2 id="what-i-did">What I did&lt;/h2>
+&lt;ul>
+&lt;li>Designed and implemented the RAG pipeline end to end: document indexing, vector retrieval, and answer generation.&lt;/li>
+&lt;li>Wrote the system prompt so responses come back as clear Egyptian Arabic legal explanations, suitable for talking to clients rather than lawyers.&lt;/li>
+&lt;li>Built the Streamlit prototype and the client intake flow around it.&lt;/li>
+&lt;/ul>
+&lt;h2 id="demo-walkthrough">Demo Walkthrough&lt;/h2>
+&lt;p>The demo below (&lt;code>v0.3&lt;/code>) shows the chatbot answering Egyptian legal questions and walking through the intake flow:&lt;/p>
+&lt;video controls width="100%" style="border-radius: 8px; margin-top: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+&lt;source src="demo.mp4" type="video/mp4">
+Your browser does not support the video tag.
+&lt;/video>
+&lt;h2 id="outcome">Outcome&lt;/h2>
+&lt;p>Delivered a working prototype through three demo iterations (&lt;code>v0.1&lt;/code> to &lt;code>v0.3&lt;/code>), enough to show the firm that document-grounded LLMs can realistically handle legal intake for a boutique practice.&lt;/p></description></item><item><title>EVNTO</title><link>https://m101yosef.github.io/project/evnto/</link><pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate><guid>https://m101yosef.github.io/project/evnto/</guid><description>&lt;h2 id="the-problem">The problem&lt;/h2>
+&lt;p>At Mansoura University, activities run by different volunteer teams and IEEE societies had no shared home — students had to track each team&amp;rsquo;s own channel to find and book anything, with no single place to see what was happening across campus. EVNTO, built with the IEEE Vectories team, was our attempt at that missing centralized layer.&lt;/p>
+&lt;h2 id="constraints">Constraints&lt;/h2>
+&lt;p>This was a student-team concept project rather than a funded product build: our evidence base was a competitive review of similar booking/event apps plus a survey we ran among students, not a live pilot with real bookings. The resulting report was meant to justify and steer a build, not to report on one that had already shipped.&lt;/p>
+&lt;h2 id="what-i-did">What I did&lt;/h2>
+&lt;p>I worked on the research that shaped the product decisions: reviewing how comparable activity/event platforms handled discovery and booking, then running and analysing a student survey to check which of those patterns actually mattered to our own campus audience versus which were just assumptions. Those findings fed directly into the recommendations for how EVNTO&amp;rsquo;s booking flow and information architecture should work.&lt;/p>
+&lt;h2 id="what-id-credit">What I&amp;rsquo;d credit&lt;/h2>
+&lt;p>The concrete output was the research report and its recommendations, which the team then used as the basis for prototyping — I don&amp;rsquo;t have adoption or usage numbers to point to, since it stayed at the concept and prototype stage. What stuck with me was how much a &amp;ldquo;just build it&amp;rdquo; instinct benefits from being slowed down by even a small, deliberately-designed survey first.&lt;/p>
+&lt;p>&lt;em>Team repo on &lt;a href="https://github.com/swarmsTeam/swarms-ai" target="_blank" rel="noopener">GitHub&lt;/a>.&lt;/em>&lt;/p></description></item></channel></rss>
